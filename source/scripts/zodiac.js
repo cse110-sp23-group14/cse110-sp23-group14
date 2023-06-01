@@ -28,7 +28,7 @@ async function readJsonData(filePath) {
  */
 async function getZodiacSign(month, day) {
   try {
-    const zodiacData = await readJsonData('source/zodiac.json');
+    const zodiacData = await readJsonData('source/jsons/zodiac.json');
     const zodiacSigns = zodiacData.ZodiacSigns;
 
     for (const sign of zodiacSigns) {
@@ -55,7 +55,7 @@ async function getZodiacSign(month, day) {
  * @returns {string} - Compatibility status ("OK" or "UNKNOWN").
  */
 async function getCompatibility(zodiacSign1, zodiacSign2) {
-  const zodiacData = await readJsonData('source/zodiac.json');
+  const zodiacData = await readJsonData('source/jsons/zodiac.json');
 
 
 const compatibilityData = zodiacData.Compatibility;

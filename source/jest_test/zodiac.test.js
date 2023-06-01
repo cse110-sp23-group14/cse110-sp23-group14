@@ -1,4 +1,4 @@
-import { readJsonData, getZodiacSign, getCompatibility } from '../zodiac.js';
+import { readJsonData, getZodiacSign, getCompatibility } from '../scripts/zodiac.js';
 
 //console.log(getZodiacSign);
 
