@@ -1,4 +1,4 @@
-const t = require('./horoscope')  //reqeust the function we are going to test from our javascript file
+const t = require('../horoscope')  //reqeust the function we are going to test from our javascript file
 
 user=1;
 test('properly adds two numbers', ()=>{
