@@ -311,35 +311,47 @@ body {
     cursor: pointer;
 }
 
-/**
-*
-* media queries 
-@media screen and (min-width:350px) {
-    .report, .compatibility, .explore{
-        margin:0;
-        font-size: 50px;
-    }
-    .close-symbol{
-        margin-right: 10px;
-    }
-    .subheading{
-        margin-left:20px;
-        font-size: medium;
-    }
 
-}
-@media screen and (min-width:1000px) {
+@media screen and (max-width: 600px) {
+    /* reducing font size for mobile devices */
     .nav h1 {
-        margin:10;
-        font-size: 80px;
+        font-size: 40px;
     }
-    .close-symbol{
-        margin-right: 90px;
+  
+    .subheading {
+        font-size: large;
     }
-    .subheading{
-        margin-left: 300px;
-        font-size: xx-large;
-    } 
-}
 
-*/
+    .popup {
+        width: 80vw;
+        height: 60vh;
+    }
+  
+    #title-text {
+        font: 48px 'Lora', serif;
+    }
+  
+    .button {
+        width: 80px;
+        transform: translateY(400%) translateX(350%);
+    }
+  
+    #horoscope-button {
+        transform: translateY(400%) translateX(450%);
+    }
+  
+    .text-box>p {
+        font: 16px 'Roboto-monospace', monospace;
+    }
+
+    .box {
+        width: 70%;
+        padding: 25px;
+    }
+
+    /* Adjusting grid layout for mobile */
+    .flex-container {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}

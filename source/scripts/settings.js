@@ -1,4 +1,4 @@
-import { getZodiacSign, readJsonData } from "../zodiac.js";
+import { getZodiacSign, readJsonData } from "./zodiac.js";
 
 window.addEventListener('DOMContentLoaded', (event) => {
     // Call the functions to display the stored name and birthday

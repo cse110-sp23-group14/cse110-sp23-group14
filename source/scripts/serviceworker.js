@@ -1,3 +1,5 @@
+
+
 /**
  * The name of the static cache used for the Progressive Web App (PWA).
  * @type {string}

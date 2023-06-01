@@ -1,4 +1,4 @@
-import { getSign, generateHoroscope } from "../horoscope.js";
+import { getSign, generateHoroscope } from "./horoscope.js";
 
 /**
  * Event listener function for the 'DOMContentLoaded' event.

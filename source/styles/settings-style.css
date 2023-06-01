@@ -37,3 +37,22 @@ span.highlight {
     float: right;
     color: var(--main-light-color);
 }
+
+@media screen and (max-width: 600px) {
+    .settings-content h1 {
+        font: 32px 'Lora', serif;
+    }
+  
+    .settings-content h2 {
+        font: 24px 'Inter', sans-serif;
+    }
+  
+    .settings-content p {
+        font: 16px 'Inter', sans-serif;
+    }
+
+    /* reducing edit button size */
+    .edit-button {
+        height: 20px;
+    }
+}
