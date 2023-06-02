@@ -13,6 +13,8 @@ html{
 body {
     height: 100%;
     margin: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 .horoscope-content{
@@ -203,8 +205,17 @@ body {
     background-clip: padding-box;
     text-align: center;
 }
-  
-.button {
+
+#horoscope-button:hover {
+    background: #fff;
+}
+
+
+#horoscope-button {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 1em;
     font-family: 'Roboto', sans-serif;
     padding: 10px;
@@ -212,26 +223,9 @@ body {
     border: 2px solid #8c67b1;
     border-radius: 50px;
     text-decoration: none;
-    top: 50%;
-    right: 0;
-    transform: translateY(900%) translateX(730%);
-    display: block;
-    width: 140px; /* Adjust the width as needed */
-    margin-right: 20px;
     background-color: #8c67b1;
-    align-items: center;
-    justify-content: center;
+    width: 140px;
 }
-
-
-.button:hover {
-    background: #fff;
-}
-
-#horoscope-button {
-    transform: translateY(900%) translateX(830%);
-}
-
 .overlay {
     position: fixed;
     top: 0;
@@ -242,6 +236,7 @@ body {
     transition: opacity 500ms;
     visibility: hidden;
     opacity: 0;
+    z-index: 3;
 }
 
 .overlay:target {
