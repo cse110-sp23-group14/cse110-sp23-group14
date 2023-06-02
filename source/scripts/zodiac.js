@@ -304,9 +304,7 @@ async function readJsonData(filePath) {
     return jsonData;
   }
   catch (error) {
-    const files = require('fs');
-    const jsonData = files.readFileSync(filePath, 'utf-8');
-    return JSON.parse(jsonData);
+    console.error(error);
   }
 }
 
