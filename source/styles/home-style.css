@@ -349,4 +349,24 @@ body {
         grid-template-columns: 100%;
         grid-template-rows: repeat(4, 1fr);
     }
+
+    .nav-content {
+        padding-left: 5vw; /* Add left padding to create spacing */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        transition: opacity 1.3s;
+        transition: visibility 0s;
+      }
+      
+      #nav-button {
+        pointer-events: all;
+        margin: 1vw; /* Reduce the margin to make the icon smaller */
+        align-self: center;
+        color: var(--main-light-color);
+        cursor: pointer;
+      }
+      
 }
