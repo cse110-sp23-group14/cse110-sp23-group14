@@ -57,7 +57,7 @@ async function displayZodiac() {
         zodiacInfoElement.innerHTML = "";
         return;
     }
-    const zodiacArray = await readJsonData('zodiac.json');
+    const zodiacArray = await readJsonData('../source/jsons/zodiac.json');
     const zodiacSign = await getZodiacSign(storedBirthday.split('.')[0], storedBirthday.split('.')[1], zodiacArray);
     console.log(zodiacSign);
     if (zodiacSign) {

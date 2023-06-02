@@ -50,7 +50,7 @@ async function generateHoroscope() {
   const hashValue = inputToHash % 13;
 
   // Read horoscopes.json and get today's horoscope
-  const horoscopes = await readJsonData("../assets/generated-text/horoscopes.json");
+  const horoscopes = await readJsonData("./jsons/horoscopes.json");
   let todayHoroscope = horoscopes[sign][hashValue];
   return todayHoroscope;
 }

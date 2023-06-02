@@ -12,13 +12,10 @@ async function readJsonData(filePath) {
     return jsonData;
   }
   catch (error) {
-    const files = require('fs');
-    const jsonData = files.readFileSync(filePath, 'utf-8');
-    return JSON.parse(jsonData);
+    console.error(error);
   }
 }
 
-  
 /**
  * Get the zodiac sign based on the given month and day.
  * @param {number} month - Month (1-12).
@@ -28,7 +25,8 @@ async function readJsonData(filePath) {
  */
 async function getZodiacSign(month, day) {
   try {
-    const zodiacData = await readJsonData('source/jsons/zodiac.json');
+    const zodiacData = await readJsonData('./jsons/zodiac.json');
+    console.log(zodiacData);
     const zodiacSigns = zodiacData.ZodiacSigns;
 
     for (const sign of zodiacSigns) {
