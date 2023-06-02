@@ -1,4 +1,4 @@
-import { getZodiacSign, readJsonData } from "./zodiac.js";
+import { Zodiac } from "./zodiac.js";
 
 window.addEventListener('DOMContentLoaded', (event) => {
     // Call the functions to display the stored name and birthday
@@ -57,8 +57,7 @@ async function displayZodiac() {
         zodiacInfoElement.innerHTML = "";
         return;
     }
-    const zodiacArray = await readJsonData('../source/jsons/zodiac.json');
-    const zodiacSign = await getZodiacSign(storedBirthday.split('.')[0], storedBirthday.split('.')[1], zodiacArray);
+    const zodiacSign = Zodiac.getZodiacSign(storedBirthday.split('.')[0], storedBirthday.split('.')[1], Zodiac.zodiacTable);
     console.log(zodiacSign);
     if (zodiacSign) {
         zodiacInfoElement.innerHTML = `Your sign is <span class='highlight'>${zodiacSign}</span>!`;

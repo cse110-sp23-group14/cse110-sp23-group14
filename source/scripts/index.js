@@ -1,4 +1,4 @@
-import { getSign, generateHoroscope } from "./horoscope.js";
+import { Horoscope } from "./horoscope.js";
 
 /**
  * Event listener function for the 'DOMContentLoaded' event.
@@ -84,7 +84,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
 
     // Set horoscope popup text
     const dailyTitle = document.getElementsByClassName("daily-title")[0];
-    const sign = await getSign();
+    const sign = Horoscope.getSign();
     if (!sign) {
         dailyTitle.innerHTML = "We don't know your sign yet! <br>Please fill out your settings!";
     }
@@ -97,7 +97,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     dailyDate.innerHTML = `${date}`;
 
     const dailyContent = document.getElementsByClassName("daily-content")[0];
-    dailyContent.innerHTML = await generateHoroscope();
+    dailyContent.innerHTML = Horoscope.generateHoroscope();
 
 
     const shareBtn = document.querySelector('.shareBtn');
