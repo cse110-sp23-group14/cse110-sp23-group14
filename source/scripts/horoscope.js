@@ -1,17 +1,6 @@
 export { getSign, generateHoroscope };
 import { getZodiacSign, readJsonData } from "./zodiac.js";
 
-/*
- *Read the JSON data from the given file path.
- *@param {string} filePath - Path to the JSON file.
- *@returns {object} - Parsed JSON data.
-*/ 
-function readHoroscopeData(filePath) {
-  const fs = require('fs');
-  const jsonData = fs.readFileSync(filePath, 'utf-8');
-  return JSON.parse(jsonData);
-}
-
 /**
  * Finds user's sign from birthday stored in local storage
  * @returns {string|null} user's zodiac sign, or null if sign is not found
@@ -54,17 +43,3 @@ async function generateHoroscope() {
   let todayHoroscope = horoscopes[sign][hashValue];
   return todayHoroscope;
 }
-
-/**
- * Retrieves information about the daily conditions and returns them as an object.
- * @returns {object} The daily conditions as an object.
- */
-function getDailyConditions() {
-  // Implementation goes here
-}
-
-// module.exports = {
-//   generateHoroscope,
-//   getDailyConditions,
-//   getSign
-// };

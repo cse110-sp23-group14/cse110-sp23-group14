@@ -1,5 +1,5 @@
 export { readJsonData, getZodiacSign, getCompatibility }
-//module.exports = { readJsonData, getZodiacSign, getCompatibility };
+
 /**
  * Read the JSON data from the given file path.
  * @param {string} filePath - Path to the JSON file.
@@ -65,10 +65,3 @@ const compatibilityData = zodiacData.Compatibility;
   }
   return "UNKNOWN";
 }
-
-
-// const zodiacSign1 = getZodiacSign(7, 23); // Leo
-// const zodiacSign2 = getZodiacSign(9, 23); // Virgo
-// const compatibility = getCompatibility(zodiacSign1, zodiacSign2);
-// console.log(compatibility); // Output: "OK"
-// console.log(zodiacSign1); // Output: "OK"

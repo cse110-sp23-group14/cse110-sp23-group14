@@ -74,7 +74,9 @@ function saveUserName() {
     localStorage.setItem('name', userName);
 }
 
-
+/**
+ * Saves the birthday entered by the user into local storage.
+ */
 function saveBirthday() {
     var birthdayMonth = document.getElementById('birthday-month').value;
     var birthdayDay = document.getElementById('birthday-day').value;
