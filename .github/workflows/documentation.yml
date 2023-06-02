@@ -31,9 +31,18 @@ jobs:
           template: minami
           front_page: README.md
           
+      # - name: Upload Docs to branch
+      #   uses: EndBug/add-and-commit@v9
+      #   with:
+      #     add: './out/*'
+      #     fetch: false
+      #     new_branch: documentation
+
       - name: Upload Docs to branch
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: './out/*'
-          fetch: false
-          new_branch: documentation
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: documentation # The branch name where you want to push the assets
+          FOLDER: out # The directory where your assets are generated
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          MESSAGE: "Generate Documentation" # The commit message
