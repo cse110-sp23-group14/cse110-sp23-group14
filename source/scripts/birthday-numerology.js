@@ -328,13 +328,84 @@ const soulUrgeNumberData = {
     },
 
     "8": {
-      "meaning": "People with a Soul Urge Number 8 are ambitious, success-oriented, and practical.",
-      "description": "They have a strong desire for achievement, financial abundance, and material success."
+      "personality": 
+      `People who belong to the life path number 8 are hardworking and goal-oriented. Irrespective of that you are also very materialistic. 
+      Since you are a very ambitious person. You are also too honest and straightforward which might give you a tough time with people around. 
+      You are not very open to taking advice from anyone as you think too highly of yourself. You always want to be the choice maker rather than anyone else getting to decide for you. 
+      You are a very energetic person and know how to deal with it. You have the qualities of a leader and are very clear about your goals. 
+      You are passionate about your work as it will lead you to earn good money which is your ultimate goal.`,
+
+      "characteristic": 
+      `Positive:
+
+      Shower of power and money if dealt nicely can bring out the responsible side of you and make you gain money and fame quickly. 
+      Your goal-oriented nature makes people look up to you in terms of work. You see things as black and white, the grey side does not exist for you. 
+      You realize your responsibility as the provider of family and ensure that your family is happy and does not lack anything when it comes to money-related possessions. 
+      Even after great failures, you have a zeal to bounce back and regain what you have lost with the help of clean ethics. 
+      The combination of energy, focus, and dedication makes you a successful person in any field you step in.
+      
+      Negative:
+      
+      With great power comes great responsibility! You often forget this rule due to which your life becomes unmanageable. 
+      You do not know how to use your authority effectively, which leads to disaster. 
+      Your careless attitude due to fame and monetary power gives people the leverage to disrespect you and take advantage of you. 
+      You are too materialistic due to which you fail to see the emotional side of life. You are self-centred and you expect your goal to be everyone's too. 
+      Your swollen ego does not let you take advice and make your life imbalanced. The rigid concept of seeing life as black and white can trap you in fear.`,
+
+      "career":`You are extremely business-minded. You are thirsty for growth all the time which pushes you to reach new heights. 
+      People with this life path number often become surgeons, tech specialists, etc. You aim to acquire more and more wealth and power. 
+      Money oriented work lures you all the time. You have leadership skills that can push a team to aim high and perform exceptionally well for power and money.`,
+
+      "love":
+      `You are good at reading people but lack the art of expressing in a relationship. 
+      You are likely to spend a lot on your partner but it does not makeup to the emotional support they seek. 
+      Over-spending on a partner might annoy them after some time. You are against infidelity and cannot tolerate it in any form. 
+      Time and again you keep reminding your partner the same. You are a strong-willed lover when in love can go out of the way to prove your love. 
+      Overall you are difficult to be in a relationship as you are more focused on your monetary goals than the partner. 
+      Unfortunately, you are so drugged by the thought of earning money and fame you can even see your partner as the tool of success.
+
+      Life path number 8 compatibility might work well with 2 and 6. As they would be ready to let you take charge and also be ready to work towards the goals.`
     },
 
     "9": {
-      "meaning": "Individuals with a Soul Urge Number 9 are compassionate, humanitarian, and idealistic.",
-      "description": "They have a deep desire to make a positive impact on the world and help others."
+      "personality": 
+      `Generosity and emotion are two pillars of your existence. Since you are a concoction of all the numbers, you are the powerhouse of energy. 
+      You are full of compassion and strength which help you cope with life and other aspects of life. You have diverse knowledge in almost all the field which makes you an intellectual person. 
+      Since you are made from the extraction of all the numbers you are adaptable, mysterious and also diverse. You possess creative thinking and artistic flair. 
+      Unfortunately, you are a control freak and like to take charge all the time. You cannot take denial sportingly. 
+      Your personality is complex and multi-layered which makes you not very open to learning and advice.`,
+
+
+      "characteristic": 
+      `Positive:
+
+      Surprisingly, your mantra for life is live and let live. You are versatile in your talent which lets you explore various types of fields in career. 
+      Humanity is very much alive in you which makes you soft-hearted towards people especially those who are close to you. 
+      You have a deep affection for people who seek help from you, it pushes you to stretch to help them. 
+      You are somewhat of a perfectionist and openly include people in your voyage who share the thought. You are not a macro thinker instead you concentrate on the bigger picture. 
+      You like to share your dreams, goals with people it motivates you. Teamwork is your forte as you are a good decision-maker who is unbiased. 
+      You support truth in every situation, you are not a blind follower. If you concentrate then you can excel creatively and can be influential. 
+      
+      Negative:
+      
+      You are never satisfied. In a broader term even when you achieve the goal, you still feel the task is unfinished and your goal becomes something else. 
+      You lack the zeal to perform exceptionally as your mind is cluttered with uninvited thoughts. At times, materialistic desire can trigger in you and if given weight, 
+      it is likely to hamper your progress. You lack the tendency to let things go, which eventually hurts you the most. 
+      In spite of being diverse yourself, you do not appreciate people who are diverse in personality, choices or opinions.`,
+
+      "career":
+      `Life path number 9 your dedication and hard work lets you earn good money in terms of business and crack good deals for those in the job. 
+      Concentration is very important if you want to attain prosperity and success. Avoid being fearful, it will block you from performing well and even exploring new opportunities. 
+      The scars of the past are likely to haunt you, which eventually affect your overall wellbeing. Since you are adaptable, you have a lot of options open in terms of career and business. 
+      Flexibility will take you to new heights in careers like psychology, philosophy, etc. You will turn out to be a great boss as you are not a control freak.`,
+
+      "love":
+      `Unfortunately, you are not a very dedicated person in the relationship. The need for freedom does not let you be completely into anyone. 
+      If the partner is controlling a little dominating you do not go well with them or eventually escape. On the contrary, you are very naïve when it comes to love. 
+      You end up being a victim in the relationship mostly. You are ready to sacrifice yourself to make the partner happy and comfortable. 
+      Even though you are patient and careful love makes you blind. Put your developing intuition in use to have a happy and fruitful relationship.
+
+      Life path number 9 compatibility is best with 7 and 3. As 3 would add fun and light-heartedness in your life and 7 will provide comfort and guidance to focus and keep the mind calm.`
     },
 
     "11": {
