@@ -8,8 +8,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     const clearNameButton = document.getElementById('clear-name-button');
     clearNameButton.addEventListener('click', clearName);
-    const clearBirthdayButton = document.getElementById('clear-birthday-button');
-    clearBirthdayButton.addEventListener('click', clearBirthday);
+    // not gonna use clear birthday
+    // const clearBirthdayButton = document.getElementById('clear-birthday-button');
+    // clearBirthdayButton.addEventListener('click', clearBirthday);
 
     const saveUserNameForm = document.getElementById('save-name-form');
     saveUserNameForm.addEventListener('submit', saveUserName);
@@ -77,27 +78,44 @@ function saveUserName() {
  * Saves the birthday entered by the user into local storage.
  */
 function saveBirthday() {
-    var birthdayMonth = document.getElementById('birthday-month').value;
-    var birthdayDay = document.getElementById('birthday-day').value;
-    var birthday = birthdayMonth + '.' + birthdayDay;
-    localStorage.setItem('birthday', birthday);
-}
+    const birthdayInput = document.getElementById("birthday");
+    // anonymous function that 
+    // change date format to what we use
+    // e.g. birthdayInput: "2023-06-02" -> birthday: "6.2"
+    const birthday = ((dateString) => {
+      const date = new Date(dateString);
+      const month = (date.getMonth() + 1).toString();
+      const day = date.getDate().toString();
+      if (month.startsWith("0")) {
+        month = month.substring(1);
+      }
+      if (day.startsWith("0")) {
+        day = day.substring(1);
+      }
+      return month + "." + day;
+    })(birthdayInput.value);
+    // Store the formatted birthday in localStorage
+    localStorage.setItem("birthday", birthday);
+    // Display a success message
+    alert("Birthday saved successfully!");
+  }
 
-function updateBirthdayDays() {
-    var monthSelect = document.getElementById('birthday-month');
-    var daySelect = document.getElementById('birthday-day');
-    var selectedMonth = parseInt(monthSelect.value);
-    var daysInMonth = new Date(2023, selectedMonth, 0).getDate(); // Get the number of days in the selected month
+// not gonna use
+// function updateBirthdayDays() {
+//     var monthSelect = document.getElementById('birthday-month');
+//     var daySelect = document.getElementById('birthday-day');
+//     var selectedMonth = parseInt(monthSelect.value);
+//     var daysInMonth = new Date(2023, selectedMonth, 0).getDate(); // Get the number of days in the selected month
 
-    daySelect.innerHTML = ''; // Clear previous options
+//     daySelect.innerHTML = ''; // Clear previous options
 
-    for (var i = 1; i <= daysInMonth; i++) {
-        var option = document.createElement('option');
-        option.value = i;
-        option.text = i;
-        daySelect.appendChild(option);
-    }
-}
+//     for (var i = 1; i <= daysInMonth; i++) {
+//         var option = document.createElement('option');
+//         option.value = i;
+//         option.text = i;
+//         daySelect.appendChild(option);
+//     }
+// }
 
 
 /**
@@ -111,10 +129,10 @@ function clearName() {
 /**
  * Clears the stored birthday from local storage and refreshes the page.
  */
-function clearBirthday() {
-    localStorage.removeItem('birthday');
-    location.reload(); // Refresh the page
-}
+// function clearBirthday() {
+//     localStorage.removeItem('birthday');
+//     location.reload(); // Refresh the page
+// }
 
 function navigateToNewPage(){
     window.location.href = "feedback.html";
