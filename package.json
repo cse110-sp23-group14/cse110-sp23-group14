@@ -1,6 +1,11 @@
 {
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "serve-port": "serve --port "
+  },
+  "jest": {
+    "preset": "jest-puppeteer",
+    "verbose": true
   },
   "name": "cse110-sp23-group14",
   "description": "[Team Page](https://github.com/cse110-sp23-group14/cse110-sp23-group14/blob/main/admin/team.md)",
@@ -20,5 +25,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cse110-sp23-group14/cse110-sp23-group14.git"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
   }
 }
