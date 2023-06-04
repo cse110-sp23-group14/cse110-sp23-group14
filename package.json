@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "jest",
-    "serve-port": "serve --port "
+    "serve-port": "serve --port 36873"
   },
   "jest": {
     "preset": "jest-puppeteer",
