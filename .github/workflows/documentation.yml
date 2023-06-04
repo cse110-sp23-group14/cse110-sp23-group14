@@ -3,6 +3,8 @@ run-name: Generate Documentation for all JS files in source
 on:
   workflow_call:
   workflow_dispatch:
+  push:
+    branches: [fortune-telling-dev]
 
 permissions:
   contents: write
@@ -13,22 +15,16 @@ jobs:
   documentation:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout fortune telling dev
         uses: actions/checkout@v3
-
-      # Retrieves the fortune telling dev
-      - uses: actions/checkout@v3
         with:
           ref: fortune-telling-dev
-          path: main/fortune-telling-dev
           clean: false
-      - run: rm -rf main/fortune-telling-dev/.git
 
-      # Builds docs from the fortune telling dev
       - name: Build Documentation
         uses: andstor/jsdoc-action@v1
         with:
-          source_dir: main/fortune-telling-dev/source
+          source_dir: source
           output_dir: ./out
           template: minami
           front_page: README.md
@@ -58,6 +54,9 @@ jobs:
           git rm -rf admin
           git rm -rf source
           git rm -rf specs
+          git rm babel.config.js
+          git rm package-lock.json
+          git rm package.json
           cp -a out/. .
           git rm -rf out
           git add *
