@@ -83,22 +83,24 @@ function saveBirthday() {
     // change date format to what we use
     // e.g. birthdayInput: "2023-06-02" -> birthday: "6.2"
     const birthday = ((dateString) => {
-      const date = new Date(dateString);
-      const month = (date.getMonth() + 1).toString();
-      const day = date.getDate().toString();
-      if (month.startsWith("0")) {
-        month = month.substring(1);
-      }
-      if (day.startsWith("0")) {
-        day = day.substring(1);
-      }
-      return month + "." + day;
+        const date = new Date(dateString);
+        const month = (date.getMonth() + 1).toString();
+        const day = date.getDate().toString();
+        if (month.startsWith("0")) {
+            month = month.substring(1);
+        }
+
+        if (day.startsWith("0")) {
+            day = day.substring(1);
+        }
+
+        return month + "." + day;
     })(birthdayInput.value);
     // Store the formatted birthday in localStorage
     localStorage.setItem("birthday", birthday);
     // Display a success message
     alert("Birthday saved successfully!");
-  }
+}
 
 // not gonna use
 // function updateBirthdayDays() {
