@@ -1,39 +1,38 @@
 function calculateLifePathNumber(birthDate) {
     // Split the birth date into an array
     const dateArray = birthDate.split(".");
-  
+
     // Extract year, month, and day from the array
     const year = dateArray[0];
     const month = dateArray[1];
     const day = dateArray[2];
-  
+
     // Reduce each part to a single digit or a master number
     const reducedYear = reduceNumber(year);
     const reducedMonth = reduceNumber(month);
     const reducedDay = reduceNumber(day);
-  
+
     // Calculate the sum of year, month, and day
     let sum = reducedYear + reducedMonth + reducedDay;
-  
+
     // Continue reducing the sum until it becomes a single-digit or a Master Number
     sum = reduceNumber(sum);
-  
+
     // Return the calculated Life Path number
     return sum;
-  }
-  
-  function reduceNumber(number) {
-    let result = Array.from(number.toString(), Number).reduce((acc, curr) => acc + curr, 0);
-    
-    while (result > 9 && result !== 11 && result !== 22 && result !== 33) {
-      result = Array.from(result.toString(), Number).reduce((acc, curr) => acc + curr, 0);
-    }
-    
-    return result;
-  }
-  
+}
 
-  // Soul Urge Number data
+function reduceNumber(number) {
+    let result = Array.from(number.toString(), Number).reduce((acc, curr) => {acc + curr, 0});
+
+    while (result > 9 && result !== 11 && result !== 22 && result !== 33) {
+        result = Array.from(result.toString(), Number).reduce((acc, curr) => acc + curr, 0);
+    }
+    return result;
+}
+
+
+// Soul Urge Number data
 const soulUrgeNumberData = {
     "1": {
       "personality": 
