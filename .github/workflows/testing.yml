@@ -17,8 +17,7 @@ jobs:
               with:
                     node-version: 18
             - run: npm ci
-            - run: npm test
-              
+            - run: npm run serve-port & npm test & sleep 10;kill $(ps aux | grep "npm run serve-port" | awk 'NR==1 {print $2}')       
             
 
 
