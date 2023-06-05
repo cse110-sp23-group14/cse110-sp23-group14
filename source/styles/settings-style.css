@@ -1,9 +1,12 @@
 .settings-content {
     padding-left: 6%;
     padding-right: 5%;
-    background-color: var(--main-dark-color);
+    background-image: url('../assets/settings-background.jpeg');
+    background-size: cover;
+    background-position: center;
     height: 100vh;
     color: var(--main-light-color);
+    text-align: center;
 }
 
 span.highlight {
@@ -13,24 +16,56 @@ span.highlight {
 
 .settings-content h1 {
     font: 64px 'Lora', serif;
+    margin-bottom: 2vh;
+}
+
+.current-profile p {
+    font: 36px 'Lora', serif;
 }
 
 .settings-content h2 {
-    margin-top: 0;
-    font: 48px 'Inter', sans-serif;
+    font: 36px 'Inter', sans-serif;
+    text-decoration: underline;
 }
 
-.settings-content p {
-    font: 24px 'Inter', sans-serif;
+.settings-content label {
+    font: 30px 'Inter', sans-serif;
 }
 
-.divider {
+.settings-content input {
+    height: 20px;
+}
+
+.clear-profile {
+    margin-top: 10vh;
+}
+
+.clear-profile p {
+    display: inline;
+    font: 18px 'Inter', sans-serif;
+}
+
+.clear-profile button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--main-light-color);
+    text-decoration: underline;
+    cursor: pointer;
+    font: 18px 'Inter', sans-serif;
+}
+
+.update-profile > div {
+    margin-bottom: 5vh;
+}
+
+/* .divider {
     margin-top: 2vh;
     margin-bottom: 2vh;
     background-color: var(--main-light-color);
     height: 0.5vh;
     text-align: center;
-}
+} */
 
 .edit-button {
     height: 32px;

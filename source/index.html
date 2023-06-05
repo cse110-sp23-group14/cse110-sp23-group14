@@ -3,7 +3,9 @@
 
 <head>
   <title>Welcome to Zodiak</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
   <link rel="manifest" href="jsons/manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,16 +16,9 @@
   <script src="https://kit.fontawesome.com/ec9b6ab711.js" crossorigin="anonymous"></script>
   <script type="module" src="scripts/settings.js"></script>
   <script type="module" src="scripts/index.js"></script>
-  <style>
-    html {
-    scroll-behavior: smooth;
-    }
-    </style>
 </head>
 
 <body>
-  <!-- <button id="settings-button">Settings</button> -->
-  <!-- <a class="button" id="settings-button" href="settings.html">Settings</a> -->
   <div class="nav-container nav-background-hide">
     <a id="nav-button"><i class="fa-solid fa-bars fa-2xl"></i><i class="fa-solid fa-xmark fa-2xl icon-hide"></i></a>
     <div class="nav-content nav-hide">
@@ -32,7 +27,7 @@
           <h1 class="home">Home</h1>
         </a>
         <a href="#daily-report" class="option" id="report-link">
-            <h1 class="report" id="report">Daily Report</h1>
+          <h1 class="report" id="report">Daily Report</h1>
         </a>
         <!--a href="#" class="option" id="compatibility-link">
           <h1 class="compatibility">Compatibility </h1>
@@ -59,8 +54,8 @@
         <img id="title-logo" src="assets/title-logo.png" alt="Logo Image here">
       </div>
     </div>
-    
-  <section id="daily-report"></section>
+
+    <section id="daily-report"></section>
 
     <div id="horoscope-popup" class="overlay">
       <div class="popup">
@@ -69,65 +64,116 @@
         <h1 class="daily-title">Sun in Leo</h1>
         <p class="daily-date">May 23, 2023</p>
         <p class="daily-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor mauris at rhoncus maximus. Praesent dui purus, pharetra at scelerisque ut, euismod eget mauris. Maecenas eleifend, purus eu dapibus finibus, libero lorem ultrices augue, vel malesuada diam quam in lorem. Suspendisse quis nisl nec risus auctor tincidunt. Integer finibus pellentesque ipsum tempor mattis. Morbi finibus nisi id purus dignissim, ut pretium velit pellentesque. Ut pretium tortor ut pretium pharetra. Ut ut hendrerit lectus.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor mauris at rhoncus maximus. Praesent dui
+          purus, pharetra at scelerisque ut, euismod eget mauris. Maecenas eleifend, purus eu dapibus finibus, libero
+          lorem ultrices augue, vel malesuada diam quam in lorem. Suspendisse quis nisl nec risus auctor tincidunt.
+          Integer finibus pellentesque ipsum tempor mattis. Morbi finibus nisi id purus dignissim, ut pretium velit
+          pellentesque. Ut pretium tortor ut pretium pharetra. Ut ut hendrerit lectus.
         </p>
         <button class="shareBtn">Share</button>
       </div>
     </div>
-  </section>
+    </section>
   </div>
 
-  <div class="site-content horoscope-content" style="background-image: url('assets/leo_constellation.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <!-- <div class="box" id="horoscope-popup-box"> -->
-      <a id="horoscope-button" class="button" href="#horoscope-popup">Today's horoscope</a>
-    <!-- </div> -->
+  <div class="site-content horoscope-content"
+    style="background-image: url('assets/leo_constellation.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <a id="horoscope-button" class="button" href="#horoscope-popup">Today's horoscope</a>
   </div>
   <section id="settingpage">
 
-  <div class="site-content settings-content">
-    <h1>Settings</h1>
-    <div class="user-profile">
-        <h2>User Profile</h2>
-        <p id="name-text">We don't have your <span class="highlight">name</span> yet!</p>
-        <p id="zodiac-text"></p>
-        <p id="birthday-text">We don't have your <span class="highlight">birth date</span> yet!</p>
-        <a href="#user-edit-popup" class="edit-button"><i class="fa-solid fa-pen-to-square fa-2xl"></i></a>
-    </div>
-    <span class="divider"></span>
-    <div class="horoscope-preferences">
-        <h2>Horoscope Preferences</h2>
-        <p id="time-zone-text">We don't know your <span class="highlight">time zone</span> yet!</p>
-        <a class="edit-button"><i class="fa-solid fa-pen-to-square fa-2xl"></i></a>
-    </div>
-  </div>
-</section>
-<div id="user-edit-popup" class="overlay">
-    <div class="popup">
-      <a href="" id="show-settings-popup"><h2>Edit User Profile</h2></a>
-      <a class="close" href="#show-settings-popup">&times;</a>
-      <div id="change-name">
-        <form id="save-name-form">
-            <label for="name">Change name:</label><br>
-            <input type="text" id="name" name="name"><br>
-            <input type="submit" value="Submit">
-        </form> 
-      </div>
-      <button id="clear-name-button">Clear Name</button>
-      <br>
+    <div class="site-content settings-content">
+      <h1>Settings</h1>
 
-      <div id="birthday-info"></div><br>
-    
-      <div id="change-birthday">
-          <form id="save-birthday-form">
-              <label for="birthday-date">Change birthday:</label><br>
-              <input type="date" id="birthday">
-              <br>
-              <button type="submit">Submit</button>
-          </form> 
+      <div class="current-profile">
+        <p>Welcome back Name! Your birthday on record is Birthday.</p>
       </div>
-     <!-- <button id="clear-birthday-button" onclick="clearBirthday()">Clear Birthday</button> -->
-  </div>
-</div>
-  
+
+      <div class="update-profile">
+        <h2>Update Profile</h2>
+        <div id="change-birthday">
+          <form id="save-birthday-form">
+            <label for="birthday-month">Your Birthday is: </label>
+            <select id="birthday-month" name="birthday-month" onchange="saveBirthday()">
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <select id="birthday-day" name="birthday-day">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+            <input type="submit" value="Update">
+          </form>
+        </div>
+        <div id="change-name">
+          <form id="save-name-form">
+            <div>
+              <label for="name">Your Name is:</label>
+              <input type="text" id="name" name="name">
+              <input type="submit" value="Update">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="clear-profile">
+        <p>*All data are saved locally. You can </p>
+        <button>clear</button>
+        <p>your data at any time.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- <div id="change-birthday">
+      <form id="save-birthday-form">
+        <label for="birthday-date">Change birthday:</label><br>
+        <input type="date" id="birthday">
+        <br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <button id="clear-birthday-button" onclick="clearBirthday()">Clear Birthday</button> -->
+
 </body>
+
 </html>
