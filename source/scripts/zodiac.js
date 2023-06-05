@@ -159,8 +159,7 @@ const zodiacJSON = {
             "Sagittarius": "NEGATIVE"
         }
     },
-    "ZodiacSigns": [
-    {
+    "ZodiacSigns": [{
         "name": "Aquarius",
         "startMonth": 1,
         "startDay": 20,
