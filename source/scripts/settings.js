@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     saveUserNameForm.addEventListener('submit', saveUserName);
     const saveBirthdayForm = document.getElementById('save-birthday-form');
     saveBirthdayForm.addEventListener('submit', saveBirthday);
-})
+});
 
 /**
  * Displays the stored birthday information on the webpage.
@@ -69,7 +69,7 @@ async function displayZodiac() {
  * Saves the string entered by the user as their name into local storage.
  */
 function saveUserName() {
-    var userName = document.getElementById('name').value;
+    const userName = document.getElementById('name').value;
     console.log(userName);
     localStorage.setItem('name', userName);
 }
@@ -79,7 +79,7 @@ function saveUserName() {
  */
 function saveBirthday() {
     const birthdayInput = document.getElementById("birthday");
-    // anonymous function that 
+    // anonymous function that
     // change date format to what we use
     // e.g. birthdayInput: "2023-06-02" -> birthday: "6.2"
     const birthday = ((dateString) => {
@@ -141,5 +141,5 @@ function navigateToNewPage(){
 }
 
 function nagigateToProfile(){
-    window.location.href = "userprofile.html"
+    window.location.href = "userprofile.html";
 }
