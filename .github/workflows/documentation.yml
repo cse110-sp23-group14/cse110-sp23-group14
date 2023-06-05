@@ -28,6 +28,8 @@ jobs:
           output_dir: ./out
           template: minami
           front_page: README.md
+
+      - run: ls -a
           
       - name: Check if Docs Exists
         run: echo "DOCS_EXIST=$(git ls-remote --heads origin documentation | wc -l)" >> $GITHUB_ENV
@@ -39,7 +41,7 @@ jobs:
       - name: Upload Docs to branch
         uses: EndBug/add-and-commit@v9
         with:
-          add: '*'
+          add: './out/*'
           fetch: false
           new_branch: documentation
 
