@@ -18,10 +18,14 @@ describe('Basic user flow for Website', () => {
 
     // Check to make sure that name and birthday are not in local storage (when we first start)
     it('Checking localStorage to make sure name and birthday are empty', async () => {
-        const storedName = await page.evaluate(() => {localStorage.getItem("name")});
+        const storedName = await page.evaluate(() => {
+            localStorage.getItem("name");
+        });
         expect(storedName).toBe(undefined);
 
-        const storedBirthday = await page.evaluate(() => {localStorage.getItem("birthday")});
+        const storedBirthday = await page.evaluate(() => {
+            localStorage.getItem("birthday");
+        });
         expect(storedBirthday).toBe(undefined);
     });
 
@@ -34,7 +38,9 @@ describe('Basic user flow for Website', () => {
             waitUntil: "domcontentloaded",
         });
 
-        const storedName = await page.evaluate(() => localStorage.getItem("name"));
+        const storedName = await page.evaluate(() => {
+            localStorage.getItem("name");
+        });
         expect(storedName).toBe('Sample Name');
     });
 });

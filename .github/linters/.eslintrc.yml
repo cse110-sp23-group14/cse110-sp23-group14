@@ -43,7 +43,7 @@ plugins:
 #########
 rules: 
     no-mixed-spaces-and-tabs: error
-    no-trailing-spaces: error
+    no-trailing-spaces: [error, {skipBlankLines: true}]
     camelcase: error
     for-direction: error
     no-await-in-loop: error
