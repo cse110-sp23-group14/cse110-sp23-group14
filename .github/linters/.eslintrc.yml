@@ -42,8 +42,22 @@ plugins:
 # Rules #
 #########
 rules: 
+  no-mixed-spaces-and-tabs: error
+  no-trailing-spaces: error
   camelcase: error
-  
+  for-direction: error
+  no-await-in-loop: error
+  no-irregular-whitespace: error
+  arrow-body-style: [error, always]
+  no-var: error
+  prefer-const: error
+  yoda: [error, never]
+  brace-style: [error, 1tbs]
+  indent: [error, tab]
+  comma-dangle: [error, only-multiline]
+  semi: [error, always]
+  semi-spacing: [error, {before: false, after: true}]
+
   
 
 
