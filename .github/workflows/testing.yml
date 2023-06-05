@@ -5,6 +5,9 @@ on:
         branches: [fortune-telling-dev]
     workflow_call:
 
+env:
+    SERVE_TIME: 20
+
 jobs:
     testing:
         runs-on: ubuntu-latest
@@ -17,7 +20,7 @@ jobs:
               with:
                     node-version: 18
             - run: npm ci
-            - run: npm run serve-port & npm test & sleep 10;kill $(ps aux | grep "npm run serve-port" | awk 'NR==1 {print $2}')       
+            - run: npm run serve-port & npm test & sleep ${SERVE_TIME};kill $(ps aux | grep "npm run serve-port" | awk 'NR==1 {print $2}')       
             
 
 

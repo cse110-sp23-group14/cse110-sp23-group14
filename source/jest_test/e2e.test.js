@@ -3,11 +3,9 @@ const SERVER_PORT = 36873;
 
 describe('Basic user flow for Website', () => {
     beforeAll(async () => {
-        // const browser = await puppeteer.launch();
-        // const page = await browser.newPage();
-        await page.goto('http://localhost:5500/source/');
-
-        // await page.goto('https://cse110-sp23-group14.github.io/cse110-sp23-group14/main/fortune-telling-dev/source/index.html');
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        await page.goto(`http://localhost:${SERVER_PORT}/source/`);
     });
 
     it('Basic test', async () => {
