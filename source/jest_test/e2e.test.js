@@ -1,10 +1,14 @@
 const puppeteer = require("puppeteer");
 const SERVER_PORT = 36873;
 
+/**
+ * How to run tests: run the command below
+ * npm run serve-port & npm test & sleep 20;kill $(ps aux | grep "npm run serve-port" | awk 'NR==1 {print $2}')
+ */
 describe('Basic user flow for Website', () => {
     beforeAll(async () => {
-        const browser = await puppeteer.launch();
-        const page = await browser.newPage();
+        // const browser = await puppeteer.launch();
+        // const page = await browser.newPage();
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
     });
 
@@ -14,11 +18,11 @@ describe('Basic user flow for Website', () => {
 
     // Check to make sure that name and birthday are not in local storage (when we first start)
     it('Checking localStorage to make sure name and birthday are empty', async () => {
-        const storedName = await page.evaluate(() => localStorage.getItem("name"));
-        expect(storedName).toBe(null);
+        const storedName = await page.evaluate(() => {localStorage.getItem("name")});
+        expect(storedName).toBe(undefined);
 
-        const storedBirthday = await page.evaluate(() => localStorage.getItem("birthday"));
-        expect(storedBirthday).toBe(null);
+        const storedBirthday = await page.evaluate(() => {localStorage.getItem("birthday")});
+        expect(storedBirthday).toBe(undefined);
     });
 
     // Check to make sure we can set name in localStorage using form in settings page
@@ -28,7 +32,7 @@ describe('Basic user flow for Website', () => {
         const nameButton = await page.evaluateHandle(`document.querySelector("#save-name-form > div > input[type=submit]:nth-child(3)")`);
         await nameButton.click({
             waitUntil: "domcontentloaded",
-          });
+        });
 
         const storedName = await page.evaluate(() => localStorage.getItem("name"));
         expect(storedName).toBe('Sample Name');
