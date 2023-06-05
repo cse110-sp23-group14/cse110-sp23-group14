@@ -1,17 +1,10 @@
 .settings-content {
-    padding-left: 6%;
-    padding-right: 5%;
     background-image: url('../assets/settings-background.jpeg');
     background-size: cover;
     background-position: center;
     height: 100vh;
     color: var(--main-light-color);
     text-align: center;
-}
-
-span.highlight {
-    font-style: italic;
-    font-weight: bold;
 }
 
 .settings-content h1 {
@@ -59,18 +52,18 @@ span.highlight {
     margin-bottom: 5vh;
 }
 
-/* .divider {
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    background-color: var(--main-light-color);
-    height: 0.5vh;
-    text-align: center;
-} */
+select {
+    height: 25px;
+}
 
-.edit-button {
-    height: 32px;
-    float: right;
-    color: var(--main-light-color);
+input[type=submit] {
+    padding-top: 4px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    height: 25px;
 }
 
 @media screen and (max-width: 600px) {

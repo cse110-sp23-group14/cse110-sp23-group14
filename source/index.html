@@ -82,7 +82,7 @@
       <h1>Settings</h1>
 
       <div class="current-profile">
-        <p>Welcome back Name! Your birthday on record is Birthday.</p>
+        <p id="profile-display">Hey new friend! We are excited to meet you.</p>
       </div>
 
       <div class="update-profile">
@@ -90,7 +90,7 @@
         <div id="change-birthday">
           <form id="save-birthday-form">
             <label for="birthday-month">Your Birthday is: </label>
-            <select id="birthday-month" name="birthday-month" onchange="saveBirthday()">
+            <select id="birthday-month" name="birthday-month">
               <option value="1">January</option>
               <option value="2">February</option>
               <option value="3">March</option>
@@ -159,17 +159,6 @@
 
     </div>
   </section>
-
-  <!-- <div id="change-birthday">
-      <form id="save-birthday-form">
-        <label for="birthday-date">Change birthday:</label><br>
-        <input type="date" id="birthday">
-        <br>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-    <button id="clear-birthday-button" onclick="clearBirthday()">Clear Birthday</button> -->
-
 
   <script src="https://kit.fontawesome.com/ec9b6ab711.js" crossorigin="anonymous"></script>
   <script type="module" src="scripts/settings.js"></script>
