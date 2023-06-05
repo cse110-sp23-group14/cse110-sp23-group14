@@ -100,7 +100,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     dailyContent.innerHTML = Horoscope.generateHoroscope();
 
 
-    const shareBtn = document.querySelector('.shareBtn');
+    const shareBtn = document.querySelector('.share-btn');
     const shareContent = document.querySelector('.daily-content').innerHTML;
     /**
      * Copy daily-horoscope to cliipboard when share button is clicked
