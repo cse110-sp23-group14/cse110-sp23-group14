@@ -2,6 +2,9 @@ name: generate-documentation
 run-name: Generate Documentation for all JS files in source
 on:
   workflow_call:
+  workflow_dispatch:
+  push:
+    branches: [fortune-telling-dev]
 
 permissions:
   contents: write
@@ -12,31 +15,50 @@ jobs:
   documentation:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout fortune telling dev
         uses: actions/checkout@v3
-
-      - uses: actions/checkout@v3
         with:
           ref: fortune-telling-dev
-          path: main/fortune-telling-dev
           clean: false
-      - run: rm -rf main/fortune-telling-dev/.git
 
       - name: Build Documentation
         uses: andstor/jsdoc-action@v1
         with:
-          source_dir: main/fortune-telling-dev/source
+          source_dir: source
           output_dir: ./out
           template: minami
           front_page: README.md
           
-      # - name: Delete documentation branch
-      #   run:
-      #     git push origin -d documentation
+      - name: Check if Docs Exists
+        run: echo "DOCS_EXIST=$(git ls-remote --heads origin documentation | wc -l)" >> $GITHUB_ENV
+        
+      - name: Delete Docs Branch
+        if: ${{ env.DOCS_EXIST == 1}}
+        run: git push origin -d documentation
 
-      # - name: Upload Docs to branch
-      #   uses: EndBug/add-and-commit@v9
-      #   with:
-      #     add: './out/*'
-      #     fetch: false
-      #     new_branch: documentation
+      - name: Upload Docs to branch
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: './out/*'
+          fetch: false
+          new_branch: documentation
+
+      - name: Go to docs branch
+        uses: actions/checkout@v3
+        with:
+          ref: documentation
+
+      - name: Clean up docs branch
+        run: |
+          git rm -rf .github
+          git rm -rf admin
+          git rm -rf source
+          git rm -rf specs
+          git rm babel.config.js
+          git rm package-lock.json
+          git rm package.json
+          cp -a out/. .
+          git rm -rf out
+          git add *
+          git commit -m "added docs"
+          git push
