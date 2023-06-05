@@ -19,7 +19,6 @@ jobs:
         uses: ./.github/workflows/testing.yml
     documentation:
         uses: ./.github/workflows/documentation.yml
-        needs: [linting]
     build-gh-pages:
         uses: ./.github/workflows/jekyll-gh-pages.yml
-        needs: [documentation, testing]
+        needs: [documentation, testing, linting]
