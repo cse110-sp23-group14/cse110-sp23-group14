@@ -39,7 +39,7 @@ jobs:
       - name: Upload Docs to branch
         uses: EndBug/add-and-commit@v9
         with:
-          add: './out/*'
+          add: '*'
           fetch: false
           new_branch: documentation
 
