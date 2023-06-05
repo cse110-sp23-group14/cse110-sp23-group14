@@ -40,7 +40,7 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           add: './out/*'
-          fetch: false
+          fetch: true
           new_branch: documentation
 
       - name: Go to docs branch
