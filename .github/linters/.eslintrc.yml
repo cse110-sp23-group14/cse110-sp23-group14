@@ -53,7 +53,7 @@ rules:
     prefer-const: error
     yoda: [error, never]
     brace-style: [error, 1tbs]
-    indent: [error, tab]
+    indent: [error, 4]
     comma-dangle: [error, only-multiline]
     semi: [error, always]
     semi-spacing: [error, {before: false, after: true}]
