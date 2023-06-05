@@ -1,10 +1,8 @@
-
-
 /**
  * The name of the static cache used for the Progressive Web App (PWA).
  * @type {string}
  */
-var staticCacheName = "pwa";
+const staticCacheName = "pwa";
 
 /**
  * Event listener for the 'install' event.
@@ -14,7 +12,7 @@ var staticCacheName = "pwa";
 self.addEventListener("install", function (event) {
   event.waitUntil(
     caches.open(staticCacheName).then(function (cache) {
-      return cache.addAll(["/"]);
+        return cache.addAll(["/"]);
     })
   );
 });
@@ -29,7 +27,7 @@ self.addEventListener("fetch", function (event) {
 
   event.respondWith(
     caches.match(event.request).then(function (response) {
-      return response || fetch(event.request);
+        return response || fetch(event.request);
     })
   );
 });
