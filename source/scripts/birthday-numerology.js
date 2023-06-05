@@ -108,14 +108,15 @@ const soulUrgeNumberData = {
             You need to pump up your self-confidence to achieve your goals rather than waiting for someone to do things for you.
         `,
 
-      "love": `Twos are known as loyal and one of the best love partners. In spite of being dedicated and supportive lovers, 
-        if by any chance you are betrayed in love then the culprit has to be ready to face the wrath of your anger and hurt. 
-        However, you are a great lover who does not give up in relationships and ensures to keep the partner happy. Communication and understanding are what you seek in a partner.
-   
-        The life path number 2 compatibility is most appreciated with 8, 9 and those who belong to the same life path number. 
-        For those who belong to the same life path number two, you are likely to get along well. 
-        But there is a catch! You might end up asking each other to make decisions and it will give birth to frustration. 
-        Whereas, 8 and 9 numbers will understand your nature and take care of your feelings treating you the way you want them to.`
+        "love": `Twos are known as loyal and one of the best love partners. In spite of being dedicated and supportive lovers, 
+            if by any chance you are betrayed in love then the culprit has to be ready to face the wrath of your anger and hurt. 
+            However, you are a great lover who does not give up in relationships and ensures to keep the partner happy. Communication and understanding are what you seek in a partner.
+
+            The life path number 2 compatibility is most appreciated with 8, 9 and those who belong to the same life path number. 
+            For those who belong to the same life path number two, you are likely to get along well. 
+            But there is a catch! You might end up asking each other to make decisions and it will give birth to frustration. 
+            Whereas, 8 and 9 numbers will understand your nature and take care of your feelings treating you the way you want them to.
+        `,
     },
 
     "3": {
@@ -145,7 +146,7 @@ const soulUrgeNumberData = {
             You need to ensure you do not fall towards the negative side of your personality because then you are likely to ruin your built image and also waste your skills.
         `,
 
-      "love": `Your friendly nature makes you an interesting personality as a partner. You adore joy, happiness, and creativity and that is what you look for in your relationship. 
+        "love": `Your friendly nature makes you an interesting personality as a partner. You adore joy, happiness, and creativity and that is what you look for in your relationship. 
             For you, self-expression and individuality is the most important. On the contrary, you are hesitant in giving yourself fully to the partner.  
             You enjoy the company of a person who is almost like you but not completely. Even though you are your own mentor and guide, 
             you still look for an understanding partner who can help you figure out life and make the right decisions regarding career and other important events. 
@@ -387,7 +388,7 @@ const soulUrgeNumberData = {
             Flexibility will take you to new heights in careers like psychology, philosophy, etc. You will turn out to be a great boss as you are not a control freak.
         `,
 
-      "love": `Unfortunately, you are not a very dedicated person in the relationship. The need for freedom does not let you be completely into anyone. 
+        "love": `Unfortunately, you are not a very dedicated person in the relationship. The need for freedom does not let you be completely into anyone. 
             If the partner is controlling a little dominating you do not go well with them or eventually escape. On the contrary, you are very naïve when it comes to love. 
             You end up being a victim in the relationship mostly. You are ready to sacrifice yourself to make the partner happy and comfortable. 
             Even though you are patient and careful love makes you blind. Put your developing intuition in use to have a happy and fruitful relationship.
@@ -405,7 +406,7 @@ const soulUrgeNumberData = {
         "meaning": "Individuals with a Soul Urge Number 22 are master builders and have the potential to manifest significant accomplishments in their lives.",
         "description": "They have a strong desire to create lasting impact and contribute to the betterment of society."
     }
-  };
+};
 
 
 // Example usage
