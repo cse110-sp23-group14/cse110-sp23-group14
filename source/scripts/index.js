@@ -75,7 +75,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             dailyReport.classList.add('highlight');
         }
     }
-   
+
     dailyReport.addEventListener('click', function() {
         dailyReport.classList.remove('highlight');
         localStorage.setItem('report_read', true);
@@ -111,7 +111,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             console.log('Copy success');    // only for testing purpose
         } catch (err) {
             console.error('Failed to copy: ', err);
-          }
+        }
     });
 
     const menuLinks = document.querySelectorAll('.nav a');
@@ -131,36 +131,35 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
      * @param {Element} target - The target element to scroll to
      */
     function scrollToElement(target) {
-      if (isMobile) {
-        const offset = target.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({
-          top: offset,
-          behavior: 'smooth'
-        });
-      } else {
-        target.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
+        if (isMobile) {
+            const offset = target.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({
+                top: offset,
+                behavior: 'smooth'
+            });
+        } else {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     }
 
-    
     document.getElementById('settings-link').addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         scrollToElement(target);
-      });
-    
-      document.getElementById('home-link').addEventListener('click', function (e) {
+    });
+
+    document.getElementById('home-link').addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         scrollToElement(target);
-      });
-    
-      document.getElementById('report-link').addEventListener('click', function (e) {
+    });
+
+    document.getElementById('report-link').addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         scrollToElement(target);
-      });
+    });
 });
 
