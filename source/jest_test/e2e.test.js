@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer");
+const SERVER_PORT = 36873;
 
 describe('Basic user flow for Website', () => {
     beforeAll(async () => {
