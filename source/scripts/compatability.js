@@ -222,9 +222,12 @@ capricorn_sign.addEventListener('click',function(){
     if(shape_pos === 'left'){
         shape_left.style.backgroundImage = `url(${image})`;
         shape_left.style.backgroundSize ='cover';
+
+        shape_left.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }else{
         shape_right.style.backgroundImage=`url(${image})`;
         shape_right.style.backgroundSize='cover';
+        shape_right.querySelector('.sign-name').textContent=this.id.toUpperCase();
 
     }
     clickCount++;
@@ -242,9 +245,11 @@ cancer_sign.addEventListener('click',function(){
     if(shape_pos === 'left'){
         shape_left.style.backgroundImage = `url(${image})`;
         shape_left.style.backgroundSize ='cover';
+        shape_left.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }else{
         shape_right.style.backgroundImage=`url(${image})`;
         shape_right.style.backgroundSize='cover';
+        shape_right.querySelector('.sign-name').textContent=this.id.toUpperCase();
 
     }
     clickCount++;
@@ -262,9 +267,11 @@ aquarius_sign.addEventListener('click',function(){
     if(shape_pos === 'left'){
         shape_left.style.backgroundImage = `url(${image})`;
         shape_left.style.backgroundSize ='cover';
+        shape_left.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }else{
         shape_right.style.backgroundImage=`url(${image})`;
         shape_right.style.backgroundSize='cover';
+        shape_right.querySelector('.sign-name').textContent=this.id.toUpperCase();
 
     }
     clickCount++;
@@ -283,9 +290,11 @@ gemini_sign.addEventListener('click',function(){
     if(shape_pos === 'left'){
         shape_left.style.backgroundImage = `url(${image})`;
         shape_left.style.backgroundSize ='cover';
+        shape_left.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }else{
         shape_right.style.backgroundImage=`url(${image})`;       
         shape_right.style.backgroundSize='cover';
+        shape_right.querySelector('.sign-name').textContent=this.id.toUpperCase();
 
     }
     clickCount++;
@@ -304,9 +313,11 @@ leo_sign.addEventListener('click',function(){
     if(shape_pos === 'left'){
         shape_left.style.backgroundImage = `url(${image})`;
         shape_left.style.backgroundSize ='cover';
+        shape_left.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }else{
         shape_right.style.backgroundImage=`url(${image})`;
         shape_right.style.backgroundSize='cover';
+        shape_right.querySelector('.sign-name').textContent=this.id.toUpperCase();
 
     }
     clickCount++;
@@ -325,9 +336,11 @@ libra_sign.addEventListener('click',function(){
     if(shape_pos === 'left'){
         shape_left.style.backgroundImage = `url(${image})`;
         shape_left.style.backgroundSize ='cover';
+        shape_left.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }else{
         shape_right.style.backgroundImage=`url(${image})`;
         shape_right.style.backgroundSize='cover';
+        shape_right.querySelector('.sign-name').textContent=this.id.toUpperCase();
 
     }
     clickCount++;
@@ -345,9 +358,11 @@ pisces_sign.addEventListener('click',function(){
     if(shape_pos === 'left'){
         shape_left.style.backgroundImage = `url(${image})`;
         shape_left.style.backgroundSize ='cover';
+        shape_left.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }else{
         shape_right.style.backgroundImage=`url(${image})`;
         shape_right.style.backgroundSize='cover';
+        shape_right.querySelector('.sign-name').textContent=this.id.toUpperCase();
 
     }
     clickCount++;
@@ -366,9 +381,11 @@ sagittarius_sign.addEventListener('click',function(){
     if(shape_pos === 'left'){
         shape_left.style.backgroundImage = `url(${image})`;
         shape_left.style.backgroundSize ='cover';
+        shape_left.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }else{
         shape_right.style.backgroundImage=`url(${image})`;
         shape_right.style.backgroundSize='cover';
+        shape_right.querySelector('.sign-name').textContent=this.id.toUpperCase();
 
     }
     clickCount++;
@@ -387,9 +404,11 @@ scorpio_sign.addEventListener('click',function(){
     if(shape_pos === 'left'){
         shape_left.style.backgroundImage = `url(${image})`;
         shape_left.style.backgroundSize ='cover';
+        shape_left.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }else{
         shape_right.style.backgroundImage=`url(${image})`;
         shape_right.style.backgroundSize='cover';
+        shape_right.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }
     clickCount++;
 
@@ -406,9 +425,11 @@ taurus_sign.addEventListener('click',function(){
     if(shape_pos === 'left'){
         shape_left.style.backgroundImage = `url(${image})`;
         shape_left.style.backgroundSize ='cover';
+        shape_left.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }else{
         shape_right.style.backgroundImage=`url(${image})`;
         shape_right.style.backgroundSize='cover';
+        shape_right.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }
     clickCount++;
 
@@ -426,9 +447,11 @@ virgo_sign.addEventListener('click',function(){
     if(shape_pos === 'left'){
         shape_left.style.backgroundImage = `url(${image})`;
         shape_left.style.backgroundSize ='cover';
+        shape_left.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }else{
         shape_right.style.backgroundImage=`url(${image})`;
         shape_right.style.backgroundSize='cover';
+        shape_right.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }
     clickCount++;
 
@@ -445,9 +468,11 @@ aries_sign.addEventListener('click',function(){
     if(shape_pos === 'left'){
         shape_left.style.backgroundImage = `url(${image})`;
         shape_left.style.backgroundSize ='cover';
+        shape_left.querySelector('.sign-name').textContent=this.id.toUpperCase();
     }else{
         shape_right.style.backgroundImage=`url(${image})`;
         shape_right.style.backgroundSize='cover';
+        shape_right.querySelector('.sign-name').textContent=this.id.toUpperCase();
 
     }
     clickCount++;
@@ -463,6 +488,8 @@ shape_left.addEventListener('click', function() {
     if(clickCount === 1) clickCount = 0; // Reset click count
     else clickCount=0;
 
+    shape_left.querySelector('.sign-name').textContent='';
+
     handleClick();
 });
 
@@ -471,6 +498,8 @@ shape_right.addEventListener('click', function() {
     shape_right.style.backgroundImage = ''; // Remove background image from shapeRight
     if(clickCount === 1) clickCount = 0; // Reset click count
     else clickCount=0;
+
+    shape_right.querySelector('.sign-name').textContent='';
 
     handleClick();
 });
