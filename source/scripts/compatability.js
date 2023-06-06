@@ -187,4 +187,309 @@ const sign2 = "Leo";
 const description = findDescription(sign1, sign2);
 console.log(description);
 
+/************************************ */
+
+// get the shape element
+const shape_left=document.querySelector('.shape-left');
+const shape_right=document.querySelector('.shape-right');
+
+const choose_sign_window=document.getElementById('choose-sign');
+const result_window=document.getElementById('result');
+
+const capricorn_sign=document.getElementById('capricorn');
+const cancer_sign=document.getElementById('cancer');
+const aquarius_sign=document.getElementById('aquarius');
+const gemini_sign=document.getElementById('gemini');
+const leo_sign=document.getElementById('leo');
+const libra_sign=document.getElementById('libra');
+const pisces_sign=document.getElementById('pisces');
+const sagittarius_sign=document.getElementById('sagittarius');
+const scorpio_sign=document.getElementById('scorpio');
+const taurus_sign=document.getElementById('taurus');
+const virgo_sign=document.getElementById('virgo');
+const aries_sign=document.getElementById('aries');
+
+var clickCount=0;
+
+// add click eventlistener to each sign
+// capricorn
+capricorn_sign.addEventListener('click',function(){
+
+    const image = this.getAttribute('src');
+
+    const shape_pos = clickCount === 0 ? 'left' : 'right';
+
+    if(shape_pos === 'left'){
+        shape_left.style.backgroundImage = `url(${image})`;
+        shape_left.style.backgroundSize ='cover';
+    }else{
+        shape_right.style.backgroundImage=`url(${image})`;
+        shape_right.style.backgroundSize='cover';
+
+    }
+    clickCount++;
+
+
+    handleClick();
+});
+//cancer
+cancer_sign.addEventListener('click',function(){
+
+    const image = this.getAttribute('source');
+
+    const shape_pos = clickCount === 0 ? 'left' : 'right';
+
+    if(shape_pos === 'left'){
+        shape_left.style.backgroundImage = `url(${image})`;
+        shape_left.style.backgroundSize ='cover';
+    }else{
+        shape_right.style.backgroundImage=`url(${image})`;
+        shape_right.style.backgroundSize='cover';
+
+    }
+    clickCount++;
+
+
+    handleClick();
+});
+//aquarius
+aquarius_sign.addEventListener('click',function(){
+
+    const image = this.getAttribute('source');
+
+    const shape_pos = clickCount === 0 ? 'left' : 'right';
+
+    if(shape_pos === 'left'){
+        shape_left.style.backgroundImage = `url(${image})`;
+        shape_left.style.backgroundSize ='cover';
+    }else{
+        shape_right.style.backgroundImage=`url(${image})`;
+        shape_right.style.backgroundSize='cover';
+
+    }
+    clickCount++;
+
+
+    handleClick();
+});
+
+//gemini
+gemini_sign.addEventListener('click',function(){
+
+    const image = this.getAttribute('source');
+
+    const shape_pos = clickCount === 0 ? 'left' : 'right';
+
+    if(shape_pos === 'left'){
+        shape_left.style.backgroundImage = `url(${image})`;
+        shape_left.style.backgroundSize ='cover';
+    }else{
+        shape_right.style.backgroundImage=`url(${image})`;       
+        shape_right.style.backgroundSize='cover';
+
+    }
+    clickCount++;
+
+
+    handleClick();
+});
+
+//leo
+leo_sign.addEventListener('click',function(){
+
+    const image = this.getAttribute('source');
+
+    const shape_pos = clickCount === 0 ? 'left' : 'right';
+
+    if(shape_pos === 'left'){
+        shape_left.style.backgroundImage = `url(${image})`;
+        shape_left.style.backgroundSize ='cover';
+    }else{
+        shape_right.style.backgroundImage=`url(${image})`;
+        shape_right.style.backgroundSize='cover';
+
+    }
+    clickCount++;
+
+
+    handleClick();
+});
+
+//libra
+libra_sign.addEventListener('click',function(){
+
+    const image = this.getAttribute('source');
+
+    const shape_pos = clickCount === 0 ? 'left' : 'right';
+
+    if(shape_pos === 'left'){
+        shape_left.style.backgroundImage = `url(${image})`;
+        shape_left.style.backgroundSize ='cover';
+    }else{
+        shape_right.style.backgroundImage=`url(${image})`;
+        shape_right.style.backgroundSize='cover';
+
+    }
+    clickCount++;
+
+
+    handleClick();
+});
+//pisces
+pisces_sign.addEventListener('click',function(){
+
+    const image = this.getAttribute('source');
+
+    const shape_pos = clickCount === 0 ? 'left' : 'right';
+
+    if(shape_pos === 'left'){
+        shape_left.style.backgroundImage = `url(${image})`;
+        shape_left.style.backgroundSize ='cover';
+    }else{
+        shape_right.style.backgroundImage=`url(${image})`;
+        shape_right.style.backgroundSize='cover';
+
+    }
+    clickCount++;
+
+
+    handleClick();
+});
+
+//sagittarius
+sagittarius_sign.addEventListener('click',function(){
+
+    const image = this.getAttribute('source');
+
+    const shape_pos = clickCount === 0 ? 'left' : 'right';
+
+    if(shape_pos === 'left'){
+        shape_left.style.backgroundImage = `url(${image})`;
+        shape_left.style.backgroundSize ='cover';
+    }else{
+        shape_right.style.backgroundImage=`url(${image})`;
+        shape_right.style.backgroundSize='cover';
+
+    }
+    clickCount++;
+
+
+    handleClick();
+});
+
+//scorpio
+scorpio_sign.addEventListener('click',function(){
+
+    const image = this.getAttribute('source');
+
+    const shape_pos = clickCount === 0 ? 'left' : 'right';
+
+    if(shape_pos === 'left'){
+        shape_left.style.backgroundImage = `url(${image})`;
+        shape_left.style.backgroundSize ='cover';
+    }else{
+        shape_right.style.backgroundImage=`url(${image})`;
+        shape_right.style.backgroundSize='cover';
+    }
+    clickCount++;
+
+
+    handleClick();
+});
+//taurus
+taurus_sign.addEventListener('click',function(){
+
+    const image = this.getAttribute('source');
+
+    const shape_pos = clickCount === 0 ? 'left' : 'right';
+
+    if(shape_pos === 'left'){
+        shape_left.style.backgroundImage = `url(${image})`;
+        shape_left.style.backgroundSize ='cover';
+    }else{
+        shape_right.style.backgroundImage=`url(${image})`;
+        shape_right.style.backgroundSize='cover';
+    }
+    clickCount++;
+
+
+    handleClick();
+});
+
+//virgo
+virgo_sign.addEventListener('click',function(){
+
+    const image = this.getAttribute('source');
+
+    const shape_pos = clickCount === 0 ? 'left' : 'right';
+
+    if(shape_pos === 'left'){
+        shape_left.style.backgroundImage = `url(${image})`;
+        shape_left.style.backgroundSize ='cover';
+    }else{
+        shape_right.style.backgroundImage=`url(${image})`;
+        shape_right.style.backgroundSize='cover';
+    }
+    clickCount++;
+
+    handleClick();
+});
+
+//aries
+aries_sign.addEventListener('click',function(){
+
+    const image = this.getAttribute('source');
+
+    const shape_pos = clickCount === 0 ? 'left' : 'right';
+
+    if(shape_pos === 'left'){
+        shape_left.style.backgroundImage = `url(${image})`;
+        shape_left.style.backgroundSize ='cover';
+    }else{
+        shape_right.style.backgroundImage=`url(${image})`;
+        shape_right.style.backgroundSize='cover';
+
+    }
+    clickCount++;
+    handleClick();
+
+
+});
+
+
+
+shape_left.addEventListener('click', function() {
+    shape_left.style.backgroundImage = ''; // Remove background image from shapeLeft
+    if(clickCount === 1) clickCount = 0; // Reset click count
+    else clickCount=0;
+
+    handleClick();
+});
+
+// Event listener for shapeRight
+shape_right.addEventListener('click', function() {
+    shape_right.style.backgroundImage = ''; // Remove background image from shapeRight
+    if(clickCount === 1) clickCount = 0; // Reset click count
+    else clickCount=0;
+
+    handleClick();
+});
+
+function handleClick(){
+    if(clickCount === 2){
+        setTimeout(() => {
+            choose_sign_window.style.display='none';  
+            result_window.style.display='flex';
+            
+        }, 300);
+        
+    }
+    else{
+        setTimeout(() => {
+            result_window.style.display='none';
+            choose_sign_window.style.display='flex'; 
+        }, 300);
+      
+    }
+}
   
