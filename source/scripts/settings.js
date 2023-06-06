@@ -4,8 +4,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // Call the functions to display the stored name and birthday
     displayStoredData();
 
-    const birthdayMonth = document.getElementById('birthday-month');
-    birthdayMonth.addEventListener('input', updateBirthdayDays);
+    // const birthdayMonth = document.getElementById('birthday-month');
+    // birthdayMonth.addEventListener('input', updateBirthdayDays);
 
     // const clearNameButton = document.getElementById('clear-name-button');
     // clearNameButton.addEventListener('click', clearName);
@@ -17,6 +17,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     saveUserNameForm.addEventListener('submit', saveUserName);
     const saveBirthdayForm = document.getElementById('save-birthday-form');
     saveBirthdayForm.addEventListener('submit', saveBirthday);
+    const clearUserInfoButton = document.querySelector('.clear-profile button');
+    clearUserInfoButton.addEventListener('click', clearUserInfo);
 });
 
 function displayStoredData() {
@@ -40,9 +42,7 @@ function displayStoredData() {
 //     var daySelect = document.getElementById('birthday-day');
 //     var selectedMonth = parseInt(monthSelect.value);
 //     var daysInMonth = new Date(2023, selectedMonth, 0).getDate(); // Get the number of days in the selected month
-
 //     daySelect.innerHTML = ''; // Clear previous options
-
 //     for (var i = 1; i <= daysInMonth; i++) {
 //         var option = document.createElement('option');
 //         option.value = i;
@@ -97,7 +97,13 @@ function clearName() {
 /**
  * Clears the stored birthday from local storage and refreshes the page.
  */
-// function clearBirthday() {
-//     localStorage.removeItem('birthday');
-//     location.reload(); // Refresh the page
-// }
+function clearBirthday() {
+    localStorage.removeItem('birthday');
+    location.reload(); // Refresh the page
+}
+
+function clearUserInfo() {
+    alert(`This will delete your name and birthday,are you sure you want to do this?`);
+    clearName();
+    clearBirthday();
+}
