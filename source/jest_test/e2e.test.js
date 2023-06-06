@@ -3,7 +3,10 @@ const SERVER_PORT = 36873;
 
 /**
  * How to run tests: run the command below
- * npm run serve-port & npm test & sleep 20;kill $(ps aux | grep "npm run serve-port" | awk 'NR==1 {print $2}')
+ * npm run serve-port & npm test
+ * Be sure to kill the port before running again
+ * You can see if serve still running with ps aux | grep "npm run serve-port"
+ * If there are >1 items then the port still open and you have to kill the PID of the first one
  */
 describe('Basic user flow for Website', () => {
     beforeAll(async () => {
