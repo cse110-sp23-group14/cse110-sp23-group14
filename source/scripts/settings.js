@@ -14,11 +14,25 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // clearBirthdayButton.addEventListener('click', clearBirthday);
 
     const saveUserNameForm = document.getElementById('save-name-form');
-    saveUserNameForm.addEventListener('submit', saveUserName);
+    saveUserNameForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent page jump
+        saveUserName();
+        displayStoredData();
+    });
+
     const saveBirthdayForm = document.getElementById('save-birthday-form');
-    saveBirthdayForm.addEventListener('submit', saveBirthday);
+    saveBirthdayForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent page jump
+        saveBirthday();
+        displayStoredData();
+    });
+    
     const clearUserInfoButton = document.querySelector('.clear-profile button');
-    clearUserInfoButton.addEventListener('click', clearUserInfo);
+    clearUserInfoButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent page jump
+        clearUserInfo();
+        displayStoredData();
+    });
 });
 
 function displayStoredData() {
@@ -80,6 +94,7 @@ function saveBirthday() {
       }
       return month + "." + day;
     })(birthdayInput.value);
+
     // Store the formatted birthday in localStorage
     localStorage.setItem("birthday", birthday);
     // Display a success message
