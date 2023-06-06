@@ -98,7 +98,21 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
 
     const dailyContent = document.getElementsByClassName("daily-content")[0];
     dailyContent.innerHTML = Horoscope.generateHoroscope();
-
+  
+    dailyContent.innerHTML = ""; // Clear the initial content
+  
+    function typeWriter(text, i) {
+      if (i < text.length) {
+        dailyContent.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(() => {
+          typeWriter(text, i);
+        }, 50);
+      }
+    }
+  
+    const contentText = Horoscope.generateHoroscope(); // Retrieve the content text
+    typeWriter(contentText, 0);
 
     const shareBtn = document.querySelector('.share-btn');
     const shareContent = document.querySelector('.daily-content').innerHTML;
