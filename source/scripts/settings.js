@@ -35,21 +35,21 @@ function displayStoredData() {
 /**
  * Update number of days when different months are input
  */
-function updateBirthdayDays() {
-    var monthSelect = document.getElementById('birthday-month');
-    var daySelect = document.getElementById('birthday-day');
-    var selectedMonth = parseInt(monthSelect.value);
-    var daysInMonth = new Date(2023, selectedMonth, 0).getDate(); // Get the number of days in the selected month
+// function updateBirthdayDays() {
+//     var monthSelect = document.getElementById('birthday-month');
+//     var daySelect = document.getElementById('birthday-day');
+//     var selectedMonth = parseInt(monthSelect.value);
+//     var daysInMonth = new Date(2023, selectedMonth, 0).getDate(); // Get the number of days in the selected month
 
-    daySelect.innerHTML = ''; // Clear previous options
+//     daySelect.innerHTML = ''; // Clear previous options
 
-    for (var i = 1; i <= daysInMonth; i++) {
-        var option = document.createElement('option');
-        option.value = i;
-        option.text = i;
-        daySelect.appendChild(option);
-    }
-}
+//     for (var i = 1; i <= daysInMonth; i++) {
+//         var option = document.createElement('option');
+//         option.value = i;
+//         option.text = i;
+//         daySelect.appendChild(option);
+//     }
+// }
 
 /**
  * Saves the string entered by the user as their name into local storage.
@@ -64,13 +64,27 @@ function saveUserName() {
  * Saves the birthday entered by the user into local storage.
  */
 function saveBirthday() {
-    const birthdayInputMonth = document.getElementById('birthday-month');
-    const birthdayMonth = birthdayInputMonth.value;
-    const birthdayInputDay = document.getElementById('birthday-day');
-    const birthdayDay = birthdayInputDay.value;
-    let birthday = birthdayMonth + "." + birthdayDay;
+    const birthdayInput = document.getElementById("birthday");
+    // anonymous function that 
+    // change date format to what we use
+    // e.g. birthdayInput: "2023-06-02" -> birthday: "6.2"
+    const birthday = ((dateString) => {
+      const date = new Date(dateString);
+      const month = (date.getMonth() + 1).toString();
+      const day = date.getDate().toString();
+      if (month.startsWith("0")) {
+        month = month.substring(1);
+      }
+      if (day.startsWith("0")) {
+        day = day.substring(1);
+      }
+      return month + "." + day;
+    })(birthdayInput.value);
+    // Store the formatted birthday in localStorage
     localStorage.setItem("birthday", birthday);
-}
+    // Display a success message
+    alert("Birthday saved successfully!");
+  }
 
 /**
  * Clears the stored name from local storage and refreshes the page.
