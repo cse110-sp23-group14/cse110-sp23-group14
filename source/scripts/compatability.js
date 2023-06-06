@@ -170,7 +170,9 @@ const compatibilityData = {
       const description = compatibility.description;
       
       // 检查输入的星座是否在当前配对中
-      if (pair.some(([a, b]) => (a === sign1 && b === sign2) || (a === sign2 && b === sign1))) {
+      if (pair.some(([a, b]) => {
+        return (a === sign1 && b === sign2) || (a === sign2 && b === sign1);
+      })) {
         return description;
       }
     }
@@ -184,3 +186,5 @@ const compatibilityData = {
   const sign2 = "Leo";
   const description = findDescription(sign1, sign2);
   console.log(description);
+
+  
