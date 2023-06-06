@@ -8,7 +8,7 @@
 
 ## Docs:
 
-[Docs link](https://cse110-sp23-group14.github.io/cse110-sp23-group14/main/documentation/out/index.html)
+[Docs link](https://cse110-sp23-group14.github.io/cse110-sp23-group14/main/documentation/index.html)
 
 ## 8-Ball-PWA:
 
