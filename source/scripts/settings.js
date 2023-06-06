@@ -85,7 +85,7 @@ function saveBirthday() {
     const birthday = ((dateString) => {
       const date = new Date(dateString);
       const month = (date.getMonth() + 1).toString();
-      const day = date.getDate().toString();
+      const day = (date.getDate() + 1).toString();
       if (month.startsWith("0")) {
         month = month.substring(1);
       }
