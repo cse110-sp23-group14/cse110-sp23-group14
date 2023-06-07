@@ -17,8 +17,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         event.preventDefault(); // Prevent page jump
         saveBirthday();
         displayStoredData();
-        setHoroscopeBackground();
-        setHoroscopePopup();
+        setHoroscope();
     });
     
     const clearUserInfoButton = document.querySelector('.clear-profile button');
@@ -26,8 +25,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         event.preventDefault(); // Prevent page jump
         clearUserInfo();
         displayStoredData();
-        setHoroscopeBackground();
-        setHoroscopePopup();
+        setHoroscope();
     });
 });
 
@@ -49,12 +47,11 @@ function displayStoredData() {
 }
 
 /**
- * set daily report's background according to user's birthday
+ * set daily report's popup card and background according to user's birthday
  */
-function setHoroscopeBackground() {
+function setHoroscope() {
     const horoscopeContent = document.querySelector('.horoscope-content');
     const zodiacSign = Horoscope.getSign();
-
     const defaultImage = 'assets/settings-background.jpeg';
     const constellation = {
         'Aries': 'assets/constellation/aries.jpeg',
@@ -70,19 +67,12 @@ function setHoroscopeBackground() {
         'Taurus': 'assets/constellation/taurus.jpeg',
         'Virgo': 'assets/constellation/virgo.jpeg',
     };
-
     if (zodiacSign) {
         const imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
         horoscopeContent.style.backgroundImage = `url(${constellation[imageKey]})`;}
     else {
         horoscopeContent.style.backgroundImage = `url(${defaultImage})`;
     }
-}
-
-/**
- * set daily report popup content according to user's zodiac(birthday)
- */
-function setHoroscopePopup() {
     const dailyTitle = document.getElementsByClassName("daily-title")[0];
     const dailyContent = document.getElementsByClassName("daily-content")[0];
     dailyTitle.innerHTML = Horoscope.getSign();
