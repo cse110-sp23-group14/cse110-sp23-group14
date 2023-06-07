@@ -27,7 +27,6 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         navIconXMark.classList.remove('icon-hide');
         navContainer.classList.add('nav-showBackground');
         navContainer.classList.remove('nav-background-hide');
-        horoscopeButton.style.zIndex = -1;
     }
 
     function closeNav() {
@@ -39,7 +38,6 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         navIconXMark.classList.add('icon-hide');
         navContainer.classList.add('nav-background-hide');
         navContainer.classList.remove('nav-showBackground');
-        horoscopeButton.style.zIndex = 0;
     }
 
     /**
