@@ -1,9 +1,9 @@
-import { Zodiac } from "./zodiac.js";
+import { Horoscope } from "./horoscope.js";
 
 window.addEventListener('DOMContentLoaded', (event) => {
     // Call the functions to display the stored name and birthday
     displayStoredData();
-
+    setHoroscopeBackground();
     // const birthdayMonth = document.getElementById('birthday-month');
     // birthdayMonth.addEventListener('input', updateBirthdayDays);
 
@@ -25,6 +25,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
         event.preventDefault(); // Prevent page jump
         saveBirthday();
         displayStoredData();
+        setHoroscopeBackground();
+        const dailyTitle = document.getElementsByClassName("daily-title")[0];
+        const dailyContent = document.getElementsByClassName("daily-content")[0];
+        dailyTitle.innerHTML = Horoscope.getSign();
+        dailyContent.innerHTML = Horoscope.generateHoroscope();
     });
     
     const clearUserInfoButton = document.querySelector('.clear-profile button');
@@ -47,6 +52,32 @@ function displayStoredData() {
         }
     }
 }
+function setHoroscopeBackground() {
+    var horoscopeContent = document.querySelector('.horoscope-content');
+    console.log(horoscopeContent);
+    const zodiacSign = Horoscope.getSign();
+  
+    var defaultImage = 'assets/settings-background.jpeg';
+  
+    var constellation = {
+      'Aries': 'assets/constellation/aries.jpeg',
+      'Aquarius': 'assets/constellation/aquarius.jpeg',
+      'Cancer' :'assets/constellation/cancer.jpeg',
+      'Capricorn': 'assets/constellation/capricorn.jpeg',
+      'Gemini' : 'assets/constellation/gemini.jpeg',
+      'Leo' : 'assets/constellation/leo.jpeg',
+      'Libra': 'assets/constellation/libra.jpeg',
+      'Pisces': 'assets/constellation/pisces.jpeg',
+      'Sagittarius': 'assets/constellation/sagittarius.jpeg',
+      'Scorpio': 'assets/constellation/scorpio.jpeg',
+      'Taurus': 'assets/constellation/taurus.jpeg',
+      'Virgo': 'assets/constellation/virgo.jpeg',
+    };
+  
+    var imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
+    horoscopeContent.style.backgroundImage = `url(${constellation[imageKey] || defaultImage})`;
+  }
+
 
 /**
  * Update number of days when different months are input
@@ -108,7 +139,7 @@ function saveBirthday() {
  * Clear 'name' and 'birthday' in localStorage
  */
 function clearUserInfo() {
-    alert(`This will delete your name and birthday,are you sure you want to do this?`);
+    alert(`This will delete your name and birthday. Are you sure you want to do this?`);
     localStorage.removeItem('name');
     localStorage.removeItem('birthday');
     location.reload(); // Refresh the page
@@ -127,4 +158,3 @@ function clearUserInfo() {
 // function clearBirthday() {
 //     localStorage.removeItem('birthday');
 // }
-

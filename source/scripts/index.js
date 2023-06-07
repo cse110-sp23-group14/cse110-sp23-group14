@@ -12,6 +12,8 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const navIconBars = document.getElementsByClassName('fa-bars')[0];
     const navIconXMark = document.getElementsByClassName('fa-xmark')[0];
     const navContainer = document.getElementsByClassName('nav-container')[0];
+    const horoscopeButton = document.getElementById('horoscope-button');
+    
     let isNavOpen = false;
 
     const dailyReport = document.querySelector('.report');
@@ -25,6 +27,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         navIconXMark.classList.remove('icon-hide');
         navContainer.classList.add('nav-show-background');
         navContainer.classList.remove('nav-background-hide');
+        horoscopeButton.style.zIndex = -1;
     }
 
     function closeNav() {
@@ -36,6 +39,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         navIconXMark.classList.add('icon-hide');
         navContainer.classList.add('nav-background-hide');
         navContainer.classList.remove('nav-show-background');
+        horoscopeButton.style.zIndex = 0;
     }
 
     /**
@@ -84,11 +88,11 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
 
     // Set horoscope popup text
     const dailyTitle = document.getElementsByClassName("daily-title")[0];
+    
     const sign = Horoscope.getSign();
     if (!sign) {
         dailyTitle.innerHTML = "We don't know your sign yet! <br>Please fill out your settings!";
-    }
-    else {
+    } else {
         dailyTitle.innerHTML = `Sun in ${sign}`;
     }
 
@@ -102,6 +106,16 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
 
     const shareBtn = document.querySelector('.share-btn');
     const shareContent = document.querySelector('.daily-content').innerHTML;
+
+    /**
+     * If the user hasn't inputted their information yet, don't display the share button.
+     */
+    if (!sign) {
+        shareBtn.style.display = 'none';
+    }
+    else {
+        shareBtn.style.display = 'default';
+    }
     /**
      * Copy daily-horoscope to cliipboard when share button is clicked
      */
