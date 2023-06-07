@@ -44,6 +44,7 @@ function displayStoredData() {
         }
     }
 }
+
 function setHoroscopeBackground() {
     let horoscopeContent = document.querySelector('.horoscope-content');
     console.log(horoscopeContent);
