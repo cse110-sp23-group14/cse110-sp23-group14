@@ -15,6 +15,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const horoscopeButton = document.getElementById('horoscope-button');
     
     let isNavOpen = false;
+    let isDisplayed = false;
 
     const dailyReport = document.querySelector('.report');
 
@@ -116,10 +117,16 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         }
   
     const contentText = Horoscope.generateHoroscope(); // Retrieve the content text
-    typeWriter(contentText, 0);
+    horoscopeButton.onclick = function() 
+    {
+        if (isDisplayed==false) {
+        typeWriter(contentText,0);
+        isDisplayed=true;
+        }
+    };
 
     const shareBtn = document.querySelector('.share-btn');
-    const shareContent = document.querySelector('.daily-content').innerHTML;
+    const shareContent = contentText;
 
     /**
      * If the user hasn't inputted their information yet, don't display the share button.
