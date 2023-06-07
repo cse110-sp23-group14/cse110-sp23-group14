@@ -160,6 +160,13 @@ body{
     border-radius: 10%;
     z-index: 1;
 }
+.sign-name{
+    color: #fff;
+    margin-left: 160px;
+    font-size: large;
+}
+
+/* choose sign section */
 section{
     margin-top: 1px;
     position:relative;
