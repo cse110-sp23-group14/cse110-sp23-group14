@@ -122,7 +122,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
      */
     shareBtn.addEventListener('click', async (event) => {
         try {
-            await navigator.clipboard.writeText('Hey :sparkling_heart:, I just checked my daily horoscope :sparkles:and I couldn\'t wait to share it with you! According to the stars :milky_way:, for ' + sign + ':\n' + shareContent + '\nHow about you? Open our app and check your own forecast:mostly_sunny:, and let\'s compare our results:chart_with_upwards_trend:. Who knows what the universe has in store for us today!');
+            await navigator.clipboard.writeText('Hey 💖, I just checked my daily horoscope ✨ and I couldn\'t wait to share it with you! According to the stars 🌌, for ' + sign + ':\n' + shareContent + '\nHow about you? Open our app and check your own forecast 🌤️, and let\'s compare our results 📈. Who knows what the universe has in store for us today!');
             console.log('Copy success');    // only for testing purpose
         } catch (err) {
             console.error('Failed to copy: ', err);
