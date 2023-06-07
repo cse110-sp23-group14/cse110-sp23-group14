@@ -127,6 +127,7 @@ function saveBirthday() {
 
     // Store the formatted birthday in localStorage
     localStorage.setItem("birthday", birthday);
+    location.reload(); // Refresh the page
     // Display a success message
     alert("Birthday saved successfully!");
 }
