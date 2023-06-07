@@ -60,21 +60,21 @@ function setHoroscopeBackground() {
     var defaultImage = 'assets/settings-background.jpeg';
   
     var constellation = {
-      'Aries': 'assets/constellation/aries.jpeg',
-      'Aquarius': 'assets/constellation/aquarius.jpeg',
-      'Cancer' :'assets/constellation/cancer.jpeg',
-      'Capricorn': 'assets/constellation/capricorn.jpeg',
-      'Gemini' : 'assets/constellation/gemini.jpeg',
-      'Leo' : 'assets/constellation/leo.jpeg',
-      'Libra': 'assets/constellation/libra.jpeg',
-      'Pisces': 'assets/constellation/pisces.jpeg',
-      'Sagittarius': 'assets/constellation/sagittarius.jpeg',
-      'Scorpio': 'assets/constellation/scorpio.jpeg',
-      'Taurus': 'assets/constellation/taurus.jpeg',
-      'Virgo': 'assets/constellation/virgo.jpeg',
+        'Aries': 'assets/constellation/aries.jpeg',
+        'Aquarius': 'assets/constellation/aquarius.jpeg',
+        'Cancer' :'assets/constellation/cancer.jpeg',
+        'Capricorn': 'assets/constellation/capricorn.jpeg',
+        'Gemini' : 'assets/constellation/gemini.jpeg',
+        'Leo' : 'assets/constellation/leo.jpeg',
+        'Libra': 'assets/constellation/libra.jpeg',
+        'Pisces': 'assets/constellation/pisces.jpeg',
+        'Sagittarius': 'assets/constellation/sagittarius.jpeg',
+        'Scorpio': 'assets/constellation/scorpio.jpeg',
+        'Taurus': 'assets/constellation/taurus.jpeg',
+        'Virgo': 'assets/constellation/virgo.jpeg',
     };
   
-    var imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
+    const imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
     horoscopeContent.style.backgroundImage = `url(${constellation[imageKey] || defaultImage})`;
   }
 
@@ -110,21 +110,21 @@ function saveUserName() {
  */
 function saveBirthday() {
     const birthdayInput = document.getElementById("birthday");
-    // anonymous function that 
+    // anonymous function that
     // change date format to what we use
     // e.g. birthdayInput: "2023-06-02" -> birthday: "6.2"
     const birthday = ((dateString) => {
-      let month = dateString.substring(5,7);
-      let day = dateString.substring(8,10);
-      console.log(`type of string:${typeof dateString}`);
-      console.log(`month:${month}, day:${day}`);
-      if (month.startsWith("0")) {
-        month = month.substring(1);
-      }
-      if (day.startsWith("0")) {
-        day = day.substring(1);
-      }
-      return month + "." + day;
+        let month = dateString.substring(5,7);
+        let day = dateString.substring(8,10);
+        console.log(`type of string:${typeof dateString}`);
+        console.log(`month:${month}, day:${day}`);
+        if (month.startsWith("0")) {
+            month = month.substring(1);
+        }
+        if (day.startsWith("0")) {
+            day = day.substring(1);
+        }
+        return month + "." + day;
     })(birthdayInput.value);
 
     localStorage.setItem("ori-birthday", birthdayInput.value);
