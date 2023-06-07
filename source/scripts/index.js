@@ -83,6 +83,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
 
     // Set horoscope popup text
     const dailyTitle = document.getElementsByClassName("daily-title")[0];
+    
     const sign = Horoscope.getSign();
     if (!sign) {
         dailyTitle.innerHTML = "We don't know your sign yet! <br>Please fill out your settings!";
@@ -114,6 +115,16 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
 
     const shareBtn = document.querySelector('.share-btn');
     const shareContent = document.querySelector('.daily-content').innerHTML;
+
+    /**
+     * If the user hasn't inputted their information yet, don't display the share button.
+     */
+    if (!sign) {
+        shareBtn.style.display = 'none';
+    }
+    else {
+        shareBtn.style.display = 'default';
+    }
     /**
      * Copy daily-horoscope to cliipboard when share button is clicked
      */
