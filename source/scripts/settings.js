@@ -52,7 +52,7 @@ function displayStoredData() {
  * set daily report's background according to user's birthday
  */
 function setHoroscopeBackground() {
-    let horoscopeContent = document.querySelector('.horoscope-content');
+    const horoscopeContent = document.querySelector('.horoscope-content');
     const zodiacSign = Horoscope.getSign();
 
     const defaultImage = 'assets/settings-background.jpeg';
@@ -73,7 +73,7 @@ function setHoroscopeBackground() {
 
     if (zodiacSign) {
         const imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
-        horoscopeContent.style.backgroundImage = `url(${constellation[imageKey]})`
+        horoscopeContent.style.backgroundImage = `url(${constellation[imageKey]})`;
     }
     else {
         horoscopeContent.style.backgroundImage = `url(${defaultImage})`;
@@ -85,9 +85,9 @@ function setHoroscopeBackground() {
  */
 function setHoroscopePopup() {
     const dailyTitle = document.getElementsByClassName("daily-title")[0];
-        const dailyContent = document.getElementsByClassName("daily-content")[0];
-        dailyTitle.innerHTML = Horoscope.getSign();
-        dailyContent.innerHTML = Horoscope.generateHoroscope();
+    const dailyContent = document.getElementsByClassName("daily-content")[0];
+    dailyTitle.innerHTML = Horoscope.getSign();
+    dailyContent.innerHTML = Horoscope.generateHoroscope();
 }
 
 /**
@@ -128,7 +128,7 @@ function saveBirthday() {
  * Clear 'name' and 'birthday' in localStorage
  */
 function clearUserInfo() {
-    let confirmed = window.confirm("Are you sure you want to clear your name and birthday?");
+    const confirmed = window.confirm("Are you sure you want to clear your name and birthday?");
     if (confirmed) {
         localStorage.removeItem('name');
         localStorage.removeItem('birthday');
