@@ -93,7 +93,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             i++;
             setTimeout(() => {
             typeWriter(text, i);
-                }, 50);
+                }, 20);
             }
         }
     const contentText = Horoscope.generateHoroscope(); // Retrieve the content text

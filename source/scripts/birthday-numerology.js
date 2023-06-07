@@ -1,30 +1,40 @@
-document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("save-birthday-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-      const birthDate = document.getElementById("birthday").value;
+function showNewPage() {
+  document.getElementById("main-content").innerHTML = `
+        <div>
+            <h2>Your Life Path Number is:</h2>
+            <h1 id="life-path-number">What</h1>
+      </div>
+      <div>
+          <button onclick="showPopup('personality', '1')">Personality</button>
+          <button onclick="showPopup('characteristic','1')">Characteristic</button>
+          <button onclick="showPopup('career','1')">Career</button>
+          <button onclick="showPopup('love','1')">Love</button>
+      </div>
+  `;
+  
+  var lifePathNumber = "7";
+  document.getElementById("life-path-number").textContent = lifePathNumber;
+}
 
-      // save birthday to local storage
-      localStorage.setItem('birthday', birthDate);
+function hidePopup(popupId) {
+  document.getElementById(popupId).style.display = "none";
+}
 
-      // convert the birthDate format to match your calculateLifePathNumber function
-      const formattedBirthDate = birthDate.split("-").reverse().join(".");
-      const lifePathNumber = calculateLifePathNumber(formattedBirthDate);
+function showPopup(popupId, lifePathNumber) {
+  const popup = document.getElementById(popupId);
+  const personalityData = soulUrgeNumberData[lifePathNumber][popupId];
 
-      // display life path number
-      document.getElementById("life-path-number").innerText = "Your Life Path Number is: " + lifePathNumber;
+  // Update the popup content with the personality information
+  popup.innerHTML = `
+    <span class="popup-close" onclick="hidePopup('${popupId}')">&times;</span>
+    <h3>${popupId}</h3>
+    <p>${personalityData}</p>
+  `;
 
-      // display the life path number information
-      const numberData = soulUrgeNumberData[lifePathNumber.toString()];
-      if (numberData) {
-          document.getElementById("personality").innerText = "Personality: " + numberData.personality;
-          document.getElementById("characteristic").innerText = "Characteristic: " + numberData.characteristic;
-          document.getElementById("career").innerText = "Career: " + numberData.career;
-          document.getElementById("love").innerText = "Love: " + numberData.love;
-      } else {
-          document.getElementById("personality").innerText = "Data for this number is not available.";
-      }
-  });
-});
+  // Display the popup
+  popup.style.display = "block";
+}
+
 
 function calculateLifePathNumber(birthDate) {
   // Split the birth date into an array
