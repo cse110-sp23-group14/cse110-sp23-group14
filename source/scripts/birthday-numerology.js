@@ -1,8 +1,8 @@
 function showNewPage() {
   document.getElementById("main-content").innerHTML = `
-        <div>
-            <h2>Your Life Path Number is:</h2>
-            <h1 id="life-path-number">What</h1>
+        <div class="container">
+            <span class="text1">Your Life Path Number is:</span>
+            <span class="text2">What</span>
       </div>
       <div>
           <button onclick="showPopup('personality', '1')">Personality</button>
@@ -13,11 +13,17 @@ function showNewPage() {
   `;
   
   var lifePathNumber = "7";
-  document.getElementById("life-path-number").textContent = lifePathNumber;
+  document.getElementsByClassName("text2").textContent = lifePathNumber;
+
+  setTimeout(function() {
+    var text2Element = document.getElementsByClassName("text2")[0];
+    text2Element.style.transition = "opacity 1s ease";
+    text2Element.style.opacity = "1";
+}, 3000); // Delay in milliseconds (3000ms = 3 seconds)
 }
 
 function hidePopup(popupId) {
-  document.getElementById(popupId).style.display = "none";
+  document.getElementByc(popupId).style.display = "none";
 }
 
 function showPopup(popupId, lifePathNumber) {
