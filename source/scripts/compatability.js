@@ -552,4 +552,5 @@ document.getElementById("popup-close").addEventListener("click", function() {
     shape_right.style.backgroundImage='';
     shape_left.querySelector('.sign-name').textContent='';
     shape_right.querySelector('.sign-name').textContent='';
+    choose_sign_window.style.display='block';
 });
