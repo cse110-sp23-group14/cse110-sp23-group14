@@ -76,7 +76,7 @@ function setHoroscopeBackground() {
   
     const imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
     horoscopeContent.style.backgroundImage = `url(${constellation[imageKey] || defaultImage})`;
-  }
+}
 
 
 /**
