@@ -4,14 +4,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     // Call the functions to display the stored name and birthday
     displayStoredData();
     setHoroscopeBackground();
-    // const birthdayMonth = document.getElementById('birthday-month');
-    // birthdayMonth.addEventListener('input', updateBirthdayDays);
-
-    // const clearNameButton = document.getElementById('clear-name-button');
-    // clearNameButton.addEventListener('click', clearName);
-    // not gonna use clear birthday
-    // const clearBirthdayButton = document.getElementById('clear-birthday-button');
-    // clearBirthdayButton.addEventListener('click', clearBirthday);
 
     const saveUserNameForm = document.getElementById('save-name-form');
     saveUserNameForm.addEventListener('submit', function(event) {
@@ -53,7 +45,7 @@ function displayStoredData() {
     }
 }
 function setHoroscopeBackground() {
-    var horoscopeContent = document.querySelector('.horoscope-content');
+    let horoscopeContent = document.querySelector('.horoscope-content');
     console.log(horoscopeContent);
     const zodiacSign = Horoscope.getSign();
   
@@ -77,24 +69,6 @@ function setHoroscopeBackground() {
     const imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
     horoscopeContent.style.backgroundImage = `url(${constellation[imageKey] || defaultImage})`;
   }
-
-
-/**
- * Update number of days when different months are input
- */
-// function updateBirthdayDays() {
-//     var monthSelect = document.getElementById('birthday-month');
-//     var daySelect = document.getElementById('birthday-day');
-//     var selectedMonth = parseInt(monthSelect.value);
-//     var daysInMonth = new Date(2023, selectedMonth, 0).getDate(); // Get the number of days in the selected month
-//     daySelect.innerHTML = ''; // Clear previous options
-//     for (var i = 1; i <= daysInMonth; i++) {
-//         var option = document.createElement('option');
-//         option.value = i;
-//         option.text = i;
-//         daySelect.appendChild(option);
-//     }
-// }
 
 /**
  * Saves the string entered by the user as their name into local storage.
@@ -139,22 +113,8 @@ function saveBirthday() {
  * Clear 'name' and 'birthday' in localStorage
  */
 function clearUserInfo() {
-    alert(`This will delete your name and birthday. Are you sure you want to do this?`);
+    alert(`Your data are cleared! You can always re-input your data on the settings page. Have a nice day!`);
     localStorage.removeItem('name');
     localStorage.removeItem('birthday');
     location.reload(); // Refresh the page
 }
-
-/**
- * Clears the stored name from local storage and refreshes the page.
- */
-// function clearName() {
-//     localStorage.removeItem('name');
-// }
-
-/**
- * Clears the stored birthday from local storage and refreshes the page.
- */
-// function clearBirthday() {
-//     localStorage.removeItem('birthday');
-// }
