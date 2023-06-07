@@ -95,7 +95,6 @@ function setHoroscopePopup() {
  */
 function saveUserName() {
     const userName = document.getElementById('name').value;
-    console.log(userName);
     localStorage.setItem('name', userName);
     alert("Name saved successfully!");
 }
@@ -110,8 +109,6 @@ function saveBirthday() {
     const birthday = ((dateString) => {
         let month = dateString.substring(5,7);
         let day = dateString.substring(8,10);
-        console.log(`type of string:${typeof dateString}`);
-        console.log(`month:${month}, day:${day}`);
         if (month.startsWith("0")) {
             month = month.substring(1);
         }
