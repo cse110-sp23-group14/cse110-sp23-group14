@@ -18,10 +18,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         saveBirthday();
         displayStoredData();
         setHoroscopeBackground();
-        const dailyTitle = document.getElementsByClassName("daily-title")[0];
-        const dailyContent = document.getElementsByClassName("daily-content")[0];
-        dailyTitle.innerHTML = Horoscope.getSign();
-        dailyContent.innerHTML = Horoscope.generateHoroscope();
+        setHoroscopePopup();
     });
     
     const clearUserInfoButton = document.querySelector('.clear-profile button');
@@ -29,9 +26,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
         event.preventDefault(); // Prevent page jump
         clearUserInfo();
         displayStoredData();
+        setHoroscopeBackground();
+        setHoroscopePopup();
     });
 });
 
+/**
+ * get user name and birthday from localStorage,
+ * and display them in setting page
+ */
 function displayStoredData() {
     const displayElement = document.getElementById('profile-display');
     const storedBirthday = localStorage.getItem('birthday');
@@ -45,13 +48,14 @@ function displayStoredData() {
     }
 }
 
+/**
+ * set daily report's background according to user's birthday
+ */
 function setHoroscopeBackground() {
     let horoscopeContent = document.querySelector('.horoscope-content');
-    console.log(horoscopeContent);
     const zodiacSign = Horoscope.getSign();
-  
+
     const defaultImage = 'assets/settings-background.jpeg';
-  
     const constellation = {
         'Aries': 'assets/constellation/aries.jpeg',
         'Aquarius': 'assets/constellation/aquarius.jpeg',
@@ -66,7 +70,7 @@ function setHoroscopeBackground() {
         'Taurus': 'assets/constellation/taurus.jpeg',
         'Virgo': 'assets/constellation/virgo.jpeg',
     };
-  
+
     if (zodiacSign) {
         const imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
         horoscopeContent.style.backgroundImage = `url(${constellation[imageKey]})`
@@ -74,25 +78,17 @@ function setHoroscopeBackground() {
     else {
         horoscopeContent.style.backgroundImage = `url(${defaultImage})`;
     }
-  }
-
+}
 
 /**
- * Update number of days when different months are input
+ * set daily report popup content according to user's zodiac(birthday)
  */
-// function updateBirthdayDays() {
-//     var monthSelect = document.getElementById('birthday-month');
-//     var daySelect = document.getElementById('birthday-day');
-//     var selectedMonth = parseInt(monthSelect.value);
-//     var daysInMonth = new Date(2023, selectedMonth, 0).getDate(); // Get the number of days in the selected month
-//     daySelect.innerHTML = ''; // Clear previous options
-//     for (var i = 1; i <= daysInMonth; i++) {
-//         var option = document.createElement('option');
-//         option.value = i;
-//         option.text = i;
-//         daySelect.appendChild(option);
-//     }
-// }
+function setHoroscopePopup() {
+    const dailyTitle = document.getElementsByClassName("daily-title")[0];
+        const dailyContent = document.getElementsByClassName("daily-content")[0];
+        dailyTitle.innerHTML = Horoscope.getSign();
+        dailyContent.innerHTML = Horoscope.generateHoroscope();
+}
 
 /**
  * Saves the string entered by the user as their name into local storage.
@@ -101,6 +97,7 @@ function saveUserName() {
     const userName = document.getElementById('name').value;
     console.log(userName);
     localStorage.setItem('name', userName);
+    alert("Name saved successfully!");
 }
 
 /**
@@ -108,8 +105,7 @@ function saveUserName() {
  */
 function saveBirthday() {
     const birthdayInput = document.getElementById("birthday");
-    // anonymous function that
-    // change date format to what we use
+    // anonymous function that change date format
     // e.g. birthdayInput: "2023-06-02" -> birthday: "6.2"
     const birthday = ((dateString) => {
         let month = dateString.substring(5,7);
@@ -125,7 +121,6 @@ function saveBirthday() {
         return month + "." + day;
     })(birthdayInput.value);
 
-    // Store the formatted birthday in localStorage
     localStorage.setItem("birthday", birthday);
     location.reload(); // Refresh the page
     // Display a success message
@@ -136,8 +131,10 @@ function saveBirthday() {
  * Clear 'name' and 'birthday' in localStorage
  */
 function clearUserInfo() {
-    alert(`Your data was cleared! You can always re-input your data on the settings page. Have a nice day!`);
-    localStorage.removeItem('name');
-    localStorage.removeItem('birthday');
-    location.reload(); // Refresh the page
+    let confirmed = window.confirm("Are you sure you want to clear your name and birthday?");
+    if (confirmed) {
+        localStorage.removeItem('name');
+        localStorage.removeItem('birthday');
+        location.reload(); // Refresh the page
+    }
 }
