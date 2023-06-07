@@ -13,7 +13,6 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const horoscopeButton = document.getElementById('horoscope-button');
     let isNavOpen = false;
     let isDisplayed = false;
-    let isDisplayed = false;
 
     const dailyReport = document.querySelector('.report');
     function openNav() {
