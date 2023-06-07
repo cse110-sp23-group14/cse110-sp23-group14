@@ -1,4 +1,4 @@
-export { Zodiac }
+export { Zodiac };
 
 const zodiacJSON = {
     "Compatibility": {
@@ -243,7 +243,7 @@ const zodiacJSON = {
         "endMonth": 1,
         "endDay": 19
     }]
-}
+};
 
 class Zodiac {
 
@@ -260,17 +260,14 @@ class Zodiac {
     * @returns {string|null} - Zodiac sign name or null if not found.
     */
     static getZodiacSign(month, day) {
-    for (const sign of this.zodiacTable.ZodiacSigns) {
-      if (
-            (month == sign.startMonth && day >= sign.startDay) ||
-            (month == sign.endMonth && day <= sign.endDay)
-        ) {
-            return sign.name;
+        for (const sign of this.zodiacTable.ZodiacSigns) {
+            if ((month == sign.startMonth && day >= sign.startDay) || (month == sign.endMonth && day <= sign.endDay)) {
+                return sign.name;
+            }
         }
     }
-}
 
-  /**
+    /**
    * Get the compatibility between two zodiac signs.
    * @param {string} zodiacSign1 - First zodiac sign.
    * @param {string} zodiacSign2 - Second zodiac sign.
@@ -282,7 +279,7 @@ class Zodiac {
         if ( zodiacSign1 in compatibilityData && zodiacSign2 in compatibilityData[zodiacSign1]) {
             return compatibilityData[zodiacSign1][zodiacSign2];
         }
-            return "UNKNOWN";
+        return "UNKNOWN";
     }
 }
 
@@ -297,8 +294,7 @@ async function readJsonData(filePath) {
         const file = await fetch(filePath);
         const jsonData = await file.json();
         return jsonData;
-    }
-    catch (error) {
+    } catch (error) {
         console.error(error);
     }
 }

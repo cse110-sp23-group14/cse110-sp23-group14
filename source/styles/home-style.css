@@ -25,14 +25,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-
-.box {
-    position: relative;
-    height: 0; 
-    width: 0;
-    border: none; 
-    background-color: transparent;
-  }
   
 .nav-container {
     position: fixed;
@@ -136,8 +128,7 @@ body {
     background-position: right;
 }
 
-/* might need to change showBackground to show-background for kebab-case*/
-.nav-showBackground {
+.nav-show-background {
     background-position: left;
 }
 
@@ -190,26 +181,11 @@ body {
     font-weight: bold;
 }
 
-.box {
-    border: 1px solid black;
-}
-
 .flex-container {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
 
-}
-
-.box {
-    width: 40%;
-    margin: 0 auto;
-    background: rgba(255 255 255 / 20%);
-    padding: 35px;
-    border: 2px solid #fff;
-    border-radius: 20px/50px;
-    background-clip: padding-box;
-    text-align: center;
 }
 
 #horoscope-button {
@@ -339,11 +315,6 @@ body {
   
     .text-box>p {
         font: 16px Roboto-monospace, monospace;
-    }
-
-    .box {
-        width: 70%;
-        padding: 25px;
     }
 
     /* Adjusting grid layout for mobile */
