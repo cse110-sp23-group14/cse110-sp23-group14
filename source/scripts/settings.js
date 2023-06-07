@@ -57,9 +57,9 @@ function setHoroscopeBackground() {
     console.log(horoscopeContent);
     const zodiacSign = Horoscope.getSign();
   
-    var defaultImage = 'assets/settings-background.jpeg';
+    const defaultImage = 'assets/settings-background.jpeg';
   
-    var constellation = {
+    const constellation = {
         'Aries': 'assets/constellation/aries.jpeg',
         'Aquarius': 'assets/constellation/aquarius.jpeg',
         'Cancer' :'assets/constellation/cancer.jpeg',
