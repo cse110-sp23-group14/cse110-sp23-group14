@@ -108,7 +108,7 @@ function saveBirthday() {
  * Clear 'name' and 'birthday' in localStorage
  */
 function clearUserInfo() {
-    alert(`This will delete your name and birthday,are you sure you want to do this?`);
+    alert(`This will delete your name and birthday. Are you sure you want to do this?`);
     localStorage.removeItem('name');
     localStorage.removeItem('birthday');
     location.reload(); // Refresh the page
