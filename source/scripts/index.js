@@ -2,7 +2,7 @@ import { Horoscope } from "./horoscope.js";
 
 /**
  * Event listener function for the 'DOMContentLoaded' event.
- * 
+ *
  * @param {Event} event -The 'DOMContentLoaded' event object
  */
 window.addEventListener('DOMContentLoaded', async (event)=> {
@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         isNavOpen = false;
         navMenu.classList.add('nav-hide');
         navMenu.classList.remove('nav-show');
-        navIconBars.classList.remove('icon-hide')
+        navIconBars.classList.remove('icon-hide');
         navIconXMark.classList.add('icon-hide');
         navContainer.classList.add('nav-background-hide');
         navContainer.classList.remove('nav-showBackground');
@@ -40,15 +40,14 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
 
     /**
     * Event listener function for the 'click' event on the navButton.
-    * 
+    *
     * @param {Event} event -The 'click' event object
     */
     navButton.addEventListener('click', (event) => {
         if (isNavOpen) {
             console.log("Closing nav...");
             closeNav();
-        }
-        else {
+        } else {
             console.log("Open nav...");
             openNav();
         }
@@ -107,7 +106,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         i++;
         setTimeout(() => {
           typeWriter(text, i);
-        }, 50);
+              }, 50);
       }
     }
   
@@ -141,7 +140,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
 
     /**
      * Scrolls to the target element smoothly.
-     * 
+     *
      * @param {Element} target - The target element to scroll to
      */
     function scrollToElement(target) {
