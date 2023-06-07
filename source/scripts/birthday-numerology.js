@@ -1,14 +1,14 @@
 function showNewPage() {
   document.getElementById("main-content").innerHTML = `
-      <div>
-          <h2>Your Life Path Number is:</h2>
-          <h1 id="life-path-number">What</h1>
+        <div>
+            <h2>Your Life Path Number is:</h2>
+            <h1 id="life-path-number">What</h1>
       </div>
       <div>
           <button onclick="showPopup('personality', '1')">Personality</button>
-          <button onclick="showPopup('characteristic')">Characteristic</button>
-          <button onclick="showPopup('career')">Career</button>
-          <button onclick="showPopup('love')">Love</button>
+          <button onclick="showPopup('characteristic','1')">Characteristic</button>
+          <button onclick="showPopup('career','1')">Career</button>
+          <button onclick="showPopup('love','1')">Love</button>
       </div>
   `;
   
@@ -27,7 +27,7 @@ function showPopup(popupId, lifePathNumber) {
   // Update the popup content with the personality information
   popup.innerHTML = `
     <span class="popup-close" onclick="hidePopup('${popupId}')">&times;</span>
-    <h3>Personality</h3>
+    <h3>${popupId}</h3>
     <p>${personalityData}</p>
   `;
 
