@@ -23,7 +23,7 @@ function showNewPage() {
 }
 
 function hidePopup(popupId) {
-  document.getElementByc(popupId).style.display = "none";
+  document.getElementById(popupId).style.display = "none";
 }
 
 function showPopup(popupId, lifePathNumber) {
