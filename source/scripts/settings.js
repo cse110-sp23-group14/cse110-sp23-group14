@@ -38,9 +38,9 @@ function displayStoredData() {
     if (storedBirthday) {
         const storedName = localStorage.getItem('name');
         if (storedName) {
-            displayElement.innerHTML = `Welcome back ${storedName}! Your birthday on record is ${storedBirthday}`;
+            displayElement.innerHTML = `Welcome back <span class="highlight">${storedName}</span>! Your birthday on record is <span class="highlight">${storedBirthday}</span>`;
         } else {
-            displayElement.innerHTML = `Welcome back! Your birthday on record is ${storedBirthday}`;
+            displayElement.innerHTML = `Welcome back! Your birthday on record is <span class="highlight">${storedBirthday}</span>`;
         }
     }
 }
