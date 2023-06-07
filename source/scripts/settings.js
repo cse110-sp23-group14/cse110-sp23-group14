@@ -74,8 +74,13 @@ function setHoroscopeBackground() {
         'Virgo': 'assets/constellation/virgo.jpeg',
     };
   
-    const imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
-    horoscopeContent.style.backgroundImage = `url(${constellation[imageKey] || defaultImage})`;
+    if (zodiacSign) {
+        const imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
+        horoscopeContent.style.backgroundImage = `url(${constellation[imageKey]})`
+    }
+    else {
+        horoscopeContent.style.backgroundImage = `url(${defaultImage})`;
+    }
   }
 
 
