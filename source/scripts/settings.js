@@ -136,7 +136,7 @@ function saveBirthday() {
  * Clear 'name' and 'birthday' in localStorage
  */
 function clearUserInfo() {
-    alert(`Your data are cleared! You can always re-input your data on the settings page. Have a nice day!`);
+    alert(`Your data was cleared! You can always re-input your data on the settings page. Have a nice day!`);
     localStorage.removeItem('name');
     localStorage.removeItem('birthday');
     location.reload(); // Refresh the page
