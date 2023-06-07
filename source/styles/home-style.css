@@ -20,13 +20,14 @@ body {
     align-items: center;
 }
 
-.horoscope-content{
+.horoscope-content {
      height: 100vh; 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-.faq{
+
+.faq {
     height:100vh;
 }
 
