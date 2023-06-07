@@ -83,9 +83,10 @@ function saveBirthday() {
     // change date format to what we use
     // e.g. birthdayInput: "2023-06-02" -> birthday: "6.2"
     const birthday = ((dateString) => {
-      const date = new Date(dateString);
-      const month = (date.getMonth() + 1).toString();
-      const day = (date.getDate() + 1).toString();
+      let month = dateString.substring(5,7);
+      let day = dateString.substring(8,10);
+      console.log(`type of string:${typeof dateString}`);
+      console.log(`month:${month}, day:${day}`);
       if (month.startsWith("0")) {
         month = month.substring(1);
       }
@@ -95,30 +96,35 @@ function saveBirthday() {
       return month + "." + day;
     })(birthdayInput.value);
 
+    localStorage.setItem("ori-birthday", birthdayInput.value);
+
     // Store the formatted birthday in localStorage
     localStorage.setItem("birthday", birthday);
     // Display a success message
     alert("Birthday saved successfully!");
-  }
-
-/**
- * Clears the stored name from local storage and refreshes the page.
- */
-function clearName() {
-    localStorage.removeItem('name');
-    location.reload(); // Refresh the page
 }
 
 /**
- * Clears the stored birthday from local storage and refreshes the page.
+ * Clear 'name' and 'birthday' in localStorage
  */
-function clearBirthday() {
+function clearUserInfo() {
+    alert(`This will delete your name and birthday,are you sure you want to do this?`);
+    localStorage.removeItem('name');
     localStorage.removeItem('birthday');
     location.reload(); // Refresh the page
 }
 
-function clearUserInfo() {
-    alert(`This will delete your name and birthday,are you sure you want to do this?`);
-    clearName();
-    clearBirthday();
-}
+/**
+ * Clears the stored name from local storage and refreshes the page.
+ */
+// function clearName() {
+//     localStorage.removeItem('name');
+// }
+
+/**
+ * Clears the stored birthday from local storage and refreshes the page.
+ */
+// function clearBirthday() {
+//     localStorage.removeItem('birthday');
+// }
+

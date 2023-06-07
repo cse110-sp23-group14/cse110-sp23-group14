@@ -2,7 +2,7 @@ import { Horoscope } from "./horoscope.js";
 
 /**
  * Event listener function for the 'DOMContentLoaded' event.
- * 
+ *
  * @param {Event} event -The 'DOMContentLoaded' event object
  */
 window.addEventListener('DOMContentLoaded', async (event)=> {
@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         isNavOpen = false;
         navMenu.classList.add('nav-hide');
         navMenu.classList.remove('nav-show');
-        navIconBars.classList.remove('icon-hide')
+        navIconBars.classList.remove('icon-hide');
         navIconXMark.classList.add('icon-hide');
         navContainer.classList.add('nav-background-hide');
         navContainer.classList.remove('nav-showBackground');
@@ -40,15 +40,14 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
 
     /**
     * Event listener function for the 'click' event on the navButton.
-    * 
+    *
     * @param {Event} event -The 'click' event object
     */
     navButton.addEventListener('click', (event) => {
         if (isNavOpen) {
             console.log("Closing nav...");
             closeNav();
-        }
-        else {
+        } else {
             console.log("Open nav...");
             openNav();
         }
@@ -61,7 +60,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const reportDateStr = reportDate.toDateString();
 
     /**
-     * get the last visted date from localStorage 
+     * get the last visted date from localStorage
      * report being highlighted on the next day
     */
     const lastVisitDate = localStorage.getItem('last_visit');
@@ -87,8 +86,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const sign = Horoscope.getSign();
     if (!sign) {
         dailyTitle.innerHTML = "We don't know your sign yet! <br>Please fill out your settings!";
-    }
-    else {
+    } else {
         dailyTitle.innerHTML = `Sun in ${sign}`;
     }
 
@@ -98,7 +96,21 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
 
     const dailyContent = document.getElementsByClassName("daily-content")[0];
     dailyContent.innerHTML = Horoscope.generateHoroscope();
-
+  
+    dailyContent.innerHTML = ""; // Clear the initial content
+  
+    function typeWriter(text, i) {
+      if (i < text.length) {
+        dailyContent.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(() => {
+            typeWriter(text, i);
+                }, 50);
+            }
+        }
+  
+    const contentText = Horoscope.generateHoroscope(); // Retrieve the content text
+    typeWriter(contentText, 0);
 
     const shareBtn = document.querySelector('.share-btn');
     const shareContent = document.querySelector('.daily-content').innerHTML;
@@ -127,7 +139,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
 
     /**
      * Scrolls to the target element smoothly.
-     * 
+     *
      * @param {Element} target - The target element to scroll to
      */
     function scrollToElement(target) {
