@@ -1,4 +1,7 @@
 function showNewPage() {
+  const birthday = localStorage.getItem('birthday');
+  const life=calculateLifePathNumber(birthday);
+  console.log(life);
   document.getElementById("main-content").innerHTML = `
         <div class="container">
             <span class="text1">Your Life Path Number is:</span>
@@ -19,6 +22,7 @@ function showNewPage() {
     var text2Element = document.getElementsByClassName("text2")[0];
     text2Element.style.transition = "opacity 1s ease";
     text2Element.style.opacity = "1";
+    text2Element.innerHTML=toString(life);
 }, 3000); // Delay in milliseconds (3000ms = 3 seconds)
 }
 
