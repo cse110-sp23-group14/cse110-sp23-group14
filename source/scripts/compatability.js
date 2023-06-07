@@ -198,7 +198,7 @@ const shape_left=document.querySelector('.shape-left');
 const shape_right=document.querySelector('.shape-right');
 const love_content=document.getElementById('description');
 const choose_sign_window=document.getElementById('choose-sign');
-const result_window=document.getElementById('result');
+//const result_window=document.getElementById('result');
 
 const capricorn_sign=document.getElementById('Capricorn');
 const cancer_sign=document.getElementById('Cancer');
@@ -520,6 +520,7 @@ function handleClick(){
         setTimeout(() => {
         // Show the pop-up
         showPopup();
+        choose_sign_window.style.display='none';
             
         }, 300);
         
@@ -546,4 +547,9 @@ function hidePopup() {
 // Attach event listener to the close button
 document.getElementById("popup-close").addEventListener("click", function() {
     hidePopup();
+    clickCount=0;
+    shape_left.style.backgroundImage='';
+    shape_right.style.backgroundImage='';
+    shape_left.querySelector('.sign-name').textContent='';
+    shape_right.querySelector('.sign-name').textContent='';
 });
