@@ -38,9 +38,9 @@ function displayStoredData() {
     if (storedBirthday) {
         const storedName = localStorage.getItem('name');
         if (storedName) {
-            displayElement.innerHTML = `Welcome back ${storedName}! Your birthday on record is ${storedBirthday}`;
+            displayElement.innerHTML = `Welcome back <span class="highlight">${storedName}</span>! Your birthday on record is <span class="highlight">${storedBirthday}</span>`;
         } else {
-            displayElement.innerHTML = `Welcome back! Your birthday on record is ${storedBirthday}`;
+            displayElement.innerHTML = `Welcome back! Your birthday on record is <span class="highlight">${storedBirthday}</span>`;
         }
     }
 }
@@ -66,9 +66,32 @@ function setHoroscopeBackground() {
         'Virgo': 'assets/constellation/virgo.jpeg',
     };
   
-    const imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
-    horoscopeContent.style.backgroundImage = `url(${constellation[imageKey] || defaultImage})`;
-}
+    if (zodiacSign) {
+        const imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
+        horoscopeContent.style.backgroundImage = `url(${constellation[imageKey]})`
+    }
+    else {
+        horoscopeContent.style.backgroundImage = `url(${defaultImage})`;
+    }
+  }
+
+
+/**
+ * Update number of days when different months are input
+ */
+// function updateBirthdayDays() {
+//     var monthSelect = document.getElementById('birthday-month');
+//     var daySelect = document.getElementById('birthday-day');
+//     var selectedMonth = parseInt(monthSelect.value);
+//     var daysInMonth = new Date(2023, selectedMonth, 0).getDate(); // Get the number of days in the selected month
+//     daySelect.innerHTML = ''; // Clear previous options
+//     for (var i = 1; i <= daysInMonth; i++) {
+//         var option = document.createElement('option');
+//         option.value = i;
+//         option.text = i;
+//         daySelect.appendChild(option);
+//     }
+// }
 
 /**
  * Saves the string entered by the user as their name into local storage.
@@ -101,8 +124,6 @@ function saveBirthday() {
         return month + "." + day;
     })(birthdayInput.value);
 
-    localStorage.setItem("ori-birthday", birthdayInput.value);
-
     // Store the formatted birthday in localStorage
     localStorage.setItem("birthday", birthday);
     // Display a success message
@@ -113,7 +134,7 @@ function saveBirthday() {
  * Clear 'name' and 'birthday' in localStorage
  */
 function clearUserInfo() {
-    alert(`Your data are cleared! You can always re-input your data on the settings page. Have a nice day!`);
+    alert(`Your data was cleared! You can always re-input your data on the settings page. Have a nice day!`);
     localStorage.removeItem('name');
     localStorage.removeItem('birthday');
     location.reload(); // Refresh the page
