@@ -73,24 +73,18 @@
             text-align: center;
         }
 
-        /* Styles for the pop-up */
         .popup {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #7F00FF; /* Set a background color that matches your theme */
+            background-color: white;
             padding: 20px;
-            width: 300px;
+            width: 400px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             display: none;
-            color: white; /* Set text color to white */
-            font-family: "Arial", sans-serif; /* Set font family */
-        }
-
-        .popup-close:hover {
-            color: #ff2741; /* Set a different color for hover effect */
+            animation: rotate 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
         }
 
         .popup-close {
@@ -98,9 +92,25 @@
             top: 5px;
             right: 5px;
             cursor: pointer;
-            color: #999999; /* Set a color for the close button */
-            font-size: 24px;
         }
+
+        @keyframes rotate {
+            0%{
+                transform: rotate(-360deg);
+                opacity: 0;
+            }
+            100%{
+                transform: rotate(0);
+                opacity: 1;
+            }
+            
+        }
+
+        .popup-close:hover {
+            color: #ff2741; /* Set a different color for hover effect */
+        }
+
+       
 
 
         .popup h3 {
@@ -154,25 +164,25 @@
     </div>
 
     <div id="personality" class="popup">
-        <span class="popup-close" onclick="hidePopup('popup-personality')">&times;</span>
+        <span class="popup-close" onclick="hidePopup('personality')">&times;</span>
         <h3>Personality</h3>
         <p id="personality">Personality description...</p>
     </div>
 
     <div id="characteristic" class="popup">
-        <span class="popup-close" onclick="hidePopup('popup-characteristic')">&times;</span>
+        <span class="popup-close" onclick="hidePopup('characteristic')">&times;</span>
         <h3>Characteristic</h3>
         <p id="characteristic">Characteristic description...</p>
     </div>
 
     <div id="career" class="popup">
-        <span class="popup-close" onclick="hidePopup('popup-career')">&times;</span>
+        <span class="popup-close" onclick="hidePopup('career')">&times;</span>
         <h3>Careerssss</h3>
         <p id="career">Career description...</p>
     </div>
 
     <div id="love" class="popup">
-        <span class="popup-close" onclick="hidePopup('popup-love')">&times;</span>
+        <span class="popup-close" onclick="hidePopup('love')">&times;</span>
         <h3>Love</h3>
         <p id="love">Love description...</p>
     </div>
