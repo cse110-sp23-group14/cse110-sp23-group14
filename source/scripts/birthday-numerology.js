@@ -1,177 +1,151 @@
 function showNewPage() {
-  const birthday = localStorage.getItem('birthday');
-  const life=calculateLifePathNumber(birthday);
-  console.log(life);
-  document.getElementById("main-content").innerHTML = `
+    const birthday = localStorage.getItem('birthday');
+    const life=calculateLifePathNumber(birthday);
+    console.log(life);
+    document.getElementById("main-content").innerHTML = `
         <div class="container">
             <span class="text1">Your Life Path Number is:</span>
             <span class="text2">What</span>
-      </div>
-      <div>
-          <button onclick="showPopup('personality', '1')">Personality</button>
-          <button onclick="showPopup('characteristic','1')">Characteristic</button>
-          <button onclick="showPopup('career','1')">Career</button>
-          <button onclick="showPopup('love','1')">Love</button>
-      </div>
-  `;
+        </div>
+        <div>
+            <button onclick="showPopup('personality', '1')">Personality</button>
+            <button onclick="showPopup('characteristic','1')">Characteristic</button>
+            <button onclick="showPopup('career','1')">Career</button>
+            <button onclick="showPopup('love','1')">Love</button>
+        </div>
+    `;
   
-  var lifePathNumber = "7";
-  document.getElementsByClassName("text2").textContent = lifePathNumber;
+    var lifePathNumber = "7";
+    document.getElementsByClassName("text2").textContent = lifePathNumber;
 
-  setTimeout(function() {
-    var text2Element = document.getElementsByClassName("text2")[0];
-    text2Element.style.transition = "opacity 1s ease";
-    text2Element.style.opacity = "1";
-    text2Element.innerHTML=toString(life);
-}, 3000); // Delay in milliseconds (3000ms = 3 seconds)
+    setTimeout(function() {
+        var text2Element = document.getElementsByClassName("text2")[0];
+        text2Element.style.transition = "opacity 1s ease";
+        text2Element.style.opacity = "1";
+        text2Element.innerHTML=toString(life);
+    }, 3000); // Delay in milliseconds (3000ms = 3 seconds)
 }
 
 function hidePopup(popupId) {
-  document.getElementById(popupId).style.display = "none";
+    document.getElementById(popupId).style.display = "none";
 }
 
 function showPopup(popupId, lifePathNumber) {
-  const popup = document.getElementById(popupId);
-  const personalityData = soulUrgeNumberData[lifePathNumber][popupId];
+    const popup = document.getElementById(popupId);
+    const personalityData = soulUrgeNumberData[lifePathNumber][popupId];
 
-  // Update the popup content with the personality information
-  popup.innerHTML = `
-    <span class="popup-close" onclick="hidePopup('${popupId}')">&times;</span>
-    <h3>${popupId}</h3>
-    <p>${personalityData}</p>
-  `;
+    // Update the popup content with the personality information
+    popup.innerHTML = `
+        <span class="popup-close" onclick="hidePopup('${popupId}')">&times;</span>
+        <h3>${popupId}</h3>
+        <p>${personalityData}</p>
+    `;
 
-  // Display the popup
-  popup.style.display = "block";
+    // Display the popup
+    popup.style.display = "block";
 }
 
 
 function calculateLifePathNumber(birthDate) {
-  // Split the birth date into an array
-  const dateArray = birthDate.split(".");
+    // Split the birth date into an array
+    const dateArray = birthDate.split(".");
 
-  // Extract year, month, and day from the array
-  const year = dateArray[0];
-  const month = dateArray[1];
-  const day = dateArray[2];
+    // Extract year, month, and day from the array
+    const year = dateArray[0];
+    const month = dateArray[1];
+    const day = dateArray[2];
 
-  // Reduce each part to a single digit or a master number
-  const reducedYear = reduceNumber(year);
-  const reducedMonth = reduceNumber(month);
-  const reducedDay = reduceNumber(day);
+    // Reduce each part to a single digit or a master number
+    const reducedYear = reduceNumber(year);
+    const reducedMonth = reduceNumber(month);
+    const reducedDay = reduceNumber(day);
 
-  // Calculate the sum of year, month, and day
-  let sum = reducedYear + reducedMonth + reducedDay;
+    // Calculate the sum of year, month, and day
+    let sum = reducedYear + reducedMonth + reducedDay;
 
-  // Reduce the sum to a single digit or a master number
-  sum = reduceNumber(sum);
+    // Reduce the sum to a single digit or a master number
+    sum = reduceNumber(sum);
 
-  // Return the calculated Life Path number
-  return sum;
+    // Return the calculated Life Path number
+    return sum;
 }
 
 function reduceNumber(number) {
-  let result = number;
+    let result = number;
 
-  while (result > 9 && result !== 11 && result !== 22 && result !== 33) {
-      const digits = Array.from(result.toString(), Number);
-      result = digits.reduce((acc, curr) => {
-          return acc + curr;
-      }, 0);
-  }
+    while (result > 9 && result !== 11 && result !== 22 && result !== 33) {
+        const digits = Array.from(result.toString(), Number);
+        result = digits.reduce((acc, curr) => {
+            return acc + curr;
+        }, 0);
+    }
 
-  return result;
+    return result;
 }
 
 
   // Soul Urge Number data
 const soulUrgeNumberData = {
     "1": {
-      "personality": 
-      `As natural-born leaders, you are not only courageous but also high spirited.  
-      You love your freedom, so it is ensured that its reins are intact in your hands. 
-      You are well- suited for self-employment and would excel as a self-boss. Your goal-oriented nature has taken you a long way in your life, if not yet then it is likely to show its effect in the coming time. 
-      The pure dedication and focus with which you take up any task or errand give you success most of the time. You put your heart and soul into achieving your target or task. 
-      You can be a multi-tasker if the work interests you and you have the zeal to do it.
-      You are mostly clear about the path of achievement but you also demand attention and love from people around. Often you get agitated when things do not go your way. The swollen ego, boastful nature and arrogance at times drive you insane and you hamper things around. 
-        `,
+        "personality": 
+            `As natural-born leaders, you are not only courageous but also high spirited. You love your freedom, so it is ensured that its reins are intact in your hands. You are well- suited for self-employment and would excel as a self-boss. Your goal-oriented nature has taken you a long way in your life, if not yet then it is likely to show its effect in the coming time. The pure dedication and focus with which you take up any task or errand give you success most of the time. You put your heart and soul into achieving your target or task. You can be a multi-tasker if the work interests you and you have the zeal to do it. You are mostly clear about the path of achievement but you also demand attention and love from people around. Often you get agitated when things do not go your way. The swollen ego, boastful nature and arrogance at times drive you insane and you hamper things around.`,
 
-      "characteristic": 
-      `Positive:
-            As declared leaders, you own qualities like lateral thinking and creativity. 
-            Others might perceive you as self-centred and egoistic, but your leadership and nut-cracking quality is what makes people envious of you. 
-            Dynamic nature, heart to take a risk and succeed are some positives which do not come in everyone and anyone.  
-        Negative:
-            It is quite evident that you are egoistic, self-centric and aggressive at times. 
-            You need to ensure that it does not reach a level that it starts to spoil things for you that you have built or earned. 
-            You mostly lose your cool when a problem pops up and lack patience. Overenthusiastic nature, 
-            dominating trait and at times the violent side of you might restrict your productivity and also be the reason for your downfall.
+        "characteristic": 
+            `Positive: 
+            As declared leaders, you own qualities like lateral thinking and creativity. Others might perceive you as self-centred and egoistic, but your leadership and nut-cracking quality is what makes people envious of you. Dynamic nature, heart to take a risk and succeed are some positives which do not come in everyone and anyone.  
+            Negative:
+            It is quite evident that you are egoistic, self-centric and aggressive at times. You need to ensure that it does not reach a level that it starts to spoil things for you that you have built or earned. You mostly lose your cool when a problem pops up and lack patience.Overenthusiastic nature, dominating trait and at times the violent side of you might restrict your productivity and also be the reason for your downfall.
             `,
         
         "career":
-        `You are a solo rider when it comes to career or business. You prefer to work alone and it is then when you outshine the most. 
-        The entrepreneur quality in you pushes to work hard and achieve any kind of goal. You tend to take your work too seriously, even when it is not needed. 
-        It leads to a lot of stress and you end up affecting your health. It is important to follow a healthy diet and a planned day to stay fit both physically and mentally. 
-        With such strong traits, you can also be a politician or go for strong posts like military, etc. You are a powerhouse of qualities, 
-        if you use them in the right way then success will be at your feet and there is no goal you cannot achieve. So, ensure to imbibe humility to sustain fame, success, and positivity in life.
-        `,
+            `You are a solo rider when it comes to career or business. You prefer to work alone and it is then when you outshine the most. The entrepreneur quality in you pushes to work hard and achieve any kind of goal. You tend to take your work too seriously, even when it is not needed. It leads to a lot of stress and you end up affecting your health. It is important to follow a healthy diet and a planned day to stay fit both physically and mentally. With such strong traits, you can also be a politician or go for strong posts like military, etc. You are a powerhouse of qualities, if you use them in the right way then success will be at your feet and there is no goal you cannot achieve. So, ensure to imbibe humility to sustain fame, success, and positivity in life.`,
 
         "love":
-        `Since you like to be the boss in most places, even in love life you are likely to do the same.  
-        You want to take charge and this can be a big drawback when you come across a person of the same life path number. 
-        Even with people who do not like to be dominated, you might face a problem, if you try to take charge all the time. 
-        Your inclination towards compromise is very less which can be a reason for a lot of differences in relations. 
-        You lack the art to talk things out to resolve, so might have to work on that to save your relation.
+            `Since you like to be the boss in most places, even in love life you are likely to do the same. You want to take charge and this can be a big drawback when you come across a person of the same life path number. Even with people who do not like to be dominated, you might face a problem, if you try to take charge all the time. Your inclination towards compromise is very less which can be a reason for a lot of differences in relations. You lack the art to talk things out to resolve, so might have to work on that to save your relation.
 
-        Partnering with a person of the same life path number can be exciting as you both have a charismatic personality. 
-        However, it can be tricky too as you both might have a different perspective about career, relationship life, etc. 
-        It can be that you both aim for the same things but your dominating nature does not let you things work out well.
-        
-        Life path number 1 compatibility is best observed with people falling under 3, 5, and 6.  
-        They can be a good match for you, as they have flexible personalities and can get along with such kinds of traits and also enjoy a healthy relationship.
-        `,
+            Partnering with a person of the same life path number can be exciting as you both have a charismatic personality. However, it can be tricky too as you both might have a different perspective about career, relationship life, etc. It can be that you both aim for the same things but your dominating nature does not let you things work out well.
+            
+            Life path number 1 compatibility is best observed with people falling under 3, 5, and 6. They can be a good match for you, as they have flexible personalities and can get along with such kinds of traits and also enjoy a healthy relationship.`,
     },
+
     "2": {
-      "personality": 
-      `People in the category of number 2 are true peace lovers. Your emotional quotient is very high which is both bane and boon for you in life. 
-      You are a loyal partner, friend, and bond with people easily. Even though you are reserved by nature, the intuitive side of you makes you a people’s person. 
-      In a situation of confusion, tiff, and misunderstanding you play an active part in resolving them for others. The convincing power is high on your side, which makes you a perfect mediator.  
+        "personality": 
+            `People in the category of number 2 are true peace lovers. Your emotional quotient is very high which is both bane and boon for you in life. You are a loyal partner, friend, and bond with people easily. Even though you are reserved by nature, the intuitive side of you makes you a people’s person. In a situation of confusion, tiff, and misunderstanding you play an active part in resolving them for others. The convincing power is high on your side, which makes you a perfect mediator.  
+            Since you have the power to change people's mind, it often becomes difficult to explain yourself when there is a problem in your paradise. 
+            You own the power to self-heal from hurtful situations and also specialize in helping others do the same. 
+            People with this life path number are mostly in professions like spirituality, healing, nursing, etc.`,
 
-      Since you have the power to change people's mind, it often becomes difficult to explain yourself when there is a problem in your paradise. 
-       You own the power to self-heal from hurtful situations and also specialize in helping others do the same. 
-       People with this life path number are mostly in professions like spirituality, healing, nursing, etc.`,
+        "characteristic": 
+        `Positive:
+        Sensitivity and loyalty run in your blood. It makes you a true friend or partner. 
+        You stand strong in any situation to protect your loved ones. You are open to listening and are compassionate to others' feelings. 
+        You are not the conflict initiators instead you always try to calm things down and maintain harmony. 
+        You are observant and very well know how to use the minutest of detail to disarm negativity in the surrounding. 
+        You like your routine life and are not very open to frequent changes or alterations.
+        
+        Negative:
+        The twos in spite of being diplomatic, lack the spine to take the lead and fight for the right. 
+        You prefer to be in the shadow and wait for others to take a stand for you, to come up front. Since your emotional side is always high, things affect you very easily. 
+        Due to this you become agitated and are likely to act weirdly. Somewhere in life, you are self-centred when it comes to your liking and comfort. 
+        But you are spineless in context to standing for self. The art of holding back thoughts and over compromising in a relation are other traits in number 2. 
+        Your over sensitiveness can be a reason for suffering.`,
 
-      "characteristic": 
-      `Positive:
-      Sensitivity and loyalty run in your blood. It makes you a true friend or partner. 
-      You stand strong in any situation to protect your loved ones. You are open to listening and are compassionate to others' feelings. 
-      You are not the conflict initiators instead you always try to calm things down and maintain harmony. 
-      You are observant and very well know how to use the minutest of detail to disarm negativity in the surrounding. 
-      You like your routine life and are not very open to frequent changes or alterations.
-      
-      Negative:
-      The twos in spite of being diplomatic, lack the spine to take the lead and fight for the right. 
-      You prefer to be in the shadow and wait for others to take a stand for you, to come up front. Since your emotional side is always high, things affect you very easily. 
-      Due to this you become agitated and are likely to act weirdly. Somewhere in life, you are self-centred when it comes to your liking and comfort. 
-      But you are spineless in context to standing for self. The art of holding back thoughts and over compromising in a relation are other traits in number 2. 
-      Your over sensitiveness can be a reason for suffering.`,
+        "career":
+        `The patience in you highlights the creative side of you. Jobs like writing and art-related might fancy you and bring happiness in life. 
+        You always keep others comfort before yours this makes you a lovable colleague at work. In situations when there is a tiff at work you are looked upon to resolve and maintain peace.  
+        Your unique nature helps you make good decisions at work even when you are deciding upon the profile you plan to opt for. 
+        Interpersonal skills is your forte so you are inclined more towards communication and mediating professions. 
+        You need to pump up your self-confidence to achieve your goals rather than waiting for someone to do things for you.`,
 
-      "career":
-      `The patience in you highlights the creative side of you. Jobs like writing and art-related might fancy you and bring happiness in life. 
-      You always keep others comfort before yours this makes you a lovable colleague at work. In situations when there is a tiff at work you are looked upon to resolve and maintain peace.  
-      Your unique nature helps you make good decisions at work even when you are deciding upon the profile you plan to opt for. 
-      Interpersonal skills is your forte so you are inclined more towards communication and mediating professions. 
-      You need to pump up your self-confidence to achieve your goals rather than waiting for someone to do things for you.`,
+        "love":
+        `Twos are known as loyal and one of the best love partners. In spite of being dedicated and supportive lovers, 
+        if by any chance you are betrayed in love then the culprit has to be ready to face the wrath of your anger and hurt. 
+        However, you are a great lover who does not give up in relationships and ensures to keep the partner happy. Communication and understanding are what you seek in a partner.
 
-      "love":
-      `Twos are known as loyal and one of the best love partners. In spite of being dedicated and supportive lovers, 
-      if by any chance you are betrayed in love then the culprit has to be ready to face the wrath of your anger and hurt. 
-      However, you are a great lover who does not give up in relationships and ensures to keep the partner happy. Communication and understanding are what you seek in a partner.
-
-      The life path number 2 compatibility is most appreciated with 8, 9 and those who belong to the same life path number. 
-      For those who belong to the same life path number two, you are likely to get along well. 
-      But there is a catch! You might end up asking each other to make decisions and it will give birth to frustration. 
-      Whereas, 8 and 9 numbers will understand your nature and take care of your feelings treating you the way you want them to.`
+        The life path number 2 compatibility is most appreciated with 8, 9 and those who belong to the same life path number. 
+        For those who belong to the same life path number two, you are likely to get along well. 
+        But there is a catch! You might end up asking each other to make decisions and it will give birth to frustration. 
+        Whereas, 8 and 9 numbers will understand your nature and take care of your feelings treating you the way you want them to.`
     },
 
     "3": {

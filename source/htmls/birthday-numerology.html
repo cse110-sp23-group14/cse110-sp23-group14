@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Settings - Zodiak</title>
-    <script src="../scripts/birthday-numerology.js"></script>
+    <title>Birthday - Zodiac</title>
     <style>
         /* Styles for the main content */
         body {
@@ -158,32 +157,33 @@
     </style>
 </head>
 <body>
+    <script src="../scripts/birthday-numerology.js"></script>
     <div id="main-content">
         <button id="start-button" onclick="showNewPage()">Start</button>
     </div>
 
-    <div id="personality" class="popup">
+    <div id="personality-popup" class="popup">
         <span class="popup-close" onclick="hidePopup('personality')">&times;</span>
         <h3>Personality</h3>
-        <p id="personality">Personality description...</p>
+        <p id="personality-text">Personality description...</p>
     </div>
 
-    <div id="characteristic" class="popup">
+    <div id="characteristic-popup" class="popup">
         <span class="popup-close" onclick="hidePopup('characteristic')">&times;</span>
         <h3>Characteristic</h3>
-        <p id="characteristic">Characteristic description...</p>
+        <p id="characteristic-text">Characteristic description...</p>
     </div>
 
-    <div id="career" class="popup">
+    <div id="career-popup" class="popup">
         <span class="popup-close" onclick="hidePopup('career')">&times;</span>
         <h3>Careerssss</h3>
-        <p id="career">Career description...</p>
+        <p id="career-text">Career description...</p>
     </div>
 
-    <div id="love" class="popup">
+    <div id="love-popup" class="popup">
         <span class="popup-close" onclick="hidePopup('love')">&times;</span>
         <h3>Love</h3>
-        <p id="love">Love description...</p>
+        <p id="love-text">Love description...</p>
     </div>
 
 </body>
