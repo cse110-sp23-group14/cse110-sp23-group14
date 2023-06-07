@@ -124,8 +124,6 @@ function saveBirthday() {
         return month + "." + day;
     })(birthdayInput.value);
 
-    localStorage.setItem("ori-birthday", birthdayInput.value);
-
     // Store the formatted birthday in localStorage
     localStorage.setItem("birthday", birthday);
     // Display a success message
