@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const reportDateStr = reportDate.toDateString();
 
     /**
-     * get the last visted date from localStorage 
+     * get the last visted date from localStorage
      * report being highlighted on the next day
     */
     const lastVisitDate = localStorage.getItem('last_visit');
@@ -86,8 +86,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const sign = Horoscope.getSign();
     if (!sign) {
         dailyTitle.innerHTML = "We don't know your sign yet! <br>Please fill out your settings!";
-    }
-    else {
+    } else {
         dailyTitle.innerHTML = `Sun in ${sign}`;
     }
 
@@ -103,12 +102,12 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     function typeWriter(text, i) {
       if (i < text.length) {
         dailyContent.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(() => {
-          typeWriter(text, i);
-              }, 50);
-      }
-    }
+            i++;
+            setTimeout(() => {
+            typeWriter(text, i);
+                }, 50);
+            }
+        }
   
     const contentText = Horoscope.generateHoroscope(); // Retrieve the content text
     typeWriter(contentText, 0);
