@@ -229,7 +229,7 @@ function checkCompatibility() {
       var sign2 = rightBox;
       var description = findDescription(sign1, sign2);
       // Assuming you want to display the description in the element with id "description"
-      document.getElementById("description").innerText = description;
+      document.getElementById("popup-description").textContent = description;
       console.log(description);
     }
 }
@@ -518,18 +518,32 @@ shape_right.addEventListener('click', function() {
 function handleClick(){
     if(clickCount === 2){
         setTimeout(() => {
-            choose_sign_window.style.display='none';  
-            result_window.style.display='flex';
+        // Show the pop-up
+        showPopup();
             
         }, 300);
         
     }
     else{
         setTimeout(() => {
-            result_window.style.display='none';
-            choose_sign_window.style.display='flex'; 
+            hidePopup();
         }, 300);
       
     }
 }
   
+
+// Function to show the pop-up with description
+function showPopup() {
+    document.getElementById("popup").style.display = "block";
+}
+
+// Function to hide the pop-up and reset the page
+function hidePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
+// Attach event listener to the close button
+document.getElementById("popup-close").addEventListener("click", function() {
+    hidePopup();
+});
