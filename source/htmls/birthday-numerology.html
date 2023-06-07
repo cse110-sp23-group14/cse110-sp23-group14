@@ -1,22 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Settings - Zodiak</title>
-    </head>
-    <body>
-        <div id="change-birthday">
-            <form id="save-birthday-form">
-                <label for="birthday-date">Change birthday:</label><br>
-                <input type="date" id="birthday">
-                <br>
-                <button type="submit">Submit</button>
-            </form> 
-        </div>
-        <div id="life-path-number"></div>
-        <div id="personality"></div>
-        <div id="characteristic"></div>
-        <div id="career"></div>
-        <div id="love"></div>
-    <script src="../scripts/birthday-numerology.js" defer></script>
-    </body>
+<head>
+    <title>Settings - Zodiak</title>
+    <script src="../scripts/birthday-numerology.js"></script>
+    <style>
+        /* Styles for the main content */
+        #main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        #main-content button {
+            font-size: 24px;
+        }
+
+        /* Styles for the pop-up */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            width: 300px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-content">
+        <button id="start-button" onclick="showNewPage()">Start</button>
+    </div>
+
+    <div id="personality" class="popup">
+        <span class="popup-close" onclick="hidePopup('popup-personality')">&times;</span>
+        <h3>Personality</h3>
+        <p id="personality">Personality description...</p>
+    </div>
+
+    <div id="characteristic" class="popup">
+        <span class="popup-close" onclick="hidePopup('popup-characteristic')">&times;</span>
+        <h3>Characteristic</h3>
+        <p id="characteristic">Characteristic description...</p>
+    </div>
+
+    <div id="career" class="popup">
+        <span class="popup-close" onclick="hidePopup('popup-career')">&times;</span>
+        <h3>Career</h3>
+        <p id="career">Career description...</p>
+    </div>
+
+    <div id="love" class="popup">
+        <span class="popup-close" onclick="hidePopup('popup-love')">&times;</span>
+        <h3>Love</h3>
+        <p id="love">Love description...</p>
+    </div>
+</body>
 </html>
+
+
