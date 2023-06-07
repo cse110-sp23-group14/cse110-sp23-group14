@@ -77,8 +77,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const sign = Horoscope.getSign();
     if (!sign) {
         dailyTitle.innerHTML = "We don't know your sign yet! <br>Please fill out your settings!";
-    }
-    else {
+    } else {
         dailyTitle.innerHTML = `${sign}`;
     }
     const dailyDate = document.getElementsByClassName("daily-date")[0];
@@ -87,21 +86,23 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const dailyContent = document.getElementsByClassName("daily-content")[0];
     dailyContent.innerHTML = Horoscope.generateHoroscope();
     dailyContent.innerHTML = ""; // Clear the initial content
+    
     function typeWriter(text, i) {
-      if (i < text.length) {
-        dailyContent.innerHTML += text.charAt(i);
+        if (i < text.length) {
+            dailyContent.innerHTML += text.charAt(i);
             i++;
             setTimeout(() => {
-            typeWriter(text, i);
-                }, 20);
-            }
+                typeWriter(text, i);
+            }, 20);
         }
+    }
+
     const contentText = Horoscope.generateHoroscope(); // Retrieve the content text
-    horoscopeButton.onclick = function() 
-    {
+    
+    horoscopeButton.onclick = function() {
         if (isDisplayed==false) {
-        typeWriter(contentText,0);
-        isDisplayed=true;
+            typeWriter(contentText,0);
+            isDisplayed=true;
         }
     };
 
@@ -113,8 +114,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
      */
     if (!sign) {
         shareBtn.style.display = 'none';
-    }
-    else {
+    } else {
         shareBtn.style.display = 'default';
     }
     /**

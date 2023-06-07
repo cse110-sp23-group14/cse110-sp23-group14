@@ -1,6 +1,8 @@
 export { Horoscope };
 import { Zodiac } from "./zodiac.js";
 
+const NUM_HOROSCOPES = 13;
+
 const horoscopeJSON = {
     "Aries": {
         "0": "Today, the stars align in your favor, dear Aries. Your natural confidence and assertiveness will be at an all-time high. Take charge and pursue your goals with unwavering determination. Success is within your grasp!",
@@ -31,7 +33,7 @@ const horoscopeJSON = {
         "10": "Take time for self-reflection today, Taurus. Assess your values, goals, and personal growth. Connect with your inner desires and make choices that align with your authentic self. Embrace your journey of self-discovery and personal excellence.",
         "11": "Fortune smiles upon you, Taurus! Opportunities for growth and abundance will manifest in your life. Embrace these chances, step into leadership roles, and let your practicality guide you towards the fulfillment of your dreams.",
         "12": "Pay attention to your communication today, Taurus. Misunderstandings or conflicts may arise due to differing perspectives. Practice empathy, choose your words carefully, and foster harmonious connections through understanding."
-    },      
+    },
     "Gemini": {
         "0": "Today is your day, dear Gemini! Your versatile nature and quick thinking will lead you to success. Embrace the opportunities that come your way and trust in your ability to adapt to any situation.",
         "1": "Prepare for unexpected changes, Gemini. Your curiosity will help you navigate through unforeseen twists and turns. Embrace the flexibility and adaptability that is inherent to your nature.",
@@ -76,7 +78,7 @@ const horoscopeJSON = {
         "10": "Take time for self-expression and self-care today, Leo. Celebrate your individuality, pursue your passions, and honor your unique gifts. Let your creative spirit shine brightly and inspire those around you.",
         "11": "Fortune favors the bold, Leo! Opportunities for recognition and success will manifest in your life. Embrace these chances, step into leadership roles, and let your natural charisma guide you towards victory.",
         "12": "Pay attention to your relationships today, Leo. Misunderstandings or conflicts may arise due to differing perspectives. Practice empathy, listen with an open heart, and foster harmonious connections through understanding."
-    },      
+    },
     "Virgo": {
         "0": "Today, dear Virgo, your analytical nature and attention to detail will lead you to success. Embrace the opportunities that come your way and trust in your ability to plan and organize effectively.",
         "1": "Prepare for unexpected changes, Virgo. Your practicality and adaptability will help you navigate through unforeseen twists and turns. Embrace the flexibility and trust that everything will work out in your favor.",
@@ -91,7 +93,7 @@ const horoscopeJSON = {
         "10": "Take time for self-reflection and self-care today, Virgo. Assess your goals, health, and personal growth. Nurture your well-being, make practical choices, and embrace your journey towards self-improvement.",
         "11": "Fortune smiles upon you, Virgo! Opportunities for growth and advancement will manifest in your life. Embrace these chances, step into leadership roles, and let your meticulous nature guide you towards success.",
         "12": "Pay attention to your communication today, Virgo. Misunderstandings or conflicts may arise due to differing perspectives. Practice active listening, express your thoughts clearly, and foster harmonious connections through understanding."
-    },      
+    },
     "Libra": {
         "0": "Today, Libra, luck is on your side! Your natural charm and diplomacy will lead you to success in social interactions and negotiations. Enjoy the positive energy surrounding you and make the most of it.",
         "1": "Misfortune may find its way into your day, Libra. However, your innate ability to find balance and harmony will help you navigate through any challenges. Trust your intuition and seek peaceful resolutions.",
@@ -110,15 +112,15 @@ const horoscopeJSON = {
     "Scorpio": {
         "0": "Today, the stars align in your favor, dear Scorpio. Opportunities for success and abundance abound. Trust your instincts and take bold steps towards your goals. Your intense focus and determination will yield exceptional results. Embrace the positive energy and seize the day!",
         "1": "Beware, Scorpio! Today, misfortunes may cross your path. Be cautious in your dealings and avoid taking unnecessary risks. Trust your intuition to navigate through challenges. It's a day to prioritize self-care and introspection. Remember, setbacks can be temporary, and better days are ahead.",
-        "2": "The cosmic energies are in a state of equilibrium today, Scorpio. It's a time for reflection and planning. Focus on maintaining a harmonious balance between work and personal life. Engage in activities that nurture your soul and recharge your energy. Seek solace in the stability of this moment.",       
-        "3": "Fortune smiles upon you, Scorpio! Opportunities for advancement and growth are within reach. Stay focused, and put your skills to good use. Trust your intuition and make calculated moves. With persistence and determination, you will make significant strides towards your aspirations.",        
-        "4": "Be prepared, Scorpio, as unexpected challenges may test your resilience today. Adaptability and flexibility are key to overcoming these obstacles. Embrace change and view setbacks as learning experiences. Remember, your strength lies in your ability to rise above adversity.",       
+        "2": "The cosmic energies are in a state of equilibrium today, Scorpio. It's a time for reflection and planning. Focus on maintaining a harmonious balance between work and personal life. Engage in activities that nurture your soul and recharge your energy. Seek solace in the stability of this moment.",
+        "3": "Fortune smiles upon you, Scorpio! Opportunities for advancement and growth are within reach. Stay focused, and put your skills to good use. Trust your intuition and make calculated moves. With persistence and determination, you will make significant strides towards your aspirations.",
+        "4": "Be prepared, Scorpio, as unexpected challenges may test your resilience today. Adaptability and flexibility are key to overcoming these obstacles. Embrace change and view setbacks as learning experiences. Remember, your strength lies in your ability to rise above adversity.",
         "5": "Your emotional depth shines through today, Scorpio. Take time to explore your feelings and nurture your relationships. Seek meaningful connections that resonate with your soul. It's a day for self-expression and connecting with others on a profound level. Embrace the richness of your emotions.",
-        "6": "Good news awaits, Scorpio! Today, financial success is on the horizon. Your hard work and shrewd decisions will lead to prosperity. Utilize your financial acumen to make wise investments or seize lucrative opportunities. Remember to share your good fortune with others who supported you along the way.",  
-        "7": "Challenges may arise today, Scorpio, testing your determination and resilience. Don't let setbacks discourage you. Use your tenacity to navigate through difficult situations. Keep your long-term goals in mind and stay focused on the bigger picture. With patience and perseverance, you will overcome these hurdles.",     
+        "6": "Good news awaits, Scorpio! Today, financial success is on the horizon. Your hard work and shrewd decisions will lead to prosperity. Utilize your financial acumen to make wise investments or seize lucrative opportunities. Remember to share your good fortune with others who supported you along the way.",
+        "7": "Challenges may arise today, Scorpio, testing your determination and resilience. Don't let setbacks discourage you. Use your tenacity to navigate through difficult situations. Keep your long-term goals in mind and stay focused on the bigger picture. With patience and perseverance, you will overcome these hurdles.",
         "8": "Your charisma and magnetism are at their peak today, Scorpio. Your words and actions will have a profound impact on those around you. Utilize this influential energy to inspire and motivate others. Your natural charm and persuasive abilities will help you make significant strides towards your goals.",
-        "9": "Tensions may arise in your relationships today, Scorpio. Communication breakdowns and misunderstandings are possible. Practice empathy and patience when dealing with others. Seek clarity and resolution through open and honest dialogue. Remember, a strong foundation of trust can withstand any storm.",  
-        "10": "The cosmic energies awaken your spiritual side today, Scorpio. Engage in practices that nourish your soul, such as meditation or connecting with nature. Pay attention to your intuition and inner wisdom. This is a time of spiritual growth and self-discovery. Embrace the journey.", 
+        "9": "Tensions may arise in your relationships today, Scorpio. Communication breakdowns and misunderstandings are possible. Practice empathy and patience when dealing with others. Seek clarity and resolution through open and honest dialogue. Remember, a strong foundation of trust can withstand any storm.",
+        "10": "The cosmic energies awaken your spiritual side today, Scorpio. Engage in practices that nourish your soul, such as meditation or connecting with nature. Pay attention to your intuition and inner wisdom. This is a time of spiritual growth and self-discovery. Embrace the journey.",
         "11": "Your ambitions and aspirations take center stage today, Scorpio. Your hard work and dedication are recognized by influential individuals. Embrace the opportunities that come your way and leverage your skills to achieve",
         "12": "Today, Scorpio, your creative energy flows abundantly. Embrace your artistic instincts and let your imagination soar. Engage in activities that allow you to express yourself freely, whether it's through writing, painting, or any other creative outlet. Trust your intuition and allow your innovative ideas to take shape. Embrace the joy that comes from channeling your creativity into something extraordinary."
     },
@@ -182,7 +184,7 @@ const horoscopeJSON = {
         "11": "Luck smiles upon your educational pursuits, Pisces. Whether you're a student or seeking personal growth, knowledge comes easily to you today. Embrace learning opportunities and expand your horizons. Your thirst for knowledge will be rewarded.",
         "12": "Misfortune casts a shadow on your health today, Pisces. Take extra care of your physical and mental well-being. Engage in activities that promote relaxation and avoid overexertion. Prioritize self-care to regain your vitality."
     }
-}
+};
 
 class Horoscope {
 
@@ -206,7 +208,7 @@ class Horoscope {
         const birthdaySplit = birthday.split(".");
 
         // Getting Zodiac sign data
-        let sign = Zodiac.getZodiacSign(birthdaySplit[0], birthdaySplit[1]);
+        const sign = Zodiac.getZodiacSign(birthdaySplit[0], birthdaySplit[1]);
         return sign;
     }
 
@@ -216,7 +218,7 @@ class Horoscope {
      */
     static generateHoroscope() {
         // Getting Zodiac sign data
-        let sign = this.getSign();
+        const sign = this.getSign();
         if (!sign) {
             return "No horoscope found.";
         }
@@ -225,12 +227,12 @@ class Horoscope {
         const date = new Date();
         const day = date.getDate();
         const month = date.getMonth();
-        let stringInputToHash = "" + day + month;
-        let inputToHash = Number(stringInputToHash);
-        const hashValue = inputToHash % 13;
+        const stringInputToHash = "" + day + month;
+        const inputToHash = Number(stringInputToHash);
+        const hashValue = inputToHash % NUM_HOROSCOPES;
 
         // Read horoscopes.json and get today's horoscope
-        let todayHoroscope = this.horoscopeTable[sign][hashValue];
+        const todayHoroscope = this.horoscopeTable[sign][hashValue];
         return todayHoroscope;
     }
 }
