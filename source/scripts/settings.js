@@ -70,8 +70,7 @@ function setHoroscope() {
     if (zodiacSign) {
         const imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
         horoscopeContent.style.backgroundImage = `url(${constellation[imageKey]})`;
-    }
-    else {
+    } else {
         horoscopeContent.style.backgroundImage = `url(${defaultImage})`;
     }
     const dailyTitle = document.getElementsByClassName("daily-title")[0];
