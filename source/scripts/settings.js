@@ -3,7 +3,7 @@ import { Horoscope } from "./horoscope.js";
 window.addEventListener('DOMContentLoaded', (event) => {
     // Call the functions to display the stored name and birthday
     displayStoredData();
-    setHoroscopeBackground();
+    setHoroscope();
 
     const saveUserNameForm = document.getElementById('save-name-form');
     saveUserNameForm.addEventListener('submit', function(event) {
