@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         navIconBars.classList.remove('icon-hide');
         navIconXMark.classList.add('icon-hide');
         navContainer.classList.add('nav-background-hide');
-        navContainer.classList.remove('nav-showBackground');
+        navContainer.classList.remove('nav-show-background');
     }
 
     /**
