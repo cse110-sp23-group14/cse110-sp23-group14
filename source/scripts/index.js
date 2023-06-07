@@ -12,6 +12,8 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const navIconBars = document.getElementsByClassName('fa-bars')[0];
     const navIconXMark = document.getElementsByClassName('fa-xmark')[0];
     const navContainer = document.getElementsByClassName('nav-container')[0];
+    const horoscopeButton = document.getElementById('horoscope-button');
+    
     let isNavOpen = false;
 
     const dailyReport = document.querySelector('.report');
@@ -25,6 +27,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         navIconXMark.classList.remove('icon-hide');
         navContainer.classList.add('nav-showBackground');
         navContainer.classList.remove('nav-background-hide');
+        horoscopeButton.style.zIndex = -1;
     }
 
     function closeNav() {
@@ -36,6 +39,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         navIconXMark.classList.add('icon-hide');
         navContainer.classList.add('nav-background-hide');
         navContainer.classList.remove('nav-showBackground');
+        horoscopeButton.style.zIndex = 0;
     }
 
     /**
@@ -87,8 +91,9 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const sign = Horoscope.getSign();
     if (!sign) {
         dailyTitle.innerHTML = "We don't know your sign yet! <br>Please fill out your settings!";
-    } else {
-        dailyTitle.innerHTML = `Sun in ${sign}`;
+    }
+    else {
+        dailyTitle.innerHTML = `${sign}`;
     }
 
     const dailyDate = document.getElementsByClassName("daily-date")[0];
