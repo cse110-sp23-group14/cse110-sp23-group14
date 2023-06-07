@@ -13,7 +13,29 @@
     <script src="https://kit.fontawesome.com/ec9b6ab711.js" crossorigin="anonymous"></script>
     <script type="module" src="../scripts/settings.js"></script>
     <script type="module" src="../scripts/compatability.js"></script>
-    <script type="module" src="../scripts/compatability.js"></script></script>
+
+    <style>
+        /* Styles for the pop-up */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            width: 300px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,7 +50,8 @@
     <span class="star"></span>
     <span class="star"></span>
     <span class="star"></span>
-       
+
+
 </div>
 <div class="header">
     <div class="shape-left"> <span class="sign-name"></span></div>
@@ -143,29 +166,12 @@
 
 </section>
 
-<div class="hidden" id="result">
-    <input type="radio" name="tabs" id="LOVE" checked>
-    <input type="radio" name="tabs" id="FAMILY">
-    <input type="radio" name="tabs" id="FRIEND">
-    <div class="cube">
-        <div class="tab-content">
-            <p id="description">this is top content</p>
-        </div>
-        <div class="tab-content">
-            <h1> family</h1>
-            <p>this is middle content</p>
-        </div>
-        <div class="tab-content">
-            <h1> friend</h1>
-            <p>this is bottom content</p>
-        </div>
-    </div>
-    <div class="labels">
-      <label for="LOVE" class="tab">love</label>
-      <label for="FAMILY" class="tab">family</label>
-      <label for="FRIEND" class="tab">friend</label>
-    </div>
-    
+<div id="popup" class="popup">
+    <span id="popup-close" class="popup-close">&times;</span>
+    <h3 id="popup-title"></h3>
+    <p id="popup-description"></p>
 </div>
+
+
 </body>
 </html>
