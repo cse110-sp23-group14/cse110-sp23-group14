@@ -200,18 +200,18 @@ const love_content=document.getElementById('description');
 const choose_sign_window=document.getElementById('choose-sign');
 //const result_window=document.getElementById('result');
 
-const capricorn_sign=document.getElementById('Capricorn');
-const cancer_sign=document.getElementById('Cancer');
-const aquarius_sign=document.getElementById('Aquarius');
-const gemini_sign=document.getElementById('Gemini');
-const leo_sign=document.getElementById('Leo');
-const libra_sign=document.getElementById('Libra');
-const pisces_sign=document.getElementById('Pisces');
-const sagittarius_sign=document.getElementById('Sagittarius');
-const scorpio_sign=document.getElementById('Scorpio');
-const taurus_sign=document.getElementById('Taurus');
-const virgo_sign=document.getElementById('Virgo');
-const aries_sign=document.getElementById('Aries');
+const capricorn_sign=document.getElementById('capricorn');
+const cancer_sign=document.getElementById('cancer');
+const aquarius_sign=document.getElementById('aquarius');
+const gemini_sign=document.getElementById('gemini');
+const leo_sign=document.getElementById('leo');
+const libra_sign=document.getElementById('libra');
+const pisces_sign=document.getElementById('pisces');
+const sagittarius_sign=document.getElementById('sagittarius');
+const scorpio_sign=document.getElementById('scorpio');
+const taurus_sign=document.getElementById('taurus');
+const virgo_sign=document.getElementById('virgo');
+const aries_sign=document.getElementById('aries');
 
 var clickCount=0;
 
@@ -219,15 +219,14 @@ var clickCount=0;
 function checkCompatibility() {
     var leftBox = document.querySelector(".shape-left .sign-name").textContent.trim();
     var rightBox = document.querySelector(".shape-right .sign-name").textContent.trim();
-    console.log(leftBox);
-    console.log(rightBox);
-    
     if (leftBox && rightBox) {
       // Both left and right boxes are filled
       // Assuming the signs are stored as lowercase strings
       var sign1 = leftBox;
       var sign2 = rightBox;
-      var description = findDescription(sign1, sign2);
+      var capitalizedSign1 = sign1.charAt(0).toUpperCase() + sign1.slice(1);
+      var capitalizedSign2 = sign2.charAt(0).toUpperCase() + sign2.slice(1);
+      var description = findDescription(capitalizedSign1, capitalizedSign2);
       // Assuming you want to display the description in the element with id "description"
       document.getElementById("popup-description").textContent = description;
       console.log(description);
