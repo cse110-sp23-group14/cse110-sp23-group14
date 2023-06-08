@@ -1,24 +1,15 @@
-body{
-    margin:0;
-    overflow: hidden;
-    font-family: system-ui, sans-serif;
-}
-*{
-    box-sizing: border-box;
-}
-
-
-.stars-container {
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:120%;
-    background: url(../assets/space.jpeg) no-repeat;
+.compatibility-content{
+    height: 100vh;
+    background-image: url('../assets/space.jpeg');
     background-size: cover;
-    z-index: 0;
+    background-position: center;
+    height: 100vh;
+    color: var(--main-light-color);
+    text-align: center;
+    z-index:0;
+
 }
-.star {
+/*.compatibility-content .stars-container .star {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -31,9 +22,10 @@ body{
     0 0 20px rgba(255 255 255 / 100%);
     pointer-events: none;
     animation: animate 3s linear infinite;
+   
 }
 
- .star::before {
+.compatibility-content .star::before {
     content:"";
     position: absolute;
     top: 50%;
@@ -43,7 +35,7 @@ body{
     background:linear-gradient(90deg,#fff, transparent);
 }
 
- .star:nth-child(1) {
+.compatibility-content .star:nth-child(1) {
     top: 0;
     right: 0;
     left: initial;
@@ -51,7 +43,7 @@ body{
     animation-duration: 1s;
 }
 
-.star:nth-child(2) {
+.compatibility-content .star:nth-child(2) {
     top: 0;
     right: 80px;
     left: initial;
@@ -59,7 +51,7 @@ body{
     animation-duration: 3s;
 }
 
-.star:nth-child(3) {
+.compatibility-content .star:nth-child(3) {
     top: 80px;
     right: 0;
     left: initial;
@@ -67,7 +59,7 @@ body{
     animation-duration: 2s;
 }
 
- .star:nth-child(4) {
+.compatibility-content .star:nth-child(4) {
     top: 0;
     right: 180px;
     left: initial;
@@ -75,7 +67,7 @@ body{
     animation-duration: 1.5s;
 }
 
-.star:nth-child(5) {
+.compatibility-content .star:nth-child(5) {
     top: 0;
     right: 400px;
     left: initial;
@@ -83,7 +75,7 @@ body{
     animation-duration: 2.5s;
 }
 
- .star:nth-child(6) {
+.compatibility-content  .star:nth-child(6) {
     top: 0;
     right: 600px;
     left: initial;
@@ -91,7 +83,7 @@ body{
     animation-duration: 3s;
 }
 
-.star:nth-child(7) {
+.compatibility-content .star:nth-child(7) {
     top: 300px;
     right:0;
     left: initial;
@@ -99,7 +91,7 @@ body{
     animation-duration: 1.75s;
 }
 
-.star:nth-child(8) {
+.compatibility-content .star:nth-child(8) {
     top: 0;
     right:700px;
     left: initial;
@@ -107,7 +99,7 @@ body{
     animation-duration: 1.25s;
 }
 
-.star:nth-child(9) {
+.compatibility-content .star:nth-child(9) {
     top: 0;
     right:1000px;
     left: initial;
@@ -115,7 +107,7 @@ body{
     animation-duration: 2.25s;
 }
 
-.star:nth-child(10) {
+.compatibility-content .star:nth-child(10) {
     top: 0;
     right:450px;
     left: initial;
@@ -123,7 +115,6 @@ body{
     animation-duration: 2.25s;
 }
 
-/* animation */
 @keyframes animate {
     0% {
         transform: rotate(315deg) translateX(0);
@@ -140,10 +131,10 @@ body{
 
     }
 
-}
+}*/
 
-/* header section */
- #header {
+/*
+.compatibility-content #header {
     margin-top: 1px;
     position:relative;
     display:flex;
@@ -153,13 +144,13 @@ body{
     padding: 3em;
     z-index: 1;
 }
- .header{
+.compatibility-content .header{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
 }
 
- .shape-left {
+.compatibility-content  .shape-left {
     width: 150px;
     height: 150px;
     border: 3px dotted white;
@@ -169,7 +160,7 @@ body{
    
     
 }
- .shape-right {
+.compatibility-content .shape-right {
     width: 150px;
     height: 150px;
     border: 3px dotted white;
@@ -180,7 +171,7 @@ body{
     
 }
 
- .ampersand {
+.compatibility-content .ampersand {
     margin-left: 30%;
     font-size: 80px;
     color:#fff;
@@ -189,30 +180,31 @@ body{
 
 
 
- .sign-name {
+.compatibility-content .sign-name {
     color: #fff;
     margin-left: 160px;
     font-size: large;
 }
 
-/* choose sign section */
- #choose-sign {
+/*
+.compatibility-content #choose-sign {
     margin-top: 1px;
     position:relative;
-    display:flex;
+   
     justify-content: center;
     align-items: center;
-    padding: 3em;
-    z-index: 1;
+    padding: 1em;
+ 
 }
-
-.zodiac-sign {
+*/
+/*
+.compatibility-content .zodiac-sign {
     font-size: 35px;
     color: #fff;
 }
-
- .menu {
-    max-width: 900px;
+/*
+.compatibility-content .menu {
+    max-width: 800px;
     margin:0 auto;
     padding:1em;
     background: rgb(255 255 255 / 24%);
@@ -228,22 +220,22 @@ body{
     text-align: center;
 }
 
-.menu a {
+.compatibility-content .menu a {
     text-decoration: none;
     color: #dbdbdb;
 }
-
- .menu h3 {
+/*
+.compatibility-content .menu h3 {
     color: #fff;
     margin: 0.4em 0 0 0;
 }
 
-.menu >div {
+.compatibility-content .menu >div {
     margin:0.2em;
     
 }
 
- .menu > div a {
+.compatibility-content .menu > div a {
     width:100%;
     height:100%;
     padding:1.5em;
@@ -256,17 +248,17 @@ body{
     transition: 0.2s;
 }
 
- .menu >div:hover a {
+.compatibility-content .menu >div:hover a {
     background: rgba(255 255 255 / 50%);
     transform: scale(1.1);
     box-shadow: 
         0 8px 32px 0
         rgb(0 0 0 / 37%);
     color: #fff;
-}
+}*/
 
-/* pop up */
- #pop{
+/*
+.compatibility-content #pop{
     margin-top: 1px;
     position:fixed;
     align-items: center;
@@ -278,7 +270,7 @@ body{
     display: flex;
 
 }
- .popup {
+.compatibility-content .popup {
     position: relative;
     background-blend-mode: normal, soft-light;
     -webkit-backdrop-filter: blur(14px);
@@ -311,3 +303,4 @@ body{
     }
     
 }
+*/
