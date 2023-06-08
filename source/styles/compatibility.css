@@ -1,20 +1,24 @@
-.compatability-content {
-    height: 100vh;
-    color: var(--main-light-color);
-    text-align: center;
-    background: url("../assets/space.jpeg") no-repeat;
-    background-size: cover;
-    background-position: center;
+body{
+    margin:0;
+    overflow: hidden;
+    font-family: system-ui, sans-serif;
+}
+*{
+    box-sizing: border-box;
 }
 
-.compatability-content .stars-container {
+
+.stars-container {
     position: fixed;
     top:0;
     left:0;
+    width:100%;
+    height:120%;
+    background: url(../assets/space.jpeg) no-repeat;
+    background-size: cover;
     z-index: 0;
 }
-
-.compatability-content .star {
+.star {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -29,7 +33,7 @@
     animation: animate 3s linear infinite;
 }
 
-.compatability-content .star::before {
+ .star::before {
     content:"";
     position: absolute;
     top: 50%;
@@ -39,7 +43,7 @@
     background:linear-gradient(90deg,#fff, transparent);
 }
 
-.compatability-content .star:nth-child(1) {
+ .star:nth-child(1) {
     top: 0;
     right: 0;
     left: initial;
@@ -47,7 +51,7 @@
     animation-duration: 1s;
 }
 
-.compatability-content .star:nth-child(2) {
+.star:nth-child(2) {
     top: 0;
     right: 80px;
     left: initial;
@@ -55,7 +59,7 @@
     animation-duration: 3s;
 }
 
-.compatability-content .star:nth-child(3) {
+.star:nth-child(3) {
     top: 80px;
     right: 0;
     left: initial;
@@ -63,7 +67,7 @@
     animation-duration: 2s;
 }
 
-.compatability-content .star:nth-child(4) {
+ .star:nth-child(4) {
     top: 0;
     right: 180px;
     left: initial;
@@ -71,7 +75,7 @@
     animation-duration: 1.5s;
 }
 
-.compatability-content .star:nth-child(5) {
+.star:nth-child(5) {
     top: 0;
     right: 400px;
     left: initial;
@@ -79,7 +83,7 @@
     animation-duration: 2.5s;
 }
 
-.compatability-content .star:nth-child(6) {
+ .star:nth-child(6) {
     top: 0;
     right: 600px;
     left: initial;
@@ -87,7 +91,7 @@
     animation-duration: 3s;
 }
 
-.compatability-content .star:nth-child(7) {
+.star:nth-child(7) {
     top: 300px;
     right:0;
     left: initial;
@@ -95,7 +99,7 @@
     animation-duration: 1.75s;
 }
 
-.compatability-content .star:nth-child(8) {
+.star:nth-child(8) {
     top: 0;
     right:700px;
     left: initial;
@@ -103,7 +107,7 @@
     animation-duration: 1.25s;
 }
 
-.compatability-content .star:nth-child(9) {
+.star:nth-child(9) {
     top: 0;
     right:1000px;
     left: initial;
@@ -111,7 +115,7 @@
     animation-duration: 2.25s;
 }
 
-.compatability-content .star:nth-child(10) {
+.star:nth-child(10) {
     top: 0;
     right:450px;
     left: initial;
@@ -139,7 +143,7 @@
 }
 
 /* header section */
-.compatability-content #header {
+ #header {
     margin-top: 1px;
     position:relative;
     display:flex;
@@ -149,13 +153,13 @@
     padding: 3em;
     z-index: 1;
 }
-.compatability-content .header{
+ .header{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
 }
 
-.compatability-content .shape-left {
+ .shape-left {
     width: 150px;
     height: 150px;
     border: 3px dotted white;
@@ -165,7 +169,7 @@
    
     
 }
-.compatability-content .shape-right {
+ .shape-right {
     width: 150px;
     height: 150px;
     border: 3px dotted white;
@@ -176,7 +180,7 @@
     
 }
 
-.compatability-content .ampersand {
+ .ampersand {
     margin-left: 30%;
     font-size: 80px;
     color:#fff;
@@ -185,14 +189,14 @@
 
 
 
-.compatability-content .sign-name {
+ .sign-name {
     color: #fff;
     margin-left: 160px;
     font-size: large;
 }
 
 /* choose sign section */
-.compatability-content #choose-sign {
+ #choose-sign {
     margin-top: 1px;
     position:relative;
     display:flex;
@@ -202,12 +206,12 @@
     z-index: 1;
 }
 
-.compatability-content .zodiac-sign {
+.zodiac-sign {
     font-size: 35px;
     color: #fff;
 }
 
-.compatability-content .menu {
+ .menu {
     max-width: 900px;
     margin:0 auto;
     padding:1em;
@@ -224,22 +228,22 @@
     text-align: center;
 }
 
-.compatability-content .menu a {
+.menu a {
     text-decoration: none;
     color: #dbdbdb;
 }
 
-.compatability-content .menu h3 {
+ .menu h3 {
     color: #fff;
     margin: 0.4em 0 0 0;
 }
 
-.compatability-content .menu >div {
+.menu >div {
     margin:0.2em;
     
 }
 
-.compatability-content .menu > div a {
+ .menu > div a {
     width:100%;
     height:100%;
     padding:1.5em;
@@ -252,7 +256,7 @@
     transition: 0.2s;
 }
 
-.compatability-content .menu >div:hover a {
+ .menu >div:hover a {
     background: rgba(255 255 255 / 50%);
     transform: scale(1.1);
     box-shadow: 
@@ -262,7 +266,7 @@
 }
 
 /* pop up */
-.compatability-content #result-pop{
+ #pop{
     margin-top: 1px;
     position:fixed;
     align-items: center;
@@ -274,7 +278,7 @@
     display: flex;
 
 }
-.compatability-content .result-popup {
+ .popup {
     position: relative;
     background-blend-mode: normal, soft-light;
     -webkit-backdrop-filter: blur(14px);
@@ -289,7 +293,7 @@
     animation: rotate 2s cubic-bezier(0.25, 0.46, 0.45,0.94) both;
 }
 
-.compatability-content .result-popup-close {
+ .popup-close {
     position: absolute;
     top: 5px;
     right: 5px;
