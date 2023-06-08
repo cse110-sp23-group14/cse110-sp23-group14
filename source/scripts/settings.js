@@ -93,7 +93,13 @@ function saveUserName() {
  */
 function saveBirthday() {
     const birthdayInput = document.getElementById("birthday");
-    // anonymous function that change date format
+    // check if the input is empty
+    if (birthdayInput.value.trim() === '') {
+        // Display an error message or take any other appropriate action
+        alert('Please enter your birthday before submitting.');
+        return;
+    }
+    // anonymous function that process date format
     // e.g. birthdayInput: "2023-06-02" -> birthday: "6.2"
     const birthday = ((dateString) => {
         let month = dateString.substring(5,7);
