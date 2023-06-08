@@ -25,19 +25,17 @@
         }
 
         .lifepath-content .text1{
-            color:white;
-            font: 48px Lora, serif;
-            font-weight: 700;
-            letter-spacing: 8px;
-            margin-bottom: 20px;
-            position: relative;
-            animation: Text 3s 1;
+            font: 36px Lora, serif;
         }
 
+        .lifepath-content .title{
+            font: 64px Lora, serif;
+            margin-bottom: 2vh;
+        }
         .lifepath-content .text2{
             font: 48px Lora, serif;
             font-weight: 700;
-            color:white;
+            color: #FEBD38;
             opacity: 0;
             transition: opacity 1s ease;
         }

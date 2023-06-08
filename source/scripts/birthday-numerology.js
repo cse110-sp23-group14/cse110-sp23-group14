@@ -14,6 +14,7 @@ function showNewPage() {
     }
     document.getElementById("main-content").innerHTML = `
         <div>
+            <p class="title">"Life Path Number"</p>
             <p class="text1">${text1}</p>
             <p class="text2">${text2}</p>
         </div>
