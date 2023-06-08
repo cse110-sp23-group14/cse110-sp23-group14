@@ -528,7 +528,7 @@ function handleClick(){
     else{
         setTimeout(() => {
             hidePopup();
-            choose_sign_window.style.display='block';
+            choose_sign_window.style.display='flex';
         }, 300);
       
     }
