@@ -96,6 +96,7 @@ function saveBirthday() {
     // anonymous function that change date format
     // e.g. birthdayInput: "2023-06-02" -> birthday: "6.2"
     const birthday = ((dateString) => {
+        let year = dateString.substring(0,5);
         let month = dateString.substring(5,7);
         let day = dateString.substring(8,10);
         if (month.startsWith("0")) {
@@ -108,6 +109,7 @@ function saveBirthday() {
     })(birthdayInput.value);
 
     localStorage.setItem("birthday", birthday);
+    localStorage.setItem("birthdayYear",year);
     location.reload(); // Refresh the page
     // Display a success message
     alert("Birthday saved successfully!");
