@@ -10,6 +10,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         event.preventDefault(); // Prevent page jump
         saveUserName();
         displayStoredData();
+        setHoroscope();
     });
 
     const saveBirthdayForm = document.getElementById('save-birthday-form');
