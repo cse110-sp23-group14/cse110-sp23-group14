@@ -18,10 +18,17 @@
 
     <style>
         /* Styles for the pop-up */
+        #pop{
+            margin-top: 1px;
+            position:relative;
+            align-items: center;
+            justify-content: center;
+        
+        }
         .popup {
-            position: absolute;
-            top: 68%;
-            left: 55%;
+            position: relative;
+            margin-left: 38%;
+       
             transform: translate(-50%, -50%);
             background-color: white;
             padding: 20px;
@@ -192,12 +199,16 @@
         </div>
         <div class="loading-shadow"></div>
     </div>-->
+    <setion id="pop">
 
-    <div id="popup" class="popup">
-        <span id="popup-close" class="popup-close">&times;</span>
-        <h3 id="popup-title"></h3>
-        <p id="popup-description"></p>
-    </div>
+        <div id="popup" class="popup">
+            <span id="popup-close" class="popup-close">&times;</span>
+            <h3 id="popup-title"></h3>
+            <p id="popup-description"></p>
+        </div>
+
+
+    </setion>
 
 </body>
 
