@@ -1,15 +1,14 @@
 function showNewPage() {
 
-    var birthday = localStorage.getItem("birthday");
-    var text1 = "Your Life Path Number is:";
-    var text2 = "";
-    var lifePathNumber=calculateLifePathNumber(birthday);
+    let birthday = localStorage.getItem("birthday");
+    let text1 = "Your Life Path Number is:";
+    let text2 = "";
+    let lifePathNumber=calculateLifePathNumber(birthday);
     if (!birthday) {
         text1 = "We do not have your birthday.";
     } else {
         // Calculate the life path number based on the birthday
         // Replace this logic with your actual calculation
-        var lifePathNumber = calculateLifePathNumber(birthday);
         text2 = lifePathNumber;
     }
     document.getElementById("main-content").innerHTML = `
@@ -27,7 +26,7 @@ function showNewPage() {
     `;
 
     setTimeout(function() {
-        var text2Element = document.getElementsByClassName("text2")[0];
+        let text2Element = document.getElementsByClassName("text2")[0];
         text2Element.style.transition = "opacity 1s ease";
         text2Element.style.opacity = "1";
     }, 3000); // Delay in milliseconds (3000ms = 3 seconds)
@@ -58,51 +57,51 @@ function showPopup(popupId, lifePathNumber) {
 
 
 function calculateLifePathNumber(birthDate) {
-  // Split the birth date into an array
-  const dateArray = birthDate.split(".");
+    // Split the birth date into an array
+    const dateArray = birthDate.split(".");
 
-  // Extract year, month, and day from the array
-  const year = dateArray[0];
-  const month = dateArray[1];
-  const day = dateArray[2];
+    // Extract year, month, and day from the array
+    const year = dateArray[0];
+    const month = dateArray[1];
+    const day = dateArray[2];
 
-  // Reduce each part to a single digit or a master number
-  const reducedYear = reduceNumber(year);
-  const reducedMonth = reduceNumber(month);
-  const reducedDay = reduceNumber(day);
+    // Reduce each part to a single digit or a master number
+    const reducedYear = reduceNumber(year);
+    const reducedMonth = reduceNumber(month);
+    const reducedDay = reduceNumber(day);
 
-  // Calculate the sum of year, month, and day
-  let sum = reducedYear + reducedMonth + reducedDay;
+    // Calculate the sum of year, month, and day
+    let sum = reducedYear + reducedMonth + reducedDay;
 
-  // Reduce the sum to a single digit or a master number
-  sum = reduceNumber(sum);
+    // Reduce the sum to a single digit or a master number
+    sum = reduceNumber(sum);
 
-  // Return the calculated Life Path number
-  return sum;
+    // Return the calculated Life Path number
+    return sum;
 }
 
 function reduceNumber(number) {
-  let result = number;
+    let result = number;
 
-  while (result > 9) {
-      const digits = Array.from(result.toString(), Number);
-      result = digits.reduce((acc, curr) => {
-          return acc + curr;
-      }, 0);
-  }
+    while (result > 9) {
+        const digits = Array.from(result.toString(), Number);
+        result = digits.reduce((acc, curr) => {
+            return acc + curr;
+        }, 0);
+    }
 
-  return result;
+    return result;
 }
 
 
-  // Soul Urge Number data
+// Soul Urge Number data
 const soulUrgeNumberData = {
     "1": {
-        "personality": 
+        "personality":
             `As natural-born leaders, you are not only courageous but also high spirited. You love your freedom, so it is ensured that its reins are intact in your hands. You are well- suited for self-employment and would excel as a self-boss. Your goal-oriented nature has taken you a long way in your life, if not yet then it is likely to show its effect in the coming time. The pure dedication and focus with which you take up any task or errand give you success most of the time. You put your heart and soul into achieving your target or task. You can be a multi-tasker if the work interests you and you have the zeal to do it. You are mostly clear about the path of achievement but you also demand attention and love from people around. Often you get agitated when things do not go your way. The swollen ego, boastful nature and arrogance at times drive you insane and you hamper things around.`,
 
-        "characteristic": 
-            `For positive,  as declared leaders, you own qualities like lateral thinking and creativity. Others might perceive you as self-centred and egoistic, but your leadership and nut-cracking quality is what makes people envious of you. Dynamic nature, heart to take a risk and succeed are some positives which do not come in everyone and anyone. 
+        "characteristic":
+            `For positive,  as declared leaders, you own qualities like lateral thinking and creativity. Others might perceive you as self-centred and egoistic, but your leadership and nut-cracking quality is what makes people envious of you. Dynamic nature, heart to take a risk and succeed are some positives which do not come in everyone and anyone.
             For negative, it is quite evident that you are egoistic, self-centric and aggressive at times. You need to ensure that it does not reach a level that it starts to spoil things for you that you have built or earned. You mostly lose your cool when a problem pops up and lack patience. Overenthusiastic nature, dominating trait and at times the violent side of you might restrict your productivity and also be the reason for your downfall.
             `,
         
@@ -118,15 +117,15 @@ const soulUrgeNumberData = {
     },
 
     "2": {
-        "personality": 
-            `People in the category of number 2 are true peace lovers. Your emotional quotient is very high which is both bane and boon for you in life. You are a loyal partner, friend, and bond with people easily. Even though you are reserved by nature, the intuitive side of you makes you a people’s person. In a situation of confusion, tiff, and misunderstanding you play an active part in resolving them for others. The convincing power is high on your side, which makes you a perfect mediator.  
+        "personality":
+            `People in the category of number 2 are true peace lovers. Your emotional quotient is very high which is both bane and boon for you in life. You are a loyal partner, friend, and bond with people easily. Even though you are reserved by nature, the intuitive side of you makes you a people's person. In a situation of confusion, tiff, and misunderstanding you play an active part in resolving them for others. The convincing power is high on your side, which makes you a perfect mediator.
             Since you have the power to change people's mind, it often becomes difficult to explain yourself when there is a problem in your paradise. 
             You own the power to self-heal from hurtful situations and also specialize in helping others do the same. 
             People with this life path number are mostly in professions like spirituality, healing, nursing, etc.`,
 
-        "characteristic": 
+        "characteristic":
         `For positive, the twos
-        have sensitivity and loyalty run in your blood. It makes you a true friend or partner. 
+        have sensitivity and loyalty run in your blood. It makes you a true friend or partner.
         You stand strong in any situation to protect your loved ones. You are open to listening and are compassionate to others' feelings. 
         You are not the conflict initiators instead you always try to calm things down and maintain harmony. 
         You are observant and very well know how to use the minutest of detail to disarm negativity in the surrounding. 
@@ -149,7 +148,7 @@ const soulUrgeNumberData = {
         "love":
         `Twos are known as loyal and one of the best love partners. In spite of being dedicated and supportive lovers, 
         if by any chance you are betrayed in love then the culprit has to be ready to face the wrath of your anger and hurt. 
-        However, you are a great lover who does not give up in relationships and ensures to keep the partner happy. Communication and understanding are what you seek in a partner.
+        However, you are a great lover who does not give up in relationships and ensures to keep the partner happy. Communication and understanding are what you seek in a partner. 
 
         The life path number 2 compatibility is most appreciated with 8, 9 and those who belong to the same life path number. 
         For those who belong to the same life path number two, you are likely to get along well. 
@@ -158,16 +157,16 @@ const soulUrgeNumberData = {
     },
 
     "3": {
-      "personality": 
-      `People who fall under this category love to be the nucleus everywhere. Since you have a charismatic aura, you end up being the centre of attraction. 
+        "personality":
+        `People who fall under this category love to be the nucleus everywhere. Since you have a charismatic aura, you end up being the centre of attraction. 
       You are full of creativity and are very expressive as compared to other numbers. You are born artists and are super romantic at heart. 
        Your observant nature helps you take a calculative and sensible decision about life, career, and other aspects of life. 
        The best part about you is that you do not hold any grudge against anyone and are very optimistic about life. 
        You are limitless and enjoy living your present to the fullest without worrying about tomorrow.  Such a nature often pushes you to escape taking up responsibility. 
        You are a die-heart spender so, saving is not something you do and due to which you suffer later.`,
 
-      "characteristic": 
-      `For positive, 
+      "characteristic":
+        `For positive, 
       you love yourself and this is the reason you are less concerned about what others feel or think about you. As your own counsellor, 
       you easily criticize yourself when needed and ensure to work on such shortcomings. With excellent communication skills, 
       you work well in a team and can provide a comfortable environment to colleagues and co-workers. 
@@ -197,13 +196,14 @@ const soulUrgeNumberData = {
     },
 
     "4": {
-      "personality": `The fours are the emblem of stability and functional life. You are practical in either personal and professional front or any situation that demands your attention. 
+        "personality":
+        `The fours are the emblem of stability and functional life. You are practical in either personal and professional front or any situation that demands your attention. 
       You desire financial stability which is your topmost priority. The thirst for respect is much bigger than anything around. 
       Companies love to have employees like you, who are team players and can hold the team together. You are imaginative, rational and anti any kind of injustice that takes place anywhere. 
       You are trustworthy when it comes to emotional support and people can depend on you for any kind of assistance. Your seriousness and hard work are likely to take you a long way.`,
 
-      "characteristic": 
-      `For Positive, 
+      "characteristic":
+        `For Positive, 
 
       you are down to earth which makes you approachable and reachable for any kind of assistance. You are people's person that is why you are amongst the much need people in the core group. 
       The best part about you is that you do not surrender to any kind of peer pressure. Perseverance is what you demand most of the time from self and even from people around you. 
@@ -218,14 +218,14 @@ const soulUrgeNumberData = {
       If you find out people working or associated with you do not carry the same ideology, then you tend to lash out at them, you become impolite, even authoritative which gives a negative impact on your image`,
 
       "career":
-      `The fours are the kind of employees companies look for. You are focused, goal-oriented and super hard working. 
+        `The fours are the kind of employees companies look for. You are focused, goal-oriented and super hard working. 
       You can fix any situation irrespective of time, place or condition. As dedicated and reliable, your seniors are likely to bestow you with responsibilities. 
       This is the reason your position graph is always moving upwards on the professional front.  You are a master in completing any task given to you. 
       Whether it boring, monotonous or even time consuming, you do not give up on completing it. Others may give up after some time but you don't until the task is completed. 
       This is the reason you turn out to be good trainers.`,
 
       "love":
-      `Looking at the seriousness you keep regarding life, you are not a natural romantic. You are not the kind who can sweep his/her lover off their feet or plan a pomp surprise celebration for them. 
+        `Looking at the seriousness you keep regarding life, you are not a natural romantic. You are not the kind who can sweep his/her lover off their feet or plan a pomp surprise celebration for them. 
       You cannot grant a fairy-tale moment to your partners this can be one reason you are considered a sloppy lover. 
       Relationship for you is a serious genre that you deal with just like other aspects of your life. There is no special treatment from your end. 
       You desire a steady relationship and a partner who is as hard-working as you.
@@ -234,7 +234,8 @@ const soulUrgeNumberData = {
     },
 
     "5": {
-      "personality": `You are an explorative personality who loves to explore. You adore your freedom and ensures that nobody dares to take it away from you. 
+        "personality": 
+        `You are an explorative personality who loves to explore. You adore your freedom and ensures that nobody dares to take it away from you. 
       Traveling, meeting new people, enjoying even the smallest experience is what describes you. Curiosity runs in your blood, it pushes you to touch new heights.
       You are also a risk- taker but a calculated one. The risk is worth the leap is what you always make sure. 
       The adventure-seeking nerve makes you a good motivator to push people to explore their potential. Fearlessness is what you constantly aim to conquer, 
@@ -242,7 +243,7 @@ const soulUrgeNumberData = {
       Monotony bores you and you make sure to exit any relation or situation that cradles it.`,
 
 
-      "characteristic": 
+      "characteristic":
       `For positive,
 
       you are full of ideas, which helps to enhance your overall personality and also image amongst people. You inspire people both on the professional and personal front. 
@@ -273,7 +274,7 @@ const soulUrgeNumberData = {
     },
 
     "6": {
-      "personality": 
+        "personality":
       `You are natural caretakers and are ready to go to any limit to keep your closed ones happy and content. 
       Your sacrificing nature makes you a people's person and also one of the most naïve personality. Your motherly side often makes you choose careers like teaching, training, childcare, etc. 
       Your emotionally intuitive nature makes you super kind that is taken for granted by some often. 
@@ -281,7 +282,7 @@ const soulUrgeNumberData = {
       Your escape from harsh reality is a drawback you should overcome. You love to take up responsibilities and make sure to do justice to the same. 
       Your humility is a gem on your personality crown.`,
 
-      "characteristic": 
+      "characteristic":
       `For positive, 
       the empathetic nature gives you a big heart to understand each one's point of view and feelings. 
       You prefer keeping others comfort before yours, this is the reason you do not think about yourself at all. 
@@ -315,7 +316,7 @@ const soulUrgeNumberData = {
     },
 
     "7": {
-      "personality": 
+        "personality":
       `Life path number 7 is always thirsty for knowledge. Your basic aim of life is to explore your surroundings and develop both spiritually and mentally. 
       You are a seeker of reality and are on the lookout to attain wisdom. In some way, you are also a perfectionist, 
       which might make your relation with people uneasy as perfection that you seek is only in your mind. You often lookout for flaws in people which does let you earn a good reputation. 
@@ -324,7 +325,7 @@ const soulUrgeNumberData = {
       Such an effort might backfire and make people look down at you as vulgar and judgmental. 
       You love your lonely mental place and most of the time are busy finding answers about your life and its purpose.`,
 
-      "characteristic": 
+      "characteristic":
       `For positive,
 
       you prefer to work in solitude and figure out things alone without anyone's help. You have your own beliefs and you like to stick to them all the time. 
@@ -360,14 +361,14 @@ const soulUrgeNumberData = {
     },
 
     "8": {
-      "personality": 
+        "personality":
       `People who belong to the life path number 8 are hardworking and goal-oriented. Irrespective of that you are also very materialistic. 
       Since you are a very ambitious person. You are also too honest and straightforward which might give you a tough time with people around. 
       You are not very open to taking advice from anyone as you think too highly of yourself. You always want to be the choice maker rather than anyone else getting to decide for you. 
       You are a very energetic person and know how to deal with it. You have the qualities of a leader and are very clear about your goals. 
       You are passionate about your work as it will lead you to earn good money which is your ultimate goal.`,
 
-      "characteristic": 
+      "characteristic":
       `For positive, 
 
       shower of power and money if dealt nicely can bring out the responsible side of you and make you gain money and fame quickly. 
@@ -400,7 +401,7 @@ const soulUrgeNumberData = {
     },
 
     "9": {
-      "personality": 
+        "personality":
       `Generosity and emotion are two pillars of your existence. Since you are a concoction of all the numbers, you are the powerhouse of energy. 
       You are full of compassion and strength which help you cope with life and other aspects of life. You have diverse knowledge in almost all the field which makes you an intellectual person. 
       Since you are made from the extraction of all the numbers you are adaptable, mysterious and also diverse. You possess creative thinking and artistic flair. 
@@ -408,7 +409,7 @@ const soulUrgeNumberData = {
       Your personality is complex and multi-layered which makes you not very open to learning and advice.`,
 
 
-      "characteristic": 
+      "characteristic":
       `For positive, 
 
       surprisingly, your mantra for life is live and let live. You are versatile in your talent which lets you explore various types of fields in career. 
@@ -441,7 +442,7 @@ const soulUrgeNumberData = {
     },
 
     "11": {
-      "personality":
+        "personality":
       `The Life Path Number 11 is a mighty number which has a great potential to be an inspiring soul for others. 
       People with 11 life path number have the ability to be magical and impressive with their skills and capabilities. 
       You can be both a source of energy and a source of light for others and irradiate them with your wisdom. 
@@ -463,7 +464,7 @@ const soulUrgeNumberData = {
       Your empathy makes you an outstanding mediator, and you can listen to others without passing judgement and provide sound guidance about the best course of action. 
       You possess tremendous inner strength and are capable of completing every task you put your mind to.`,
 
-      "career": 
+      "career":
       `The Life Path Number 11, a master number in numerology, is well-suited for work involving diverse worldviews and negotiation, 
       making careers in foreign affairs and dispute resolution an excellent fit. 11s have a knack for mediating and are often sought by employers for their problem-solving abilities.
 
@@ -482,7 +483,7 @@ const soulUrgeNumberData = {
     },
 
     "22": {
-      "personality": 
+        "personality":
       `This Life Path Number 22 is the most powerful of them all. It will give you a lot of success, knowledge, and money as well. 
       There are tremendous possibilities for you to indulge in, depending on what you choose to do. You can either have the probability to find something tremendous here or lead the simple life.
 
@@ -495,7 +496,7 @@ const soulUrgeNumberData = {
       It makes you create a following of sorts, all of which may have a common goal or aim. You may be able to get people together to unite in search of a common goal without you flying high above the ground. 
       You do all these things with humility and subtlety.`,
 
-      "characteristic": 
+      "characteristic":
       `So, people with the Life Path Number 22 may have a great chance to get into politics, business. You are very sensible, logical and pragmatic which makes you deal with all situations in a more practical manner. 
       You have a vision and a glimpse of how to reach your goal, and you do exactly what is required, making you a successful person.
       You have an idea of what will work and what will not, on which you make further decisions on how to reach your goal. 
@@ -522,7 +523,7 @@ const soulUrgeNumberData = {
     },
 
     "33": {
-      "personality":
+        "personality":
       `Simply put, they get drained, and instead of finding ways to recharge their spiritual energies, 
       they prefer to let themselves become careless and apathetic to the problems and plight of others around them. 
       Though they do this for self-preservation, they can easily be seduced by the ease and comfort it provides, and slowly start sliding into negative behaviour. 
@@ -551,5 +552,5 @@ const soulUrgeNumberData = {
       Their trust and support make them compatible partners for several life path numbers. As a Master Number, 33 shares compatibility similar to Number 6, 
       but they should seek partners with positive energies that contribute to their happiness and the world.`
     }
-  }
-  ;
+}
+;
