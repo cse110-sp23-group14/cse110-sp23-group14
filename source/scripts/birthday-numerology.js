@@ -1,9 +1,9 @@
 function showNewPage() {
 
-    let birthday = localStorage.getItem("birthday");
+    const birthday = localStorage.getItem("birthday");
     let text1 = "Your Life Path Number is:";
     let text2 = "";
-    let lifePathNumber=calculateLifePathNumber(birthday);
+    const lifePathNumber=calculateLifePathNumber(birthday);
     if (!birthday) {
         text1 = "We do not have your birthday.";
     } else {
@@ -26,7 +26,7 @@ function showNewPage() {
     `;
 
     setTimeout(function() {
-        let text2Element = document.getElementsByClassName("text2")[0];
+        const text2Element = document.getElementsByClassName("text2")[0];
         text2Element.style.transition = "opacity 1s ease";
         text2Element.style.opacity = "1";
     }, 3000); // Delay in milliseconds (3000ms = 3 seconds)
@@ -165,7 +165,7 @@ const soulUrgeNumberData = {
        You are limitless and enjoy living your present to the fullest without worrying about tomorrow.  Such a nature often pushes you to escape taking up responsibility. 
        You are a die-heart spender so, saving is not something you do and due to which you suffer later.`,
 
-      "characteristic":
+        "characteristic":
         `For positive, 
       you love yourself and this is the reason you are less concerned about what others feel or think about you. As your own counsellor, 
       you easily criticize yourself when needed and ensure to work on such shortcomings. With excellent communication skills, 
@@ -178,13 +178,13 @@ const soulUrgeNumberData = {
       Since you are good at most of the things you do, this often creates a lot of confusion in deciding which work to take up first. Due to this, you lack focus. 
       Overthinking and analysing is what you do most of the time, this affects your productivity and holds you from giving your best.`,
 
-      "career":
+        "career":
       `You are quite practical and are mostly into the artistic, intellectual and creative category of work. 
       You are not a person who can excel in businesses as you are fickle-minded. When it comes to hobbies and passion, you might find it difficult to settle in a job. 
       Your spontaneous attitude makes you a quick learner and you play on your strengths. Do not doubt your skills and go-ahead to perform to the best of your ability.
         You need to ensure you do not fall towards the negative side of your personality because then you are likely to ruin your built image and also waste your skills.`,
 
-      "love":
+        "love":
       `Your friendly nature makes you an interesting personality as a partner. You adore joy, happiness, and creativity and that is what you look for in your relationship. 
       For you, self-expression and individuality is the most important. On the contrary, you are hesitant in giving yourself fully to the partner.  
       You enjoy the company of a person who is almost like you but not completely. Even though you are your own mentor and guide, 
@@ -202,7 +202,7 @@ const soulUrgeNumberData = {
       Companies love to have employees like you, who are team players and can hold the team together. You are imaginative, rational and anti any kind of injustice that takes place anywhere. 
       You are trustworthy when it comes to emotional support and people can depend on you for any kind of assistance. Your seriousness and hard work are likely to take you a long way.`,
 
-      "characteristic":
+        "characteristic":
         `For Positive, 
 
       you are down to earth which makes you approachable and reachable for any kind of assistance. You are people's person that is why you are amongst the much need people in the core group. 
@@ -217,14 +217,14 @@ const soulUrgeNumberData = {
       You are a staunch rule follower and expect others to have the same ideology. 
       If you find out people working or associated with you do not carry the same ideology, then you tend to lash out at them, you become impolite, even authoritative which gives a negative impact on your image`,
 
-      "career":
+        "career":
         `The fours are the kind of employees companies look for. You are focused, goal-oriented and super hard working. 
       You can fix any situation irrespective of time, place or condition. As dedicated and reliable, your seniors are likely to bestow you with responsibilities. 
       This is the reason your position graph is always moving upwards on the professional front.  You are a master in completing any task given to you. 
       Whether it boring, monotonous or even time consuming, you do not give up on completing it. Others may give up after some time but you don't until the task is completed. 
       This is the reason you turn out to be good trainers.`,
 
-      "love":
+        "love":
         `Looking at the seriousness you keep regarding life, you are not a natural romantic. You are not the kind who can sweep his/her lover off their feet or plan a pomp surprise celebration for them. 
       You cannot grant a fairy-tale moment to your partners this can be one reason you are considered a sloppy lover. 
       Relationship for you is a serious genre that you deal with just like other aspects of your life. There is no special treatment from your end. 
@@ -243,7 +243,7 @@ const soulUrgeNumberData = {
       Monotony bores you and you make sure to exit any relation or situation that cradles it.`,
 
 
-      "characteristic":
+        "characteristic":
       `For positive,
 
       you are full of ideas, which helps to enhance your overall personality and also image amongst people. You inspire people both on the professional and personal front. 
@@ -258,14 +258,14 @@ const soulUrgeNumberData = {
       The rebellious side of you turns to active mode when someone tries to tie you or take away your freedom. 
       You are inclined towards making a lot of enemies, ensure you keep yourself away from such situations. Stay away from fights as much as possible to preserve peace in life`, 
 
-      "career":`Committing to a career is very difficult for the fives as they fear to be tied. You are a powerhouse of energy, ideas, 
+        "career":`Committing to a career is very difficult for the fives as they fear to be tied. You are a powerhouse of energy, ideas, 
       and passion and if you realize that the job does not give justice to your expectation, you tend to run away from such profiles. 
       Your fluctuating mind and restlessness often restrict you from taking up new or long projects, as you are doubtful about your stability. 
       You very well know that excitement or zeal for something does not stay the same in you over time. You seek perfection but lack commitment and prolonged concentration,
        this is the reason you feel directionless most of the time. The best part about fives is that you can develop new skills in any field, so the right flexibility and liking, 
        this is the only way you can hold yourself and settle to find a purpose in life.`,
 
-       "love":`Your free-spiritedness is one of the charming facts about you that attracts people towards you. Even though you are shy about romance, you very well know what you seek. 
+        "love":`Your free-spiritedness is one of the charming facts about you that attracts people towards you. Even though you are shy about romance, you very well know what you seek. 
        The fear of being pulled by your partner into his/ her style of living, you avoid any kind of commitment and serious relationships. 
        Since freedom is what you love the most, you are not ready to compromise even if it costs keeping the love of your life at one arm distance.
 
@@ -282,7 +282,7 @@ const soulUrgeNumberData = {
       Your escape from harsh reality is a drawback you should overcome. You love to take up responsibilities and make sure to do justice to the same. 
       Your humility is a gem on your personality crown.`,
 
-      "characteristic":
+        "characteristic":
       `For positive, 
       the empathetic nature gives you a big heart to understand each one's point of view and feelings. 
       You prefer keeping others comfort before yours, this is the reason you do not think about yourself at all. 
@@ -297,14 +297,14 @@ const soulUrgeNumberData = {
       you do not get a chance to exhibit your talent and skills that might benefit you. In harsh words, you do not mind being slaves to people.
        With all your energy channelized towards others betterment, you are likely to get sick worrying and eventually you are unable to showcase your talent, as you avoid taking hard tasks.`,
 
-     "career":
+        "career":
      `You lack self-confidence and are mostly the back-bencher in all the fields, courtesy you're giving nature. On the contrary, you are the one who spreads a cozy vibe at work. 
      You are an employee who is always ready to contribute as much as you can. This is the reason most of you opt for professions like social work, teaching, training, etc. 
      You can excel in the leadership position, as you are someone who ensures peace and harmony along with the betterment of your fellow members. 
      You are a control freak, a problem solver with a cool mind, this is the reason your team is always disciplined and happy at the same time. 
      Your decision-making skills work well. You are a soft-spoken person, this gives you a chance to show your talent and skills to others around.`,
 
-     "love":
+        "love":
      `Reading all the above qualities, it is quite evident that you are an amazing partner when it comes to relationships. 
      Your caring, selfless nature makes the partner comfortable, as they get all the attention and the right to make decisions.
       Your motherly nature does not only confined to the partner, but you are also the same when it comes to your family. 
@@ -325,7 +325,7 @@ const soulUrgeNumberData = {
       Such an effort might backfire and make people look down at you as vulgar and judgmental. 
       You love your lonely mental place and most of the time are busy finding answers about your life and its purpose.`,
 
-      "characteristic":
+        "characteristic":
       `For positive,
 
       you prefer to work in solitude and figure out things alone without anyone's help. You have your own beliefs and you like to stick to them all the time. 
@@ -344,14 +344,14 @@ const soulUrgeNumberData = {
       You love to escape from reality and often appear is a person who is not understanding. 
       Unfortunately, you can be exhausting to be around.`,
 
-      "career":
+        "career":
       `You are a learner and also a wise man at the same time at work. You enjoy learning practically than theoretically. 
       Intuitiveness is one of your qualities. You have excellent communication skills and are a good guide to others. 
       Since you are intelligent and observant you are likely to take up professions like scientists, investigation, philosophy, etc. 
       You enjoy working independently. Comfort takes a back seat when it comes to focusing at work and completing the task. 
       In spite of that, you are anti-deadlines. You have your way of working which you do not like to change when others advise you to follow a different way of working. `,
 
-      "love":
+        "love":
       `You tend to fall in love quickly if you ignore the bug of finding self. At times the blind run for personal quest makes your partner feel out of place, lonely and unwanted. 
       You as a lover you always want reassurance in the relationship. At times, to make the condition right you can overdo love declaration and gestures which might make your partner feel awkward. 
       Winning your trust is a tedious task. You love natural beauty and prefer to cradle yourself in the same- close to nature. 
@@ -368,7 +368,7 @@ const soulUrgeNumberData = {
       You are a very energetic person and know how to deal with it. You have the qualities of a leader and are very clear about your goals. 
       You are passionate about your work as it will lead you to earn good money which is your ultimate goal.`,
 
-      "characteristic":
+        "characteristic":
       `For positive, 
 
       shower of power and money if dealt nicely can bring out the responsible side of you and make you gain money and fame quickly. 
@@ -385,11 +385,11 @@ const soulUrgeNumberData = {
       You are too materialistic due to which you fail to see the emotional side of life. You are self-centred and you expect your goal to be everyone's too. 
       Your swollen ego does not let you take advice and make your life imbalanced.`,
 
-      "career":`You are extremely business-minded. You are thirsty for growth all the time which pushes you to reach new heights. 
+        "career":`You are extremely business-minded. You are thirsty for growth all the time which pushes you to reach new heights. 
       People with this life path number often become surgeons, tech specialists, etc. You aim to acquire more and more wealth and power. 
       Money oriented work lures you all the time. You have leadership skills that can push a team to aim high and perform exceptionally well for power and money.`,
 
-      "love":
+        "love":
       `You are good at reading people but lack the art of expressing in a relationship. 
       You are likely to spend a lot on your partner but it does not makeup to the emotional support they seek. 
       Over-spending on a partner might annoy them after some time. You are against infidelity and cannot tolerate it in any form. 
@@ -409,7 +409,7 @@ const soulUrgeNumberData = {
       Your personality is complex and multi-layered which makes you not very open to learning and advice.`,
 
 
-      "characteristic":
+        "characteristic":
       `For positive, 
 
       surprisingly, your mantra for life is live and let live. You are versatile in your talent which lets you explore various types of fields in career. 
@@ -426,13 +426,13 @@ const soulUrgeNumberData = {
       it is likely to hamper your progress. You lack the tendency to let things go, which eventually hurts you the most. 
       In spite of being diverse yourself, you do not appreciate people who are diverse in personality, choices or opinions.`,
 
-      "career":
+        "career":
       `Life path number 9 your dedication and hard work lets you earn good money in terms of business and crack good deals for those in the job. 
       Concentration is very important if you want to attain prosperity and success. Avoid being fearful, it will block you from performing well and even exploring new opportunities. 
       The scars of the past are likely to haunt you, which eventually affect your overall wellbeing. Since you are adaptable, you have a lot of options open in terms of career and business. 
       Flexibility will take you to new heights in careers like psychology, philosophy, etc. You will turn out to be a great boss as you are not a control freak.`,
 
-      "love":
+        "love":
       `Unfortunately, you are not a very dedicated person in the relationship. The need for freedom does not let you be completely into anyone. 
       If the partner is controlling a little dominating you do not go well with them or eventually escape. On the contrary, you are very naïve when it comes to love. 
       You end up being a victim in the relationship mostly. You are ready to sacrifice yourself to make the partner happy and comfortable. 
@@ -454,7 +454,7 @@ const soulUrgeNumberData = {
       You may not be aware of the surrounding that you create with your aura, but you do influence many people around you without you being conscious about it. 
       This suggests that you may be quite powerful and prominent in your essence.`,
 
-      "characteristic":
+        "characteristic":
       `You're a visionary who struggles to live up to other people's standards. As a result, 11s make fantastic artists, poets, and musicians. 
       You are an expert at translating your cosmic consciousness into art, and you aren't afraid to produce works that others consider avant-garde or strange.
 
@@ -464,7 +464,7 @@ const soulUrgeNumberData = {
       Your empathy makes you an outstanding mediator, and you can listen to others without passing judgement and provide sound guidance about the best course of action. 
       You possess tremendous inner strength and are capable of completing every task you put your mind to.`,
 
-      "career":
+        "career":
       `The Life Path Number 11, a master number in numerology, is well-suited for work involving diverse worldviews and negotiation, 
       making careers in foreign affairs and dispute resolution an excellent fit. 11s have a knack for mediating and are often sought by employers for their problem-solving abilities.
 
@@ -475,7 +475,7 @@ const soulUrgeNumberData = {
       Importantly, they seek religious traditions that permit personal exploration and discovery. Overall, number 11s are highly intuitive and adaptable, 
       possessing a unique blend of worldly negotiation skills and deep spiritual understanding.`,
 
-      "love":
+        "love":
       `Individuals with Life Path Number 11 possess natural diplomacy and tact. They are skilled at uniting different viewpoints and foster harmony. 
       With a strong sense of aesthetics and rhythm, they excel in fields such as massage, acupuncture, physical therapy, and counselling. Emotionally sensitive and loyal, 
       they thrive in relationships that have spiritual engagement and mutual understanding. They share a unique connection with those of Life Path Number 2, 
@@ -496,7 +496,7 @@ const soulUrgeNumberData = {
       It makes you create a following of sorts, all of which may have a common goal or aim. You may be able to get people together to unite in search of a common goal without you flying high above the ground. 
       You do all these things with humility and subtlety.`,
 
-      "characteristic":
+        "characteristic":
       `So, people with the Life Path Number 22 may have a great chance to get into politics, business. You are very sensible, logical and pragmatic which makes you deal with all situations in a more practical manner. 
       You have a vision and a glimpse of how to reach your goal, and you do exactly what is required, making you a successful person.
       You have an idea of what will work and what will not, on which you make further decisions on how to reach your goal. 
@@ -505,12 +505,12 @@ const soulUrgeNumberData = {
       Even though this is one of the Life Path Numbers which holds great potential, it is also challenging to maintain and attain an equanimous state of mind while having to do so many tasks. 
       You may have a lot of ambitions and objectives to fulfill which requires a vast amount of energy, power, and determination.`,
 
-      "career":
+        "career":
       `People with the number 22 are master builders, and they always want to create. As they are creative, they can work great in the field of design. 
       Their communication skills help them deal with clients efficiently, and can be good in sales. The strength of people with life path number 22 is innumerable; 
       thus through considerable efforts, they can bring together the three powerful things (People, Idea & Resources) and implement their plans effectively for the bigger cause.`,
 
-      "love":
+        "love":
       `As far as your relationship with your partner is concerned, you are a substantial lover who takes care of their partner's needs. 
       You are someone who stands by his/her partner when required, be it emotional support or giving proper advice when needed. 
       Though you do not have any unrealistic or imaginary thoughts about love, you do care about your partner and your close ones as per your numerology compatibility chart. 
@@ -532,20 +532,20 @@ const soulUrgeNumberData = {
       and control the emotional aspirations and aspersions of the people around them. After that, it is impossible to inform them to the erosion of their self-control, 
       and it is easy for them to be lost within the manifest destructiveness of the number 33.`,
 
-      "characteristic":`
+        "characteristic":`
       Life Path Number 33, in numerology, shares altruistic, creative, and nurturing qualities with Life Path Number 6, reflecting a powerful desire to serve and heal others. 
       However, unlike Number 6, 33 has mastered the ability to be selflessly giving without harm to self. They feel the distress of those around them deeply and constantly seek to alleviate it. 
       Their potential to make the world a better place through alleviation of suffering is one of their greatest challenges, which they might fully realize only in mid-life. 
       This path number carries the responsibility of enhanced cosmic consciousness, with a focus on uplifting humanity. Ultimately, Life Path Number 33 embodies altruism, striving to uplift global consciousness.`,
 
-      "career":
+        "career":
       `Life Path Number 33, known as the 'master teacher', embodies great spiritual potential and a strong desire to aid those in need. 
       With talents in arts and a charismatic nature, 33s may find success in music, visual arts, or business. However, a career that doesn't involve service or charity work may leave them unfulfilled. 
       Their nurturing and giving nature may lead them towards professions that benefit the less fortunate. Despite their inclination to self-sacrifice potentially interfering with their career growth, 
       they are urged to balance their altruistic nature with their professional goals. Ultimately, as a Master Number, 33s feel a cosmic responsibility, 
       seeking to help others in the most direct and specific ways possible.`,
       
-      "love":
+        "love":
       `People with Life Path Number 33 are generous, kind, and attractive, often admired for their humble yet proud demeanor. 
       They possess great understanding and listening skills, offering sympathy to those around them. However, they need to balance nurturing with enabling, u
       nderstanding that they can't protect their loved ones from every negative experience. In relationships, they seek harmony and make warm, protective, and understanding parents. 
