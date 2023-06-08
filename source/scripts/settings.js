@@ -86,7 +86,6 @@ function setHoroscope() {
 function saveUserName() {
     const userName = document.getElementById('name').value;
     localStorage.setItem('name', userName);
-    alert("Name saved successfully!");
 }
 
 /**
@@ -118,8 +117,6 @@ function saveBirthday() {
     localStorage.setItem("birthday", birthday);
     localStorage.setItem("birthdayYear",birthdayYear);
     location.reload(); // Refresh the page
-    // Display a success message
-    alert("Birthday saved successfully!");
 }
 
 /**
