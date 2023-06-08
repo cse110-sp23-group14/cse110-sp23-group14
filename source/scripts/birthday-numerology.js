@@ -1,6 +1,6 @@
 function showNewPage() {
 
-    const birthday = localStorage.getItem("birthday");
+    const birthday = localStorage.getItem("birthdayYear");
     let text1 = "Your Life Path Number is:";
     let text2 = "";
     const lifePathNumber=calculateLifePathNumber(birthday);
@@ -18,10 +18,10 @@ function showNewPage() {
             <p class="text2">${text2}</p>
         </div>
         <div>
-            <button onclick="showPopup('personality', 1)">Personality</button>
-            <button onclick="showPopup('characteristic',1)">Characteristic</button>
-            <button onclick="showPopup('career',1)">Career</button>
-            <button onclick="showPopup('love',1)">Love</button>
+            <button onclick="showPopup('personality', ${lifePathNumber})">Personality</button>
+            <button onclick="showPopup('characteristic',${lifePathNumber})">Characteristic</button>
+            <button onclick="showPopup('career',${lifePathNumber})">Career</button>
+            <button onclick="showPopup('love',${lifePathNumber})">Love</button>
         </div>
     `;
 
@@ -57,18 +57,20 @@ function showPopup(popupId, lifePathNumber) {
 
 
 function calculateLifePathNumber(birthDate) {
+    console.log(birthDate);
     // Split the birth date into an array
-    const dateArray = birthDate.split(".");
+    const dateArray = birthDate.split('.');
 
     // Extract year, month, and day from the array
     const year = dateArray[0];
     const month = dateArray[1];
     const day = dateArray[2];
-
+    console.log(dateArray);
     // Reduce each part to a single digit or a master number
     const reducedYear = reduceNumber(year);
     const reducedMonth = reduceNumber(month);
     const reducedDay = reduceNumber(day);
+    
 
     // Calculate the sum of year, month, and day
     let sum = reducedYear + reducedMonth + reducedDay;
@@ -81,8 +83,7 @@ function calculateLifePathNumber(birthDate) {
 }
 
 function reduceNumber(number) {
-    let result = number;
-
+    let result = parseInt(number, 10);
     while (result > 9) {
         const digits = Array.from(result.toString(), Number);
         result = digits.reduce((acc, curr) => {
