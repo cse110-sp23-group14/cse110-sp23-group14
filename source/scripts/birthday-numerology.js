@@ -1,28 +1,34 @@
 function showNewPage() {
-    const birthday = localStorage.getItem('birthday');
-    const life=calculateLifePathNumber(birthday);
-    console.log(life);
+
+    var birthday = localStorage.getItem("birthday");
+    var text1 = "Your Life Path Number is:";
+    var text2 = "";
+    var lifePathNumber=calculateLifePathNumber(birthday);
+    if (!birthday) {
+        text1 = "We do not have your birthday.";
+    } else {
+        // Calculate the life path number based on the birthday
+        // Replace this logic with your actual calculation
+        var lifePathNumber = calculateLifePathNumber(birthday);
+        text2 = lifePathNumber;
+    }
     document.getElementById("main-content").innerHTML = `
-        <div class="container">
-            <span class="text1">Your Life Path Number is:</span>
-            <span class="text2">What</span>
+        <div>
+            <p class="text1">${text1}</p>
+            <p class="text2">${text2}</p>
         </div>
         <div>
-            <button onclick="showPopup('personality', '1')">Personality</button>
-            <button onclick="showPopup('characteristic','1')">Characteristic</button>
-            <button onclick="showPopup('career','1')">Career</button>
-            <button onclick="showPopup('love','1')">Love</button>
+            <button onclick="showPopup('personality', 1)">Personality</button>
+            <button onclick="showPopup('characteristic',1)">Characteristic</button>
+            <button onclick="showPopup('career',1)">Career</button>
+            <button onclick="showPopup('love',1)">Love</button>
         </div>
     `;
-  
-    var lifePathNumber = "7";
-    document.getElementsByClassName("text2").textContent = lifePathNumber;
 
     setTimeout(function() {
         var text2Element = document.getElementsByClassName("text2")[0];
         text2Element.style.transition = "opacity 1s ease";
         text2Element.style.opacity = "1";
-        text2Element.innerHTML=toString(life);
     }, 3000); // Delay in milliseconds (3000ms = 3 seconds)
 }
 
@@ -34,10 +40,14 @@ function showPopup(popupId, lifePathNumber) {
     const popup = document.getElementById(popupId);
     const personalityData = soulUrgeNumberData[lifePathNumber][popupId];
 
-    // Update the popup content with the personality information
+    // Update the popup content with the personality information\
     popup.innerHTML = `
         <span class="popup-close" onclick="hidePopup('${popupId}')">&times;</span>
-        <h3>${popupId}</h3>
+        <img class="image" src="assets/lifepath/${lifePathNumber}.jpg" alt="horoscope sign">
+        <br>
+        <br>
+        <h3 >${popupId}</h3>
+        <br>
         <p>${personalityData}</p>
     `;
 
@@ -47,40 +57,40 @@ function showPopup(popupId, lifePathNumber) {
 
 
 function calculateLifePathNumber(birthDate) {
-    // Split the birth date into an array
-    const dateArray = birthDate.split(".");
+  // Split the birth date into an array
+  const dateArray = birthDate.split(".");
 
-    // Extract year, month, and day from the array
-    const year = dateArray[0];
-    const month = dateArray[1];
-    const day = dateArray[2];
+  // Extract year, month, and day from the array
+  const year = dateArray[0];
+  const month = dateArray[1];
+  const day = dateArray[2];
 
-    // Reduce each part to a single digit or a master number
-    const reducedYear = reduceNumber(year);
-    const reducedMonth = reduceNumber(month);
-    const reducedDay = reduceNumber(day);
+  // Reduce each part to a single digit or a master number
+  const reducedYear = reduceNumber(year);
+  const reducedMonth = reduceNumber(month);
+  const reducedDay = reduceNumber(day);
 
-    // Calculate the sum of year, month, and day
-    let sum = reducedYear + reducedMonth + reducedDay;
+  // Calculate the sum of year, month, and day
+  let sum = reducedYear + reducedMonth + reducedDay;
 
-    // Reduce the sum to a single digit or a master number
-    sum = reduceNumber(sum);
+  // Reduce the sum to a single digit or a master number
+  sum = reduceNumber(sum);
 
-    // Return the calculated Life Path number
-    return sum;
+  // Return the calculated Life Path number
+  return sum;
 }
 
 function reduceNumber(number) {
-    let result = number;
+  let result = number;
 
-    while (result > 9 && result !== 11 && result !== 22 && result !== 33) {
-        const digits = Array.from(result.toString(), Number);
-        result = digits.reduce((acc, curr) => {
-            return acc + curr;
-        }, 0);
-    }
+  while (result > 9) {
+      const digits = Array.from(result.toString(), Number);
+      result = digits.reduce((acc, curr) => {
+          return acc + curr;
+      }, 0);
+  }
 
-    return result;
+  return result;
 }
 
 
@@ -91,10 +101,8 @@ const soulUrgeNumberData = {
             `As natural-born leaders, you are not only courageous but also high spirited. You love your freedom, so it is ensured that its reins are intact in your hands. You are well- suited for self-employment and would excel as a self-boss. Your goal-oriented nature has taken you a long way in your life, if not yet then it is likely to show its effect in the coming time. The pure dedication and focus with which you take up any task or errand give you success most of the time. You put your heart and soul into achieving your target or task. You can be a multi-tasker if the work interests you and you have the zeal to do it. You are mostly clear about the path of achievement but you also demand attention and love from people around. Often you get agitated when things do not go your way. The swollen ego, boastful nature and arrogance at times drive you insane and you hamper things around.`,
 
         "characteristic": 
-            `Positive: 
-            As declared leaders, you own qualities like lateral thinking and creativity. Others might perceive you as self-centred and egoistic, but your leadership and nut-cracking quality is what makes people envious of you. Dynamic nature, heart to take a risk and succeed are some positives which do not come in everyone and anyone.  
-            Negative:
-            It is quite evident that you are egoistic, self-centric and aggressive at times. You need to ensure that it does not reach a level that it starts to spoil things for you that you have built or earned. You mostly lose your cool when a problem pops up and lack patience.Overenthusiastic nature, dominating trait and at times the violent side of you might restrict your productivity and also be the reason for your downfall.
+            `For positive,  as declared leaders, you own qualities like lateral thinking and creativity. Others might perceive you as self-centred and egoistic, but your leadership and nut-cracking quality is what makes people envious of you. Dynamic nature, heart to take a risk and succeed are some positives which do not come in everyone and anyone. 
+            For negative, it is quite evident that you are egoistic, self-centric and aggressive at times. You need to ensure that it does not reach a level that it starts to spoil things for you that you have built or earned. You mostly lose your cool when a problem pops up and lack patience. Overenthusiastic nature, dominating trait and at times the violent side of you might restrict your productivity and also be the reason for your downfall.
             `,
         
         "career":
@@ -116,15 +124,15 @@ const soulUrgeNumberData = {
             People with this life path number are mostly in professions like spirituality, healing, nursing, etc.`,
 
         "characteristic": 
-        `Positive:
-        Sensitivity and loyalty run in your blood. It makes you a true friend or partner. 
+        `For positive, the twos
+        have sensitivity and loyalty run in your blood. It makes you a true friend or partner. 
         You stand strong in any situation to protect your loved ones. You are open to listening and are compassionate to others' feelings. 
         You are not the conflict initiators instead you always try to calm things down and maintain harmony. 
         You are observant and very well know how to use the minutest of detail to disarm negativity in the surrounding. 
-        You like your routine life and are not very open to frequent changes or alterations.
+        You like your routine life and are not very open to frequent changes or alterations. 
         
-        Negative:
-        The twos in spite of being diplomatic, lack the spine to take the lead and fight for the right. 
+        For negative,
+        the twos in spite of being diplomatic, lack the spine to take the lead and fight for the right. 
         You prefer to be in the shadow and wait for others to take a stand for you, to come up front. Since your emotional side is always high, things affect you very easily. 
         Due to this you become agitated and are likely to act weirdly. Somewhere in life, you are self-centred when it comes to your liking and comfort. 
         But you are spineless in context to standing for self. The art of holding back thoughts and over compromising in a relation are other traits in number 2. 
@@ -158,13 +166,13 @@ const soulUrgeNumberData = {
        You are a die-heart spender so, saving is not something you do and due to which you suffer later.`,
 
       "characteristic": 
-      `Positive:
-      You love yourself and this is the reason you are less concerned about what others feel or think about you. As your own counsellor, 
+      `For positive, 
+      you love yourself and this is the reason you are less concerned about what others feel or think about you. As your own counsellor, 
       you easily criticize yourself when needed and ensure to work on such shortcomings. With excellent communication skills, 
-      you work well in a team and can provide a comfortable environment to colleagues and co-workers. Your creative skills, cheerfulness, and friendly nature attract people towards you.
+      you work well in a team and can provide a comfortable environment to colleagues and co-workers. 
       
-      Negative:
-      You do not usually get hurt easily, but if you do then you cut off from people around and built a cocoon around you. 
+      For negative, 
+      you do not usually get hurt easily, but if you do then you cut off from people around and built a cocoon around you. 
       You act opposite to your true nature. In some worse cases, you even become sarcastic with intend to hurt the person who hurt you. 
       You are not someone who loves rules so, you do not like to work under rigid conditions. 
       Since you are good at most of the things you do, this often creates a lot of confusion in deciding which work to take up first. Due to this, you lack focus. 
@@ -194,21 +202,19 @@ const soulUrgeNumberData = {
       You are trustworthy when it comes to emotional support and people can depend on you for any kind of assistance. Your seriousness and hard work are likely to take you a long way.`,
 
       "characteristic": 
-      `Positive:
+      `For Positive, 
 
-      You are down to earth which makes you approachable and reachable for any kind of assistance. You are people's person that is why you are amongst the much need people in the core group. 
+      you are down to earth which makes you approachable and reachable for any kind of assistance. You are people's person that is why you are amongst the much need people in the core group. 
       The best part about you is that you do not surrender to any kind of peer pressure. Perseverance is what you demand most of the time from self and even from people around you. 
-      The orderly form of life is your life long mantra. You are a learner and seek knowledge from everywhere you go. Risk bearing feature is absent in your system, 
-      you would rather make a solid backup plan and act accordingly than depend on taking the risk without a safety net at hand. 
-      You are determined in whatever you do and even possess loner quality, where you can enjoy a lonely time too.
+      The orderly form of life is your life long mantra. You are a learner and seek knowledge from everywhere you go. You would rather make a solid backup plan and act accordingly than depend on taking the risk without a safety net at hand. 
+      You are determined in whatever you do and even possess loner quality.
       
-      Negative:
+      For Negative, 
       
-      Unfortunately, you are very harsh on yourself. Either it is because of some old wounds which have yet not healed or any mishap that has left an unhealed scar. 
+      unfortunately, you are very harsh on yourself. Either it is because of some old wounds which have yet not healed or any mishap that has left an unhealed scar. 
       Such things make you feeble and you find it hard to forget. One of the biggest problems with you is that you are not ready to compromise in any situation. 
-      You are a staunch rule follower and expect others to have the same ideology which is quite impossible most times. 
-      If you find out people working or associated with you do not carry the same ideology, then you tend to lash out at them, you become impolite, 
-      stubborn and even authoritative which gives a negative impact on your image`,
+      You are a staunch rule follower and expect others to have the same ideology. 
+      If you find out people working or associated with you do not carry the same ideology, then you tend to lash out at them, you become impolite, even authoritative which gives a negative impact on your image`,
 
       "career":
       `The fours are the kind of employees companies look for. You are focused, goal-oriented and super hard working. 
@@ -236,15 +242,15 @@ const soulUrgeNumberData = {
 
 
       "characteristic": 
-      `Positive:
+      `For positive,
 
-      You are full of ideas, which helps to enhance your overall personality and also image amongst people. You inspire people both on the professional and personal front. 
+      you are full of ideas, which helps to enhance your overall personality and also image amongst people. You inspire people both on the professional and personal front. 
       Since you are young at heart, you do not support orthodox ideologies and rules. Live life to the fullest without any restrictions is what you advise people all the time. 
       You possess good communication skills this helps you crack some good deals and even expand your social circle. 
       Progressive thinking is the tool that makes you live life in the highest way possible without any judgments.
       
-      Negative:
-      As a person who is never at rest, you often end up with unfinished tasks in your basket. Since you are too hyper with all the workaround, 
+      For negative,
+      as a person who is never at rest, you often end up with unfinished tasks in your basket. Since you are too hyper with all the workaround, 
       you just aim at doing everything at once leading to no work done. Lack of concentration makes you agitated and lose cool. 
       You are anxious most of the time, and anger always sits on your nose, if things do not go your way. 
       The rebellious side of you turns to active mode when someone tries to tie you or take away your freedom. 
@@ -275,22 +281,22 @@ const soulUrgeNumberData = {
       Your humility is a gem on your personality crown.`,
 
       "characteristic": 
-      `Positive:
-      The empathetic nature gives you a big heart to understand each one's point of view and feelings. 
+      `For positive, 
+      the empathetic nature gives you a big heart to understand each one's point of view and feelings. 
       You prefer keeping others comfort before yours, this is the reason you do not think about yourself at all. 
       Your sacrificing nature, makes you most wanted amongst family and friends. At times, the extent of sacrifice and the desperation to make the other person feel good has no limit, 
       which eventually affects your overall health and can exhaust you completely. Love, peace, and support are inbuilt emotions in you making you appear charming and the 
-      most warm-natured person to be with.
+      most warm-natured person to be with. 
       
-      Negative:
+      For negative, 
       
-      They say too much of everything is bad! Such is the case with the life path number 6. Your over-servicing nature makes you ignore yourself and results in self-destruction. 
+      they say too much of everything is bad! Such is the case with the life path number 6. Your over-servicing nature makes you ignore yourself and results in self-destruction. 
       By default, you assume that you are obliged to do things for others and keep your preferences at bay. Due to this, 
-      you do not get a chance to exhibit your talent and skills that might benefit you professionally and personally. To put it in harsh words, you do not mind being slaves to people.
+      you do not get a chance to exhibit your talent and skills that might benefit you. In harsh words, you do not mind being slaves to people.
        With all your energy channelized towards others betterment, you are likely to get sick worrying and eventually you are unable to showcase your talent, as you avoid taking hard tasks.`,
 
      "career":
-     `You lack self-confidence and are mostly the back-bencher in all the fields, courtesy you‘re giving nature. On the contrary, you are the one who spreads a cozy vibe at work. 
+     `You lack self-confidence and are mostly the back-bencher in all the fields, courtesy you're giving nature. On the contrary, you are the one who spreads a cozy vibe at work. 
      You are an employee who is always ready to contribute as much as you can. This is the reason most of you opt for professions like social work, teaching, training, etc. 
      You can excel in the leadership position, as you are someone who ensures peace and harmony along with the betterment of your fellow members. 
      You are a control freak, a problem solver with a cool mind, this is the reason your team is always disciplined and happy at the same time. 
@@ -318,22 +324,22 @@ const soulUrgeNumberData = {
       You love your lonely mental place and most of the time are busy finding answers about your life and its purpose.`,
 
       "characteristic": 
-      `Positive:
+      `For positive,
 
-      You prefer to work in solitude and figure out things alone without anyone's help. You have your own beliefs and you like to stick to them all the time. 
+      you prefer to work in solitude and figure out things alone without anyone's help. You have your own beliefs and you like to stick to them all the time. 
       It is very difficult to change your mindset or decisions. Even though you are a loner, 
       you have a magnetic charm that attracts people every time you decide to walk out of your shell are confident to express yourself. 
       At times people see a humorous side of you which they like. You are sensible and sensitive at the same time. 
-      You have infinite spiritual energy in you that helps you to evolve, know yourself and also introspect various aspects of life.
+      You have infinite spiritual energy in you that helps you to evolve, know yourself and also introspect various aspects of life. 
     
-      Negative:
+      For negative, 
       
-      Your loner side is not what people close to you enjoy. You often judge others because they do not have a mind-set like you or cannot do things just the way you like. 
-      Paranoia runs in your blood and is also the reason you are likely to collapse. 
+      your loner side is not what people close to you enjoy. You often judge others because they do not have a mind-set like you or cannot do things just the way you like. 
+      Paranoia runs in your blood and is also the reason you are likely to collapse.  
       The tiff between heart and mind is never-ending as you want to ignore your heart completely and follow your mind which is not possible. 
       Since you are on the lookout for inner peace, you fail to realize that it is right there and your mindset is the only barrier that restricts you from attaining it. 
-      You are a secretive person and someone who conceals his feelings easily, thus making it difficult to know what exactly you are feeling and feeding your mind. 
-      A cruel critic, slap tongue, careless use of words are few of your not so good sides. You love to escape from reality and often appear is a person who is not understanding. 
+      You are a secretive person and someone who conceals his feelings easily, thus making it difficult to know what exactly you are feeling. 
+      You love to escape from reality and often appear is a person who is not understanding. 
       Unfortunately, you can be exhausting to be around.`,
 
       "career":
@@ -361,21 +367,21 @@ const soulUrgeNumberData = {
       You are passionate about your work as it will lead you to earn good money which is your ultimate goal.`,
 
       "characteristic": 
-      `Positive:
+      `For positive, 
 
-      Shower of power and money if dealt nicely can bring out the responsible side of you and make you gain money and fame quickly. 
+      shower of power and money if dealt nicely can bring out the responsible side of you and make you gain money and fame quickly. 
       Your goal-oriented nature makes people look up to you in terms of work. You see things as black and white, the grey side does not exist for you. 
       You realize your responsibility as the provider of family and ensure that your family is happy and does not lack anything when it comes to money-related possessions. 
       Even after great failures, you have a zeal to bounce back and regain what you have lost with the help of clean ethics. 
-      The combination of energy, focus, and dedication makes you a successful person in any field you step in.
+      The combination of energy, focus, and dedication makes you a successful person in any field you step in. 
       
-      Negative:
+      For negative, 
       
-      With great power comes great responsibility! You often forget this rule due to which your life becomes unmanageable. 
+      with great power comes great responsibility! You often forget this rule due to which your life becomes unmanageable. 
       You do not know how to use your authority effectively, which leads to disaster. 
       Your careless attitude due to fame and monetary power gives people the leverage to disrespect you and take advantage of you. 
       You are too materialistic due to which you fail to see the emotional side of life. You are self-centred and you expect your goal to be everyone's too. 
-      Your swollen ego does not let you take advice and make your life imbalanced. The rigid concept of seeing life as black and white can trap you in fear.`,
+      Your swollen ego does not let you take advice and make your life imbalanced.`,
 
       "career":`You are extremely business-minded. You are thirsty for growth all the time which pushes you to reach new heights. 
       People with this life path number often become surgeons, tech specialists, etc. You aim to acquire more and more wealth and power. 
@@ -402,18 +408,18 @@ const soulUrgeNumberData = {
 
 
       "characteristic": 
-      `Positive:
+      `For positive, 
 
-      Surprisingly, your mantra for life is live and let live. You are versatile in your talent which lets you explore various types of fields in career. 
+      surprisingly, your mantra for life is live and let live. You are versatile in your talent which lets you explore various types of fields in career. 
       Humanity is very much alive in you which makes you soft-hearted towards people especially those who are close to you. 
       You have a deep affection for people who seek help from you, it pushes you to stretch to help them. 
       You are somewhat of a perfectionist and openly include people in your voyage who share the thought. You are not a macro thinker instead you concentrate on the bigger picture. 
       You like to share your dreams, goals with people it motivates you. Teamwork is your forte as you are a good decision-maker who is unbiased. 
       You support truth in every situation, you are not a blind follower. If you concentrate then you can excel creatively and can be influential. 
       
-      Negative:
+      For negative, 
       
-      You are never satisfied. In a broader term even when you achieve the goal, you still feel the task is unfinished and your goal becomes something else. 
+      you are never satisfied. In a broader term even when you achieve the goal, you still feel the task is unfinished and your goal becomes something else. 
       You lack the zeal to perform exceptionally as your mind is cluttered with uninvited thoughts. At times, materialistic desire can trigger in you and if given weight, 
       it is likely to hamper your progress. You lack the tendency to let things go, which eventually hurts you the most. 
       In spite of being diverse yourself, you do not appreciate people who are diverse in personality, choices or opinions.`,

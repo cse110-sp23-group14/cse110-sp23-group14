@@ -11,6 +11,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="styles/home-style.css">
         <link rel="stylesheet" href="styles/settings-style.css">
+        <link rel="stylesheet" href="styles/lifepath-style.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -76,6 +77,40 @@
             <a id="horoscope-button" class="button" href="#horoscope-popup">Today's Horoscope</a>
         </div>
         
+        <section id="lifepathpage">
+            <div class="site-content lifepath-content">
+                <div class="lifepath-background">
+                        <div id="main-content">
+                            <button id="start-button" onclick="showNewPage()">Discover Your Life Path Number Meaning</button>
+                        </div>
+                    
+                        <div id="personality" class="popup">
+                            <span class="popup-close" onclick="hidePopup('personality')">&times;</span>
+                            <h3>Personality</h3>
+                            <p id="personality-text">Personality description...</p>
+                        </div>
+                    
+                        <div id="characteristic" class="popup">
+                            <span class="popup-close" onclick="hidePopup('characteristic')">&times;</span>
+                            <h3>Characteristic</h3>
+                            <p id="characteristic-text">Characteristic description...</p>
+                        </div>
+                    
+                        <div id="career" class="popup">
+                            <span class="popup-close" onclick="hidePopup('career')">&times;</span>
+                            <h3>Careerssss</h3>
+                            <p id="career-text">Career description...</p>
+                        </div>
+                    
+                        <div id="love" class="popup">
+                            <span class="popup-close" onclick="hidePopup('love')">&times;</span>
+                            <h3>Love</h3>
+                            <p id="love-text">Love description...</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+
         <section id="settingpage">
                 <div class="site-content settings-content">
                     <div class="settings-menu-background">
@@ -111,6 +146,9 @@
                 </div>
         </section>
 
+
+        
+
         <section id="faqpage">
                 <div class="site-content faq">
                     <h1 id="title-faq">FAQ</h1>
@@ -120,6 +158,8 @@
         <script src="https://kit.fontawesome.com/ec9b6ab711.js" crossorigin="anonymous"></script>
         <script type="module" src="scripts/settings.js"></script>
         <script type="module" src="scripts/index.js"></script>
+        <script src="scripts/birthday-numerology.js"></script>
+
 
     </body>
 </html>
