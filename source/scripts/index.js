@@ -174,4 +174,9 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         const target = document.querySelector(this.getAttribute('href'));
         scrollToElement(target);
     });
+    document.getElementById('compatability-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        scrollToElement(target);
+    });
 });

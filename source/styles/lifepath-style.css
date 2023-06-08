@@ -81,18 +81,6 @@
     font-size: 24px;
 }
 
-@keyframes rotate {
-    0%{
-        transform: rotate(-360deg);
-        opacity: 0;
-    }
-    100%{
-        transform: rotate(0);
-        opacity: 1;
-    }
-            
-}
-
 .lifepath-content .popup-close:hover {
     color: #8c67b1;; /* Set a different color for hover effect */
 }

@@ -15,50 +15,6 @@
     <script src="https://kit.fontawesome.com/ec9b6ab711.js" crossorigin="anonymous"></script>
     <script type="module" src="../scripts/settings.js"></script>
     <script type="module" src="../scripts/compatability.js"></script>
-
-    <style>
-        /* Styles for the pop-up */
-        #pop{
-            margin-top: 1px;
-            position:relative;
-            align-items: center;
-            justify-content: center;
-        
-        }
-        .popup {
-            position: relative;
-            margin-left: 38%;
-       
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 20px;
-            width: 400px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            display: none;
-            animation: rotate 2s cubic-bezier(0.25, 0.46, 0.45,0.94) both;
-
-        }
-
-        .popup-close {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            cursor: pointer;
-        }
-
-        @keyframes rotate {
-            0%{
-                transform: rotate(-360deg);
-                opacity: 0;
-            }
-            100%{
-                transform: rotate(0);
-                opacity: 1;
-            }
-            
-        }
-    </style>
 </head>
 
 <body>
@@ -190,15 +146,6 @@
             </div>
         </div>
     </section>
-
-    <!--<div class="loading-container">
-        <div class="loading">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="loading-shadow"></div>
-    </div>-->
     <setion id="pop">
 
         <div id="popup" class="popup">
@@ -206,10 +153,6 @@
             <h3 id="popup-title"></h3>
             <p id="popup-description"></p>
         </div>
-
-
     </setion>
-
 </body>
-
 </html>

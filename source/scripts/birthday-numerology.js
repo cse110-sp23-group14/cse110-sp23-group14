@@ -42,7 +42,7 @@ function showPopup(popupId, lifePathNumber) {
 
     // Update the popup content with the personality information\
     popup.innerHTML = `
-        <span class="popup-close" onclick="hidePopup('${popupId}')">&times;</span>
+        <span class="popup-close1" onclick="hidePopup('${popupId}')">&times;</span>
         <img class="image" src="assets/lifepath/${lifePathNumber}.jpg" alt="horoscope sign">
         <br>
         <br>
