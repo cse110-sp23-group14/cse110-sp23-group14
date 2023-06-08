@@ -234,7 +234,7 @@ const soulUrgeNumberData = {
     },
 
     "5": {
-        "personality": 
+        "personality":
         `You are an explorative personality who loves to explore. You adore your freedom and ensures that nobody dares to take it away from you. 
       Traveling, meeting new people, enjoying even the smallest experience is what describes you. Curiosity runs in your blood, it pushes you to touch new heights.
       You are also a risk- taker but a calculated one. The risk is worth the leap is what you always make sure. 
@@ -256,7 +256,7 @@ const soulUrgeNumberData = {
       you just aim at doing everything at once leading to no work done. Lack of concentration makes you agitated and lose cool. 
       You are anxious most of the time, and anger always sits on your nose, if things do not go your way. 
       The rebellious side of you turns to active mode when someone tries to tie you or take away your freedom. 
-      You are inclined towards making a lot of enemies, ensure you keep yourself away from such situations. Stay away from fights as much as possible to preserve peace in life`, 
+      You are inclined towards making a lot of enemies, ensure you keep yourself away from such situations. Stay away from fights as much as possible to preserve peace in life`,
 
         "career":`Committing to a career is very difficult for the fives as they fear to be tied. You are a powerhouse of energy, ideas, 
       and passion and if you realize that the job does not give justice to your expectation, you tend to run away from such profiles. 
