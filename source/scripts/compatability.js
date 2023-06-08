@@ -198,20 +198,21 @@ const shape_left=document.querySelector('.shape-left');
 const shape_right=document.querySelector('.shape-right');
 const love_content=document.getElementById('description');
 const choose_sign_window=document.getElementById('choose-sign');
+
 //const result_window=document.getElementById('result');
 
-const capricorn_sign=document.getElementById('capricorn');
-const cancer_sign=document.getElementById('cancer');
-const aquarius_sign=document.getElementById('aquarius');
-const gemini_sign=document.getElementById('gemini');
-const leo_sign=document.getElementById('leo');
-const libra_sign=document.getElementById('libra');
-const pisces_sign=document.getElementById('pisces');
-const sagittarius_sign=document.getElementById('sagittarius');
-const scorpio_sign=document.getElementById('scorpio');
-const taurus_sign=document.getElementById('taurus');
-const virgo_sign=document.getElementById('virgo');
-const aries_sign=document.getElementById('aries');
+const capricorn_sign=document.getElementById('Capricorn');
+const cancer_sign=document.getElementById('Cancer');
+const aquarius_sign=document.getElementById('Aquarius');
+const gemini_sign=document.getElementById('Gemini');
+const leo_sign=document.getElementById('Leo');
+const libra_sign=document.getElementById('Libra');
+const pisces_sign=document.getElementById('Pisces');
+const sagittarius_sign=document.getElementById('Sagittarius');
+const scorpio_sign=document.getElementById('Scorpio');
+const taurus_sign=document.getElementById('Taurus');
+const virgo_sign=document.getElementById('Virgo');
+const aries_sign=document.getElementById('Aries');
 
 var clickCount=0;
 
@@ -236,8 +237,7 @@ function checkCompatibility() {
 // add click eventlistener to each sign
 // capricorn
 capricorn_sign.addEventListener('click',function(){
-    const image ='assets/zodiac_sign/capricorn.png';
-
+    const image ='../assets/zodiac_sign/capricorn.png';
     const shape_pos = clickCount === 0 ? 'left' : 'right';
 
     if(shape_pos === 'left'){
@@ -257,7 +257,7 @@ capricorn_sign.addEventListener('click',function(){
 //cancer
 cancer_sign.addEventListener('click',function(){
     checkCompatibility();
-    const image = 'assets/zodiac_sign/cancer.png';
+    const image = '../assets/zodiac_sign/cancer.png';
 
     const shape_pos = clickCount === 0 ? 'left' : 'right';
 
@@ -278,7 +278,7 @@ cancer_sign.addEventListener('click',function(){
 //aquarius
 aquarius_sign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/aquarius.png';
+    const image = '../assets/zodiac_sign/aquarius.png';
 
     const shape_pos = clickCount === 0 ? 'left' : 'right';
 
@@ -299,7 +299,7 @@ aquarius_sign.addEventListener('click',function(){
 
 //gemini
 gemini_sign.addEventListener('click',function(){
-    const image = 'assets/zodiac_sign/gemini.png';
+    const image = '../assets/zodiac_sign/gemini.png';
 
     const shape_pos = clickCount === 0 ? 'left' : 'right';
 
@@ -321,7 +321,7 @@ gemini_sign.addEventListener('click',function(){
 //leo
 leo_sign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/leo.png';
+    const image = '../assets/zodiac_sign/leo.png';
 
     const shape_pos = clickCount === 0 ? 'left' : 'right';
 
@@ -343,7 +343,7 @@ leo_sign.addEventListener('click',function(){
 //libra
 libra_sign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/libra.png';
+    const image = '../assets/zodiac_sign/libra.png';
 
     const shape_pos = clickCount === 0 ? 'left' : 'right';
 
@@ -364,7 +364,7 @@ libra_sign.addEventListener('click',function(){
 //pisces
 pisces_sign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/pisces.png';
+    const image = '../assets/zodiac_sign/pisces.png';
 
     const shape_pos = clickCount === 0 ? 'left' : 'right';
 
@@ -386,7 +386,7 @@ pisces_sign.addEventListener('click',function(){
 //sagittarius
 sagittarius_sign.addEventListener('click',function(){
 
-    const image = 'assets/zodiac_sign/sagittarius.png';
+    const image = '../assets/zodiac_sign/sagittarius.png';
 
     const shape_pos = clickCount === 0 ? 'left' : 'right';
 
@@ -408,7 +408,7 @@ sagittarius_sign.addEventListener('click',function(){
 //scorpio
 scorpio_sign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/scorpio.png';
+    const image = '../assets/zodiac_sign/scorpio.png';
 
     const shape_pos = clickCount === 0 ? 'left' : 'right';
 
@@ -428,7 +428,7 @@ scorpio_sign.addEventListener('click',function(){
 //taurus
 taurus_sign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/taurus.png';
+    const image = '../assets/zodiac_sign/taurus.png';
 
     const shape_pos = clickCount === 0 ? 'left' : 'right';
 
@@ -449,7 +449,7 @@ taurus_sign.addEventListener('click',function(){
 //virgo
 virgo_sign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/virgo.png';
+    const image = '../assets/zodiac_sign/virgo.png';
 
     const shape_pos = clickCount === 0 ? 'left' : 'right';
 
@@ -470,7 +470,7 @@ virgo_sign.addEventListener('click',function(){
 //aries
 aries_sign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/aries.png';
+    const image = '../assets/zodiac_sign/aries.png';
 
     const shape_pos = clickCount === 0 ? 'left' : 'right';
 
@@ -536,16 +536,16 @@ function handleClick(){
 
 // Function to show the pop-up with description
 function showPopup() {
-    document.getElementById("result-popup").style.display = "block";
+    document.getElementById("popup").style.display = "block";
 }
 
 // Function to hide the pop-up and reset the page
 function hidePopup() {
-    document.getElementById("result-popup").style.display = "none";
+    document.getElementById("popup").style.display = "none";
 }
 
 // Attach event listener to the close button
-document.getElementById("result-popup-close").addEventListener("click", function() {
+document.getElementById("popup-close").addEventListener("click", function() {
     hidePopup();
     clickCount=0;
     shape_left.style.backgroundImage='';
