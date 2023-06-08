@@ -123,6 +123,7 @@ function clearUserInfo() {
     if (confirmed) {
         localStorage.removeItem('name');
         localStorage.removeItem('birthday');
+        localStorage.removeItem('birthdayYear');
         location.reload(); // Refresh the page
     }
 }
