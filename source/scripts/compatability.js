@@ -536,16 +536,16 @@ function handleClick(){
 
 // Function to show the pop-up with description
 function showPopup() {
-    document.getElementById("popup").style.display = "block";
+    document.getElementById("result-popup").style.display = "block";
 }
 
 // Function to hide the pop-up and reset the page
 function hidePopup() {
-    document.getElementById("popup").style.display = "none";
+    document.getElementById("result-popup").style.display = "none";
 }
 
 // Attach event listener to the close button
-document.getElementById("popup-close").addEventListener("click", function() {
+document.getElementById("result-popup-close").addEventListener("click", function() {
     hidePopup();
     clickCount=0;
     shape_left.style.backgroundImage='';
