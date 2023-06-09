@@ -9,7 +9,9 @@
     z-index:0;
 
 }
-/*.compatibility-content .stars-container .star {
+
+/* shooting star */
+.compatibility-content .stars-container .star {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -114,7 +116,8 @@
     animation-delay: 2.6s;
     animation-duration: 2.25s;
 }
-
+ 
+/* shooting star animation*/
 @keyframes animate {
     0% {
         transform: rotate(315deg) translateX(0);
@@ -131,9 +134,9 @@
 
     }
 
-}*/
+}
 
-/*
+/* header */
 .compatibility-content #header {
     margin-top: 1px;
     position:relative;
@@ -141,7 +144,7 @@
 
     justify-content: center;
     align-items: center;
-    padding: 3em;
+    padding: 2em;
     z-index: 1;
 }
 .compatibility-content .header{
@@ -151,8 +154,8 @@
 }
 
 .compatibility-content  .shape-left {
-    width: 150px;
-    height: 150px;
+    width: 145px;
+    height: 145px;
     border: 3px dotted white;
     border-radius: 10%;
     z-index: 1;   
@@ -161,8 +164,8 @@
     
 }
 .compatibility-content .shape-right {
-    width: 150px;
-    height: 150px;
+    width: 145px;
+    height: 145px;
     border: 3px dotted white;
     border-radius: 10%;
     z-index: 1;   
@@ -183,33 +186,21 @@
 .compatibility-content .sign-name {
     color: #fff;
     margin-left: 160px;
-    font-size: large;
+    font-size: x-large;
 }
 
-/*
-.compatibility-content #choose-sign {
-    margin-top: 1px;
-    position:relative;
-   
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
- 
-}
-*/
-/*
 .compatibility-content .zodiac-sign {
     font-size: 35px;
     color: #fff;
 }
-/*
+
 .compatibility-content .menu {
     max-width: 800px;
     margin:0 auto;
     padding:1em;
     background: rgb(255 255 255 / 24%);
     box-shadow: 
-        0 8px 32px 0
+        0 6px 30px 0
         rgb(0 0 0 / 37%);
     backdrop-filter: blur(15px);
     border: 
@@ -222,9 +213,9 @@
 
 .compatibility-content .menu a {
     text-decoration: none;
-    color: #dbdbdb;
+    color: #f0e9e9;
 }
-/*
+
 .compatibility-content .menu h3 {
     color: #fff;
     margin: 0.4em 0 0 0;
@@ -236,9 +227,9 @@
 }
 
 .compatibility-content .menu > div a {
-    width:100%;
-    height:100%;
-    padding:1.5em;
+    width:80%;
+    height:80%;
+    padding:1em;
     background:    
         rgba(255,255,255,20%);
     display: flex;
@@ -255,10 +246,10 @@
         0 8px 32px 0
         rgb(0 0 0 / 37%);
     color: #fff;
-}*/
+}
 
 /*
-.compatibility-content #pop{
+.compatibility-content #compatibility-pop{
     margin-top: 1px;
     position:fixed;
     align-items: center;
@@ -269,23 +260,30 @@
     height: 100%;
     display: flex;
 
-}
-.compatibility-content .popup {
-    position: relative;
+}*/
+
+.compatibility-content .compatibility-popup {
+    position: absolute;
     background-blend-mode: normal, soft-light;
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
     background-color: rbga(255,255,255 0.3);
     color: #dbdbdb;
+    font-size: large;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
     padding: 20px;
-    width: 400px;
+    width: 60%;
+    height: 60%;
+    margin-left: 20%;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     display: none;
     animation: rotate 2s cubic-bezier(0.25, 0.46, 0.45,0.94) both;
 }
 
- .popup-close {
+.compatibility-content .compatibility-popup-close {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -303,4 +301,3 @@
     }
     
 }
-*/
