@@ -12,13 +12,11 @@ const SERVER_PORT = 36873;
 
 
 /**
- * Test suite to test storing user's information to local storage
+ * E2E test suite to test storing user's information to local storage
  * Testing basic functionality for settings page
  */
 describe('Settings page test suite', () => {
     beforeAll(async () => {
-        // const browser = await puppeteer.launch();
-        // const page = await browser.newPage();
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
     });
 
@@ -84,8 +82,6 @@ describe('Settings page test suite', () => {
      */
     it('Check that we can edit birthday in localStorage', async () => {
         // Enter a birthday
-        // await page.click('#birthday');
-        // await page.type('#birthday', '05181991', {delay: 10});
         await page.$eval('#birthday', el => el.value = '1999-05-18');
         const bdayButton = await page.evaluateHandle(`document.querySelector("#save-birthday-form > input[type=submit]:nth-child(3)")`);
         await bdayButton.click();
