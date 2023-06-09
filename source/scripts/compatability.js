@@ -166,12 +166,12 @@ const compatibilityData = {
 
   
 function findDescription(sign1, sign2) {
-    // 遍历配对集合
+
     for (const compatibility of compatibilityData.compatibility) {
         const pair = compatibility.pair;
         const description = compatibility.description;
       
-        // 检查输入的星座是否在当前配对中
+
         if (pair.some(([a, b]) => {
             return (a === sign1 && b === sign2) || (a === sign2 && b === sign1);
         })) {
@@ -179,11 +179,11 @@ function findDescription(sign1, sign2) {
         }
     }
     
-    // 如果没有找到匹配的描述，则返回空
+
     return null;
 }
   
-// 示例用法
+
 const sign1 = "Aries";
 const sign2 = "Leo";
 const description = findDescription(sign1, sign2);
@@ -198,51 +198,51 @@ console.log(description);
 const shapeLeft=document.querySelector('.shape-left');
 // naming for this isn't consistent, is this still working?
 const shapeRight=document.querySelector('.shape-right');
-const love_content=document.getElementById('description');
-const choose_sign_window=document.getElementById('choose-sign');
+const loveContent=document.getElementById('description');
+const chooseSignWindow=document.getElementById('choose-sign');
 
 //const result_window=document.getElementById('result');
 
-const capricorn_sign=document.getElementById('Capricorn');
-const cancer_sign=document.getElementById('Cancer');
-const aquarius_sign=document.getElementById('Aquarius');
-const gemini_sign=document.getElementById('Gemini');
-const leo_sign=document.getElementById('Leo');
-const libra_sign=document.getElementById('Libra');
-const pisces_sign=document.getElementById('Pisces');
-const sagittarius_sign=document.getElementById('Sagittarius');
-const scorpio_sign=document.getElementById('Scorpio');
-const taurus_sign=document.getElementById('Taurus');
-const virgo_sign=document.getElementById('Virgo');
-const aries_sign=document.getElementById('Aries');
+const capricornSign=document.getElementById('Capricorn');
+const cancerSign=document.getElementById('Cancer');
+const aquariusSign=document.getElementById('Aquarius');
+const geminiSign=document.getElementById('Gemini');
+const leoSign=document.getElementById('Leo');
+const libraSign=document.getElementById('Libra');
+const piscesSign=document.getElementById('Pisces');
+const sagittariusSign=document.getElementById('Sagittarius');
+const scorpioSign=document.getElementById('Scorpio');
+const taurusSign=document.getElementById('Taurus');
+const virgoSign=document.getElementById('Virgo');
+const ariesSign=document.getElementById('Aries');
 
-var clickCount=0;
+let clickCount=0;
 
 
 function checkCompatibility() {
-    var leftBox = document.querySelector(".shape-left .sign-name").textContent.trim();
-    var rightBox = document.querySelector(".shape-right .sign-name").textContent.trim();
+    const leftBox = document.querySelector(".shape-left .sign-name").textContent.trim();
+    const rightBox = document.querySelector(".shape-right .sign-name").textContent.trim();
     if (leftBox && rightBox) {
-      // Both left and right boxes are filled
-      // Assuming the signs are stored as lowercase strings
-      var sign1 = leftBox;
-      var sign2 = rightBox;
-      var capitalizedSign1 = sign1.charAt(0).toUpperCase() + sign1.slice(1);
-      var capitalizedSign2 = sign2.charAt(0).toUpperCase() + sign2.slice(1);
-      var description = findDescription(capitalizedSign1, capitalizedSign2);
-      // Assuming you want to display the description in the element with id "description"
-      document.getElementById("popup-description").textContent = description;
-      console.log(description);
+        // Both left and right boxes are filled
+        // Assuming the signs are stored as lowercase strings
+        const sign1 = leftBox;
+        const sign2 = rightBox;
+        const capitalizedSign1 = sign1.charAt(0).toUpperCase() + sign1.slice(1);
+        const capitalizedSign2 = sign2.charAt(0).toUpperCase() + sign2.slice(1);
+        const description = findDescription(capitalizedSign1, capitalizedSign2);
+        // Assuming you want to display the description in the element with id "description"
+        document.getElementById("popup-description").textContent = description;
+        console.log(description);
     }
 }
 
 // add click eventlistener to each sign
 // capricorn
-capricorn_sign.addEventListener('click',function(){
-    const image ='../assets/zodiac_sign/capricorn.png';
-    const shape_pos = clickCount === 0 ? 'left' : 'right';
+capricornSign.addEventListener('click',function(){
+    const image ='assets/zodiac_sign/capricorn.png';
+    const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shape_pos === 'left'){
+    if(shapePos === 'left'){
         shapeLeft.style.backgroundImage = `url(${image})`;
         shapeLeft.style.backgroundSize ='cover';
         shapeLeft.querySelector('.sign-name').textContent=this.id;
@@ -253,17 +253,17 @@ capricorn_sign.addEventListener('click',function(){
     }
     checkCompatibility();
   
-  clickCount++;
-  handleClick();
+    clickCount++;
+    handleClick();
 });
 //cancer
-cancer_sign.addEventListener('click',function(){
+cancerSign.addEventListener('click',function(){
     checkCompatibility();
-    const image = '../assets/zodiac_sign/cancer.png';
+    const image = 'assets/zodiac_sign/cancer.png';
 
-    const shape_pos = clickCount === 0 ? 'left' : 'right';
+    const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shape_pos === 'left'){
+    if(shapePos === 'left'){
         shapeLeft.style.backgroundImage = `url(${image})`;
         shapeLeft.style.backgroundSize ='cover';
         shapeLeft.querySelector('.sign-name').textContent=this.id;
@@ -274,17 +274,17 @@ cancer_sign.addEventListener('click',function(){
 
     }
     checkCompatibility();
-  clickCount++;
-  handleClick();
+    clickCount++;
+    handleClick();
 });
 //aquarius
-aquarius_sign.addEventListener('click',function(){
+aquariusSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/aquarius.png';
+    const image = 'assets/zodiac_sign/aquarius.png';
 
-    const shape_pos = clickCount === 0 ? 'left' : 'right';
+    const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shape_pos === 'left'){
+    if(shapePos === 'left'){
         shapeLeft.style.backgroundImage = `url(${image})`;
         shapeLeft.style.backgroundSize ='cover';
         shapeLeft.querySelector('.sign-name').textContent=this.id;
@@ -295,39 +295,39 @@ aquarius_sign.addEventListener('click',function(){
 
     }
     checkCompatibility();
-  clickCount++;
-  handleClick();
+    clickCount++;
+    handleClick();
 });
 
 //gemini
-gemini_sign.addEventListener('click',function(){
-    const image = '../assets/zodiac_sign/gemini.png';
+geminiSign.addEventListener('click',function(){
+    const image = 'assets/zodiac_sign/gemini.png';
 
-    const shape_pos = clickCount === 0 ? 'left' : 'right';
+    const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shape_pos === 'left'){
+    if(shapePos === 'left'){
         shapeLeft.style.backgroundImage = `url(${image})`;
         shapeLeft.style.backgroundSize ='cover';
         shapeLeft.querySelector('.sign-name').textContent=this.id;
     }else{
-        shapeRight.style.backgroundImage=`url(${image})`;       
+        shapeRight.style.backgroundImage=`url(${image})`;
         shapeRight.style.backgroundSize='cover';
         shapeRight.querySelector('.sign-name').textContent=this.id;
 
     }
     checkCompatibility();
-  clickCount++;
-  handleClick();
+    clickCount++;
+    handleClick();
 });
 
 //leo
-leo_sign.addEventListener('click',function(){
+leoSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/leo.png';
+    const image = 'assets/zodiac_sign/leo.png';
 
-    const shape_pos = clickCount === 0 ? 'left' : 'right';
+    const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shape_pos === 'left'){
+    if(shapePos === 'left'){
         shapeLeft.style.backgroundImage = `url(${image})`;
         shapeLeft.style.backgroundSize ='cover';
         shapeLeft.querySelector('.sign-name').textContent=this.id;
@@ -338,18 +338,18 @@ leo_sign.addEventListener('click',function(){
 
     }
     checkCompatibility();
-  clickCount++;
-  handleClick();
+    clickCount++;
+    handleClick();
 });
 
 //libra
-libra_sign.addEventListener('click',function(){
+libraSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/libra.png';
+    const image = 'assets/zodiac_sign/libra.png';
 
-    const shape_pos = clickCount === 0 ? 'left' : 'right';
+    const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shape_pos === 'left'){
+    if(shapePos === 'left'){
         shapeLeft.style.backgroundImage = `url(${image})`;
         shapeLeft.style.backgroundSize ='cover';
         shapeLeft.querySelector('.sign-name').textContent=this.id;
@@ -360,17 +360,17 @@ libra_sign.addEventListener('click',function(){
 
     }
     checkCompatibility();
-  clickCount++;
-  handleClick();
+    clickCount++;
+    handleClick();
 });
 //pisces
-pisces_sign.addEventListener('click',function(){
+piscesSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/pisces.png';
+    const image = 'assets/zodiac_sign/pisces.png';
 
-    const shape_pos = clickCount === 0 ? 'left' : 'right';
+    const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shape_pos === 'left'){
+    if(shapePos === 'left'){
         shapeLeft.style.backgroundImage = `url(${image})`;
         shapeLeft.style.backgroundSize ='cover';
         shapeLeft.querySelector('.sign-name').textContent=this.id;
@@ -381,18 +381,18 @@ pisces_sign.addEventListener('click',function(){
 
     }
     checkCompatibility();
-  clickCount++;
-  handleClick();
+    clickCount++;
+    handleClick();
 });
 
 //sagittarius
-sagittarius_sign.addEventListener('click',function(){
+sagittariusSign.addEventListener('click',function(){
 
-    const image = '../assets/zodiac_sign/sagittarius.png';
+    const image = 'assets/zodiac_sign/sagittarius.png';
 
-    const shape_pos = clickCount === 0 ? 'left' : 'right';
+    const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shape_pos === 'left'){
+    if(shapePos === 'left'){
         shapeLeft.style.backgroundImage = `url(${image})`;
         shapeLeft.style.backgroundSize ='cover';
         shapeLeft.querySelector('.sign-name').textContent=this.id;
@@ -403,18 +403,18 @@ sagittarius_sign.addEventListener('click',function(){
 
     }
     checkCompatibility();
-  clickCount++;
-  handleClick();
+    clickCount++;
+    handleClick();
 });
 
 //scorpio
-scorpio_sign.addEventListener('click',function(){
+scorpioSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/scorpio.png';
+    const image = 'assets/zodiac_sign/scorpio.png';
 
-    const shape_pos = clickCount === 0 ? 'left' : 'right';
+    const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shape_pos === 'left'){
+    if(shapePos === 'left'){
         shapeLeft.style.backgroundImage = `url(${image})`;
         shapeLeft.style.backgroundSize ='cover';
         shapeLeft.querySelector('.sign-name').textContent=this.id;
@@ -424,17 +424,17 @@ scorpio_sign.addEventListener('click',function(){
         shapeRight.querySelector('.sign-name').textContent=this.id;
     }
     checkCompatibility();
-  clickCount++;
-  handleClick();
+    clickCount++;
+    handleClick();
 });
 //taurus
-taurus_sign.addEventListener('click',function(){
+taurusSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/taurus.png';
+    const image = 'assets/zodiac_sign/taurus.png';
 
-    const shape_pos = clickCount === 0 ? 'left' : 'right';
+    const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shape_pos === 'left'){
+    if(shapePos === 'left'){
         shapeLeft.style.backgroundImage = `url(${image})`;
         shapeLeft.style.backgroundSize ='cover';
         shapeLeft.querySelector('.sign-name').textContent=this.id;
@@ -444,18 +444,18 @@ taurus_sign.addEventListener('click',function(){
         shapeRight.querySelector('.sign-name').textContent=this.id;
     }
     checkCompatibility();
-  clickCount++;
-  handleClick();
+    clickCount++;
+    handleClick();
 });
 
 //virgo
-virgo_sign.addEventListener('click',function(){
+virgoSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/virgo.png';
+    const image = 'assets/zodiac_sign/virgo.png';
 
-    const shape_pos = clickCount === 0 ? 'left' : 'right';
+    const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shape_pos === 'left'){
+    if(shapePos === 'left'){
         shapeLeft.style.backgroundImage = `url(${image})`;
         shapeLeft.style.backgroundSize ='cover';
         shapeLeft.querySelector('.sign-name').textContent=this.id;
@@ -465,30 +465,30 @@ virgo_sign.addEventListener('click',function(){
         shapeRight.querySelector('.sign-name').textContent=this.id;
     }
     checkCompatibility();
-  clickCount++;
-  handleClick();
+    clickCount++;
+    handleClick();
 });
 
 //aries
-aries_sign.addEventListener('click',function(){
+ariesSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/aries.png';
+    const image = 'assets/zodiac_sign/aries.png';
 
-    const shape_pos = clickCount === 0 ? 'left' : 'right';
+    const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shape_pos === 'left'){
+    if(shapePos === 'left'){
         shapeLeft.style.backgroundImage = `url(${image})`;
         shapeLeft.style.backgroundSize ='cover';
-        shapeLeft.querySelector('.sign-name').textContent=this.id
+        shapeLeft.querySelector('.sign-name').textContent=this.id;
     }else{
         shapeRight.style.backgroundImage=`url(${image})`;
         shapeRight.style.backgroundSize='cover';
-        shapeRight.querySelector('.sign-name').textContent=this.id
+        shapeRight.querySelector('.sign-name').textContent=this.id;
 
     }
     checkCompatibility();
-  clickCount++;
-  handleClick();
+    clickCount++;
+    handleClick();
 
 
 });
@@ -520,16 +520,15 @@ function handleClick(){
     if(clickCount === 2){
         setTimeout(() => {
         // Show the pop-up
-        showPopup();
-        choose_sign_window.style.display='none';
+            showPopup();
+            chooseSignWindow.style.display='none';
             
         }, 300);
         
-    }
-    else{
+    } else{
         setTimeout(() => {
             hidePopup();
-            choose_sign_window.style.display='flex';
+            chooseSignWindow.style.display='block';
         }, 300);
       
     }
@@ -538,21 +537,21 @@ function handleClick(){
 
 // Function to show the pop-up with description
 function showPopup() {
-    document.getElementById("popup").style.display = "block";
+    document.getElementById("compatibility-popup").style.display = "block";
 }
 
 // Function to hide the pop-up and reset the page
 function hidePopup() {
-    document.getElementById("popup").style.display = "none";
+    document.getElementById("compatibility-popup").style.display = "none";
 }
 
 // Attach event listener to the close button
-document.getElementById("popup-close").addEventListener("click", function() {
+document.querySelector(".compatibility-popup-close").addEventListener("click", () => {
     hidePopup();
     clickCount=0;
     shapeLeft.style.backgroundImage='';
     shapeRight.style.backgroundImage='';
     shapeLeft.querySelector('.sign-name').textContent='';
     shapeRight.querySelector('.sign-name').textContent='';
-    choose_sign_window.style.display='block';
+    chooseSignWindow.style.display='block';
 });
