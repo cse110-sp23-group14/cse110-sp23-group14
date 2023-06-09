@@ -23,7 +23,6 @@ function findDescription(sign1, sign2) {
 const sign1 = "Aries";
 const sign2 = "Leo";
 const description = findDescription(sign1, sign2);
-console.log(description);
 
 /************************************ */
 
@@ -68,7 +67,6 @@ function checkCompatibility() {
         const description = findDescription(capitalizedSign1, capitalizedSign2);
         // Assuming you want to display the description in the element with id "description"
         document.getElementById("popup-description").textContent = description;
-        console.log(description);
     }
 }
 
