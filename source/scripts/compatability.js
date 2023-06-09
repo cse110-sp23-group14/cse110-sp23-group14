@@ -51,8 +51,33 @@ const taurusSign=document.getElementById('Taurus');
 const virgoSign=document.getElementById('Virgo');
 const ariesSign=document.getElementById('Aries');
 
-let clickCount=0;
+const signArray = [capricornSign, cancerSign, aquariusSign, geminiSign, leoSign, libraSign, piscesSign, sagittariusSign, scorpioSign, taurusSign, virgoSign, ariesSign];
+const signNamesArray = ['capricorn', 'cancer', 'aquarius', 'gemini', 'leo', 'libra', 'pisces', 'sagittarius', 'scorpio', 'taurus', 'virgo', 'aries'];
 
+let clickCount=0;
+for (let i=0; i < signArray.length; i++) {
+    signArray[i].addEventListener('click', () => {
+        checkCompatibility();
+
+        
+        const image = `assets/zodiac_sign/${signElementArray[i]}.png`;
+
+        const shapePos = clickCount === 0 ? 'left' : 'right';
+
+        if(shapePos === 'left'){
+            shapeLeft.style.backgroundImage = `url(${image})`;
+            shapeLeft.style.backgroundSize ='cover';
+            shapeLeft.querySelector('.sign-name').textContent = imagesArray[i];
+        }else{
+            shapeRight.style.backgroundImage=`url(${image})`;
+            shapeRight.style.backgroundSize='cover';
+            shapeRight.querySelector('.sign-name').textContent= imagesArray[i];
+        }
+        checkCompatibility();
+        clickCount++;
+        handleClick();
+    });
+}
 
 function checkCompatibility() {
     const leftBox = document.querySelector(".shape-left .sign-name").textContent.trim();
@@ -72,260 +97,260 @@ function checkCompatibility() {
 
 // add click eventlistener to each sign
 // capricorn
-capricornSign.addEventListener('click',function(){
-    const image ='assets/zodiac_sign/capricorn.png';
-    const shapePos = clickCount === 0 ? 'left' : 'right';
+// capricornSign.addEventListener('click',function(){
+//     const image ='assets/zodiac_sign/capricorn.png';
+//     const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shapePos === 'left'){
-        shapeLeft.style.backgroundImage = `url(${image})`;
-        shapeLeft.style.backgroundSize ='cover';
-        shapeLeft.querySelector('.sign-name').textContent=this.id;
-    }else{
-        shapeRight.style.backgroundImage=`url(${image})`;
-        shapeRight.style.backgroundSize='cover';
-        shapeRight.querySelector('.sign-name').textContent=this.id;
-    }
-    checkCompatibility();
+//     if(shapePos === 'left'){
+//         shapeLeft.style.backgroundImage = `url(${image})`;
+//         shapeLeft.style.backgroundSize ='cover';
+//         shapeLeft.querySelector('.sign-name').textContent=this.id;
+//     }else{
+//         shapeRight.style.backgroundImage=`url(${image})`;
+//         shapeRight.style.backgroundSize='cover';
+//         shapeRight.querySelector('.sign-name').textContent=this.id;
+//     }
+//     checkCompatibility();
   
-    clickCount++;
-    handleClick();
-});
-//cancer
-cancerSign.addEventListener('click',function(){
-    checkCompatibility();
-    const image = 'assets/zodiac_sign/cancer.png';
+//     clickCount++;
+//     handleClick();
+// });
+// //cancer
+// cancerSign.addEventListener('click',function(){
+//     checkCompatibility();
+//     const image = 'assets/zodiac_sign/cancer.png';
 
-    const shapePos = clickCount === 0 ? 'left' : 'right';
+//     const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shapePos === 'left'){
-        shapeLeft.style.backgroundImage = `url(${image})`;
-        shapeLeft.style.backgroundSize ='cover';
-        shapeLeft.querySelector('.sign-name').textContent=this.id;
-    }else{
-        shapeRight.style.backgroundImage=`url(${image})`;
-        shapeRight.style.backgroundSize='cover';
-        shapeRight.querySelector('.sign-name').textContent=this.id;
+//     if(shapePos === 'left'){
+//         shapeLeft.style.backgroundImage = `url(${image})`;
+//         shapeLeft.style.backgroundSize ='cover';
+//         shapeLeft.querySelector('.sign-name').textContent=this.id;
+//     }else{
+//         shapeRight.style.backgroundImage=`url(${image})`;
+//         shapeRight.style.backgroundSize='cover';
+//         shapeRight.querySelector('.sign-name').textContent=this.id;
 
-    }
-    checkCompatibility();
-    clickCount++;
-    handleClick();
-});
-//aquarius
-aquariusSign.addEventListener('click',function(){
+//     }
+//     checkCompatibility();
+//     clickCount++;
+//     handleClick();
+// });
+// //aquarius
+// aquariusSign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/aquarius.png';
+//     const image = 'assets/zodiac_sign/aquarius.png';
 
-    const shapePos = clickCount === 0 ? 'left' : 'right';
+//     const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shapePos === 'left'){
-        shapeLeft.style.backgroundImage = `url(${image})`;
-        shapeLeft.style.backgroundSize ='cover';
-        shapeLeft.querySelector('.sign-name').textContent=this.id;
-    }else{
-        shapeRight.style.backgroundImage=`url(${image})`;
-        shapeRight.style.backgroundSize='cover';
-        shapeRight.querySelector('.sign-name').textContent=this.id;
+//     if(shapePos === 'left'){
+//         shapeLeft.style.backgroundImage = `url(${image})`;
+//         shapeLeft.style.backgroundSize ='cover';
+//         shapeLeft.querySelector('.sign-name').textContent=this.id;
+//     }else{
+//         shapeRight.style.backgroundImage=`url(${image})`;
+//         shapeRight.style.backgroundSize='cover';
+//         shapeRight.querySelector('.sign-name').textContent=this.id;
 
-    }
-    checkCompatibility();
-    clickCount++;
-    handleClick();
-});
+//     }
+//     checkCompatibility();
+//     clickCount++;
+//     handleClick();
+// });
 
-//gemini
-geminiSign.addEventListener('click',function(){
-    const image = 'assets/zodiac_sign/gemini.png';
+// //gemini
+// geminiSign.addEventListener('click',function(){
+//     const image = 'assets/zodiac_sign/gemini.png';
 
-    const shapePos = clickCount === 0 ? 'left' : 'right';
+//     const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shapePos === 'left'){
-        shapeLeft.style.backgroundImage = `url(${image})`;
-        shapeLeft.style.backgroundSize ='cover';
-        shapeLeft.querySelector('.sign-name').textContent=this.id;
-    }else{
-        shapeRight.style.backgroundImage=`url(${image})`;
-        shapeRight.style.backgroundSize='cover';
-        shapeRight.querySelector('.sign-name').textContent=this.id;
+//     if(shapePos === 'left'){
+//         shapeLeft.style.backgroundImage = `url(${image})`;
+//         shapeLeft.style.backgroundSize ='cover';
+//         shapeLeft.querySelector('.sign-name').textContent=this.id;
+//     }else{
+//         shapeRight.style.backgroundImage=`url(${image})`;
+//         shapeRight.style.backgroundSize='cover';
+//         shapeRight.querySelector('.sign-name').textContent=this.id;
 
-    }
-    checkCompatibility();
-    clickCount++;
-    handleClick();
-});
+//     }
+//     checkCompatibility();
+//     clickCount++;
+//     handleClick();
+// });
 
-//leo
-leoSign.addEventListener('click',function(){
+// //leo
+// leoSign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/leo.png';
+//     const image = 'assets/zodiac_sign/leo.png';
 
-    const shapePos = clickCount === 0 ? 'left' : 'right';
+//     const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shapePos === 'left'){
-        shapeLeft.style.backgroundImage = `url(${image})`;
-        shapeLeft.style.backgroundSize ='cover';
-        shapeLeft.querySelector('.sign-name').textContent=this.id;
-    }else{
-        shapeRight.style.backgroundImage=`url(${image})`;
-        shapeRight.style.backgroundSize='cover';
-        shapeRight.querySelector('.sign-name').textContent=this.id;
+//     if(shapePos === 'left'){
+//         shapeLeft.style.backgroundImage = `url(${image})`;
+//         shapeLeft.style.backgroundSize ='cover';
+//         shapeLeft.querySelector('.sign-name').textContent=this.id;
+//     }else{
+//         shapeRight.style.backgroundImage=`url(${image})`;
+//         shapeRight.style.backgroundSize='cover';
+//         shapeRight.querySelector('.sign-name').textContent=this.id;
 
-    }
-    checkCompatibility();
-    clickCount++;
-    handleClick();
-});
+//     }
+//     checkCompatibility();
+//     clickCount++;
+//     handleClick();
+// });
 
-//libra
-libraSign.addEventListener('click',function(){
+// //libra
+// libraSign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/libra.png';
+//     const image = 'assets/zodiac_sign/libra.png';
 
-    const shapePos = clickCount === 0 ? 'left' : 'right';
+//     const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shapePos === 'left'){
-        shapeLeft.style.backgroundImage = `url(${image})`;
-        shapeLeft.style.backgroundSize ='cover';
-        shapeLeft.querySelector('.sign-name').textContent=this.id;
-    }else{
-        shapeRight.style.backgroundImage=`url(${image})`;
-        shapeRight.style.backgroundSize='cover';
-        shapeRight.querySelector('.sign-name').textContent=this.id;
+//     if(shapePos === 'left'){
+//         shapeLeft.style.backgroundImage = `url(${image})`;
+//         shapeLeft.style.backgroundSize ='cover';
+//         shapeLeft.querySelector('.sign-name').textContent=this.id;
+//     }else{
+//         shapeRight.style.backgroundImage=`url(${image})`;
+//         shapeRight.style.backgroundSize='cover';
+//         shapeRight.querySelector('.sign-name').textContent=this.id;
 
-    }
-    checkCompatibility();
-    clickCount++;
-    handleClick();
-});
-//pisces
-piscesSign.addEventListener('click',function(){
+//     }
+//     checkCompatibility();
+//     clickCount++;
+//     handleClick();
+// });
+// //pisces
+// piscesSign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/pisces.png';
+//     const image = 'assets/zodiac_sign/pisces.png';
 
-    const shapePos = clickCount === 0 ? 'left' : 'right';
+//     const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shapePos === 'left'){
-        shapeLeft.style.backgroundImage = `url(${image})`;
-        shapeLeft.style.backgroundSize ='cover';
-        shapeLeft.querySelector('.sign-name').textContent=this.id;
-    }else{
-        shapeRight.style.backgroundImage=`url(${image})`;
-        shapeRight.style.backgroundSize='cover';
-        shapeRight.querySelector('.sign-name').textContent=this.id;
+//     if(shapePos === 'left'){
+//         shapeLeft.style.backgroundImage = `url(${image})`;
+//         shapeLeft.style.backgroundSize ='cover';
+//         shapeLeft.querySelector('.sign-name').textContent=this.id;
+//     }else{
+//         shapeRight.style.backgroundImage=`url(${image})`;
+//         shapeRight.style.backgroundSize='cover';
+//         shapeRight.querySelector('.sign-name').textContent=this.id;
 
-    }
-    checkCompatibility();
-    clickCount++;
-    handleClick();
-});
+//     }
+//     checkCompatibility();
+//     clickCount++;
+//     handleClick();
+// });
 
-//sagittarius
-sagittariusSign.addEventListener('click',function(){
+// //sagittarius
+// sagittariusSign.addEventListener('click',function(){
 
-    const image = 'assets/zodiac_sign/sagittarius.png';
+//     const image = 'assets/zodiac_sign/sagittarius.png';
 
-    const shapePos = clickCount === 0 ? 'left' : 'right';
+//     const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shapePos === 'left'){
-        shapeLeft.style.backgroundImage = `url(${image})`;
-        shapeLeft.style.backgroundSize ='cover';
-        shapeLeft.querySelector('.sign-name').textContent=this.id;
-    }else{
-        shapeRight.style.backgroundImage=`url(${image})`;
-        shapeRight.style.backgroundSize='cover';
-        shapeRight.querySelector('.sign-name').textContent=this.id;
+//     if(shapePos === 'left'){
+//         shapeLeft.style.backgroundImage = `url(${image})`;
+//         shapeLeft.style.backgroundSize ='cover';
+//         shapeLeft.querySelector('.sign-name').textContent=this.id;
+//     }else{
+//         shapeRight.style.backgroundImage=`url(${image})`;
+//         shapeRight.style.backgroundSize='cover';
+//         shapeRight.querySelector('.sign-name').textContent=this.id;
 
-    }
-    checkCompatibility();
-    clickCount++;
-    handleClick();
-});
+//     }
+//     checkCompatibility();
+//     clickCount++;
+//     handleClick();
+// });
 
-//scorpio
-scorpioSign.addEventListener('click',function(){
+// //scorpio
+// scorpioSign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/scorpio.png';
+//     const image = 'assets/zodiac_sign/scorpio.png';
 
-    const shapePos = clickCount === 0 ? 'left' : 'right';
+//     const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shapePos === 'left'){
-        shapeLeft.style.backgroundImage = `url(${image})`;
-        shapeLeft.style.backgroundSize ='cover';
-        shapeLeft.querySelector('.sign-name').textContent=this.id;
-    }else{
-        shapeRight.style.backgroundImage=`url(${image})`;
-        shapeRight.style.backgroundSize='cover';
-        shapeRight.querySelector('.sign-name').textContent=this.id;
-    }
-    checkCompatibility();
-    clickCount++;
-    handleClick();
-});
-//taurus
-taurusSign.addEventListener('click',function(){
+//     if(shapePos === 'left'){
+//         shapeLeft.style.backgroundImage = `url(${image})`;
+//         shapeLeft.style.backgroundSize ='cover';
+//         shapeLeft.querySelector('.sign-name').textContent=this.id;
+//     }else{
+//         shapeRight.style.backgroundImage=`url(${image})`;
+//         shapeRight.style.backgroundSize='cover';
+//         shapeRight.querySelector('.sign-name').textContent=this.id;
+//     }
+//     checkCompatibility();
+//     clickCount++;
+//     handleClick();
+// });
+// //taurus
+// taurusSign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/taurus.png';
+//     const image = 'assets/zodiac_sign/taurus.png';
 
-    const shapePos = clickCount === 0 ? 'left' : 'right';
+//     const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shapePos === 'left'){
-        shapeLeft.style.backgroundImage = `url(${image})`;
-        shapeLeft.style.backgroundSize ='cover';
-        shapeLeft.querySelector('.sign-name').textContent=this.id;
-    }else{
-        shapeRight.style.backgroundImage=`url(${image})`;
-        shapeRight.style.backgroundSize='cover';
-        shapeRight.querySelector('.sign-name').textContent=this.id;
-    }
-    checkCompatibility();
-    clickCount++;
-    handleClick();
-});
+//     if(shapePos === 'left'){
+//         shapeLeft.style.backgroundImage = `url(${image})`;
+//         shapeLeft.style.backgroundSize ='cover';
+//         shapeLeft.querySelector('.sign-name').textContent=this.id;
+//     }else{
+//         shapeRight.style.backgroundImage=`url(${image})`;
+//         shapeRight.style.backgroundSize='cover';
+//         shapeRight.querySelector('.sign-name').textContent=this.id;
+//     }
+//     checkCompatibility();
+//     clickCount++;
+//     handleClick();
+// });
 
-//virgo
-virgoSign.addEventListener('click',function(){
+// //virgo
+// virgoSign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/virgo.png';
+//     const image = 'assets/zodiac_sign/virgo.png';
 
-    const shapePos = clickCount === 0 ? 'left' : 'right';
+//     const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shapePos === 'left'){
-        shapeLeft.style.backgroundImage = `url(${image})`;
-        shapeLeft.style.backgroundSize ='cover';
-        shapeLeft.querySelector('.sign-name').textContent=this.id;
-    }else{
-        shapeRight.style.backgroundImage=`url(${image})`;
-        shapeRight.style.backgroundSize='cover';
-        shapeRight.querySelector('.sign-name').textContent=this.id;
-    }
-    checkCompatibility();
-    clickCount++;
-    handleClick();
-});
+//     if(shapePos === 'left'){
+//         shapeLeft.style.backgroundImage = `url(${image})`;
+//         shapeLeft.style.backgroundSize ='cover';
+//         shapeLeft.querySelector('.sign-name').textContent=this.id;
+//     }else{
+//         shapeRight.style.backgroundImage=`url(${image})`;
+//         shapeRight.style.backgroundSize='cover';
+//         shapeRight.querySelector('.sign-name').textContent=this.id;
+//     }
+//     checkCompatibility();
+//     clickCount++;
+//     handleClick();
+// });
 
-//aries
-ariesSign.addEventListener('click',function(){
+// //aries
+// ariesSign.addEventListener('click',function(){
     
-    const image = 'assets/zodiac_sign/aries.png';
+//     const image = 'assets/zodiac_sign/aries.png';
 
-    const shapePos = clickCount === 0 ? 'left' : 'right';
+//     const shapePos = clickCount === 0 ? 'left' : 'right';
 
-    if(shapePos === 'left'){
-        shapeLeft.style.backgroundImage = `url(${image})`;
-        shapeLeft.style.backgroundSize ='cover';
-        shapeLeft.querySelector('.sign-name').textContent=this.id;
-    }else{
-        shapeRight.style.backgroundImage=`url(${image})`;
-        shapeRight.style.backgroundSize='cover';
-        shapeRight.querySelector('.sign-name').textContent=this.id;
+//     if(shapePos === 'left'){
+//         shapeLeft.style.backgroundImage = `url(${image})`;
+//         shapeLeft.style.backgroundSize ='cover';
+//         shapeLeft.querySelector('.sign-name').textContent=this.id;
+//     }else{
+//         shapeRight.style.backgroundImage=`url(${image})`;
+//         shapeRight.style.backgroundSize='cover';
+//         shapeRight.querySelector('.sign-name').textContent=this.id;
 
-    }
-    checkCompatibility();
-    clickCount++;
-    handleClick();
+//     }
+//     checkCompatibility();
+//     clickCount++;
+//     handleClick();
 
 
-});
+// });
 
 
 
