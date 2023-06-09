@@ -33,7 +33,7 @@ test('sample test so tests run before we refactor this file', () =>{
 describe('Horoscope page test suite', () => {
     // Making sure to go to the page
     beforeAll(async () => {
-        await page.goTo(`http://localhost:${SERVER_PORT}/source/`);
+        await page.goto(`http://localhost:${SERVER_PORT}/source/`);
     });
 
     it('Checking that localStorage has no name or birthday', async () => {
