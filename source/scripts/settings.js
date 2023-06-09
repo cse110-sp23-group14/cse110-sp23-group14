@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
  */
 function displayStoredData() {
     const displayElement = document.getElementById('profile-display');
-    const storedBirthday = localStorage.getItem('birthday');
+    const storedBirthday = localStorage.getItem('birthdayYear');
     if (storedBirthday) {
         const storedName = localStorage.getItem('name');
         if (storedName) {
