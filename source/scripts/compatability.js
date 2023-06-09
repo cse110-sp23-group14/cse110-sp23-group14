@@ -166,12 +166,12 @@ const compatibilityData = {
 
   
 function findDescription(sign1, sign2) {
-    // 遍历配对集合
+
     for (const compatibility of compatibilityData.compatibility) {
         const pair = compatibility.pair;
         const description = compatibility.description;
       
-        // 检查输入的星座是否在当前配对中
+
         if (pair.some(([a, b]) => {
             return (a === sign1 && b === sign2) || (a === sign2 && b === sign1);
         })) {
@@ -179,11 +179,11 @@ function findDescription(sign1, sign2) {
         }
     }
     
-    // 如果没有找到匹配的描述，则返回空
+
     return null;
 }
   
-// 示例用法
+
 const sign1 = "Aries";
 const sign2 = "Leo";
 const description = findDescription(sign1, sign2);
@@ -237,7 +237,7 @@ function checkCompatibility() {
 // add click eventlistener to each sign
 // capricorn
 capricornSign.addEventListener('click',function(){
-    const image ='../assets/zodiac_sign/capricorn.png';
+    const image ='assets/zodiac_sign/capricorn.png';
     const shapePos = clickCount === 0 ? 'left' : 'right';
 
     if(shapePos === 'left'){
@@ -257,7 +257,7 @@ capricornSign.addEventListener('click',function(){
 //cancer
 cancerSign.addEventListener('click',function(){
     checkCompatibility();
-    const image = '../assets/zodiac_sign/cancer.png';
+    const image = 'assets/zodiac_sign/cancer.png';
 
     const shapePos = clickCount === 0 ? 'left' : 'right';
 
@@ -278,7 +278,7 @@ cancerSign.addEventListener('click',function(){
 //aquarius
 aquariusSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/aquarius.png';
+    const image = 'assets/zodiac_sign/aquarius.png';
 
     const shapePos = clickCount === 0 ? 'left' : 'right';
 
@@ -299,7 +299,7 @@ aquariusSign.addEventListener('click',function(){
 
 //gemini
 geminiSign.addEventListener('click',function(){
-    const image = '../assets/zodiac_sign/gemini.png';
+    const image = 'assets/zodiac_sign/gemini.png';
 
     const shapePos = clickCount === 0 ? 'left' : 'right';
 
@@ -321,7 +321,7 @@ geminiSign.addEventListener('click',function(){
 //leo
 leoSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/leo.png';
+    const image = 'assets/zodiac_sign/leo.png';
 
     const shapePos = clickCount === 0 ? 'left' : 'right';
 
@@ -343,7 +343,7 @@ leoSign.addEventListener('click',function(){
 //libra
 libraSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/libra.png';
+    const image = 'assets/zodiac_sign/libra.png';
 
     const shapePos = clickCount === 0 ? 'left' : 'right';
 
@@ -364,7 +364,7 @@ libraSign.addEventListener('click',function(){
 //pisces
 piscesSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/pisces.png';
+    const image = 'assets/zodiac_sign/pisces.png';
 
     const shapePos = clickCount === 0 ? 'left' : 'right';
 
@@ -386,7 +386,7 @@ piscesSign.addEventListener('click',function(){
 //sagittarius
 sagittariusSign.addEventListener('click',function(){
 
-    const image = '../assets/zodiac_sign/sagittarius.png';
+    const image = 'assets/zodiac_sign/sagittarius.png';
 
     const shapePos = clickCount === 0 ? 'left' : 'right';
 
@@ -408,7 +408,7 @@ sagittariusSign.addEventListener('click',function(){
 //scorpio
 scorpioSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/scorpio.png';
+    const image = 'assets/zodiac_sign/scorpio.png';
 
     const shapePos = clickCount === 0 ? 'left' : 'right';
 
@@ -428,7 +428,7 @@ scorpioSign.addEventListener('click',function(){
 //taurus
 taurusSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/taurus.png';
+    const image = 'assets/zodiac_sign/taurus.png';
 
     const shapePos = clickCount === 0 ? 'left' : 'right';
 
@@ -449,7 +449,7 @@ taurusSign.addEventListener('click',function(){
 //virgo
 virgoSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/virgo.png';
+    const image = 'assets/zodiac_sign/virgo.png';
 
     const shapePos = clickCount === 0 ? 'left' : 'right';
 
@@ -470,7 +470,7 @@ virgoSign.addEventListener('click',function(){
 //aries
 ariesSign.addEventListener('click',function(){
     
-    const image = '../assets/zodiac_sign/aries.png';
+    const image = 'assets/zodiac_sign/aries.png';
 
     const shapePos = clickCount === 0 ? 'left' : 'right';
 
@@ -526,7 +526,7 @@ function handleClick(){
     } else{
         setTimeout(() => {
             hidePopup();
-            chooseSignWindow.style.display='flex';
+            chooseSignWindow.style.display='block';
         }, 300);
       
     }
@@ -535,16 +535,16 @@ function handleClick(){
 
 // Function to show the pop-up with description
 function showPopup() {
-    document.getElementById("popup").style.display = "block";
+    document.getElementById("compatibility-popup").style.display = "block";
 }
 
 // Function to hide the pop-up and reset the page
 function hidePopup() {
-    document.getElementById("popup").style.display = "none";
+    document.getElementById("compatibility-popup").style.display = "none";
 }
 
 // Attach event listener to the close button
-document.querySelector(".popup-close").addEventListener("click", () => {
+document.querySelector(".compatibility-popup-close").addEventListener("click", () => {
     hidePopup();
     clickCount=0;
     shapeLeft.style.backgroundImage='';
