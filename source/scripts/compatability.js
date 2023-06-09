@@ -308,7 +308,7 @@ geminiSign.addEventListener('click',function(){
         shapeLeft.style.backgroundSize ='cover';
         shapeLeft.querySelector('.sign-name').textContent=this.id;
     }else{
-        shapeRight.style.backgroundImage=`url(${image})`;     
+        shapeRight.style.backgroundImage=`url(${image})`;
         shapeRight.style.backgroundSize='cover';
         shapeRight.querySelector('.sign-name').textContent=this.id;
 
