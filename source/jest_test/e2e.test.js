@@ -52,7 +52,7 @@ describe('Basic user flow for Website', () => {
     // Check to make sure we can set name in localStorage using form in settings page
     it('Check that we can edit name in localStorage', async () => {
         // Enter a name
-        await page.type('input[name=name]', 'Sample Name', {delay: 200});
+        await page.type('#name', 'Sample Name', {delay: 10});
         const nameButton = await page.evaluateHandle(`document.querySelector("#save-name-form > div > input[type=submit]:nth-child(3)")`);
         await nameButton.click();
 
