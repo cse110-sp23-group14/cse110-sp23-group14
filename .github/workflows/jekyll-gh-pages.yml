@@ -26,6 +26,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       #Adds the test-8ball-PWA branch to the pages
       - uses: actions/checkout@v3
         with:
@@ -33,6 +34,7 @@ jobs:
           path: main/test-8ball-PWA
           clean: false
       - run: rm -rf main/test-8ball-PWA/.git
+
       #Adds the fortune-telling-dev branch to the pages
       - uses: actions/checkout@v3
         with:
@@ -40,6 +42,7 @@ jobs:
           path: main/fortune-telling-dev
           clean: false
       - run: rm -rf main/fortune-telling-dev/.git
+
       #Adds the documentation branch to the pages
       - uses: actions/checkout@v3
         with:
@@ -47,6 +50,21 @@ jobs:
           path: main/documentation
           clean: false
       - run: rm -rf main/documentation/.git
+
+      - name: Clean folders for deploy
+        run: |
+          rm -rf main/fortune-telling-dev/admin
+          rm -rf main/fortune-telling-dev/specs
+          rm -rf main/fortune-telling-dev/.github
+          rm main/fortune-telling-dev/package.json
+          rm main/fortune-telling-dev/package-lock.json
+          rm main/fortune-telling-dev/jes-puppeteer.config.js
+          rm main/fortune-telling-dev/babel.config.js
+          rm -rf main/test-8ball-PWA/admin
+          rm -rf main/test-8ball-PWA/specs
+          rm -rf admin
+          rm -rf specs
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Build with Jekyll
