@@ -1,5 +1,5 @@
 .faq {
-    height:200vh;
+    height:150vh;
     background-image: url('../assets/settings-background.jpeg');
     background-size: cover;
     background-position: center;
@@ -15,7 +15,8 @@
 .faq h2 {
     font: 25px Inter, sans-serif;
     color: var(--main-light-color);
-    margin-left: 10vh;
+    margin-left: 15vh;
+    font-weight: bold;
 }
 .faq p {
     font: 20px Lora, serif;
