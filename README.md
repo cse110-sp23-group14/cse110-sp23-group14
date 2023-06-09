@@ -13,7 +13,7 @@
 
 ## Project Overview:
 
-This project is a website that allows you to recieve a daily horoscope based on your birthday.
+This project is a website that allows you to recieve a daily horoscope based on your birthday. Some other features include the life path number which tells you your life path based on your birthday and the compatability checker to check your love compatability
 
 ## Repo Walk Through
 
@@ -26,26 +26,27 @@ This project is a website that allows you to recieve a daily horoscope based on 
 
 ## CI/CD Documentation
 
-- Run the full CI/CD at this link: TODO add link
+- Run the full CI/CD at this link: [here](https://github.com/cse110-sp23-group14/cse110-sp23-group14/actions/workflows/full-deploy-pipeline.yml)
 - Note about full CI/CD: Only run it on the main branch because deploy fails for no reason when run on other branches
 - CI/CD Features
     - Multibranch Deploy
         - This action deploys the full release from the main branch as well as: 8ball, dev branch (for testing), and documentation from their respective branches.
         - Have multibranch deploy since we had to constantly change which branch pages was built off of when building the project which got annoying
         - Comments in `.yml` provide more clarity, but essentially works by copying files into main branch and deploying them all
-        - Can be run manually here
+        - Can be run manually [here](https://github.com/cse110-sp23-group14/cse110-sp23-group14/actions/workflows/full-deploy-pipeline.yml)
     - Github Super linter
         - Works by running specified linters (ESLint, HTMLHint, and stylelint) on all the of the files in the repo
         - Style specifications for the linters found in the `.github/linters` folder.
-        - Can be run manually here
+        - Can be run manually [here](https://github.com/cse110-sp23-group14/cse110-sp23-group14/actions/workflows/linter.yml)
     - Testing
         - Testing is done with puppeteer + Jest
         - BIG ISSUE WITH THE TESTING WORKFLOW: IT WILL PASS EVEN IF TESTS FAIL, BE SURE TO CHECK WORKFLOW AFTER IT RUNS
         - Tests found in `source/jest_test`
+        - Can be run manually here
     - Documentation 
         - Documentation done with JSDocs
         - Built off of the fortune-telling-dev branch for most up to date docs
-        - Can be run manually here
+        - Can be run manually [here](https://github.com/cse110-sp23-group14/cse110-sp23-group14/actions/workflows/documentation.yml)
 
 
 
