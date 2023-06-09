@@ -55,26 +55,40 @@ const signArray = [capricornSign, cancerSign, aquariusSign, geminiSign, leoSign,
 const signNamesArray = ['capricorn', 'cancer', 'aquarius', 'gemini', 'leo', 'libra', 'pisces', 'sagittarius', 'scorpio', 'taurus', 'virgo', 'aries'];
 
 let clickCount=0;
+
 for (let i=0; i < signArray.length; i++) {
     signArray[i].addEventListener('click', () => {
-        checkCompatibility();
+
 
         
-        const image = `assets/zodiac_sign/${signElementArray[i]}.png`;
+        const image = `assets/zodiac_sign/${signNamesArray[i]}.png`;
 
-        const shapePos = clickCount === 0 ? 'left' : 'right';
+        
 
-        if(shapePos === 'left'){
+        if(shapeLeft.querySelector('.sign-name').textContent=='' && shapeRight.querySelector('.sign-name').textContent==''){
             shapeLeft.style.backgroundImage = `url(${image})`;
             shapeLeft.style.backgroundSize ='cover';
-            shapeLeft.querySelector('.sign-name').textContent = imagesArray[i];
+            shapeLeft.querySelector('.sign-name').textContent = signNamesArray[i];
         }else{
-            shapeRight.style.backgroundImage=`url(${image})`;
-            shapeRight.style.backgroundSize='cover';
-            shapeRight.querySelector('.sign-name').textContent= imagesArray[i];
+            if(shapeLeft.querySelector('.sign-name').textContent=='')
+            {
+                shapeLeft.style.backgroundImage = `url(${image})`;
+                shapeLeft.style.backgroundSize ='cover';
+                shapeLeft.querySelector('.sign-name').textContent = signNamesArray[i];
+    
+            }
+
+            else{
+                shapeRight.style.backgroundImage=`url(${image})`;
+                shapeRight.style.backgroundSize='cover';
+                shapeRight.querySelector('.sign-name').textContent= signNamesArray[i];
+    
+
+            }
         }
-        checkCompatibility();
+
         clickCount++;
+        checkCompatibility();
         handleClick();
     });
 }
@@ -355,10 +369,8 @@ function checkCompatibility() {
 
 
 shapeLeft.addEventListener('click', function() {
+   clickCount--;
     shapeLeft.style.backgroundImage = ''; // Remove background image from shapeLeft
-    if(clickCount === 1) clickCount = 0; // Reset click count
-    else clickCount=0;
-
     shapeLeft.querySelector('.sign-name').textContent='';
 
     handleClick();
@@ -366,10 +378,9 @@ shapeLeft.addEventListener('click', function() {
 
 // Event listener for shapeRight
 shapeRight.addEventListener('click', function() {
+    clickCount--;
     shapeRight.style.backgroundImage = ''; // Remove background image from shapeRight
-    if(clickCount === 1) clickCount = 0; // Reset click count
-    else clickCount=0;
-
+   
     shapeRight.querySelector('.sign-name').textContent='';
 
     handleClick();
