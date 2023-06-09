@@ -38,31 +38,26 @@ const chooseSignWindow=document.getElementById('choose-sign');
 
 //const result_window=document.getElementById('result');
 
-const capricornSign=document.getElementById('capricorn');
-const cancerSign=document.getElementById('cancer');
-const aquariusSign=document.getElementById('aquarius');
-const geminiSign=document.getElementById('gemini');
-const leoSign=document.getElementById('leo');
-const libraSign=document.getElementById('libra');
-const piscesSign=document.getElementById('pisces');
-const sagittariusSign=document.getElementById('sagittarius');
-const scorpioSign=document.getElementById('scorpio');
-const taurusSign=document.getElementById('taurus');
-const virgoSign=document.getElementById('virgo');
-const ariesSign=document.getElementById('aries');
+const capricornSign=document.getElementById('Capricorn');
+const cancerSign=document.getElementById('Cancer');
+const aquariusSign=document.getElementById('Aquarius');
+const geminiSign=document.getElementById('Gemini');
+const leoSign=document.getElementById('Leo');
+const libraSign=document.getElementById('Libra');
+const piscesSign=document.getElementById('Pisces');
+const sagittariusSign=document.getElementById('Sagittarius');
+const scorpioSign=document.getElementById('Scorpio');
+const taurusSign=document.getElementById('Taurus');
+const virgoSign=document.getElementById('Virgo');
+const ariesSign=document.getElementById('Aries');
 const signArray = [capricornSign, cancerSign, aquariusSign, geminiSign, leoSign, libraSign, piscesSign, sagittariusSign, scorpioSign, taurusSign, virgoSign, ariesSign];
 const signNamesArray = ['capricorn', 'cancer', 'aquarius', 'gemini', 'leo', 'libra', 'pisces', 'sagittarius', 'scorpio', 'taurus', 'virgo', 'aries'];
 
 let clickCount=0;
 
 for (let i=0; i < signArray.length; i++) {
-    signArray[i].addEventListener('click', () => {
-
-
-        
+    signArray[i].addEventListener('click', function(){
         const image = `assets/zodiac_sign/${signNamesArray[i]}.png`;
-
-        
 
         if(shapeLeft.querySelector('.sign-name').textContent=='' && shapeRight.querySelector('.sign-name').textContent==''){
             shapeLeft.style.backgroundImage = `url(${image})`;
@@ -76,16 +71,12 @@ for (let i=0; i < signArray.length; i++) {
                 shapeLeft.querySelector('.sign-name').textContent = signNamesArray[i];
     
             }
-
             else{
                 shapeRight.style.backgroundImage=`url(${image})`;
                 shapeRight.style.backgroundSize='cover';
                 shapeRight.querySelector('.sign-name').textContent= signNamesArray[i];
-    
-
             }
         }
-
         clickCount++;
         checkCompatibility();
         handleClick();
@@ -367,13 +358,13 @@ function checkCompatibility() {
 
 
 
-shapeLeft.addEventListener('click', function() {
-   clickCount--;
-    shapeLeft.style.backgroundImage = ''; // Remove background image from shapeLeft
-    shapeLeft.querySelector('.sign-name').textContent='';
+// shapeLeft.addEventListener('click', function() {
+//    clickCount--;
+//     shapeLeft.style.backgroundImage = ''; // Remove background image from shapeLeft
+//     shapeLeft.querySelector('.sign-name').textContent='';
 
-    handleClick();
-});
+//     handleClick();
+// });
 
 // Event listener for shapeRight
 shapeRight.addEventListener('click', function() {
