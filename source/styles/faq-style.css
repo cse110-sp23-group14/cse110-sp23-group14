@@ -1,0 +1,35 @@
+.faq {
+    height:200vh;
+    background-image: url('../assets/settings-background.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: var(--main-light-color);
+    text-align: left;
+}
+.title-faq{
+    font: 40px Lora, serif;
+    color: var(--main-light-color);
+    text-align: center;
+}
+
+.faq h2 {
+    font: 25px Inter, sans-serif;
+    color: var(--main-light-color);
+    margin-left: 10vh;
+}
+.faq p {
+    font: 20px Lora, serif;
+    color:var(--main-light-color);
+    margin-left: 20vh;
+    margin-right: 10vh;
+}
+.bullet-point{
+    font: 20px Lora, serif;
+    color:var(--main-light-color);
+    margin-left: 20vh;
+}
+.steps{
+    font: 20px Lora, serif;
+    color:var(--main-light-color);
+    margin-left: 20vh;
+}
