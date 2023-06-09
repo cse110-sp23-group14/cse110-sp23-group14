@@ -1,11 +1,12 @@
 import { Horoscope } from "./horoscope.js";
-import { constellation } from "../jsons/constellation.js";
+import { constellation } from "../jsons/constellationJson.js";
 
 window.addEventListener('DOMContentLoaded', (event) => {
     // Call the functions to display the stored name and birthday
     displayStoredData();
     setHoroscope();
 
+    // Updates horoscope on name submit
     const saveUserNameForm = document.getElementById('save-name-form');
     saveUserNameForm.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent page jump
@@ -14,6 +15,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         setHoroscope();
     });
 
+    // Updates horoscope on birthday submit
     const saveBirthdayForm = document.getElementById('save-birthday-form');
     saveBirthdayForm.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent page jump
@@ -32,7 +34,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 /**
- * get user name and birthday from localStorage,
+ * Get user name and birthday from localStorage,
  * and display them in setting page
  */
 function displayStoredData() {
@@ -107,7 +109,7 @@ function saveBirthday() {
 }
 
 /**
- * Clear 'name' and 'birthday' in localStorage
+ * Clear 'name' and 'birthday' items in localStorage
  */
 function clearUserInfo() {
     const confirmed = window.confirm("Are you sure you want to clear your name and birthday?");
