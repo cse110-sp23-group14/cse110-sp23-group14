@@ -545,7 +545,7 @@ function hidePopup() {
 }
 
 // Attach event listener to the close button
-document.getElementById("popup-close").addEventListener("click", function() {
+document.querySelector(".popup-close").addEventListener("click", () => {
     hidePopup();
     clickCount=0;
     shapeLeft.style.backgroundImage='';
