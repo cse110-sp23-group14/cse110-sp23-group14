@@ -1,4 +1,5 @@
 import { Horoscope } from "./horoscope.js";
+
 /**
  * Event listener function for the 'DOMContentLoaded' event.
  *
@@ -15,6 +16,11 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     let isDisplayed = false;
 
     const dailyReport = document.querySelector('.report');
+
+    /**
+     * This function opens up the navigation bar
+     * and changes the hamburger to an x
+     */
     function openNav() {
         // Open Nav
         isNavOpen = true;
@@ -25,6 +31,12 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         navContainer.classList.add('nav-show-background');
         navContainer.classList.remove('nav-background-hide');
     }
+
+
+    /**
+     * Closes the navigation bar
+     * and changes the x back to the hamburger
+     */
     function closeNav() {
         // Close Nav
         isNavOpen = false;
@@ -35,6 +47,8 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         navContainer.classList.add('nav-background-hide');
         navContainer.classList.remove('nav-show-background');
     }
+
+
     /**
     * Event listener function for the 'click' event on the navButton.
     *

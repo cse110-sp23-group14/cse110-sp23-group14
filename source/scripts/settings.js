@@ -1,10 +1,12 @@
 import { Horoscope } from "./horoscope.js";
+import { constellation } from "../jsons/constellationJson.js";
 
 window.addEventListener('DOMContentLoaded', (event) => {
     // Call the functions to display the stored name and birthday
     displayStoredData();
     setHoroscope();
 
+    // Updates horoscope on name submit
     const saveUserNameForm = document.getElementById('save-name-form');
     saveUserNameForm.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent page jump
@@ -13,6 +15,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         setHoroscope();
     });
 
+    // Updates horoscope on birthday submit
     const saveBirthdayForm = document.getElementById('save-birthday-form');
     saveBirthdayForm.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent page jump
@@ -31,7 +34,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 /**
- * get user name and birthday from localStorage,
+ * Get user name and birthday from localStorage,
  * and display them in setting page
  */
 function displayStoredData() {
@@ -54,20 +57,6 @@ function setHoroscope() {
     const horoscopeContent = document.querySelector('.horoscope-content');
     const zodiacSign = Horoscope.getSign();
     const defaultImage = 'assets/settings-background.jpeg';
-    const constellation = {
-        'Aries': 'assets/constellation/aries.jpeg',
-        'Aquarius': 'assets/constellation/aquarius.jpeg',
-        'Cancer' :'assets/constellation/cancer.jpeg',
-        'Capricorn': 'assets/constellation/capricorn.jpeg',
-        'Gemini' : 'assets/constellation/gemini.jpeg',
-        'Leo' : 'assets/constellation/leo.jpeg',
-        'Libra': 'assets/constellation/libra.jpeg',
-        'Pisces': 'assets/constellation/pisces.jpeg',
-        'Sagittarius': 'assets/constellation/sagittarius.jpeg',
-        'Scorpio': 'assets/constellation/scorpio.jpeg',
-        'Taurus': 'assets/constellation/taurus.jpeg',
-        'Virgo': 'assets/constellation/virgo.jpeg',
-    };
     if (zodiacSign) {
         const imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
         horoscopeContent.style.backgroundImage = `url(${constellation[imageKey]})`;
@@ -112,7 +101,7 @@ function saveBirthday() {
         }
         return month + "." + day;
     })(birthdayInput.value);
-
+    
     const birthdayYear = birthdayInput.value.substring(0,4) + '.' + birthday;
     localStorage.setItem("birthday", birthday);
     localStorage.setItem("birthdayYear",birthdayYear);
@@ -120,7 +109,7 @@ function saveBirthday() {
 }
 
 /**
- * Clear 'name' and 'birthday' in localStorage
+ * Clear 'name' and 'birthday' items in localStorage
  */
 function clearUserInfo() {
     const confirmed = window.confirm("Are you sure you want to clear your name and birthday?");
