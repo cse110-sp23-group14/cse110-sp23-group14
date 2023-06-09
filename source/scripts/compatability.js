@@ -194,7 +194,9 @@ console.log(description);
 
 
 // get the shape element
+// naming for this isn't consistent, is this still working?
 const shapeLeft=document.querySelector('.shape-left');
+// naming for this isn't consistent, is this still working?
 const shapeRight=document.querySelector('.shape-right');
 const love_content=document.getElementById('description');
 const choose_sign_window=document.getElementById('choose-sign');
