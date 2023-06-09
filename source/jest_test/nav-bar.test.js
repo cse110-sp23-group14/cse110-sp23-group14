@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const SERVER_PORT = 36873;
+const SERVER_PORT = 5500;//36873;
 
 
 /**
@@ -16,11 +16,22 @@ describe('Nav bar test suite', () => {
     it('Check that nav bar opens', async () => {
         const buttonHandle = await page.evaluateHandle(`document.querySelector("#nav-button > i.fa-solid.fa-bars.fa-2xl")`);
         await buttonHandle.click();
+        
+        // Wait for nav bar animation
+        await page.waitForTimeout(100);
 
-        // We don't really need this but keep it in case page takes a while to load
-        await page.goto(`http://localhost:${SERVER_PORT}/source/`);
+        // Check that hamburger icon is hidden and x icon is shown
+        const images = await page.$eval("#nav-button", (element) => {
+            return element.innerHTML
+        });
+        console.log(images);
+        expect(images).toBe('<i class=\"fa-solid fa-bars fa-2xl icon-hide\"></i><i class=\"fa-solid fa-xmark fa-2xl\"></i>');
+    });
 
-        const text = await page.evaluateHandle(`document.querySelector("#home-link > h1").innerHTML`);
-        expect(text).toBe('Home');
+    /**
+     * This should pass (sanity check)
+     */
+    it('Basic test', async () => {
+        expect(20).toBe(20);
     });
 });
