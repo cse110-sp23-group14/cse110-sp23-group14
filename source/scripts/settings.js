@@ -1,5 +1,5 @@
 import { Horoscope } from "./horoscope.js";
-import { constellation } from "../jsons/constellation.js";
+import { constellation } from "../jsons/constellationJson.js";
 
 window.addEventListener('DOMContentLoaded', (event) => {
     // Call the functions to display the stored name and birthday

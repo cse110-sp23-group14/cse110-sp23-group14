@@ -1,4 +1,4 @@
-import {soulUrgeNumberData} from "../jsons/soulUrgeNumberData.js";
+import {soulUrgeNumberData} from "../jsons/soulUrgeNumberDataJson.js";
 
 // window.addEventListener('DOMContentLoaded', (event)=> {});
 
