@@ -83,22 +83,26 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const dailyDate = document.getElementsByClassName("daily-date")[0];
     const date = new Date().toLocaleDateString();
     dailyDate.innerHTML = `${date}`;
+    
+    // Animate the text for the Daily Content inside horoscope pop up box
     const dailyContent = document.getElementsByClassName("daily-content")[0];
     dailyContent.innerHTML = Horoscope.generateHoroscope();
     dailyContent.innerHTML = ""; // Clear the initial content
     
+    // Makes the text appear letter by letter 
     function typeWriter(text, i) {
         if (i < text.length) {
             dailyContent.innerHTML += text.charAt(i);
             i++;
             setTimeout(() => {
                 typeWriter(text, i);
-            }, 20);
+            }, 27);
         }
     }
 
     const contentText = Horoscope.generateHoroscope(); // Retrieve the content text
     
+    // only start animating horoscope text once popup appears
     horoscopeButton.onclick = function() {
         if (isDisplayed==false) {
             typeWriter(contentText,0);
