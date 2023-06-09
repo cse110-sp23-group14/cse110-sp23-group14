@@ -41,6 +41,7 @@ body {
     background-image: linear-gradient(to right, #1D267D 30%, transparent 70%);
     transition: background-position 1s;
     pointer-events: none;
+    z-index: 2;
 }
 
 #nav-button {
