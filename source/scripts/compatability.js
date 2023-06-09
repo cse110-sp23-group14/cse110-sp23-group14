@@ -526,7 +526,7 @@ function handleClick(){
     } else{
         setTimeout(() => {
             hidePopup();
-            chooseSignWindow.style.display='flex';
+            chooseSignWindow.style.display='block';
         }, 300);
       
     }
