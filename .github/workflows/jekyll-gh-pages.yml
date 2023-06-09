@@ -58,7 +58,7 @@ jobs:
           rm -rf main/fortune-telling-dev/.github
           rm main/fortune-telling-dev/package.json
           rm main/fortune-telling-dev/package-lock.json
-          rm main/fortune-telling-dev/jes-puppeteer.config.js
+          rm main/fortune-telling-dev/jest-puppeteer.config.js
           rm main/fortune-telling-dev/babel.config.js
           rm -rf main/test-8ball-PWA/admin
           rm -rf main/test-8ball-PWA/specs
