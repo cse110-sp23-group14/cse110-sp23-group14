@@ -1,4 +1,4 @@
-import {soulUrgeNumberData} from "../jsons/soulUrgeNumberData"
+import {soulUrgeNumberData} from "../jsons/soulUrgeNumberData.js"
 
 
 function showNewPage() {
