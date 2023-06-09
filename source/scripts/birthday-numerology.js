@@ -1,7 +1,10 @@
 import {soulUrgeNumberData} from "../jsons/soulUrgeNumberDataJson.js";
 
 // window.addEventListener('DOMContentLoaded', (event)=> {});
-
+const start=document.getElementById("start-button");
+start.addEventListener('click', function() {
+    showNewPage();
+});
 function showNewPage() {
     const birthday = localStorage.getItem("birthdayYear");
     let text1 = "Your Life Path Number is:";
