@@ -20,8 +20,8 @@ function findDescription(sign1, sign2) {
 }
   
 
-const sign1 = "Aries";
-const sign2 = "Leo";
+const sign1 = "aries";
+const sign2 = "leo";
 const description = findDescription(sign1, sign2);
 
 /************************************ */
@@ -38,19 +38,18 @@ const chooseSignWindow=document.getElementById('choose-sign');
 
 //const result_window=document.getElementById('result');
 
-const capricornSign=document.getElementById('Capricorn');
-const cancerSign=document.getElementById('Cancer');
-const aquariusSign=document.getElementById('Aquarius');
-const geminiSign=document.getElementById('Gemini');
-const leoSign=document.getElementById('Leo');
-const libraSign=document.getElementById('Libra');
-const piscesSign=document.getElementById('Pisces');
-const sagittariusSign=document.getElementById('Sagittarius');
-const scorpioSign=document.getElementById('Scorpio');
-const taurusSign=document.getElementById('Taurus');
-const virgoSign=document.getElementById('Virgo');
-const ariesSign=document.getElementById('Aries');
-
+const capricornSign=document.getElementById('capricorn');
+const cancerSign=document.getElementById('cancer');
+const aquariusSign=document.getElementById('aquarius');
+const geminiSign=document.getElementById('gemini');
+const leoSign=document.getElementById('leo');
+const libraSign=document.getElementById('libra');
+const piscesSign=document.getElementById('pisces');
+const sagittariusSign=document.getElementById('sagittarius');
+const scorpioSign=document.getElementById('scorpio');
+const taurusSign=document.getElementById('taurus');
+const virgoSign=document.getElementById('virgo');
+const ariesSign=document.getElementById('aries');
 const signArray = [capricornSign, cancerSign, aquariusSign, geminiSign, leoSign, libraSign, piscesSign, sagittariusSign, scorpioSign, taurusSign, virgoSign, ariesSign];
 const signNamesArray = ['capricorn', 'cancer', 'aquarius', 'gemini', 'leo', 'libra', 'pisces', 'sagittarius', 'scorpio', 'taurus', 'virgo', 'aries'];
 
