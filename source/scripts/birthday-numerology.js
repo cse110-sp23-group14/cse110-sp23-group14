@@ -1,66 +1,47 @@
 import {soulUrgeNumberData} from "../jsons/soulUrgeNumberDataJson.js";
 
-// window.addEventListener('DOMContentLoaded', (event)=> {});
-const start=document.getElementById("start-button");
-start.addEventListener('click', function() {
-    showNewPage();
-});
-function showNewPage() {
+window.addEventListener('DOMContentLoaded', (event)=> {
+    const lifePathNumberLabel = document.getElementById("lifepath-number");
+
     const birthday = localStorage.getItem("birthdayYear");
-    let text1 = "Your Life Path Number is:";
-    let text2 = "";
-    const lifePathNumber=calculateLifePathNumber(birthday);
-    if (!birthday) {
-        text1 = "We do not have your birthday.";
-    } else {
-        // Calculate the life path number based on the birthday
-        // Replace this logic with your actual calculation
-        text2 = lifePathNumber;
+    let lifePathNumber = -1;
+    if (birthday) {
+        lifePathNumber = calculateLifePathNumber(birthday);
+        lifePathNumberLabel.innerHTML = `${lifePathNumber}`;
+        lifePathNumberLabel.classList.add('highlight');
+        lifePathNumberLabel.classList.remove('deemphasize');
+        const lifePathTitle = document.getElementById('lifepath-title');
+        const lifePathText = document.getElementById('lifepath-text');
+        const lifePathButtons = document.querySelectorAll('.button-box a');
+        const lifePathImage = document.getElementById('lifepath-image');
+        lifePathImage.setAttribute('src', `assets/lifepath/${lifePathNumber}.jpg`);
+        lifePathButtons[0].addEventListener('click', function() {
+            lifePathTitle.innerHTML = `Personality`;
+            lifePathText.innerHTML = soulUrgeNumberData[lifePathNumber]['personality'];
+        });
+        lifePathButtons[1].addEventListener('click', function() {
+            lifePathTitle.innerHTML = `Characteristics`;
+            lifePathText.innerHTML = soulUrgeNumberData[lifePathNumber]['characteristic'];
+        });
+        lifePathButtons[2].addEventListener('click', function() {
+            lifePathTitle.innerHTML = `Career`;
+            lifePathText.innerHTML = soulUrgeNumberData[lifePathNumber]['career'];
+        });
+        lifePathButtons[3].addEventListener('click', function() {
+            lifePathTitle.innerHTML = `Love`;
+            lifePathText.innerHTML = soulUrgeNumberData[lifePathNumber]['love'];
+        });
     }
-    document.getElementById("main-content").innerHTML = `
-        <div>
-            <p class="title">"Life Path Number"</p>
-            <p class="text1">${text1}</p>
-            <p class="text2">${text2}</p>
-        </div>
-        <div>
-            <button onclick="showPopup('personality', ${lifePathNumber})">Personality</button>
-            <button onclick="showPopup('characteristic',${lifePathNumber})">Characteristic</button>
-            <button onclick="showPopup('career',${lifePathNumber})">Career</button>
-            <button onclick="showPopup('love',${lifePathNumber})">Love</button>
-        </div>
-    `;
-
-    setTimeout(function() {
-        const text2Element = document.getElementsByClassName("text2")[0];
-        text2Element.style.transition = "opacity 1s ease";
-        text2Element.style.opacity = "1";
-    }, 3000); // Delay in milliseconds (3000ms = 3 seconds)
-}
-
-function hidePopup(popupId) {
-    document.getElementById(popupId).style.display = "none";
-}
-
-function showPopup(popupId, lifePathNumber) {
-    const popup = document.getElementById(popupId);
-    const personalityData = soulUrgeNumberData[lifePathNumber][popupId];
-
-    // Update the popup content with the personality information\
-    popup.innerHTML = `
-        <span class="popup-close" onclick="hidePopup('${popupId}')">&times;</span>
-        <img class="image" src="assets/lifepath/${lifePathNumber}.jpg" alt="horoscope sign">
-        <br>
-        <br>
-        <h3 >${popupId}</h3>
-        <br>
-        <p>${personalityData}</p>
-    `;
-
-    // Display the popup
-    popup.style.display = "block";
-}
-
+    else {
+        const lifePathButtonBox = document.querySelector('.lifepath-content .button-box');
+        lifePathButtonBox.style.display = 'none';
+        lifePathNumberLabel.innerHTML = "Your lifepath has not been revealed yet. Please fill out your info!";
+        lifePathNumberLabel.classList.add('deemphasize');
+        lifePathNumberLabel.classList.remove('highlight');
+    }
+});
+// popupId is personality, characteristic, career, love
+// const personalityData = soulUrgeNumberData[lifePathNumber][popupId];
 
 function calculateLifePathNumber(birthDate) {
     console.log(birthDate);
@@ -99,6 +80,3 @@ function reduceNumber(number) {
 
     return result;
 }
-
-
-// Soul Urge Number data

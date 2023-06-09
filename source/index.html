@@ -34,7 +34,7 @@
                             <h1 class="report" id="report">Compatibility</h1>
                         </a>
                         
-                        <a href="#lifepathpage" class="option" id="lifepath-link">
+                        <a href="#lifepath-page" class="option" id="lifepath-link">
                             <h1 class="settings">Life Path Number</h1>
                         </a>
                         <a href="#settingpage" class="option" id="settings-link">
@@ -222,35 +222,33 @@
             </div>
         </section>
 
-        <section id="lifepathpage">
+        <section id="lifepath-page">
+            <div id="lifepath-popup" class="overlay">
+                <div class="popup">
+                        <a class="close" href="#lifepath-popup-box">&times;</a>
+                        <img id="lifepath-image" src="" alt="horoscope sign">
+                        <h1 id="lifepath-title">Personality</h1>
+                        <p id="lifepath-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor mauris at rhoncus maximus. Praesent dui
+                        purus, pharetra at scelerisque ut, euismod eget mauris. Maecenas eleifend, purus eu dapibus finibus, libero
+                        lorem ultrices augue, vel malesuada diam quam in lorem. Suspendisse quis nisl nec risus auctor tincidunt.
+                        Integer finibus pellentesque ipsum tempor mattis. Morbi finibus nisi id purus dignissim, ut pretium velit
+                        pellentesque. Ut pretium tortor ut pretium pharetra. Ut ut hendrerit lectus.
+                        </p>
+                </div>
+            </div>
             <div class="site-content lifepath-content">
-                <div class="lifepath-background">
-                        <div id="main-content">
-                            <button id="start-button">Discover Your Life Path Number Meaning</button>
-                        </div>
-                        <div id="personality" class="popup">
-                            <span class="popup-close" onclick="hidePopup('personality')">&times;</span>
-                            <h3>Personality</h3>
-                            <p id="personality-text">Personality description...</p>
-                        </div>
-                    
-                        <div id="characteristic" class="popup">
-                            <span class="popup-close" onclick="hidePopup('characteristic')">&times;</span>
-                            <h3>Characteristic</h3>
-                            <p id="characteristic-text">Characteristic description...</p>
-                        </div>
-                    
-                        <div id="career" class="popup">
-                            <span class="popup-close" onclick="hidePopup('career')">&times;</span>
-                            <h3>Careerssss</h3>
-                            <p id="career-text">Career description...</p>
-                        </div>
-                    
-                        <div id="love" class="popup">
-                            <span class="popup-close" onclick="hidePopup('love')">&times;</span>
-                            <h3>Love</h3>
-                            <p id="love-text">Love description...</p>
-                        </div>
+                <div class="lifepath-menu-background">
+                    <div class="lifepath-info">
+                        <h1>Your Lifepath Number</h1>
+                        <p id="lifepath-number">#</p>
+                    </div>
+                    <div class="button-box">
+                        <a id="personality-button" class="button" href="#lifepath-popup">Personality</a>
+                        <a id="characteristics-button" class="button" href="#lifepath-popup">Characteristics</a>
+                        <a id="career-button" class="button" href="#lifepath-popup">Career</a>
+                        <a id="love-button" class="button" href="#lifepath-popup">Love</a>
+                    </div>
                 </div>
             </div>
         </section>
