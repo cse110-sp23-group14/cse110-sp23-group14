@@ -19,7 +19,6 @@ class Horoscope {
     static getSign() {
         // Getting Birthday Data
         const birthday = localStorage.getItem('birthday');
-        console.log(birthday);
         if (!birthday) {
             return null;
         }
