@@ -62,10 +62,7 @@ const signNamesArray = ['capricorn', 'cancer', 'aquarius', 'gemini', 'leo', 'lib
 let clickCount = 0;
 
 for (let i=0; i < signArray.length; i++) {
-    signArray[i].addEventListener('click', () => {
-
-
-        
+    signArray[i].addEventListener('click', function(){
         const image = `assets/zodiac_sign/${signNamesArray[i]}.png`;
 
         if(shapeLeft.querySelector('.sign-name').textContent=='' && shapeRight.querySelector('.sign-name').textContent==''){
@@ -84,7 +81,6 @@ for (let i=0; i < signArray.length; i++) {
                 shapeRight.querySelector('.sign-name').textContent= signNamesArray[i];
             }
         }
-
         clickCount++;
         checkCompatibility();
         handleClick();
