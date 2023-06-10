@@ -196,7 +196,8 @@
 }
 
 .compatibility-content .menu {
-    max-width: 800px;
+    height: 50vh;
+    max-width: 60vw;
     margin:0 auto;
     padding:1em;
     background: rgb(255 255 255 / 24%);
@@ -212,7 +213,7 @@
     text-align: center;
 }
 
-.compatibility-content .menu a {
+.compatibility-content .menu {
     text-decoration: none;
     color: #f0e9e9;
 }
@@ -227,9 +228,9 @@
     
 }
 
-.compatibility-content .menu > div a {
+.compatibility-content .menu > div {
     width:80%;
-    height:80%;
+    height:60%;
     padding:1em;
     background:    
         rgba(255,255,255,20%);
@@ -240,7 +241,7 @@
     transition: 0.2s;
 }
 
-.compatibility-content .menu >div:hover a {
+.compatibility-content .menu >div:hover {
     background: rgba(255 255 255 / 50%);
     transform: scale(1.1);
     box-shadow: 
@@ -300,4 +301,42 @@
         opacity: 1;
     }
     
+}
+
+#compatability-popup-new.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+#close-compatability-popup-new {
+    cursor: pointer;
+}
+
+#check-compatability-button {
+    font-family: Inter, sans-serif !important;
+    font-weight: bold;
+    margin: 2% auto auto;
+    font-size: 1em;
+    padding: 1%;
+    color: var(--main-dark-color);
+    border: 2px solid #8c67b1;
+    border-radius: 50px;
+    text-decoration: none;
+    background-color: #8c67b1;
+    width: 30%;
+    text-align: center;
+}
+
+#check-compatability-button:disabled {
+    background-color: #c994fd;
+    opacity: 50%;
+}
+
+
+#check-compatability-button:hover {
+    background-color: #c994fd;
+}
+
+#check-compatability-button:active {
+    background-color: #eedcff;
 }
