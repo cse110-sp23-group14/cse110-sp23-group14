@@ -23,8 +23,8 @@
 
 
 const puppeteer = require("puppeteer");
-// const SERVER_PORT = 36873; // Use this when actually running tests in CI/CD pipeline
-const SERVER_PORT = 5500; // Use this when just running tests locally
+const SERVER_PORT = 36873; // Use this when actually running tests in CI/CD pipeline
+// const SERVER_PORT = 5500; // Use this when just running tests locally
 
 test('sample test so tests run before we refactor this file', () =>{
     expect(4).toBe(4);

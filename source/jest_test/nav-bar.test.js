@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const SERVER_PORT = 5500;//36873;
+const SERVER_PORT = 36873;
 
 
 /**
