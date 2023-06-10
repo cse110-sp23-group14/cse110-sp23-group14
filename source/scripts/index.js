@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const navContainer = document.getElementsByClassName('nav-container')[0];
     const horoscopeButton = document.getElementById('horoscope-button');
     let isNavOpen = false;
-    let isDisplayed = false;
+    let isHoroscopeDisplayed = false;
 
     const dailyReport = document.querySelector('.report');
 
@@ -118,9 +118,9 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     
     // only start animating horoscope text once popup appears
     horoscopeButton.onclick = function() {
-        if (isDisplayed==false) {
+        if (isHoroscopeDisplayed==false) {
             typeWriter(contentText,0);
-            isDisplayed=true;
+            isHoroscopeDisplayed=true;
         }
     };
 
@@ -136,7 +136,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         shareBtn.style.display = 'default';
     }
     /**
-     * Copy daily-horoscope to cliipboard when share button is clicked
+     * Copy daily-horoscope to clipboard when share button is clicked
      */
     shareBtn.addEventListener('click', async (event) => {
         try {
