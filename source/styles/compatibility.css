@@ -196,7 +196,8 @@
 }
 
 .compatibility-content .menu {
-    max-width: 800px;
+    height: 50vh;
+    max-width: 60vw;
     margin:0 auto;
     padding:1em;
     background: rgb(255 255 255 / 24%);
@@ -212,7 +213,7 @@
     text-align: center;
 }
 
-.compatibility-content .menu a {
+.compatibility-content .menu {
     text-decoration: none;
     color: #f0e9e9;
 }
@@ -227,9 +228,9 @@
     
 }
 
-.compatibility-content .menu > div a {
+.compatibility-content .menu > div {
     width:80%;
-    height:80%;
+    height:60%;
     padding:1em;
     background:    
         rgba(255,255,255,20%);
@@ -240,7 +241,7 @@
     transition: 0.2s;
 }
 
-.compatibility-content .menu >div:hover a {
+.compatibility-content .menu >div:hover {
     background: rgba(255 255 255 / 50%);
     transform: scale(1.1);
     box-shadow: 
