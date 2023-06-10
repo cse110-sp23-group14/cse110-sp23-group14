@@ -4,7 +4,7 @@
 
 Run the commands below: 
 
-`npm run serve-port` & `npm test`
+`npm run serve-port & npm run test`
 
 Be sure to kill the port before running again.
 
