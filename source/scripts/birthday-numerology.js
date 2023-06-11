@@ -26,6 +26,7 @@ function updateLifePathNumber(){
         const lifePathTitle = document.getElementById('lifepath-title');
         const lifePathText = document.getElementById('lifepath-text');
         const lifePathButtons = document.querySelectorAll('.button-box a');
+        const lifePathButtonBox = document.querySelector('.button-box');
         const lifePathImage = document.getElementById('lifepath-image');
         lifePathImage.setAttribute('src', `assets/lifepath/${lifePathNumber}.png`);
 
@@ -61,7 +62,8 @@ function updateLifePathNumber(){
             lifePathTitle.innerHTML = predictionType;
             lifePathText.innerHTML = predictionValue;
         }
-    
+        // show lifePathButtons
+        lifePathButtonBox.style.display = '';
         // Attach the event listener to each button
         lifePathButtons.forEach(button => {
             button.addEventListener('click', handleButtonClick);
