@@ -46,8 +46,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
         const horoscopeDetect = document.getElementById('horoscope-detect');
         // Check if localStorage has the birthdayYear key
         if (localStorage.getItem('birthdayYear')) {
-        // Hide the paragraph
-        horoscopeDetect.style.display = 'none';
+            // Hide the paragraph
+            horoscopeDetect.style.display = 'none';
         }
     });
     
@@ -72,8 +72,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
         const horoscopeDetect = document.getElementById('horoscope-detect');
         // Check if localStorage has the birthdayYear key
         if (!localStorage.getItem('birthdayYear')) {
-        // Hide the paragraph
-        horoscopeDetect.style.display = 'block';
+            // Hide the paragraph
+            horoscopeDetect.style.display = 'block';
         }
     });
 });
@@ -93,7 +93,7 @@ function displayStoredData() {
             displayElement.innerHTML = `Welcome back! Your birthday on record is <span class="highlight">${storedBirthday}</span>`;
         }
     }else{
-        displayElement.innerHTML = 'Hey new friend! We are excited to meet you.'
+        displayElement.innerHTML = 'Hey new friend! We are excited to meet you.';
     }
 }
 

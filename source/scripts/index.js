@@ -20,8 +20,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         // Hide the button
         horoscopeButton.style.display = 'none';
         horoscopeDetect.style.display = 'block';
-    }
-    else{
+    }else{
         horoscopeDetect.style.display = 'none';
     }
 
@@ -178,6 +177,21 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         });
     }
 
+    /**
+     * FAQ dropdown functionality
+     */
+    const questions = document.getElementsByClassName('question');
+    const answers = document.getElementsByClassName('answer');
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].addEventListener('click', (event) => {
+            if (answers[i].classList.contains('hide')) {
+                answers[i].classList.remove('hide');
+            }
+            else {
+                answers[i].classList.add('hide');
+            }
+        });
+    }
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     /**
      * Scrolls to the target element smoothly.
@@ -231,6 +245,16 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
      * @param {Event} event - "click"
      */
     document.getElementById('lifepath-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        scrollToElement(target);
+    });
+
+    /**
+     * Scrolls to the FAQ page
+     * @param {Event} event - "click"
+     */
+    document.getElementById('faq-link').addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         scrollToElement(target);
