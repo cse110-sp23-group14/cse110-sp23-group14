@@ -67,3 +67,7 @@ ul, ol {
 .hide {
     display: none;
 }
+
+/* .faq-page {
+    scroll-snap-type: none;
+} */
