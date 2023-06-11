@@ -38,6 +38,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
         displayStoredData();
         setHoroscope();
         updateLifePathNumber();
+        const horoscopeButton = document.getElementById('horoscope-button');
+        if (localStorage.getItem('birthdayYear')) {
+            // Hide the button
+            horoscopeButton.style.display = 'block';
+        }
+        const horoscopeDetect = document.getElementById('horoscope-detect');
+        // Check if localStorage has the birthdayYear key
+        if (localStorage.getItem('birthdayYear')) {
+        // Hide the paragraph
+        horoscopeDetect.style.display = 'none';
+        }
     });
     
     const clearUserInfoButton = document.querySelector('.clear-profile button');
@@ -52,6 +63,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
         displayStoredData();
         setHoroscope();
         updateLifePathNumber();
+        setHoroscope();
+        const horoscopeButton = document.getElementById('horoscope-button');
+        if (!localStorage.getItem('birthdayYear')) {
+            // Hide the button
+            horoscopeButton.style.display = 'none';
+        }
+        const horoscopeDetect = document.getElementById('horoscope-detect');
+        // Check if localStorage has the birthdayYear key
+        if (!localStorage.getItem('birthdayYear')) {
+        // Hide the paragraph
+        horoscopeDetect.style.display = 'block';
+        }
     });
 });
 

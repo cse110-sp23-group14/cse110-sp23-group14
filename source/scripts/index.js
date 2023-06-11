@@ -11,10 +11,16 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const navIconXMark = document.getElementsByClassName('fa-xmark')[0];
     const navContainer = document.getElementsByClassName('nav-container')[0];
     const horoscopeButton = document.getElementById('horoscope-button');
+    const horoscopeDetect = document.getElementById('horoscope-detect');
     let isNavOpen = false;
     let isHoroscopeDisplayed = false;
-
     const dailyReport = document.querySelector('.report');
+
+    if (!localStorage.getItem('birthdayYear')) {
+        // Hide the button
+        horoscopeButton.style.display = 'none';
+        horoscopeDetect.style.display = 'block';
+    }
 
     /**
      * This function opens up the navigation bar
