@@ -4,20 +4,23 @@
     <title>Birthday - Zodiac</title>
     <link rel="stylesheet" href="../styles/life-path.css">
     <style>
-        
         /* Styles for the main content */
+
+        /* Set the background image and adjust its properties */
         body {
             background-image: url("../assets/space.jpeg");
             background-size: cover;
             background-position: center;
         }
         
+         /* Reset default padding, margin, and font for all elements */
         *{
             padding:0;
             margin:0;
             font-family: sans-serif;
         }
 
+        /* Style for the container element */
         .container{
             text-align: center;
             position: absolute;
@@ -28,11 +31,13 @@
 
         }
 
+        /* Style for the span elements inside the container */
         .container span{
             text-transform: uppercase;
             display: block;
         }
 
+        /* Style for the first text element */
         .text1{
             color:white;
             font: 48px Lora, serif;
@@ -44,6 +49,7 @@
 
         }
 
+        /* Style for the second text element */
         .text2{
             font: 48px Lora, serif;
             font-weight: 700;
@@ -51,6 +57,7 @@
             opacity: 0;
             transition: opacity 1s ease;
         }
+        /* Keyframe animation for the first text element */
         @keyframes Text{
             0%{
                 color:black;
@@ -66,6 +73,7 @@
             }
         }
 
+        /* Style for the main content section */
         #main-content {
             display: flex;
             flex-direction: column;
@@ -75,6 +83,7 @@
             text-align: center;
         }
 
+        /* Style for the popup section */
         .popup {
             position: fixed;
             top: 20%;
@@ -91,6 +100,7 @@
             overflow: auto;
         }
 
+        /* Style for the close button of the popup */
         .popup-close {
             position: absolute;
             top: 20px;
@@ -99,6 +109,7 @@
             font-size: 24px;
         }
 
+        /* Keyframe animation for the popup */
         @keyframes rotate {
             0%{
                 transform: rotate(-360deg);
@@ -115,6 +126,7 @@
             color: red; /* Set a different color for hover effect */
         }
         
+        /* Style for the heading inside the popup */
         .popup h3 {
             color:white;
             font: 48px Lora, serif;
@@ -123,17 +135,20 @@
             text-align: center;
         }
 
+        /* Style for the images inside the popup */
         .popup img{
             display: block;
             margin: 0 auto;
         }
 
+        /* Style for the paragraph inside the popup */
         .popup p {
             color: white; /* Set a color for the content that matches your theme */
             font-size: 14px;
             line-height: 1.5;
         }
 
+        /* Style for the start button */
         #start-button {
             font-family: Inter, sans-serif !important;
             font-weight: bold;
@@ -149,10 +164,12 @@
             text-align: center;
         }
 
+        /* Style for the hover effect on the start button */
         #start-button:hover {
             background-color: white; /* Set a different background color for hover effect */
         }
 
+        /* Style for generic buttons */
         button {
             padding: 10px 20px;
             background-color: #8c67b1;
@@ -165,37 +182,44 @@
             margin: 300px 20px 5px; /* Adjust the margin values here */
         }
 
+        /* Style for the hover effect on buttons */
         button:hover {
             background-color: white; /* Set a different background color for hover effect */
         }
     </style>
 </head>
 <body>
-    
+    <!-- JavaScript file for birthday numerology -->
     <script src="../scripts/birthday-numerology.js"></script>
     
+    <!-- Main content section -->
     <div id="main-content">
+        <!-- Button to trigger a new page -->
         <button id="start-button" onclick="showNewPage()">Discover Your Life Path Number Meaning</button>
     </div>
 
+    <!-- Popup section for personality description -->
     <div id="personality" class="popup">
         <span class="popup-close" onclick="hidePopup('personality')">&times;</span>
         <h3>Personality</h3>
         <p id="personality-text">Personality description...</p>
     </div>
 
+    <!-- Popup section for characteristic description -->
     <div id="characteristic" class="popup">
         <span class="popup-close" onclick="hidePopup('characteristic')">&times;</span>
         <h3>Characteristic</h3>
         <p id="characteristic-text">Characteristic description...</p>
     </div>
 
+    <!-- Popup section for career description -->
     <div id="career" class="popup">
         <span class="popup-close" onclick="hidePopup('career')">&times;</span>
         <h3>Careerssss</h3>
         <p id="career-text">Career description...</p>
     </div>
 
+    <!-- Popup section for love description -->
     <div id="love" class="popup">
         <span class="popup-close" onclick="hidePopup('love')">&times;</span>
         <h3>Love</h3>
