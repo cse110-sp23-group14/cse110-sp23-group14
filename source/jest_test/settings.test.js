@@ -18,7 +18,7 @@ const SERVER_PORT = 36873;
 describe('Settings page test suite', () => {
     beforeAll(async () => {
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
-    });
+    }, 10000);
 
     /**
      * This should pass (sanity check)
@@ -64,11 +64,12 @@ describe('Settings page test suite', () => {
         const nameButton = await page.evaluateHandle(`document.querySelector("#save-name-form > div > input[type=submit]:nth-child(3)")`);
         await nameButton.click();
 
-        // We don't really need this but keep it in case page takes a while to load
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
         const storedName = await page.evaluate(() => localStorage.getItem('name'));
         expect(storedName).toBe('Sample Name');
+
+        await nameButton.dispose();
     });
 
     /**
@@ -82,11 +83,27 @@ describe('Settings page test suite', () => {
         const bdayButton = await page.evaluateHandle(`document.querySelector("#save-birthday-form > input[type=submit]:nth-child(3)")`);
         await bdayButton.click();
 
-        // We don't really need this but keep it in case page takes a while to load
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
         const storedBirthday = await page.evaluate(() => localStorage.getItem('birthday'));
         expect(storedBirthday).toBe('5.18');
+
+        const storedYear = await page.evaluate(() => localStorage.getItem('birthdayYear'));
+        expect(storedYear).toBe('1999.5.18');
+
+        await bdayButton.dispose();
+    });
+
+    /**
+     * Check that the settings text updates correctly with new name/birthday
+     */
+    it('Check that settings text updates', async () => {
+        const settingsText = await page.$eval("#profile-display", (element) => {
+            return element.innerHTML;
+        });
+
+        const expectedText = 'Welcome back <span class="highlight">Sample Name</span>! Your birthday on record is <span class="highlight">1999.5.18</span>';
+        expect(settingsText).toBe(expectedText);
     });
 
     /**
@@ -111,5 +128,7 @@ describe('Settings page test suite', () => {
 
         const storedBirthday = await page.evaluate(() => localStorage.getItem('birthday'));
         expect(storedBirthday).toBe(null);
+
+        await clearButton.dispose();
     });
 });

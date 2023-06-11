@@ -8,7 +8,7 @@ const SERVER_PORT = 36873;
 describe('Nav bar test suite', () => {
     beforeAll(async () => {
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
-    });
+    }, 10000);
 
     /**
      * Check that the nav bar opens when we click the hamburger icon
@@ -26,6 +26,8 @@ describe('Nav bar test suite', () => {
         });
         console.log(images);
         expect(images).toBe('<i class=\"fa-solid fa-bars fa-2xl icon-hide\"></i><i class=\"fa-solid fa-xmark fa-2xl\"></i>');
+
+        await buttonHandle.dispose();
     });
 
     /**

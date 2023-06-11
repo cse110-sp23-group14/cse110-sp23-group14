@@ -23,10 +23,9 @@
 
 
 const puppeteer = require("puppeteer");
-const SERVER_PORT = 36873; // Use this when actually running tests in CI/CD pipeline
-// const SERVER_PORT = 5500; // Use this when just running tests locally
+const SERVER_PORT = 36873;
 
-test('sample test so tests run before we refactor this file', () =>{
+test('Sample sanity check test', () =>{
     expect(4).toBe(4);
 });
 
@@ -37,7 +36,9 @@ describe('Horoscope page test suite', () => {
     });
 
     it('Checking that localStorage has no name or birthday', async () => {
-        const storedName = await page.evaluate( () => localStorage.getItem('name'));
+        const storedName = await page.evaluate( () => 
+            localStorage.getItem('name')
+        );
         expect(storedName).toBe(null);
 
         // TODO: Finish this part, basically just ripped off of settings.test.js
