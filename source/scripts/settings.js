@@ -48,7 +48,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
         event.preventDefault(); // Prevent page jump
         clearUserInfo();
         displayStoredData();
-        setHoroscope();
+        // displayStoredData();
+        // setHoroscope();
+        // updateLifePathNumber();
     });
 });
 
@@ -66,6 +68,8 @@ function displayStoredData() {
         } else {
             displayElement.innerHTML = `Welcome back! Your birthday on record is <span class="highlight">${storedBirthday}</span>`;
         }
+    }else{
+        displayElement.innerHTML = 'Hey new friend! We are excited to meet you.'
     }
 }
 
@@ -142,4 +146,5 @@ function clearUserInfo() {
         displayStoredData();
         updateLifePathNumber();
     }
+    displayStoredData();
 }
