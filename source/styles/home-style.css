@@ -240,6 +240,7 @@ button:hover, .button:hover {
     border-radius: 5px;
     width: 30vw;
     height: 70vh;
+    overflow: scroll;
     overflow-y: hidden;
     position: relative;
     color: white;
