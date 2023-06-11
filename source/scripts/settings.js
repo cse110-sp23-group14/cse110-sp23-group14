@@ -1,5 +1,6 @@
 import { Horoscope } from "./horoscope.js";
 import { constellation } from "../jsons/constellationJson.js";
+import { updateLifePathNumber } from "./birthday-numerology.js";
 
 /**
  * Event listener function for the 'DOMContentLoaded' event.
@@ -87,6 +88,8 @@ function displayStoredData() {
         } else {
             displayElement.innerHTML = `Welcome back! Your birthday on record is <span class="highlight">${storedBirthday}</span>`;
         }
+    }else{
+        displayElement.innerHTML = 'Hey new friend! We are excited to meet you.'
     }
 }
 
@@ -147,6 +150,7 @@ function saveBirthday() {
     localStorage.setItem("birthdayYear",birthdayYear);
     setHoroscope();
     displayStoredData();
+    updateLifePathNumber();
 }
 
 /**
@@ -160,5 +164,7 @@ function clearUserInfo() {
         localStorage.removeItem('birthdayYear');
         setHoroscope();
         displayStoredData();
+        updateLifePathNumber();
     }
+    displayStoredData();
 }

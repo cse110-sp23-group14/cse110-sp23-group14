@@ -1,3 +1,4 @@
+/* set the settings for the compatibility content section */
 .compatibility-content{
     height: 100vh;
     background-image: url('../assets/space.jpeg');
@@ -26,6 +27,7 @@
    
 }
 
+/* adds a line element before each shooting star */
 .compatibility-content .star::before {
     content:"";
     position: absolute;
@@ -36,6 +38,7 @@
     background:linear-gradient(90deg,#fff, transparent);
 }
 
+/* position and animation properties of the 10 shooting stars */
 .compatibility-content .star:nth-child(1) {
     top: 0;
     right: 0;
@@ -132,7 +135,6 @@
         opacity: 0;
 
     }
-
 }
 
 /* header */
@@ -182,8 +184,6 @@
     z-index: 1;
 }
 
-
-
 .compatibility-content .sign-name {
     color: #fff;
     margin-top: 150px;
@@ -227,7 +227,6 @@
 
 .compatibility-content .menu >div {
     margin:0.2em;
-    
 }
 
 .compatibility-content .menu > div {
@@ -311,7 +310,21 @@
     opacity: 1;
 }
 
+.compatability-popup-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
 #close-compatability-popup-new {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
     cursor: pointer;
 }
 
