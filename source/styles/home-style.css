@@ -367,14 +367,14 @@ button:hover, .button:hover {
         width: 100%;
         transition: opacity 1.3s;
         transition: visibility 0s;
-      }
+    }
       
-      #nav-button {
+    #nav-button {
         pointer-events: all;
         margin: 1vw; /* Reduce the margin to make the icon smaller */
         align-self: center;
         color: var(--main-light-color);
         cursor: pointer;
-      }
+    }
       
 }
