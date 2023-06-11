@@ -2,7 +2,6 @@ export { Horoscope };
 import { Zodiac } from "./zodiac.js";
 import { horoscopeJSON } from "../jsons/horoscopeJson.js";
 
-
 const NUM_HOROSCOPES = 13;
 class Horoscope {
 
@@ -23,7 +22,6 @@ class Horoscope {
             return null;
         }
         const birthdaySplit = birthday.split(".");
-
         // Getting Zodiac sign data
         const sign = Zodiac.getZodiacSign(birthdaySplit[0], birthdaySplit[1]);
         return sign;
@@ -39,7 +37,6 @@ class Horoscope {
         if (!sign) {
             return "No horoscope found.";
         }
-    
         // Getting Date for hashing function
         const date = new Date();
         const day = date.getDate();
@@ -47,7 +44,6 @@ class Horoscope {
         const stringInputToHash = "" + day + month;
         const inputToHash = Number(stringInputToHash);
         const hashValue = inputToHash % NUM_HOROSCOPES;
-
         // Read horoscopes.json and get today's horoscope
         const todayHoroscope = this.horoscopeTable[sign][hashValue];
         return todayHoroscope;

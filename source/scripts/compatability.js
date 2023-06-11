@@ -1,40 +1,33 @@
 import {compatibilityData} from "../jsons/compatibilityDataJson.js";
 
-  
+/**
+ * This function takes in two signs and find the compatibility description between those signs.
+ * @param {string} sign1
+ * @param {string} sign2 
+ * @returns {string|null} user's compatibility description, or null if not found.
+ */
 function findDescription(sign1, sign2) {
-
     for (const compatibility of compatibilityData.compatibility) {
         const pair = compatibility.pair;
         const description = compatibility.description;
-      
-
         if (pair.some(([a, b]) => {
             return (a === sign1 && b === sign2) || (a === sign2 && b === sign1);
         })) {
             return description;
         }
     }
-    
-
     return null;
 }
   
-
 const sign1 = "aries";
 const sign2 = "leo";
 const description = findDescription(sign1, sign2);
-
-/************************************ */
-
-
 
 // get the shape element
 const shapeLeft = document.querySelector('.shape-left');
 const shapeRight = document.querySelector('.shape-right');
 const loveContent = document.getElementById('description');
 const chooseSignWindow = document.getElementById('choose-sign');
-
-//const result_window=document.getElementById('result');
 
 const checkCompatibilityButton = document.getElementById('check-compatability-button');
 const closeCompatability = document.getElementById('close-compatability-popup-new');
@@ -87,6 +80,10 @@ for (let i=0; i < signArray.length; i++) {
     });
 }
 
+/**
+ * This function checks the compatibility between the two Zodiac signs by calling on the findDescription
+ * function and displays the description on the popup page.
+ */
 function checkCompatibility() {
     const leftBox = document.querySelector(".shape-left .sign-name").textContent.trim();
     const rightBox = document.querySelector(".shape-right .sign-name").textContent.trim();
@@ -103,19 +100,29 @@ function checkCompatibility() {
     }
 }
 
-// checkCompatibilityButton.onclick = function() {
-//     document.getElementById('compatability-popup-new').classList.add('visible');
-// }
-
+/**
+ * It is triggered when the checkCompatibilityButton is being clicked, it will alert that the button was clicked
+ * The compatability popup page will appear
+ * @param {Event} event - "click"
+ */
 checkCompatibilityButton.addEventListener('click', () => {
     alert('button was clicked')
     document.getElementById('compatability-popup-new').classList.add('visible');
 });
 
+/**
+ * It is triggered when the closeCompatability is being clicked
+ * The compatability popup page will disappear
+ * @param {Event} event - "click"
+ */
 closeCompatability.addEventListener('click', function() {
     document.getElementById('compatability-popup-new').classList.remove('visible');
 });
 
+/**
+ * Event listener for shapeLeft
+ * @param {Event} event - "click"
+ */
 shapeLeft.addEventListener('click', function() {
     clickCount--;
     shapeLeft.style.backgroundImage = ''; // Remove background image from shapeLeft
@@ -124,7 +131,10 @@ shapeLeft.addEventListener('click', function() {
     handleClick();
 });
 
-// Event listener for shapeRight
+/**
+ * Event listener for shapeRight
+ * @param {Event} event - "click"
+ */
 shapeRight.addEventListener('click', function() {
     clickCount--;
     shapeRight.style.backgroundImage = ''; // Remove background image from shapeRight
@@ -133,6 +143,9 @@ shapeRight.addEventListener('click', function() {
     handleClick();
 });
 
+/**
+ * shows or hides the popup menu
+ */
 function handleClick() {
     if(clickCount === 2) {
         setTimeout(() => {
@@ -164,7 +177,10 @@ function hidePopup() {
     document.getElementById("compatibility-popup").style.display = "none";
 }
 
-// Attach event listener to the close button
+/**
+ * Attach event listener to the close button
+ * @param {Event} event - "click"
+ */
 document.querySelector(".compatibility-popup-close").addEventListener("click", () => {
     hidePopup();
     clickCount=0;
