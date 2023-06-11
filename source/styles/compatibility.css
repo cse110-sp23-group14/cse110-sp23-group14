@@ -137,45 +137,44 @@
 
 /* header */
 .compatibility-content #header {
-    margin-top: 1px;
     position:relative;
     display:flex;
     justify-content: center;
     align-items: center;
-    padding: 2em;
+    padding: 1%;
     z-index: 1;
 }
 
 .compatibility-content .header{
+    margin: 1.5vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    
+    height: 17.5vh;
+    width: 50vw;
+    align-items: center;
 }
 
 .compatibility-content  .shape-left {
-    width: 145px;
-    height: 145px;
+    height: 17.5vh;
+    width: 17.5vh;
     border: 3px dotted white;
     border-radius: 10%;
     z-index: 1;   
-    margin-right: 20%;
-   
-    
+    margin-left: 0; 
 }
 
 .compatibility-content .shape-right {
-    width: 145px;
-    height: 145px;
+    height: 17.5vh;
+    width: 17.5vh;
     border: 3px dotted white;
     border-radius: 10%;
     z-index: 1;   
-    margin-left: 20%;
-   
-    
+    margin-right: 0;
 }
 
 .compatibility-content .ampersand {
-    margin-left: 30%;
+    margin-left: 10%;
+    margin-right: 10%;
     font-size: 80px;
     color:#fff;
     z-index: 1;
@@ -195,9 +194,11 @@
 }
 
 .compatibility-content .menu {
-    height: 50vh;
-    max-width: 60vw;
-    margin:0 auto;
+    height: 60vh;
+    width: 60vw;
+    min-width: 460px;
+    max-width: 660px;
+    margin: 0 auto;
     padding:1em;
     background: rgb(255 255 255 / 24%);
     box-shadow: 
@@ -212,10 +213,10 @@
     text-align: center;
 }
 
-.compatibility-content .menu {
+/* .compatibility-content .menu {
     text-decoration: none;
     color: #f0e9e9;
-}
+} */
 
 .compatibility-content .menu h3 {
     color: #fff;
@@ -228,9 +229,9 @@
 }
 
 .compatibility-content .menu > div {
-    width:80%;
-    height:60%;
-    padding:1em;
+    width: same-as-height;
+    height: 15vh;
+    padding: 1.5vh;
     background:    
         rgba(255,255,255,20%);
     display: flex;
@@ -314,7 +315,7 @@
 #check-compatability-button {
     font-family: Inter, sans-serif !important;
     font-weight: bold;
-    margin: 2% auto auto;
+    margin: auto;
     font-size: 1em;
     padding: 1%;
     color: var(--main-dark-color);
