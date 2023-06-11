@@ -295,6 +295,12 @@ button:hover, .button:hover {
     cursor: pointer;
 }
 
+#horoscope-detect{
+    color: var(--main-light-color);
+    text-align: center;
+    font: 2vw Lora, serif;
+}
+
 
 @media screen and (width <= 1100px) {
     .popup {
