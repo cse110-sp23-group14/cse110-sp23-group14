@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     * Saves the birthday
     * @param {Event} event - 'submit'
     */
-    saveBirthdayForm.addEventListener('submit', function(event) {
+    saveBirthdayForm.addEventListener('submit', function(event){
         event.preventDefault(); // Prevent page jump
         saveBirthday();
         displayStoredData();
@@ -40,10 +40,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const clearUserInfoButton = document.querySelector('.clear-profile button');
     
     /**
-     * clears user information
-     * @param {Event} event - 'click'
-     */
-    clearUserInfoButton.addEventListener('click', function(event) {
+    * clears user information
+    * @param {Event} event - 'click'
+    */
+    clearUserInfoButton.addEventListener('click', function(event){
         event.preventDefault(); // Prevent page jump
         clearUserInfo();
         displayStoredData();
@@ -123,7 +123,8 @@ function saveBirthday() {
     const birthdayYear = birthdayInput.value.substring(0,4) + '.' + birthday;
     localStorage.setItem("birthday", birthday);
     localStorage.setItem("birthdayYear",birthdayYear);
-    location.reload(); // Refresh the page
+    setHoroscope();
+    displayStoredData();
 }
 
 /**
@@ -135,6 +136,7 @@ function clearUserInfo() {
         localStorage.removeItem('name');
         localStorage.removeItem('birthday');
         localStorage.removeItem('birthdayYear');
-        location.reload(); // Refresh the page
+        setHoroscope();
+        displayStoredData();
     }
 }

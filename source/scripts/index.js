@@ -122,7 +122,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             i++;
             setTimeout(() => {
                 typeWriter(text, i);
-            }, 27);
+            }, 10);
         }
     }
 
@@ -164,7 +164,6 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
 
     const menuLinks = document.querySelectorAll('.nav a');
     for (const link of menuLinks) {
-        console.log(link);
         link.addEventListener('click', (event) => {
             closeNav();
         });
