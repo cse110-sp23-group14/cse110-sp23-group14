@@ -24,7 +24,6 @@ describe('Nav bar test suite', () => {
         const images = await page.$eval("#nav-button", (element) => {
             return element.innerHTML;
         });
-        console.log(images);
         expect(images).toBe('<i class=\"fa-solid fa-bars fa-2xl icon-hide\"></i><i class=\"fa-solid fa-xmark fa-2xl\"></i>');
 
         await buttonHandle.dispose();

@@ -38,7 +38,7 @@ describe('Settings page test suite', () => {
         // We don't really need this but keep it in case page takes a while to load
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const storedName = await page.evaluate(() => localStorage.getItem('test'));
+        const storedName = await page.evaluate(() => {return localStorage.getItem('test')});
         expect(storedName).toBe('testObj');
     });
 
@@ -46,13 +46,13 @@ describe('Settings page test suite', () => {
      * Check to make sure that name and birthday are not in local storage (when we first start)
      */
     it('Checking localStorage to make sure name and birthday are empty', async () => {
-        const storedName = await page.evaluate(() => localStorage.getItem('name'));
+        const storedName = await page.evaluate(() => {return localStorage.getItem('name')});
         expect(storedName).toBe(null);
 
-        const storedBirthday = await page.evaluate(() => localStorage.getItem('birthday'));
+        const storedBirthday = await page.evaluate(() => {return localStorage.getItem('birthday')});
         expect(storedBirthday).toBe(null);
 
-        const storedYear = await page.evaluate(() => localStorage.getItem('birthdayYear'));
+        const storedYear = await page.evaluate(() => {return localStorage.getItem('birthdayYear')});
         expect(storedYear).toBe(null);
     });
 
@@ -69,7 +69,7 @@ describe('Settings page test suite', () => {
 
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const storedName = await page.evaluate(() => localStorage.getItem('name'));
+        const storedName = await page.evaluate(() => {return localStorage.getItem('name')});
         expect(storedName).toBe('Sample Name');
 
         await nameButton.dispose();
@@ -88,10 +88,10 @@ describe('Settings page test suite', () => {
 
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const storedBirthday = await page.evaluate(() => localStorage.getItem('birthday'));
+        const storedBirthday = await page.evaluate(() => {return localStorage.getItem('birthday')});
         expect(storedBirthday).toBe('5.18');
 
-        const storedYear = await page.evaluate(() => localStorage.getItem('birthdayYear'));
+        const storedYear = await page.evaluate(() => {return localStorage.getItem('birthdayYear')});
         expect(storedYear).toBe('1999.5.18');
 
         await bdayButton.dispose();
@@ -115,18 +115,18 @@ describe('Settings page test suite', () => {
     it('Check that >4-digit birth year goes in localStorage correctly', async () => {
         // Enter a birthday
         await page.$eval('#birthday', el => {
-            el.value = '99999-09-23';
+            el.value = '99999-12-31';
         });
         const bdayButton = await page.evaluateHandle(`document.querySelector("#save-birthday-form > input[type=submit]:nth-child(3)")`);
         await bdayButton.click();
 
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const storedBirthday = await page.evaluate(() => localStorage.getItem('birthday'));
-        expect(storedBirthday).toBe('9.23');
+        const storedBirthday = await page.evaluate(() => {return localStorage.getItem('birthday')});
+        expect(storedBirthday).toBe('12.31');
 
-        const storedYear = await page.evaluate(() => localStorage.getItem('birthdayYear'));
-        expect(storedYear).toBe('99999.9.23');
+        const storedYear = await page.evaluate(() => {return localStorage.getItem('birthdayYear')});
+        expect(storedYear).toBe('99999.12.31');
 
         await bdayButton.dispose();
     });
@@ -139,7 +139,7 @@ describe('Settings page test suite', () => {
             return element.innerHTML;
         });
 
-        const expectedText = 'Welcome back <span class="highlight">Sample Name</span>! Your birthday on record is <span class="highlight">99999.9.23</span>';
+        const expectedText = 'Welcome back <span class="highlight">Sample Name</span>! Your birthday on record is <span class="highlight">99999.12.31</span>';
         expect(settingsText).toBe(expectedText);
     });
 
@@ -160,13 +160,13 @@ describe('Settings page test suite', () => {
         await clearButton.click();
 
         // Check that name and birthday are no longer stored
-        const storedName = await page.evaluate(() => localStorage.getItem('name'));
+        const storedName = await page.evaluate(() => {return localStorage.getItem('name')});
         expect(storedName).toBe(null);
 
-        const storedBirthday = await page.evaluate(() => localStorage.getItem('birthday'));
+        const storedBirthday = await page.evaluate(() => {return localStorage.getItem('birthday')});
         expect(storedBirthday).toBe(null);
 
-        const storedYear = await page.evaluate(() => localStorage.getItem('birthdayYear'));
+        const storedYear = await page.evaluate(() => {return localStorage.getItem('birthdayYear')});
         expect(storedYear).toBe(null);
 
         await clearButton.dispose();
