@@ -135,21 +135,18 @@ function saveBirthday() {
         alert('Please enter your birthday before submitting.');
         return;
     }
-    // anonymous function that process date format
-    // e.g. birthdayInput: "2023-06-02" -> birthday: "6.2"
-    const birthday = ((dateString) => {
-        let month = dateString.substring(5,7);
-        let day = dateString.substring(8,10);
-        if (month.startsWith("0")) {
-            month = month.substring(1);
-        }
-        if (day.startsWith("0")) {
-            day = day.substring(1);
-        }
-        return month + "." + day;
-    })(birthdayInput.value);
-    
-    const birthdayYear = birthdayInput.value.substring(0,4) + '.' + birthday;
+    // process date format
+    // "2023-06-01" --> "2023.6.1"
+    const dateArray = birthdayInput.value.split('-'); 
+    // remove leading "0"
+    for (let i=0; i<dateArray.length; i++) {
+        dateArray[i] = parseInt(dateArray[i], 10).toString();
+    }
+    const year = dateArray[0];
+    const month = dateArray[1];
+    const day = dateArray[2];
+    const birthday = month + '.' + day;
+    const birthdayYear = year + '.' + birthday;
     localStorage.setItem("birthday", birthday);
     localStorage.setItem("birthdayYear",birthdayYear);
     setHoroscope();
