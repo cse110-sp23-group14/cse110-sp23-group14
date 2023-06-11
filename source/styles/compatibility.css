@@ -158,7 +158,7 @@
     align-items: center;
 }
 
-.compatibility-content  .shape-left {
+.compatibility-content .shape-left {
     height: 17.5vh;
     width: 17.5vh;
     border: 3px dotted white;
@@ -225,11 +225,8 @@
     margin: 0.4em 0 0 0;
 }
 
-.compatibility-content .menu >div {
-    margin:0.2em;
-}
-
 .compatibility-content .menu > div {
+    margin:0.2em;
     cursor: pointer;
     width: same-as-height;
     height: 15vh;
@@ -355,4 +352,53 @@
 
 #check-compatability-button:active {
     background-color: #eedcff;
+}
+
+@media screen and (width <= 600px) {
+
+    .compatibility-content .header{
+        margin: 0;
+        min-width: 0;
+        width: 305px;
+    }
+
+    .compatibility-content .shape-left {
+        height: 15vh;
+        width: 15vh;
+    }
+    
+    .compatibility-content .shape-right {
+        height: 15vh;
+        width: 15vh;
+    }
+    
+    .compatibility-content .ampersand {
+        font-size: 50px;
+    }
+
+    .compatibility-content .menu {
+        min-width: 0;
+        width: 75vw;
+        height: 70vh;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0;
+        margin: auto;
+    }
+
+    .compatibility-content .menu > div {
+        width: 22.5vw;
+        height: 15vh;
+        padding: 0;
+        margin: 1vw;
+        padding: 0.3vw
+    }
+
+    .compatibility-content .menu > div > *{
+        margin: 0;
+    }
+
+    .compatibility-content .zodiac-sign {
+        font-size: 30px;
+    }
+
 }
