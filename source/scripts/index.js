@@ -21,6 +21,9 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         horoscopeButton.style.display = 'none';
         horoscopeDetect.style.display = 'block';
     }
+    else{
+        horoscopeDetect.style.display = 'none';
+    }
 
     /**
      * This function opens up the navigation bar
