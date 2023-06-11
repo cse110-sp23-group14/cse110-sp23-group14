@@ -151,6 +151,8 @@
     grid-template-columns: repeat(3, 1fr);
     height: 17.5vh;
     width: 50vw;
+    max-width: 400px;
+    min-width: 340px;
     align-items: center;
 }
 
@@ -184,7 +186,7 @@
 
 .compatibility-content .sign-name {
     color: #fff;
-    margin-left: 160px;
+    margin-top: 150px;
     font-size: x-large;
 }
 

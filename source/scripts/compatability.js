@@ -61,7 +61,8 @@ for (let i=0; i < signArray.length; i++) {
         if(shapeLeft.querySelector('.sign-name').textContent=='' && shapeRight.querySelector('.sign-name').textContent==''){
             shapeLeft.style.backgroundImage = `url(${image})`;
             shapeLeft.style.backgroundSize ='cover';
-            shapeLeft.querySelector('.sign-name').textContent = signNamesArray[i];
+            shapeLeft.querySelector('.sign-name').textContent = signNamesArray[i].charAt(0).toUpperCase() + signNamesArray[i].slice(1);
+            // Inspiration: const capitalizedSign1 = sign1.charAt(0).toUpperCase() + sign1.slice(1);
         } else {
             if(shapeLeft.querySelector('.sign-name').textContent=='') {
                 shapeLeft.style.backgroundImage = `url(${image})`;
@@ -71,7 +72,7 @@ for (let i=0; i < signArray.length; i++) {
             } else {
                 shapeRight.style.backgroundImage=`url(${image})`;
                 shapeRight.style.backgroundSize='cover';
-                shapeRight.querySelector('.sign-name').textContent= signNamesArray[i];
+                shapeRight.querySelector('.sign-name').textContent = signNamesArray[i].charAt(0).toUpperCase() + signNamesArray[i].slice(1);
             }
         }
         if(clickCount<2){
@@ -110,7 +111,6 @@ function checkCompatibility() {
  * @param {Event} event - "click"
  */
 checkCompatibilityButton.addEventListener('click', () => {
-    alert('button was clicked');
     document.getElementById('compatability-popup-new').classList.add('visible');
 });
 
