@@ -178,12 +178,12 @@ function hidePopup() {
  * Attach event listener to the close button
  * @param {Event} event - "click"
  */
-document.querySelector(".compatibility-popup-close").addEventListener("click", () => {
-    hidePopup();
-    clickCount=0;
-    shapeLeft.style.backgroundImage='';
-    shapeRight.style.backgroundImage='';
-    shapeLeft.querySelector('.sign-name').textContent='';
-    shapeRight.querySelector('.sign-name').textContent='';
-    chooseSignWindow.style.display='block';
-});
+// document.querySelector(".compatibility-popup-close").addEventListener("click", () => {
+//     hidePopup();
+//     clickCount=0;
+//     shapeLeft.style.backgroundImage='';
+//     shapeRight.style.backgroundImage='';
+//     shapeLeft.querySelector('.sign-name').textContent='';
+//     shapeRight.querySelector('.sign-name').textContent='';
+//     chooseSignWindow.style.display='block';
+// });
