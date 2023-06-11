@@ -52,8 +52,8 @@
         <div class="site-content">
             <div class="title-box">
                 <div class="title-content">
-                    <h1 id="title-text">welcome to <span class="bolded">Zodiak</span></h1>
-                    <img id="title-logo" src="assets/title-logo.png" alt="Logo Image here">
+                    <h1 class="title-text">welcome to <span class="bolded">Zodiak</span></h1>
+                    <img class="title-logo" src="assets/title-logo.png" alt="Logo Image here">
                 </div>
             </div>
 
@@ -252,33 +252,35 @@
         <section id="settingpage">
                 <div class="site-content settings-content">
                     <div class="settings-menu-background">
-                        <h1>Settings</h1>
-                        <div class="current-profile">
-                            <p id="profile-display">Hey new friend! We are excited to meet you.</p>
-                        </div>
-                        <div class="update-profile">
-                            <h2>Update Profile</h2>
-                            <div id="change-birthday">
-                                <form id="save-birthday-form">
-                                    <label for="birthday-date">Your Birthday is:</label>
-                                    <input type="date" id="birthday">
-                                    <input type="submit" value="Update">
-                                </form> 
+                        <div class="settings-content-inside">
+                            <h1>Settings</h1>
+                            <div class="current-profile">
+                                <p id="profile-display">Hey new friend! We are excited to meet you.</p>
                             </div>
-                            <div id="change-name">
-                                <form id="save-name-form">
-                                    <div>
-                                        <label for="name">Your Name is:</label>
-                                        <input type="text" id="name" name="name">
+                            <div class="update-profile">
+                                <h2>Update Profile</h2>
+                                <div id="change-birthday">
+                                    <form id="save-birthday-form">
+                                        <label for="birthday-date">Your Birthday is:</label>
+                                        <input type="date" id="birthday">
                                         <input type="submit" value="Update">
-                                    </div>
-                                </form>
+                                    </form> 
+                                </div>
+                                <div id="change-name">
+                                    <form id="save-name-form">
+                                        <div>
+                                            <label for="name">Your Name is:</label>
+                                            <input type="text" id="name" name="name">
+                                            <input type="submit" value="Update">
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                        <div class="clear-profile">
-                            <p>*All data is saved locally. You can </p>
-                            <button>clear</button>
-                            <p>your data at any time.</p>
+                            <div class="clear-profile">
+                                <p>*All data is saved locally. You can </p>
+                                <button>clear</button>
+                                <p>your data at any time.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -286,34 +288,36 @@
         
         <section id="faqpage">
                 <div class="site-content faq">
-                    <h1 class="title-faq">Frequently Asked Questions</h1>
-                    <div id="Questions">
-                        <h2 id = "first-question">1. What is a horoscope?</h2>
-                        <p>A horoscope is a personalized astrological forecast based on the positions of celestial bodies at the time of a person's birth. It is a symbolic representation of the energies and influences that may affect various aspects of a person's life, such as personality traits, relationships, career, and more.</p>
-                        <h2 id ="second-question">2. What is a Zodiac sign?</h2>
-                        <p>The Zodiac signs are twelve equal divisions of the ecliptic, representing specific periods of the year. The signs are: Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces. Each sign is associated with certain characteristics and is ruled by a particular planet.</p>
-                        <h2 id ="third-question">3.How is my Zodiac sign determined?</h2>
-                        <p>It is calculated by the date of your birthday. You can actually input your birthday into our site and we will calculate your Zodiac sign for you!</p>
-                        <h2 id = "fourth-question">4. What are the benefits of reading my daily horoscope?</h2>
-                            <ul class = "bullet-point">
-                                <li>Increases your self-awareness</li>
-                                <li>Provides guidance and decision-making</li>
-                                <li>Educates on the timing and awareness of celestial influences</li>
-                                <li>Gives validation and reassurance</li>
-                                <li>Spurs personal growth and development</li>
-                                <li>Sparks curiosity and exploration</li>
-                            </ul>
-                        <h2 id = "fifth-question">5. Help! My horoscope was wrong!</h2>
-                        <p>Remember, astrology, the foundation of horoscopes, is not considered a scientific discipline in the traditional sense. It operates on a different set of principles and is often regarded as a metaphysical or esoteric practice. Still, it has a long history and is valued by many individuals and cultures.
-                            It's important to approach horoscopes with an open mind, using them as a tool for self-reflection and inspiration rather than relying solely on them for decision-making. Ultimately, you have the power to shape your own life and make choices based on your personal values, goals, and circumstances.</p>
-                        <h2 id = "sixth-question">6. How does your compatibility feature work?</h2>
-                            <ol class = "steps">
-                                <li>Select the zodiac sign of the first person</li>
-                                <li> Select the zodiac sign of the second person</li>
-                                <li>Read the result of putting these two signs together!</li>
-                            </ol>
-                        <h2 id = "seventh-question">7. My question was not answered here! Who can I contact?</h2>
-                        <p>You may reach the developers at the Geisel Library on the first floor on Tuesdays and Thursdays after their favorite lecture.</p>
+                    <div class="faq-background">
+                        <h1 class="title-faq">Frequently Asked Questions</h1>
+                        <div class="faq-content">
+                            <h2 id = "first-question">1. What is a horoscope?</h2>
+                            <p>A horoscope is a personalized astrological forecast based on the positions of celestial bodies at the time of a person's birth. It is a symbolic representation of the energies and influences that may affect various aspects of a person's life, such as personality traits, relationships, career, and more.</p>
+                            <h2 id ="second-question">2. What is a Zodiac sign?</h2>
+                            <p>The Zodiac signs are twelve equal divisions of the ecliptic, representing specific periods of the year. The signs are: Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces. Each sign is associated with certain characteristics and is ruled by a particular planet.</p>
+                            <h2 id ="third-question">3.How is my Zodiac sign determined?</h2>
+                            <p>It is calculated by the date of your birthday. You can actually input your birthday into our site and we will calculate your Zodiac sign for you!</p>
+                            <h2 id = "fourth-question">4. What are the benefits of reading my daily horoscope?</h2>
+                                <ul class = "bullet-point">
+                                    <li>Increases your self-awareness</li>
+                                    <li>Provides guidance and decision-making</li>
+                                    <li>Educates on the timing and awareness of celestial influences</li>
+                                    <li>Gives validation and reassurance</li>
+                                    <li>Spurs personal growth and development</li>
+                                    <li>Sparks curiosity and exploration</li>
+                                </ul>
+                            <h2 id = "fifth-question">5. Help! My horoscope was wrong!</h2>
+                            <p>Remember, astrology, the foundation of horoscopes, is not considered a scientific discipline in the traditional sense. It operates on a different set of principles and is often regarded as a metaphysical or esoteric practice. Still, it has a long history and is valued by many individuals and cultures.
+                                It's important to approach horoscopes with an open mind, using them as a tool for self-reflection and inspiration rather than relying solely on them for decision-making. Ultimately, you have the power to shape your own life and make choices based on your personal values, goals, and circumstances.</p>
+                            <h2 id = "sixth-question">6. How does your compatibility feature work?</h2>
+                                <ol class = "steps">
+                                    <li>Select the zodiac sign of the first person</li>
+                                    <li> Select the zodiac sign of the second person</li>
+                                    <li>Read the result of putting these two signs together!</li>
+                                </ol>
+                            <h2 id = "seventh-question">7. My question was not answered here! Who can I contact?</h2>
+                            <p>You may reach the developers at the Geisel Library on the first floor on Tuesdays and Thursdays after their favorite lecture.</p>
+                        </div>
                     </div>
                 </div>
 

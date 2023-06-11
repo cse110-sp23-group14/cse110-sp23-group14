@@ -1,10 +1,26 @@
 .faq {
     min-height: 100vh;
+    /* allow overflow in snap section */
+    height: fit-content;
+    overflow-y: scroll;
+
     background-image: url('../assets/settings-background.jpeg');
     background-size: cover;
     background-position: center;
     color: var(--main-light-color);
     text-align: left;
+    align-items: center;
+}
+
+.faq-background {
+    width: 80vw;
+    height: auto;
+    background-color: rgba(40 37 37 / 50%);
+}
+
+.faq-content {
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 .title-faq{
@@ -17,26 +33,21 @@
 .faq h2 {
     font: 2vh Inter, sans-serif;
     color: var(--main-light-color);
-    margin-left: 15vh;
-    margin-right: 10vh;
     font-weight: bold;
 }
 
 .faq p {
     font: 1.8vh Lora, serif;
     color:var(--main-light-color);
-    margin-left: 20vh;
-    margin-right: 10vh;
+    padding-left: 2.5vw;
 }
 
 .bullet-point{
     font: 1.8vh Lora, serif;
     color:var(--main-light-color);
-    margin-left: 20vh;
 }
 
 .steps{
     font: 1.8vh Lora, serif;
     color:var(--main-light-color);
-    margin-left: 20vh;
 }
