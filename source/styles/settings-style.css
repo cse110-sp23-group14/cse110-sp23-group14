@@ -5,33 +5,36 @@
     height: 100vh;
     color: var(--main-light-color);
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .settings-menu-background {
-    margin-top: 5%;
-    margin-right: auto;
-    margin-left: auto;
-    width: 80%;
-    padding-bottom: 5%;
+    width: 80vw;
+    height: 80vh;
     background-color: rgba(40 37 37 / 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .settings-content h1 {
-    font: 64px Lora, serif;
+    font: 4.5vw Lora, serif;
+    margin-top: 0;
     margin-bottom: 2vh;
 }
 
 .current-profile p {
-    font: 36px Lora, serif;
+    font: 2.5vw Lora, serif;
 }
 
 .settings-content h2 {
-    font: 36px Inter, sans-serif;
+    font: 2.5vw Inter, sans-serif;
     text-decoration: underline;
 }
 
 .settings-content label {
-    font: 30px Inter, sans-serif;
+    font: 2vw Inter, sans-serif;
 }
 
 .settings-content input {
@@ -44,7 +47,7 @@
 
 .clear-profile p {
     display: inline;
-    font: 18px Inter, sans-serif;
+    font: 1.3vw Inter, sans-serif;
 }
 
 .clear-profile button {
@@ -54,7 +57,7 @@
     color: var(--main-light-color);
     text-decoration: underline;
     cursor: pointer;
-    font: 18px Inter, sans-serif;
+    font: 1.3vw Inter, sans-serif;
 }
 
 .update-profile > div {
@@ -73,20 +76,37 @@ input[type="submit"] {
 }
 
 @media screen and (width <= 600px) {
-    .settings-content h1 {
-        font: 32px Lora, serif;
-    }
-  
-    .settings-content h2 {
-        font: 24px Inter, sans-serif;
-    }
-  
-    .settings-content p {
-        font: 16px Inter, sans-serif;
+    .settings-menu-background {
+        width: 95vw;
+        height: 70vh;
     }
 
-    /* reducing edit button size */
-    .edit-button {
-        height: 20px;
+    .settings-content-inside {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .settings-content h1 {
+        font: 9vw Lora, serif;
+    }
+
+    .current-profile p {
+        font: 5vw Lora, serif;
+    }
+
+    .settings-content h2 {
+        font: 5vw Inter, sans-serif;
+    }
+
+    .settings-content label {
+        font: 4vw Inter, sans-serif;
+    }
+
+    .clear-profile p {
+        font: 3.5vw Inter, sans-serif;
+    }
+
+    .clear-profile button {
+        font: 3.5vw Inter, sans-serif;
     }
 }
