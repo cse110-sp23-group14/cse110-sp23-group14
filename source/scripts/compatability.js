@@ -110,7 +110,6 @@ function checkCompatibility() {
  * @param {Event} event - "click"
  */
 checkCompatibilityButton.addEventListener('click', () => {
-    alert('button was clicked');
     document.getElementById('compatability-popup-new').classList.add('visible');
 });
 
