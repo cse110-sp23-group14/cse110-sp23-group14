@@ -123,7 +123,8 @@ function saveBirthday() {
     const birthdayYear = birthdayInput.value.substring(0,4) + '.' + birthday;
     localStorage.setItem("birthday", birthday);
     localStorage.setItem("birthdayYear",birthdayYear);
-    location.reload(); // Refresh the page
+    setHoroscope();
+    displayStoredData();
 }
 
 /**
@@ -135,6 +136,7 @@ function clearUserInfo() {
         localStorage.removeItem('name');
         localStorage.removeItem('birthday');
         localStorage.removeItem('birthdayYear');
-        location.reload(); // Refresh the page
+        setHoroscope();
+        displayStoredData();
     }
 }
