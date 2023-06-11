@@ -30,7 +30,7 @@ describe('Settings page test suite', () => {
     /**
      * Check to make sure we can set and get local storage with a random token
      */
-    it('Check that we can edit/access localStorage', async () => { 
+    it('Check that we can edit/access localStorage', async () => {
         await page.evaluate(() => {
             localStorage.setItem('test', 'testObj');
         });
@@ -39,7 +39,7 @@ describe('Settings page test suite', () => {
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
         const storedName = await page.evaluate(() => {
-            localStorage.getItem('test')
+            localStorage.getItem('test');
         });
         expect(storedName).toBe('testObj');
     });
