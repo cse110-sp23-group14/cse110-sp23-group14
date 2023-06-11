@@ -235,4 +235,14 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         const target = document.querySelector(this.getAttribute('href'));
         scrollToElement(target);
     });
+
+    /**
+     * Scrolls to the FAQ page
+     * @param {Event} event - "click"
+     */
+    document.getElementById('faq-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        scrollToElement(target);
+    });
 });
