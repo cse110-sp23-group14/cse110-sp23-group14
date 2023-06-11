@@ -298,7 +298,8 @@ button:hover, .button:hover {
 #horoscope-detect{
     color: var(--main-light-color);
     text-align: center;
-    font: 2vw Lora, serif;
+    font: calc(12px + 1.5vw) Lora, serif;
+    margin: auto;
 }
 
 
