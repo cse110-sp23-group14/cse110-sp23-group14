@@ -41,12 +41,29 @@
     padding-left: 2.5vw;
 }
 
-.bullet-point{
+ul, ol {
     font: 1.8vh Lora, serif;
     color:var(--main-light-color);
 }
 
-.steps{
+.steps {
     font: 1.8vh Lora, serif;
     color:var(--main-light-color);
+}
+
+.question {
+    border-bottom: 0.1em solid var(--main-light-color);
+    padding: 1em;
+}
+
+.question h2 {
+    cursor: pointer;
+}
+
+.question h2:hover {
+    color: #8c67b1;
+}
+
+.hide {
+    display: none;
 }

@@ -169,6 +169,21 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         });
     }
 
+    /**
+     * FAQ dropdown functionality
+     */
+    const questions = document.getElementsByClassName('question');
+    const answers = document.getElementsByClassName('answer');
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].addEventListener('click', (event) => {
+            if (answers[i].classList.contains('hide')) {
+                answers[i].classList.remove('hide');
+            }
+            else {
+                answers[i].classList.add('hide');
+            }
+        });
+    }
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     /**
      * Scrolls to the target element smoothly.
