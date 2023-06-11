@@ -107,6 +107,40 @@ describe('Settings page test suite', () => {
     });
 
     /**
+     * Try to add a big birth year to make sure we don't have overflow issues
+     */
+    it('Check that >4-digit birth year goes in localStorage correctly', async () => {
+        // Enter a birthday
+        await page.$eval('#birthday', el => {
+            el.value = '99999-09-23';
+        });
+        const bdayButton = await page.evaluateHandle(`document.querySelector("#save-birthday-form > input[type=submit]:nth-child(3)")`);
+        await bdayButton.click();
+
+        await page.goto(`http://localhost:${SERVER_PORT}/source/`);
+
+        const storedBirthday = await page.evaluate(() => localStorage.getItem('birthday'));
+        expect(storedBirthday).toBe('9.23');
+
+        const storedYear = await page.evaluate(() => localStorage.getItem('birthdayYear'));
+        expect(storedYear).toBe('99999.9.23');
+
+        await bdayButton.dispose();
+    });
+
+    /**
+     * Check that the settings text updates correctly with 5-digit birth year
+     */
+    it('Check that settings text updates with >4 digit birth year', async () => {
+        const settingsText = await page.$eval("#profile-display", (element) => {
+            return element.innerHTML;
+        });
+
+        const expectedText = 'Welcome back <span class="highlight">Sample Name</span>! Your birthday on record is <span class="highlight">99999.9.23</span>';
+        expect(settingsText).toBe(expectedText);
+    });
+
+    /**
      * Check to make sure that the clear button clears both name and birthday from localstorage
      */
     it('Check that clear function works', async () => {
@@ -128,6 +162,9 @@ describe('Settings page test suite', () => {
 
         const storedBirthday = await page.evaluate(() => localStorage.getItem('birthday'));
         expect(storedBirthday).toBe(null);
+
+        const storedYear = await page.evaluate(() => localStorage.getItem('birthdayYear'));
+        expect(storedYear).toBe(null);
 
         await clearButton.dispose();
     });
