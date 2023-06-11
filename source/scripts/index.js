@@ -98,10 +98,8 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     */
     navButton.addEventListener('click', (event) => {
         if (isNavOpen) {
-            console.log("Closing nav...");
             updateNav(false);
         } else {
-            console.log("Open nav...");
             updateNav(true);
         }
     });
