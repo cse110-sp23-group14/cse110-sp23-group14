@@ -7,7 +7,6 @@
     color: var(--main-light-color);
     text-align: center;
     z-index:0;
-
 }
 
 /* shooting star */
@@ -150,7 +149,7 @@
 .compatibility-content .header{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
+    
 }
 
 .compatibility-content  .shape-left {
