@@ -30,7 +30,7 @@ describe('Settings page test suite', () => {
     /**
      * Check to make sure we can set and get local storage with a random token
      */
-    it('Check that we can edit/access localStorage', async () => {        
+    it('Check that we can edit/access localStorage', async () => { 
         await page.evaluate(() => {
             localStorage.setItem('test', 'testObj');
         });
@@ -38,9 +38,9 @@ describe('Settings page test suite', () => {
         // We don't really need this but keep it in case page takes a while to load
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const storedName = await page.evaluate(() => 
+        const storedName = await page.evaluate(() => {
             localStorage.getItem('test')
-        );
+        });
         expect(storedName).toBe('testObj');
     });
 
@@ -48,14 +48,14 @@ describe('Settings page test suite', () => {
      * Check to make sure that name and birthday are not in local storage (when we first start)
      */
     it('Checking localStorage to make sure name and birthday are empty', async () => {
-        const storedName = await page.evaluate(() =>
-            localStorage.getItem('name')
-        );
+        const storedName = await page.evaluate(() => {
+            localStorage.getItem('name');
+        });
         expect(storedName).toBe(null);
 
-        const storedBirthday = await page.evaluate(() => 
-            localStorage.getItem('birthday')
-        );
+        const storedBirthday = await page.evaluate(() => {
+            localStorage.getItem('birthday');
+        });
         expect(storedBirthday).toBe(null);
     });
 
@@ -71,9 +71,9 @@ describe('Settings page test suite', () => {
         // We don't really need this but keep it in case page takes a while to load
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const storedName = await page.evaluate(() => 
-            localStorage.getItem('name')
-        );
+        const storedName = await page.evaluate(() => {
+            localStorage.getItem('name');
+        });
         expect(storedName).toBe('Sample Name');
     });
 
@@ -82,16 +82,18 @@ describe('Settings page test suite', () => {
      */
     it('Check that we can edit birthday in localStorage', async () => {
         // Enter a birthday
-        await page.$eval('#birthday', el => el.value = '1999-05-18');
+        await page.$eval('#birthday', el => {
+            el.value = '1999-05-18';
+        });
         const bdayButton = await page.evaluateHandle(`document.querySelector("#save-birthday-form > input[type=submit]:nth-child(3)")`);
         await bdayButton.click();
 
         // We don't really need this but keep it in case page takes a while to load
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const storedBirthday = await page.evaluate(() => 
-            localStorage.getItem('birthday')
-        );
+        const storedBirthday = await page.evaluate(() => {
+            localStorage.getItem('birthday');
+        });
         expect(storedBirthday).toBe('5.18');
     });
 
@@ -112,14 +114,14 @@ describe('Settings page test suite', () => {
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
         // Check that name and birthday are no longer stored
-        const storedName = await page.evaluate(() =>
-            localStorage.getItem('name')
-        );
+        const storedName = await page.evaluate(() => {
+            localStorage.getItem('name');
+        });
         expect(storedName).toBe(null);
 
-        const storedBirthday = await page.evaluate(() => 
-            localStorage.getItem('birthday')
-        );
+        const storedBirthday = await page.evaluate(() => {
+            localStorage.getItem('birthday');
+        });
         expect(storedBirthday).toBe(null);
     });
 });
