@@ -51,6 +51,9 @@ describe('Settings page test suite', () => {
 
         const storedBirthday = await page.evaluate(() => localStorage.getItem('birthday'));
         expect(storedBirthday).toBe(null);
+
+        const storedYear = await page.evaluate(() => localStorage.getItem('birthdayYear'));
+        expect(storedYear).toBe(null);
     });
 
     /**
