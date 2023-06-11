@@ -23,6 +23,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         saveUserName();
         displayStoredData();
         setHoroscope();
+        updateLifePathNumber();
     });
 
     // Updates horoscope on birthday submit
@@ -36,6 +37,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         saveBirthday();
         displayStoredData();
         setHoroscope();
+        updateLifePathNumber();
     });
     
     const clearUserInfoButton = document.querySelector('.clear-profile button');
@@ -48,9 +50,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
         event.preventDefault(); // Prevent page jump
         clearUserInfo();
         displayStoredData();
-        // displayStoredData();
-        // setHoroscope();
-        // updateLifePathNumber();
+        setHoroscope();
+        updateLifePathNumber();
     });
 });
 
