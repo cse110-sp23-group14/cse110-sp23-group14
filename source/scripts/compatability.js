@@ -100,7 +100,7 @@ function checkCompatibility() {
         const description = findDescription(capitalizedSign1, capitalizedSign2);
         // Assuming you want to display the description in the element with id "description"
         document.querySelector(".abcd").textContent = description;
-        checkCompatibilityButton.disabled=false; 
+        checkCompatibilityButton.disabled=false;
     }
 }
 
