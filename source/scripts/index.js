@@ -174,6 +174,9 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     for (const link of menuLinks) {
         link.addEventListener('click', (event) => {
             closeNav();
+            event.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            scrollToElement(target);
         });
     }
 
@@ -209,63 +212,64 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             });
         }
     }
-    /**
-     * Scrolls to the settings page
-     * @param {Event} event - "click"
-     */
-    document.getElementById('settings-link').addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        scrollToElement(target);
-    });
+    
+    // /**
+    //  * Scrolls to the settings page
+    //  * @param {Event} event - "click"
+    //  */
+    // document.getElementById('settings-link').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     const target = document.querySelector(this.getAttribute('href'));
+    //     scrollToElement(target);
+    // });
 
-    /**
-     * Scrolls to the home page
-     * @param {Event} event - "click"
-     */
-    document.getElementById('home-link').addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        scrollToElement(target);
-    });
+    // /**
+    //  * Scrolls to the home page
+    //  * @param {Event} event - "click"
+    //  */
+    // document.getElementById('home-link').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     const target = document.querySelector(this.getAttribute('href'));
+    //     scrollToElement(target);
+    // });
 
-    /**
-     * Scrolls to the report link page
-     * @param {Event} event - "click"
-     */
-    document.getElementById('report-link').addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        scrollToElement(target);
-    });
+    // /**
+    //  * Scrolls to the report link page
+    //  * @param {Event} event - "click"
+    //  */
+    // document.getElementById('report-link').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     const target = document.querySelector(this.getAttribute('href'));
+    //     scrollToElement(target);
+    // });
 
-    /**
-     * Scrolls to the lifepath page
-     * @param {Event} event - "click"
-     */
-    document.getElementById('lifepath-link').addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        scrollToElement(target);
-    });
+    // /**
+    //  * Scrolls to the lifepath page
+    //  * @param {Event} event - "click"
+    //  */
+    // document.getElementById('lifepath-link').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     const target = document.querySelector(this.getAttribute('href'));
+    //     scrollToElement(target);
+    // });
 
-    /**
-     * Scrolls to the compatability page
-     * @param {Event} event - "click"
-     */
-    document.getElementById('compatibility-link').addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        scrollToElement(target);
-    });
+    // /**
+    //  * Scrolls to the compatability page
+    //  * @param {Event} event - "click"
+    //  */
+    // document.getElementById('compatibility-link').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     const target = document.querySelector(this.getAttribute('href'));
+    //     scrollToElement(target);
+    // });
 
-    /**
-     * Scrolls to the FAQ page
-     * @param {Event} event - "click"
-     */
-    document.getElementById('faq-link').addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        scrollToElement(target);
-    });
+    // /**
+    //  * Scrolls to the FAQ page
+    //  * @param {Event} event - "click"
+    //  */
+    // document.getElementById('faq-link').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     const target = document.querySelector(this.getAttribute('href'));
+    //     scrollToElement(target);
+    // });
 });
