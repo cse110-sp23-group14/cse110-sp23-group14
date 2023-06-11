@@ -81,7 +81,10 @@ for (let i=0; i < signArray.length; i++) {
                 shapeRight.querySelector('.sign-name').textContent= signNamesArray[i];
             }
         }
-        clickCount++;
+        if(clickCount<2){
+            clickCount++;
+        }
+        
         checkCompatibility();
         handleClick();
     });
@@ -99,7 +102,9 @@ function checkCompatibility() {
         const capitalizedSign2 = sign2.charAt(0).toUpperCase() + sign2.slice(1);
         const description = findDescription(capitalizedSign1, capitalizedSign2);
         // Assuming you want to display the description in the element with id "description"
-        document.getElementById("popup-description").textContent = description;
+        document.querySelector(".abcd").textContent = description;
+        console.log('a');
+        checkCompatibilityButton.disabled=false; 
     }
 }
 
@@ -133,11 +138,12 @@ shapeRight.addEventListener('click', function() {
     handleClick();
 });
 
+
+
 function handleClick() {
     if(clickCount === 2) {
         setTimeout(() => {
             // Show the pop-up
-            showPopup();
             // Hide the menu
             // chooseSignWindow.style.display='none';
             // Enable button
@@ -146,23 +152,13 @@ function handleClick() {
         
     } else {
         setTimeout(() => {
-            hidePopup();
             //chooseSignWindow.style.display='block';
             checkCompatibilityButton.disabled = true;
         }, 300);
     }
 }
-  
 
-// Function to show the pop-up with description
-function showPopup() {
-    document.getElementById("compatibility-popup").style.display = "block";
-}
 
-// Function to hide the pop-up and reset the page
-function hidePopup() {
-    document.getElementById("compatibility-popup").style.display = "none";
-}
 
 // Attach event listener to the close button
 document.querySelector(".compatibility-popup-close").addEventListener("click", () => {
