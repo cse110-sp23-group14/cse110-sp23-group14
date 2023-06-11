@@ -4,7 +4,6 @@
     background-image: url('../assets/space.jpeg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
     color: var(--main-light-color);
     text-align: center;
     z-index:0;
