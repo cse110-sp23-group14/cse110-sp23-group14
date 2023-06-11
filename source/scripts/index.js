@@ -198,11 +198,11 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
      */
     function scrollToElement(target) {
         if (isMobile) {
-            const offset = target.getBoundingClientRect().top + window.pageYOffset;
+            const offset = target.getBoundingClientRect().top + document.documentElement.scrollTop;
             window.scrollTo({
                 top: offset,
                 behavior: 'smooth'
-            });
+            },2);
         } else {
             target.scrollIntoView({
                 behavior: 'smooth'
