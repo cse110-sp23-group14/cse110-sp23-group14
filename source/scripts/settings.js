@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     * Saves the birthday
     * @param {Event} event - 'submit'
     */
-    saveBirthdayForm.addEventListener('submit', function(event) {
+    saveBirthdayForm.addEventListener('submit', function(event){
         event.preventDefault(); // Prevent page jump
         saveBirthday();
         displayStoredData();
@@ -40,10 +40,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const clearUserInfoButton = document.querySelector('.clear-profile button');
     
     /**
-     * clears user information
-     * @param {Event} event - 'click'
-     */
-    clearUserInfoButton.addEventListener('click', function(event) {
+    * clears user information
+    * @param {Event} event - 'click'
+    */
+    clearUserInfoButton.addEventListener('click', function(event){
         event.preventDefault(); // Prevent page jump
         clearUserInfo();
         displayStoredData();
