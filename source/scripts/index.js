@@ -122,7 +122,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             i++;
             setTimeout(() => {
                 typeWriter(text, i);
-            }, 27);
+            }, 10);
         }
     }
 
