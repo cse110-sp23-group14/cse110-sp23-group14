@@ -38,9 +38,7 @@ describe('Settings page test suite', () => {
         // We don't really need this but keep it in case page takes a while to load
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const storedName = await page.evaluate(() => 
-            localStorage.getItem('test')
-        );
+        const storedName = await page.evaluate(() => localStorage.getItem('test'));
         expect(storedName).toBe('testObj');
     });
 
@@ -48,14 +46,10 @@ describe('Settings page test suite', () => {
      * Check to make sure that name and birthday are not in local storage (when we first start)
      */
     it('Checking localStorage to make sure name and birthday are empty', async () => {
-        const storedName = await page.evaluate(() => 
-            localStorage.getItem('name')
-        );
+        const storedName = await page.evaluate(() => localStorage.getItem('name'));
         expect(storedName).toBe(null);
 
-        const storedBirthday = await page.evaluate(() => 
-            localStorage.getItem('birthday')
-        );
+        const storedBirthday = await page.evaluate(() => localStorage.getItem('birthday'));
         expect(storedBirthday).toBe(null);
     });
 
@@ -73,9 +67,7 @@ describe('Settings page test suite', () => {
         // We don't really need this but keep it in case page takes a while to load
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const storedName = await page.evaluate(() => 
-            localStorage.getItem('name')
-        );
+        const storedName = await page.evaluate(() => localStorage.getItem('name'));
         expect(storedName).toBe('Sample Name');
     });
 
@@ -93,9 +85,7 @@ describe('Settings page test suite', () => {
         // We don't really need this but keep it in case page takes a while to load
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const storedBirthday = await page.evaluate(() => 
-            localStorage.getItem('birthday')
-        );
+        const storedBirthday = await page.evaluate(() => localStorage.getItem('birthday'));
         expect(storedBirthday).toBe('5.18');
     });
 
@@ -116,14 +106,10 @@ describe('Settings page test suite', () => {
         await clearButton.click();
 
         // Check that name and birthday are no longer stored
-        const storedName = await page.evaluate(() => 
-            localStorage.getItem('name')
-        );
+        const storedName = await page.evaluate(() => localStorage.getItem('name'));
         expect(storedName).toBe(null);
 
-        const storedBirthday = await page.evaluate(() => 
-            localStorage.getItem('birthday')
-        );
+        const storedBirthday = await page.evaluate(() => localStorage.getItem('birthday'));
         expect(storedBirthday).toBe(null);
     });
 });

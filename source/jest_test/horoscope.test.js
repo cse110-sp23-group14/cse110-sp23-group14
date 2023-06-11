@@ -37,9 +37,7 @@ describe('Horoscope page test suite', () => {
     });
 
     it('Checking that localStorage has no name or birthday', async () => {
-        const storedName = await page.evaluate( () => {
-            localStorage.getItem('name');
-        });
+        const storedName = await page.evaluate( () => localStorage.getItem('name'));
         expect(storedName).toBe(null);
 
         // TODO: Finish this part, basically just ripped off of settings.test.js
