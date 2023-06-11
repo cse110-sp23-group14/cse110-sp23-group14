@@ -20,8 +20,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         // Hide the button
         horoscopeButton.style.display = 'none';
         horoscopeDetect.style.display = 'block';
-    }
-    else{
+    }else{
         horoscopeDetect.style.display = 'none';
     }
 
