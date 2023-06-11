@@ -1,10 +1,19 @@
 import {soulUrgeNumberData} from "../jsons/soulUrgeNumberDataJson.js";
+export {updateLifePathNumber};
 
 /**
  * Event listener function for the 'DOMContentLoaded' event.
  * @param {Event} event -The 'DOMContentLoaded' event object
  */
 window.addEventListener('DOMContentLoaded', (event)=> {
+    updateLifePathNumber();
+});
+
+/**
+    * Updates the life path number text on the numerology page
+    * (Made to not have to reload page to get number to change)
+    */
+function updateLifePathNumber(){
     const lifePathNumberLabel = document.getElementById("lifepath-number");
 
     const birthday = localStorage.getItem("birthdayYear");
@@ -62,13 +71,13 @@ window.addEventListener('DOMContentLoaded', (event)=> {
         lifePathNumberLabel.classList.add('deemphasize');
         lifePathNumberLabel.classList.remove('highlight');
     }
-});
+}
 
 /**
- * Calculates the life path number based on the birthday
- * @param {number} birthDate
- * @returns {number} calculated life path number
- */
+* Calculates the life path number based on the birthday
+* @param {number} birthDate
+* @returns {number} calculated life path number
+*/
 function calculateLifePathNumber(birthDate) {
     // Split the birth date into an array
     const dateArray = birthDate.split('.');
