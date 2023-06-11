@@ -74,10 +74,10 @@ function updateLifePathNumber(){
 }
 
 /**
-* Calculates the life path number based on the birthday
-* @param {number} birthDate
-* @returns {number} calculated life path number
-*/
+ * Calculates the life path number based on the birthday
+ * @param {number} birthDate
+ * @returns {number} calculated life path number
+ */
 function calculateLifePathNumber(birthDate) {
     // Split the birth date into an array
     const dateArray = birthDate.split('.');
