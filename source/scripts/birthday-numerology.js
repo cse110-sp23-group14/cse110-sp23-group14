@@ -30,39 +30,41 @@ function updateLifePathNumber(){
         lifePathImage.setAttribute('src', `assets/lifepath/${lifePathNumber}.png`);
 
         /**
-         * Writes the Personality prediction
-         * @param {Event} event -The 'click' event object
+         * Event listener for lifePathButtons
+         * @param {Event} event - The 'click' event object
          */
-        lifePathButtons[0].addEventListener('click', function() {
-            lifePathTitle.innerHTML = `Personality`;
-            lifePathText.innerHTML = soulUrgeNumberData[lifePathNumber]['personality'];
-        });
-
-        /**
-         * Writes the Characteristics prediction
-         * @param {Event} event -The 'click' event object
-         */
-        lifePathButtons[1].addEventListener('click', function() {
-            lifePathTitle.innerHTML = `Characteristics`;
-            lifePathText.innerHTML = soulUrgeNumberData[lifePathNumber]['characteristic'];
-        });
-
-        /**
-         * Writes the career prediction
-         * @param {Event} event -The 'click' event object
-         */
-        lifePathButtons[2].addEventListener('click', function() {
-            lifePathTitle.innerHTML = `Career`;
-            lifePathText.innerHTML = soulUrgeNumberData[lifePathNumber]['career'];
-        });
-
-        /**
-         * Writes the love prediction
-         * @param {Event} event -The 'click' event object
-         */
-        lifePathButtons[3].addEventListener('click', function() {
-            lifePathTitle.innerHTML = `Love`;
-            lifePathText.innerHTML = soulUrgeNumberData[lifePathNumber]['love'];
+        function handleButtonClick(event) {
+            const buttonIndex = Array.from(lifePathButtons).indexOf(event.target);
+            let predictionType, predictionValue;
+    
+            switch (buttonIndex) {
+            case 0:
+                predictionType = 'Personality';
+                predictionValue = soulUrgeNumberData[lifePathNumber]['personality'];
+                break;
+            case 1:
+                predictionType = 'Characteristics';
+                predictionValue = soulUrgeNumberData[lifePathNumber]['characteristic'];
+                break;
+            case 2:
+                predictionType = 'Career';
+                predictionValue = soulUrgeNumberData[lifePathNumber]['career'];
+                break;
+            case 3:
+                predictionType = 'Love';
+                predictionValue = soulUrgeNumberData[lifePathNumber]['love'];
+                break;
+            default:
+                return;
+            }
+    
+            lifePathTitle.innerHTML = predictionType;
+            lifePathText.innerHTML = predictionValue;
+        }
+    
+        // Attach the event listener to each button
+        lifePathButtons.forEach(button => {
+            button.addEventListener('click', handleButtonClick);
         });
     }else {
         const lifePathButtonBox = document.querySelector('.lifepath-content .button-box');

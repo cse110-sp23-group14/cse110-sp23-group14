@@ -54,6 +54,22 @@ const signNamesArray = ['capricorn', 'cancer', 'aquarius', 'gemini', 'leo', 'lib
 // How it works: It starts at 0, then on each click of the menu, the counter goes up.
 let clickCount = 0;
 
+
+/**
+ * Sets the properties of a shape element.
+ *
+ * @param {HTMLElement} shape - The shape element to set the properties for.
+ * @param {string} image - The URL of the background image.
+ * @param {string} signName - The sign name text.
+ * @returns {void}
+ */
+function setShapeProperties(shape, image, signName) {
+    shape.style.backgroundImage = `url(${image})`;
+    shape.style.backgroundSize = 'cover';
+    shape.querySelector('.sign-name').textContent = signName.charAt(0).toUpperCase() + signName.slice(1);
+}
+
+
 for (let i=0; i < signArray.length; i++) {
     signArray[i].addEventListener('click', function(){
         const image = `assets/zodiac_sign/${signNamesArray[i]}.png`;
@@ -64,15 +80,10 @@ for (let i=0; i < signArray.length; i++) {
             shapeLeft.querySelector('.sign-name').textContent = signNamesArray[i].charAt(0).toUpperCase() + signNamesArray[i].slice(1);
             // Inspiration: const capitalizedSign1 = sign1.charAt(0).toUpperCase() + sign1.slice(1);
         } else {
-            if(shapeLeft.querySelector('.sign-name').textContent=='') {
-                shapeLeft.style.backgroundImage = `url(${image})`;
-                shapeLeft.style.backgroundSize ='cover';
-                shapeLeft.querySelector('.sign-name').textContent = signNamesArray[i].charAt(0).toUpperCase() + signNamesArray[i].slice(1);
-    
+            if (shapeLeft.querySelector('.sign-name').textContent == '') {
+                setShapeProperties(shapeLeft, image, signNamesArray[i]);
             } else {
-                shapeRight.style.backgroundImage=`url(${image})`;
-                shapeRight.style.backgroundSize='cover';
-                shapeRight.querySelector('.sign-name').textContent = signNamesArray[i].charAt(0).toUpperCase() + signNamesArray[i].slice(1);
+                setShapeProperties(shapeRight, image, signNamesArray[i]);
             }
         }
         if(clickCount<2){
@@ -125,26 +136,26 @@ closeCompatability.addEventListener('click', function() {
 });
 
 /**
- * Event listener for shapeLeft
- * @param {Event} event - "click"
+ * Handles the click event for a shape element.
+ *
+ * @param {HTMLElement} shape - The shape element that was clicked.
+ * @returns {void}
  */
+function handleShapeClick(shape) {
+    clickCount--;
+    shape.style.backgroundImage = ''; // Remove background image from the shape
+    shape.querySelector('.sign-name').textContent = '';
+    handleClick();
+}
+  
+// Event listener for shapeLeft
 shapeLeft.addEventListener('click', function() {
-    clickCount--;
-    shapeLeft.style.backgroundImage = ''; // Remove background image from shapeLeft
-    shapeLeft.querySelector('.sign-name').textContent='';
-
-    handleClick();
+    handleShapeClick(shapeLeft);
 });
-
-/**
- * Event listener for shapeRight
- * @param {Event} event - "click"
- */
+  
+// Event listener for shapeRight
 shapeRight.addEventListener('click', function() {
-    clickCount--;
-    shapeRight.style.backgroundImage = ''; // Remove background image from shapeRight
-    shapeRight.querySelector('.sign-name').textContent='';
-    handleClick();
+    handleShapeClick(shapeRight);
 });
 
 /**
