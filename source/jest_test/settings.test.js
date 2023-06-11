@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const SERVER_PORT = 36873;
+const SERVER_PORT = 5500;//36873;
 
 
 /**
@@ -38,9 +38,9 @@ describe('Settings page test suite', () => {
         // We don't really need this but keep it in case page takes a while to load
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const storedName = await page.evaluate(() => {
-            localStorage.getItem('test');
-        });
+        const storedName = await page.evaluate(() => 
+            localStorage.getItem('test')
+        );
         expect(storedName).toBe('testObj');
     });
 
@@ -48,14 +48,14 @@ describe('Settings page test suite', () => {
      * Check to make sure that name and birthday are not in local storage (when we first start)
      */
     it('Checking localStorage to make sure name and birthday are empty', async () => {
-        const storedName = await page.evaluate(() => {
-            localStorage.getItem('name');
-        });
+        const storedName = await page.evaluate(() => 
+            localStorage.getItem('name')
+        );
         expect(storedName).toBe(null);
 
-        const storedBirthday = await page.evaluate(() => {
-            localStorage.getItem('birthday');
-        });
+        const storedBirthday = await page.evaluate(() => 
+            localStorage.getItem('birthday')
+        );
         expect(storedBirthday).toBe(null);
     });
 
@@ -64,16 +64,18 @@ describe('Settings page test suite', () => {
      */
     it('Check that we can edit name in localStorage', async () => {
         // Enter a name
-        await page.type('#name', 'Sample Name', {delay: 10});
+        await page.$eval('#name', el => {
+            el.value = 'Sample Name';
+        });
         const nameButton = await page.evaluateHandle(`document.querySelector("#save-name-form > div > input[type=submit]:nth-child(3)")`);
         await nameButton.click();
 
         // We don't really need this but keep it in case page takes a while to load
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const storedName = await page.evaluate(() => {
-            localStorage.getItem('name');
-        });
+        const storedName = await page.evaluate(() => 
+            localStorage.getItem('name')
+        );
         expect(storedName).toBe('Sample Name');
     });
 
@@ -91,9 +93,9 @@ describe('Settings page test suite', () => {
         // We don't really need this but keep it in case page takes a while to load
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const storedBirthday = await page.evaluate(() => {
-            localStorage.getItem('birthday');
-        });
+        const storedBirthday = await page.evaluate(() => 
+            localStorage.getItem('birthday')
+        );
         expect(storedBirthday).toBe('5.18');
     });
 
@@ -106,22 +108,22 @@ describe('Settings page test suite', () => {
             await dialog.accept();
         });
 
-        // Click clear button
-        const clearButton = await page.evaluateHandle(`document.querySelector("#settingpage > div > div > div.clear-profile > button")`);
-        await clearButton.click();
-
         // Wait to accept dialog and reload home page
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
+        // Click clear button
+        const clearButton = await page.evaluateHandle(`document.querySelector("#settingpage > div > div > div > div.clear-profile > button")`);
+        await clearButton.click();
+
         // Check that name and birthday are no longer stored
-        const storedName = await page.evaluate(() => {
-            localStorage.getItem('name');
-        });
+        const storedName = await page.evaluate(() => 
+            localStorage.getItem('name')
+        );
         expect(storedName).toBe(null);
 
-        const storedBirthday = await page.evaluate(() => {
-            localStorage.getItem('birthday');
-        });
+        const storedBirthday = await page.evaluate(() => 
+            localStorage.getItem('birthday')
+        );
         expect(storedBirthday).toBe(null);
     });
 });
