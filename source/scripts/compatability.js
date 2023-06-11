@@ -99,7 +99,7 @@ function checkCompatibility() {
         const capitalizedSign2 = sign2.charAt(0).toUpperCase() + sign2.slice(1);
         const description = findDescription(capitalizedSign1, capitalizedSign2);
         // Assuming you want to display the description in the element with id "description"
-        document.querySelector(".abcd").textContent = description;
+        document.querySelector(".descript").textContent = description;
         checkCompatibilityButton.disabled=false;
     }
 }
@@ -178,6 +178,8 @@ function hidePopup() {
  * Attach event listener to the close button
  * @param {Event} event - "click"
  */
+
+/*
 document.querySelector(".compatibility-popup-close").addEventListener("click", () => {
     hidePopup();
     clickCount=0;
@@ -187,3 +189,4 @@ document.querySelector(".compatibility-popup-close").addEventListener("click", (
     shapeRight.querySelector('.sign-name').textContent='';
     chooseSignWindow.style.display='block';
 });
+*/
