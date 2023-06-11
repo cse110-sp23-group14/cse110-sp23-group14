@@ -11,6 +11,7 @@ html {
     scroll-snap-type: y mandatory;
     overflow: scroll;
     overscroll-behavior-y: none;
+    overscroll-behavior-x: none;
     overflow-x: hidden;
 }
 
