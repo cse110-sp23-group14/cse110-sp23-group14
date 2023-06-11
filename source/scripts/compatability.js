@@ -100,7 +100,6 @@ function checkCompatibility() {
         const description = findDescription(capitalizedSign1, capitalizedSign2);
         // Assuming you want to display the description in the element with id "description"
         document.querySelector(".abcd").textContent = description;
-        console.log('a');
         checkCompatibilityButton.disabled=false; 
     }
 }
@@ -111,7 +110,6 @@ function checkCompatibility() {
  * @param {Event} event - "click"
  */
 checkCompatibilityButton.addEventListener('click', () => {
-    alert('button was clicked')
     document.getElementById('compatability-popup-new').classList.add('visible');
 });
 
@@ -144,7 +142,6 @@ shapeRight.addEventListener('click', function() {
     clickCount--;
     shapeRight.style.backgroundImage = ''; // Remove background image from shapeRight
     shapeRight.querySelector('.sign-name').textContent='';
-
     handleClick();
 });
 
