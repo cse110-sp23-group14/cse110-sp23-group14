@@ -4,9 +4,22 @@ export {compatibilityData};
 const compatibilityData = {
     "compatibility": [
         {
-            "pair": [["Aries", "Aries"], ["Taurus", "Taurus"], ["Gemini", "Gemini"], ["Cancer", "Cancer"], ["Leo", "Leo"], ["Virgo", "Virgo"], ["Libra", "Libra"], ["Scorpio", "Scorpio"], ["Sagittarius", "Sagittarius"], ["Capricorn", "Capricorn"], ["Aquarius", "Aquarius"], ["Pisces", "Pisces"]],
+            "pair": [
+                ["Aries", "Aries"], 
+                ["Taurus", "Taurus"], 
+                ["Gemini", "Gemini"], 
+                ["Cancer", "Cancer"], 
+                ["Leo", "Leo"], 
+                ["Virgo", "Virgo"], 
+                ["Libra", "Libra"], 
+                ["Scorpio", "Scorpio"], 
+                ["Sagittarius", "Sagittarius"], 
+                ["Capricorn", "Capricorn"], 
+                ["Aquarius", "Aquarius"], 
+                ["Pisces", "Pisces"]
+            ],
 
-            "description": "As they say, how can you love somebody else unless you love yourself? If you date someone of the same sign, congratulations. You've probably embraced your quirks and accepted your humanity. Now, you can celebrate that with a kindred spirit! If you haven't learned to love yourself, warts and all, this relationship can inspire some crucial self-acceptance. Remember, though: #twinning might be comfortable, but autonomy is important to keep that frisky friction. Maintain some separation between your lives, even if it's easy to hang out together. Otherwise, passion may cool to a brother-sister vibe."
+            "description": "0° (Conjunction): When two signs are in conjunction, they have an intense and harmonious connection. You both share the same element and have a deep understanding of each other. Your similarities create a sense of ease and comfort in your relationship, allowing you to effortlessly support and complement one another. You share common goals, values, and interests, making your bond strong and harmonious."
         },
         {
             "pair": [
@@ -35,7 +48,7 @@ const compatibilityData = {
                 ["Pisces", "Aquarius"],
                 ["Pisces", "Aries"]
             ],
-            "description": "Like next-door neighbors with a completely different style of decorating, gardening, and living, the signs on either side of yours can stir up an instant love/hate vibe. Of course, all that friction can lead to explosive sexual chemistry, even an obsessive quest to figure each other out (you never will). Some astrologers believe that each sign is an evolved version of the one before it. The sign after yours is a teacher. However, like a rebellious teen seeking emancipation from a parent, you may never admit that this person has taught you anything. This cosmic combination can make for painful breakups and a seething sexual tension that lingers for a lifetime."
+            "description": "30° (Semi-Sextile): Signs that are semi-sextile have a subtle and supportive compatibility. While you may have different elemental natures, you still share some similarities that enable you to understand and appreciate each other. Your relationship is characterized by a sense of cooperation, where you can support each other's growth and offer different perspectives. With open communication and mutual respect, you can create a stable and nurturing connection."
         },
         {
             "pair": [
@@ -64,7 +77,7 @@ const compatibilityData = {
                 ["Pisces", "Capricorn"],
                 ["Pisces", "Taurus"]
             ],
-            "description": "It's easy and breezy to date a person who lives two zodiac signs away. Your signs are always of a compatible 'element' (for example, they're a water sign and you're an earth sign, which are both of the 'feminine' quality), making this a great match. You'll often have similar values and attitudes about politics, raising a family, which movies to rent. Friendship and communication are the hallmarks of this aspect.\n\nBeing best friends is easy. Keeping the sexy spark alive? A little challenging. You'll need to structure 'date nights' or set up scenarios that get you out of buddy mode."
+            "description": "60° (Sextile): When two signs are sextile, they share compatible elements and have a natural affinity for each other. You have a harmonious and supportive relationship, built on mutual understanding and cooperation. Your connection is marked by positive energy and synergy. You inspire and motivate each other, creating a partnership that fosters growth, creativity, and shared experiences."
         },
         {
             "pair": [
@@ -93,7 +106,7 @@ const compatibilityData = {
                 ["Pisces", "Gemini"],
                 ["Pisces", "Sagittarius"]
             ],
-            "description": "The square aspect is a harsh, 90-degree angle between two signs that creates a push-pull dynamic. It's the relationship that helps you work through issues with a difficult parent, usually by reactivating old, painful wounds. There can be power struggles and clashing agendas. Don't expect to kick back and put your feet up in this match.\n\nThe dynamic tension will keep you active and keyed up. Of course, that could be exactly what you want. The opportunity of the 'square' aspect is to teach you how to compromise with an equally strong-willed partner. When you strike that delicate balance, you can make an undeniable 'power couple'—a true force to be reckoned with."
+            "description": "90° (Square): Signs that are square to each other have a dynamic and challenging compatibility. Your elemental natures may differ, leading to some conflicts and tension. However, this aspect also offers an opportunity for growth and learning. Your relationship requires effort, compromise, and understanding to overcome obstacles and find a balance. With patience, open-mindedness, and effective communication, you can transform your differences into strengths and build a resilient and transformative bond."
         },
         {
             "pair": [
@@ -122,7 +135,7 @@ const compatibilityData = {
                 ["Pisces", "Scorpio"],
                 ["Pisces", "Cancer"]
             ],
-            "description": "Ah, home, sweet home. The trine sign mate has the same 'element' as yours (fire, earth, air, or water), creating an unspoken kinship and harmony in this good match. At last, you don't have to constantly explain yourself. You've never felt so comfortable, so understood on a core level. This is the person you can burp and fart around or pee with the door open when they're home. But don't invest in a wardrobe full of elastic waistbands just yet.\n\nIn trine relationships, you'll need to preserve some mystery to keep things exciting. Make sure you stay active and on the go, and don't do everything together. A little autonomy goes a long way to keep the passion alive."
+            "description": "120° (Trine): When two signs are trine, they share the same element and have a natural flow of compatibility. Your connection is marked by harmony, mutual support, and shared values. You understand each other intuitively and effortlessly work together. Your relationship is characterized by a sense of ease and appreciation for each other's strengths. You complement each other, fostering personal growth and achieving shared goals."
         },
         {
             "pair": [
@@ -145,7 +158,7 @@ const compatibilityData = {
                 ["Sagittarius", "Taurus"],
                 ["Sagittarius", "Cancer"]
             ],
-            "description": "This is a fascinating, complex combination that defies explanation—the original odd couple. You'll either feel like you're with your soul mate or the devil incarnate. 'How did those two end up together?' people will wonder. Your bond is intense, unspoken, almost secretive in a way.\n\nThe person five signs away from your sign has nothing in common with you astrologically. You'll need to adapt to your differences, which could take a great deal of adjustment, even discarding a former lifestyle. For one of you, the relationship will be about sex and intimacy; for the other, duty and service. If you've both done the requisite self-awareness work, you can make a formidable team when you pool your strengths. You might also come together for karmic purposes—for example, to have a child."
+            "description": "150° (Quincunx): When two signs are quincunx, they have an unconventional and complex compatibility. Your elemental natures are different, which can create a sense of unease or tension. However, this aspect also provides an opportunity for growth and integration. Your relationship calls for flexibility, adaptation, and open-mindedness. By embracing the challenge of understanding each other's unique perspectives, you can create a relationship that is dynamic, transformative, and mutually enriching."
         },
         {
             "pair": [
@@ -162,7 +175,7 @@ const compatibilityData = {
                 ["Virgo", "Pisces"],
                 ["Pisces", "Virgo"]
             ],
-            "description": "Your opposite sign lives directly across the zodiac wheel from you. However, you've got more in common than the name suggests. This sign can be highly compatible, even a soul twin match. You each have a distinct role, but you're a tag team, too. With an opposite sign, you're challenged to grow as a person and take responsibility for your part of the relationship.\n\nWe tend to view things from a close-up, missing the whole picture by hyper-focusing on a detail or two. With an opposite sign, your life appears in full relief, like a finished painting. Suddenly, it all makes sense. This can be a little uncomfortable, but if you've manifested an opposite sign partnership, it means you're ready to grow up."
+            "description": "180° (Opposition): Signs that are in opposition to each other have a magnetic and intense compatibility. Your elemental natures are opposite, creating a dynamic of attraction and challenge. Your relationship is marked by both complementarity and conflict. It calls for balance, compromise, and understanding. By embracing your differences and finding common ground, you can create a relationship that is transformative and deeply fulfilling."
         }
     ]
 };

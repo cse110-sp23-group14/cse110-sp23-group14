@@ -67,7 +67,7 @@ for (let i=0; i < signArray.length; i++) {
             if(shapeLeft.querySelector('.sign-name').textContent=='') {
                 shapeLeft.style.backgroundImage = `url(${image})`;
                 shapeLeft.style.backgroundSize ='cover';
-                shapeLeft.querySelector('.sign-name').textContent = signNamesArray[i];
+                shapeLeft.querySelector('.sign-name').textContent = signNamesArray[i].charAt(0).toUpperCase() + signNamesArray[i].slice(1);
     
             } else {
                 shapeRight.style.backgroundImage=`url(${image})`;
