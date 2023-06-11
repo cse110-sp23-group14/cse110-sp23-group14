@@ -15,11 +15,13 @@
         <link rel="stylesheet" href="styles/compatibility.css" >
         <link rel="stylesheet" href ="styles/faq-style.css">
 
+        <!-- Setting the character encoding and viewport for the page -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
+        <!-- Navigation bar -->
         <div class="nav-container nav-background-hide">
             <a id="nav-button"><i class="fa-solid fa-bars fa-2xl"></i><i class="fa-solid fa-xmark fa-2xl icon-hide"></i></a>
             <div class="nav-content nav-hide">
@@ -59,6 +61,7 @@
 
             <section id="daily-report"></section>
 
+            <!-- horoscope popup has date, imagine, daily horoscope, and share button -->
             <div id="horoscope-popup" class="overlay">
                 <div class="popup">
                         <a class="close" href="#horoscope_popup-box">&times;</a>
@@ -77,7 +80,8 @@
                 </div>
             </div>
         </div>
-
+        
+        <!-- clicking the horoscope button will lead to the popup -->
         <div class="site-content horoscope-content">
             <a id="horoscope-button" class="button" href="#horoscope-popup">Today's Horoscope</a>
         </div>
@@ -111,6 +115,7 @@
             
                 </section>
             
+                 <!-- the signs of the people whose compatabilities to check-->
                 <section id="choose-sign">
                    
                     <div class="menu">
@@ -192,13 +197,16 @@
                     Check Compatability
                 </button>
 
+                 <!-- compatibility result of the two signs-->
                 <div id="compatability-popup-new" class="overlay">
                     <div class="popup">
-                        <span id="close-compatability-popup-new" style="position: absolute; top: 10px; right: 10px;">&times;</span>
-                        <img src="assets/title-logo.png" alt="compatability">
-                        <h1 class="filler" style="text-align: center;">Leo</h1>
-                        <p class="filler" style="text-align: center;">May 23, 2023</p>
-                        <p class="abcd"></p>
+                        <span id="close-compatability-popup-new">&times;</span>
+                        <img class="filler" src="filler" alt="filler">
+                        <h1 class="filler">Leo</h1>
+                        <p class="filler">May 23, 2023</p>
+                        <p class="filler">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor mauris at rhoncus maximus. Praesent dui purus, pharetra at scelerisque ut, euismod eget mauris. Maecenas eleifend, purus eu dapibus finibus, libero lorem ultrices augue, vel malesuada diam quam in lorem. Suspendisse quis nisl nec risus auctor tincidunt. Integer finibus pellentesque ipsum tempor mattis. Morbi finibus nisi id purus dignissim, ut pretium velit pellentesque. Ut pretium tortor ut pretium pharetra. Ut ut hendrerit lectus.
+                        </p>
                         <button class="filler">Share</button>
                         <p class="filler"></p>
                     </div>
@@ -206,6 +214,7 @@
             </div>
         </section>
 
+         <!-- lifepath page with popups-->
         <section id="lifepath-page">
             <div id="lifepath-popup" class="overlay">
                 <div class="popup">
@@ -237,6 +246,7 @@
             </div>
         </section>
 
+        <!-- setting page allows user to update name and birthday-->
         <section id="settingpage">
                 <div class="site-content settings-content">
                     <div class="settings-menu-background">
@@ -274,6 +284,7 @@
                 </div>
         </section>
         
+        <!-- FAQ page for the whole site-->
         <section id="faqpage">
                 <div class="site-content faq">
                     <div class="faq-background">
