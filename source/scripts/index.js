@@ -186,8 +186,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         questions[i].addEventListener('click', (event) => {
             if (answers[i].classList.contains('hide')) {
                 answers[i].classList.remove('hide');
-            }
-            else {
+            } else {
                 answers[i].classList.add('hide');
             }
         });
