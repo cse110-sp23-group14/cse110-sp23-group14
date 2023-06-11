@@ -70,7 +70,6 @@ window.addEventListener('DOMContentLoaded', (event)=> {
  * @returns {number} calculated life path number
  */
 function calculateLifePathNumber(birthDate) {
-    console.log(birthDate);
     // Split the birth date into an array
     const dateArray = birthDate.split('.');
 
@@ -78,7 +77,6 @@ function calculateLifePathNumber(birthDate) {
     const year = dateArray[0];
     const month = dateArray[1];
     const day = dateArray[2];
-    console.log(dateArray);
     // Reduce each part to a single digit or a master number
     const reducedYear = reduceNumber(year);
     const reducedMonth = reduceNumber(month);
