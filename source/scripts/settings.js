@@ -137,7 +137,7 @@ function saveBirthday() {
     }
     // process date format
     // "2023-06-01" --> "2023.6.1"
-    const dateArray = birthdayInput.value.split('-'); 
+    const dateArray = birthdayInput.value.split('-');
     // remove leading "0"
     for (let i=0; i<dateArray.length; i++) {
         dateArray[i] = parseInt(dateArray[i], 10).toString();
