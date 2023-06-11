@@ -2,7 +2,6 @@ import { Horoscope } from "./horoscope.js";
 
 /**
  * Event listener function for the 'DOMContentLoaded' event.
- *
  * @param {Event} event -The 'DOMContentLoaded' event object
  */
 window.addEventListener('DOMContentLoaded', async (event)=> {
@@ -32,7 +31,6 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         navContainer.classList.remove('nav-background-hide');
     }
 
-
     /**
      * Closes the navigation bar
      * and changes the x back to the hamburger
@@ -48,7 +46,6 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         navContainer.classList.remove('nav-show-background');
     }
 
-
     /**
     * Event listener function for the 'click' event on the navButton.
     *
@@ -63,10 +60,12 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             openNav();
         }
     });
+
     const currentDate = new Date();
     const currentDateStr = currentDate.toDateString();
     const reportDate = new Date();
     const reportDateStr = reportDate.toDateString();
+
     /**
      * get the last visted date from localStorage
      * report being highlighted on the next day
@@ -75,17 +74,25 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     if (lastVisitDate !== currentDateStr) {
         localStorage.removeItem('report_read');
     }
+
     if (currentDateStr === reportDateStr) {
         const isRead = localStorage.getItem('report_read');
         if(!isRead) {
             dailyReport.classList.add('highlight');
         }
     }
+
+    /**
+    * When the user clicks on the dailyReport, it is marked as read
+    * @param {Event} event -The 'click' event object
+    */
     dailyReport.addEventListener('click', function() {
         dailyReport.classList.remove('highlight');
         localStorage.setItem('report_read', true);
     });
+
     localStorage.setItem('last_visit', currentDateStr);
+
     // Set horoscope popup text
     const dailyTitle = document.getElementsByClassName("daily-title")[0];
     const sign = Horoscope.getSign();
@@ -94,6 +101,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     } else {
         dailyTitle.innerHTML = `${sign}`;
     }
+    
     const dailyDate = document.getElementsByClassName("daily-date")[0];
     const date = new Date().toLocaleDateString();
     dailyDate.innerHTML = `${date}`;
@@ -103,7 +111,11 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     dailyContent.innerHTML = Horoscope.generateHoroscope();
     dailyContent.innerHTML = ""; // Clear the initial content
     
-    // Makes the text appear letter by letter
+    /**
+    * type writer animation for the horoscope popup
+    * @param {string} text
+    * @param {number} i
+    */
     function typeWriter(text, i) {
         if (i < text.length) {
             dailyContent.innerHTML += text.charAt(i);
@@ -137,6 +149,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     }
     /**
      * Copy daily-horoscope to clipboard when share button is clicked
+     * @param {Event} event -The 'click' event object
      */
     shareBtn.addEventListener('click', async (event) => {
         try {
@@ -148,6 +161,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             console.error('Failed to copy: ', err);
         }
     });
+
     const menuLinks = document.querySelectorAll('.nav a');
     for (const link of menuLinks) {
         console.log(link);
@@ -155,10 +169,10 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             closeNav();
         });
     }
+
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     /**
      * Scrolls to the target element smoothly.
-     *
      * @param {Element} target - The target element to scroll to
      */
     function scrollToElement(target) {
@@ -174,21 +188,40 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             });
         }
     }
+    /**
+     * Scrolls to the settings page 
+     * @param {Event} event - "click"
+     */
     document.getElementById('settings-link').addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         scrollToElement(target);
     });
+
+    /**
+     * Scrolls to the home page
+     * @param {Event} event - "click"
+     */
     document.getElementById('home-link').addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         scrollToElement(target);
     });
+
+    /**
+     * Scrolls to the report link page
+     * @param {Event} event - "click"
+     */
     document.getElementById('report-link').addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         scrollToElement(target);
     });
+
+    /**
+     * Scrolls to the lifepath page
+     * @param {Event} event - "click"
+     */
     document.getElementById('lifepath-link').addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));

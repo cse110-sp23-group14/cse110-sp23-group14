@@ -1,6 +1,10 @@
 import { Horoscope } from "./horoscope.js";
 import { constellation } from "../jsons/constellationJson.js";
 
+/**
+ * Event listener function for the 'DOMContentLoaded' event.
+ * @param {Event} event -The 'DOMContentLoaded' event object
+ */
 window.addEventListener('DOMContentLoaded', (event) => {
     // Call the functions to display the stored name and birthday
     displayStoredData();
@@ -8,6 +12,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // Updates horoscope on name submit
     const saveUserNameForm = document.getElementById('save-name-form');
+
+    /**
+     * Saves the username 
+     * @param {Event} event - 'submit' 
+     */
     saveUserNameForm.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent page jump
         saveUserName();
@@ -17,6 +26,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // Updates horoscope on birthday submit
     const saveBirthdayForm = document.getElementById('save-birthday-form');
+     /**
+     * Saves the birthday 
+     * @param {Event} event - 'submit' 
+     */
     saveBirthdayForm.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent page jump
         saveBirthday();
@@ -25,6 +38,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
     
     const clearUserInfoButton = document.querySelector('.clear-profile button');
+    /**
+     * clears user information
+     * @param {Event} event - 'click' 
+     */
     clearUserInfoButton.addEventListener('click', function(event) {
         event.preventDefault(); // Prevent page jump
         clearUserInfo();

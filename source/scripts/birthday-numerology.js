@@ -1,5 +1,9 @@
 import {soulUrgeNumberData} from "../jsons/soulUrgeNumberDataJson.js";
 
+/**
+ * Event listener function for the 'DOMContentLoaded' event.
+ * @param {Event} event -The 'DOMContentLoaded' event object
+ */
 window.addEventListener('DOMContentLoaded', (event)=> {
     const lifePathNumberLabel = document.getElementById("lifepath-number");
 
@@ -15,18 +19,38 @@ window.addEventListener('DOMContentLoaded', (event)=> {
         const lifePathButtons = document.querySelectorAll('.button-box a');
         const lifePathImage = document.getElementById('lifepath-image');
         lifePathImage.setAttribute('src', `assets/lifepath/${lifePathNumber}.jpg`);
+
+        /**
+         * Writes the Personality prediction
+         * @param {Event} event -The 'click' event object
+         */
         lifePathButtons[0].addEventListener('click', function() {
             lifePathTitle.innerHTML = `Personality`;
             lifePathText.innerHTML = soulUrgeNumberData[lifePathNumber]['personality'];
         });
+
+        /**
+         * Writes the Characteristics prediction
+         * @param {Event} event -The 'click' event object
+         */
         lifePathButtons[1].addEventListener('click', function() {
             lifePathTitle.innerHTML = `Characteristics`;
             lifePathText.innerHTML = soulUrgeNumberData[lifePathNumber]['characteristic'];
         });
+
+        /**
+         * Writes the career prediction
+         * @param {Event} event -The 'click' event object
+         */
         lifePathButtons[2].addEventListener('click', function() {
             lifePathTitle.innerHTML = `Career`;
             lifePathText.innerHTML = soulUrgeNumberData[lifePathNumber]['career'];
         });
+
+        /**
+         * Writes the love prediction
+         * @param {Event} event -The 'click' event object
+         */
         lifePathButtons[3].addEventListener('click', function() {
             lifePathTitle.innerHTML = `Love`;
             lifePathText.innerHTML = soulUrgeNumberData[lifePathNumber]['love'];
@@ -40,9 +64,12 @@ window.addEventListener('DOMContentLoaded', (event)=> {
         lifePathNumberLabel.classList.remove('highlight');
     }
 });
-// popupId is personality, characteristic, career, love
-// const personalityData = soulUrgeNumberData[lifePathNumber][popupId];
 
+/**
+ * Calculates the life path number based on the birthday
+ * @param {number} birthDate 
+ * @returns {number} calculated life path number  
+ */
 function calculateLifePathNumber(birthDate) {
     console.log(birthDate);
     // Split the birth date into an array
@@ -57,7 +84,6 @@ function calculateLifePathNumber(birthDate) {
     const reducedYear = reduceNumber(year);
     const reducedMonth = reduceNumber(month);
     const reducedDay = reduceNumber(day);
-    
 
     // Calculate the sum of year, month, and day
     let sum = reducedYear + reducedMonth + reducedDay;
@@ -69,6 +95,11 @@ function calculateLifePathNumber(birthDate) {
     return sum;
 }
 
+/**
+ * Performs a reduction operation on it until the result becomes a single-digit number
+ * @param {number} number 
+ * @returns {number} single digit number 
+ */
 function reduceNumber(number) {
     let result = parseInt(number, 10);
     while (result > 9) {

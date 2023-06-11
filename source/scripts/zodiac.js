@@ -23,7 +23,7 @@ class Zodiac {
         }
     }
 
-    /**
+   /**
    * Get the compatibility between two zodiac signs.
    * @param {string} zodiacSign1 - First zodiac sign.
    * @param {string} zodiacSign2 - Second zodiac sign.
@@ -39,7 +39,6 @@ class Zodiac {
     }
 }
 
-//module.exports = { readJsonData, getZodiacSign, getCompatibility };
 /**
  * Read the JSON data from the given file path.
  * @param {string} filePath - Path to the JSON file.
