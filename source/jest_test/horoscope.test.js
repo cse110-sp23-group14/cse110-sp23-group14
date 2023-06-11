@@ -17,7 +17,7 @@
 
 /**
  * Notes:
- * - Our functions and our webpage (localStorage, DOM, etc.) are strongly coupled, and so for our "unit tests", 
+ * - Our functions and our webpage (localStorage, DOM, etc.) are strongly coupled, and so for our "unit tests",
  * - we need to use puppeteer to tests parts of our code
  *  */
 
