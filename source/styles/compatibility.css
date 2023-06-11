@@ -231,6 +231,7 @@
 }
 
 .compatibility-content .menu > div {
+    cursor: pointer;
     width: same-as-height;
     height: 15vh;
     padding: 1.5vh;

@@ -1,5 +1,6 @@
 import { Horoscope } from "./horoscope.js";
 import { constellation } from "../jsons/constellationJson.js";
+import { updateLifePathNumber } from "./birthday-numerology.js";
 
 /**
  * Event listener function for the 'DOMContentLoaded' event.
@@ -125,6 +126,7 @@ function saveBirthday() {
     localStorage.setItem("birthdayYear",birthdayYear);
     setHoroscope();
     displayStoredData();
+    updateLifePathNumber();
 }
 
 /**
@@ -138,5 +140,6 @@ function clearUserInfo() {
         localStorage.removeItem('birthdayYear');
         setHoroscope();
         displayStoredData();
+        updateLifePathNumber();
     }
 }
