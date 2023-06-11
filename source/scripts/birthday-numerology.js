@@ -55,8 +55,7 @@ window.addEventListener('DOMContentLoaded', (event)=> {
             lifePathTitle.innerHTML = `Love`;
             lifePathText.innerHTML = soulUrgeNumberData[lifePathNumber]['love'];
         });
-    }
-    else {
+    }else {
         const lifePathButtonBox = document.querySelector('.lifepath-content .button-box');
         lifePathButtonBox.style.display = 'none';
         lifePathNumberLabel.innerHTML = "Your lifepath has not been revealed yet. Please fill out your info!";
@@ -67,8 +66,8 @@ window.addEventListener('DOMContentLoaded', (event)=> {
 
 /**
  * Calculates the life path number based on the birthday
- * @param {number} birthDate 
- * @returns {number} calculated life path number  
+ * @param {number} birthDate
+ * @returns {number} calculated life path number
  */
 function calculateLifePathNumber(birthDate) {
     console.log(birthDate);
@@ -97,8 +96,8 @@ function calculateLifePathNumber(birthDate) {
 
 /**
  * Performs a reduction operation on it until the result becomes a single-digit number
- * @param {number} number 
- * @returns {number} single digit number 
+ * @param {number} number
+ * @returns {number} single digit number
  */
 function reduceNumber(number) {
     let result = parseInt(number, 10);

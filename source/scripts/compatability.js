@@ -3,7 +3,7 @@ import {compatibilityData} from "../jsons/compatibilityDataJson.js";
 /**
  * This function takes in two signs and find the compatibility description between those signs.
  * @param {string} sign1
- * @param {string} sign2 
+ * @param {string} sign2
  * @returns {string|null} user's compatibility description, or null if not found.
  */
 function findDescription(sign1, sign2) {
@@ -110,6 +110,7 @@ function checkCompatibility() {
  * @param {Event} event - "click"
  */
 checkCompatibilityButton.addEventListener('click', () => {
+    alert('button was clicked');
     document.getElementById('compatability-popup-new').classList.add('visible');
 });
 

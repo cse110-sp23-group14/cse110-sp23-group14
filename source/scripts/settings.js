@@ -14,8 +14,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const saveUserNameForm = document.getElementById('save-name-form');
 
     /**
-     * Saves the username 
-     * @param {Event} event - 'submit' 
+     * Saves the username
+     * @param {Event} event - 'submit'
      */
     saveUserNameForm.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent page jump
@@ -26,10 +26,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // Updates horoscope on birthday submit
     const saveBirthdayForm = document.getElementById('save-birthday-form');
-     /**
-     * Saves the birthday 
-     * @param {Event} event - 'submit' 
-     */
+    /**
+    * Saves the birthday
+    * @param {Event} event - 'submit'
+    */
     saveBirthdayForm.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent page jump
         saveBirthday();
@@ -38,9 +38,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
     
     const clearUserInfoButton = document.querySelector('.clear-profile button');
+    
     /**
      * clears user information
-     * @param {Event} event - 'click' 
+     * @param {Event} event - 'click'
      */
     clearUserInfoButton.addEventListener('click', function(event) {
         event.preventDefault(); // Prevent page jump

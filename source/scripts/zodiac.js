@@ -1,5 +1,5 @@
 export { Zodiac };
-import { zodiacJSON } from "../jsons/zodiacJson.js"
+import { zodiacJSON } from "../jsons/zodiacJson.js";
 
 class Zodiac {
 
@@ -23,13 +23,13 @@ class Zodiac {
         }
     }
 
-   /**
-   * Get the compatibility between two zodiac signs.
-   * @param {string} zodiacSign1 - First zodiac sign.
-   * @param {string} zodiacSign2 - Second zodiac sign.
-   * @param {object} compatibilityData - Object representing zodiac sign compatibility.
-   * @returns {string} - Compatibility status ("OK" or "UNKNOWN").
-   */
+    /**
+    * Get the compatibility between two zodiac signs.
+    * @param {string} zodiacSign1 - First zodiac sign.
+    * @param {string} zodiacSign2 - Second zodiac sign.
+    * @param {object} compatibilityData - Object representing zodiac sign compatibility.
+    * @returns {string} - Compatibility status ("OK" or "UNKNOWN").
+    */
     static getCompatibility(zodiacSign1, zodiacSign2) {
         const compatibilityData = this.zodiacTable.Compatibility;
         if ( zodiacSign1 in compatibilityData && zodiacSign2 in compatibilityData[zodiacSign1]) {

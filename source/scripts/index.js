@@ -189,7 +189,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         }
     }
     /**
-     * Scrolls to the settings page 
+     * Scrolls to the settings page
      * @param {Event} event - "click"
      */
     document.getElementById('settings-link').addEventListener('click', function (e) {
