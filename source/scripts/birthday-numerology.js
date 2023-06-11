@@ -27,7 +27,7 @@ function updateLifePathNumber(){
         const lifePathText = document.getElementById('lifepath-text');
         const lifePathButtons = document.querySelectorAll('.button-box a');
         const lifePathImage = document.getElementById('lifepath-image');
-        lifePathImage.setAttribute('src', `assets/lifepath/${lifePathNumber}.jpg`);
+        lifePathImage.setAttribute('src', `assets/lifepath/${lifePathNumber}.png`);
 
         /**
          * Writes the Personality prediction
