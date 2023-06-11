@@ -25,29 +25,41 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     }
 
     /**
-     * Open or close the navigation bar based on the parameter value
+     * Adds the specified class and removes the other class
+     * @param {Element} element - The DOM element to modify
+     * @param {string} addClass - The class to add
+     * @param {string} removeClass - The class to remove
+     */
+    function modifyClass(element, addClass, removeClass) {
+        if (addClass) {
+            element.classList.add(addClass);
+        }
+        if (removeClass) {
+            element.classList.remove(removeClass);
+        }
+    }
+
+    /**
+     * Updates the navigation bar state based on the parameter value
      * @param {boolean} isOpen - Indicates whether the navigation bar should be open or closed
      */
     function updateNav(isOpen) {
         if (isOpen) {
             isNavOpen = true;
-            navMenu.classList.add('nav-show');
-            navMenu.classList.remove('nav-hide');
-            navIconBars.classList.add('icon-hide');
-            navIconXMark.classList.remove('icon-hide');
-            navContainer.classList.add('nav-show-background');
-            navContainer.classList.remove('nav-background-hide');
+            modifyClass(navMenu, 'nav-show', 'nav-hide');
+            modifyClass(navIconBars, 'icon-hide', '');
         } else {
             isNavOpen = false;
-            navMenu.classList.add('nav-hide');
-            navMenu.classList.remove('nav-show');
-            navIconBars.classList.remove('icon-hide');
-            navIconXMark.classList.add('icon-hide');
-            navContainer.classList.add('nav-background-hide');
-            navContainer.classList.remove('nav-show-background');
+            modifyClass(navMenu, 'nav-hide', 'nav-show');
+            modifyClass(navIconBars, '', 'icon-hide');
+        }
+        // Additional code specific to opening/closing the navigation bar
+        if (isOpen) {
+            modifyClass(navContainer, 'nav-show-background', 'nav-background-hide');
+        } else {
+            modifyClass(navContainer, 'nav-background-hide', 'nav-show-background');
         }
     }
-
     
     // /**
     //  * This function opens up the navigation bar
