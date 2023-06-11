@@ -25,34 +25,59 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     }
 
     /**
-     * This function opens up the navigation bar
-     * and changes the hamburger to an x
+     * Open or close the navigation bar based on the parameter value
+     * @param {boolean} isOpen - Indicates whether the navigation bar should be open or closed
      */
-    function openNav() {
-        // Open Nav
-        isNavOpen = true;
-        navMenu.classList.add('nav-show');
-        navMenu.classList.remove('nav-hide');
-        navIconBars.classList.add('icon-hide');
-        navIconXMark.classList.remove('icon-hide');
-        navContainer.classList.add('nav-show-background');
-        navContainer.classList.remove('nav-background-hide');
+    function updateNav(isOpen) {
+        if (isOpen) {
+            isNavOpen = true;
+            navMenu.classList.add('nav-show');
+            navMenu.classList.remove('nav-hide');
+            navIconBars.classList.add('icon-hide');
+            navIconXMark.classList.remove('icon-hide');
+            navContainer.classList.add('nav-show-background');
+            navContainer.classList.remove('nav-background-hide');
+        } else {
+            isNavOpen = false;
+            navMenu.classList.add('nav-hide');
+            navMenu.classList.remove('nav-show');
+            navIconBars.classList.remove('icon-hide');
+            navIconXMark.classList.add('icon-hide');
+            navContainer.classList.add('nav-background-hide');
+            navContainer.classList.remove('nav-show-background');
+        }
     }
 
-    /**
-     * Closes the navigation bar
-     * and changes the x back to the hamburger
-     */
-    function closeNav() {
-        // Close Nav
-        isNavOpen = false;
-        navMenu.classList.add('nav-hide');
-        navMenu.classList.remove('nav-show');
-        navIconBars.classList.remove('icon-hide');
-        navIconXMark.classList.add('icon-hide');
-        navContainer.classList.add('nav-background-hide');
-        navContainer.classList.remove('nav-show-background');
-    }
+    
+    // /**
+    //  * This function opens up the navigation bar
+    //  * and changes the hamburger to an x
+    //  */
+    // function openNav() {
+    //     // Open Nav
+    //     isNavOpen = true;
+    //     navMenu.classList.add('nav-show');
+    //     navMenu.classList.remove('nav-hide');
+    //     navIconBars.classList.add('icon-hide');
+    //     navIconXMark.classList.remove('icon-hide');
+    //     navContainer.classList.add('nav-show-background');
+    //     navContainer.classList.remove('nav-background-hide');
+    // }
+
+    // /**
+    //  * Closes the navigation bar
+    //  * and changes the x back to the hamburger
+    //  */
+    // function closeNav() {
+    //     // Close Nav
+    //     isNavOpen = false;
+    //     navMenu.classList.add('nav-hide');
+    //     navMenu.classList.remove('nav-show');
+    //     navIconBars.classList.remove('icon-hide');
+    //     navIconXMark.classList.add('icon-hide');
+    //     navContainer.classList.add('nav-background-hide');
+    //     navContainer.classList.remove('nav-show-background');
+    // }
 
     /**
     * Event listener function for the 'click' event on the navButton.
@@ -62,10 +87,10 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     navButton.addEventListener('click', (event) => {
         if (isNavOpen) {
             console.log("Closing nav...");
-            closeNav();
+            updateNav(false);
         } else {
             console.log("Open nav...");
-            openNav();
+            updateNav(true);
         }
     });
 
@@ -173,7 +198,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const menuLinks = document.querySelectorAll('.nav a');
     for (const link of menuLinks) {
         link.addEventListener('click', (event) => {
-            closeNav();
+            updateNav(false);
             event.preventDefault();
             const target = document.querySelector(link.getAttribute('href'));
             scrollToElement(target);
