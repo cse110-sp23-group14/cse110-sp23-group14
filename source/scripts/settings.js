@@ -7,26 +7,22 @@ import { updateLifePathNumber } from "./birthday-numerology.js";
  * @param {Event} event -The 'DOMContentLoaded' event object
  */
 window.addEventListener('DOMContentLoaded', (event) => {
-    // Call the functions to display the stored name and birthday
     displayStoredData();
     setHoroscope();
 
-    // Updates horoscope on name submit
     const saveUserNameForm = document.getElementById('save-name-form');
-
     /**
      * Saves the username
      * @param {Event} event - 'submit'
      */
     saveUserNameForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent page jump
+        event.preventDefault();
         saveUserName();
         displayStoredData();
         setHoroscope();
         updateLifePathNumber();
     });
 
-    // Updates horoscope on birthday submit
     const saveBirthdayForm = document.getElementById('save-birthday-form');
     /**
     * Saves the birthday
@@ -40,25 +36,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
         updateLifePathNumber();
         const horoscopeButton = document.getElementById('horoscope-button');
         if (localStorage.getItem('birthdayYear')) {
-            // Hide the button
             horoscopeButton.style.display = 'block';
         }
         const horoscopeDetect = document.getElementById('horoscope-detect');
-        // Check if localStorage has the birthdayYear key
         if (localStorage.getItem('birthdayYear')) {
-            // Hide the paragraph
             horoscopeDetect.style.display = 'none';
         }
     });
     
     const clearUserInfoButton = document.querySelector('.clear-profile button');
-    
     /**
     * clears user information
     * @param {Event} event - 'click'
     */
     clearUserInfoButton.addEventListener('click', function(event){
-        event.preventDefault(); // Prevent page jump
+        event.preventDefault();
         clearUserInfo();
         displayStoredData();
         setHoroscope();
@@ -66,13 +58,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
         setHoroscope();
         const horoscopeButton = document.getElementById('horoscope-button');
         if (!localStorage.getItem('birthdayYear')) {
-            // Hide the button
             horoscopeButton.style.display = 'none';
         }
         const horoscopeDetect = document.getElementById('horoscope-detect');
-        // Check if localStorage has the birthdayYear key
         if (!localStorage.getItem('birthdayYear')) {
-            // Hide the paragraph
             horoscopeDetect.style.display = 'block';
         }
     });
@@ -129,9 +118,7 @@ function saveUserName() {
  */
 function saveBirthday() {
     const birthdayInput = document.getElementById("birthday");
-    // check if the input is empty
     if (birthdayInput.value.trim() === '') {
-        // Display an error message or take any other appropriate action
         alert('Please enter your birthday before submitting.');
         return;
     }

@@ -62,30 +62,30 @@
                     <img class="title-logo" src="assets/title-logo.png" alt="Logo Image here">
                 </div>
             </div>
+        </div>
 
-            <!-- Daily Horoscope page -->
-            <section id="daily-report"></section>
+        <!-- Daily Horoscope page -->
+        <section id="daily-report"></section>
+        
+        <div class="site-content horoscope-content">
+            <!-- clicking the horoscope button will lead to the popup -->
+            <a id="horoscope-button" class="button" href="#horoscope-popup">Today's Horoscope</a>
+            <p id="horoscope-detect">We do not have your birthday yet. <br>Please fill out your information in the settings page!</p>
 
             <!-- horoscope popup has date, imagine, daily horoscope, and share button -->
             <div id="horoscope-popup" class="overlay">
                 <div class="popup">
-                        <a class="close" href="#horoscope_popup-box">&times;</a>
-                        <img class="daily-image" src="assets/title-logo.png" alt="daily horoscope image">
-                        <h1 class="daily-title">Leo</h1>
-                        <p class="daily-date">May 23, 2023</p>
-                        <p class="daily-content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor mauris at rhoncus maximus. Praesent dui purus, pharetra at scelerisque ut, euismod eget mauris. Maecenas eleifend, purus eu dapibus finibus, libero lorem ultrices augue, vel malesuada diam quam in lorem. Suspendisse quis nisl nec risus auctor tincidunt. Integer finibus pellentesque ipsum tempor mattis. Morbi finibus nisi id purus dignissim, ut pretium velit pellentesque. Ut pretium tortor ut pretium pharetra. Ut ut hendrerit lectus.
-                        </p>
-                        <button class="share-btn">Share</button>
-                        <p class="share-confirm"></p>
+                    <a class="close" href="#horoscope_popup-box">&times;</a>
+                    <img class="daily-image" src="assets/title-logo.png" alt="daily horoscope image">
+                    <h1 class="daily-title">Leo</h1>
+                    <p class="daily-date">May 23, 2023</p>
+                    <p class="daily-content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor mauris at rhoncus maximus. Praesent dui purus, pharetra at scelerisque ut, euismod eget mauris. Maecenas eleifend, purus eu dapibus finibus, libero lorem ultrices augue, vel malesuada diam quam in lorem. Suspendisse quis nisl nec risus auctor tincidunt. Integer finibus pellentesque ipsum tempor mattis. Morbi finibus nisi id purus dignissim, ut pretium velit pellentesque. Ut pretium tortor ut pretium pharetra. Ut ut hendrerit lectus.
+                    </p>
+                    <button class="share-btn">Share</button>
+                    <p class="share-confirm"></p>
                 </div>
             </div>
-        </div>
-        
-        <!-- clicking the horoscope button will lead to the popup -->
-        <div class="site-content horoscope-content">
-            <a id="horoscope-button" class="button" href="#horoscope-popup">Today's Horoscope</a>
-            <p id="horoscope-detect">We do not have your birthday yet. <br>Please fill out your information in the settings page!</p>
         </div>
 
         <!-- Compatibility checker page -->
@@ -106,7 +106,7 @@
                     <span class="star"></span>
                 </div>
 
-                <!-- Header of the compatability page -->
+                <!-- Header of the compatibility page -->
                 <section id="header">
                     <div class="header">
                         <div class="shape-left"> <span class="sign-name"></span></div>
@@ -116,7 +116,7 @@
             
                 </section>
             
-                 <!-- The signs of the people whose compatabilities to check-->
+                 <!-- The signs of the people whose compatibilities to check-->
                 <section id="choose-sign">
                    
                     <div class="menu">
@@ -194,15 +194,15 @@
                     </div>
                 </section>
 
-                <button id="check-compatability-button" disabled>
+                <button id="check-compatibility-button" disabled>
                     Check Compatibility
                 </button>
 
                  <!-- compatibility result of the two signs-->
-                <div id="compatability-popup-new" class="overlay">
+                <div id="compatibility-popup-new" class="overlay">
                     <div class="popup">
-                        <span id="close-compatability-popup-new">&times;</span>
-                        <img class="compatability-popup-logo" src="assets/title-logo.png" alt="filler">
+                        <span id="close-compatibility-popup-new">&times;</span>
+                        <img class="compatibility-popup-logo" src="assets/title-logo.png" alt="filler">
                         <h1 class="compatibility-pair">Leo + Aries</h1>
                         <p class="descript">a</p>
                     </div>
@@ -214,16 +214,16 @@
         <section id="lifepath-page">
             <div id="lifepath-popup" class="overlay">
                 <div class="popup">
-                        <a class="close" href="#lifepath-popup-box">&times;</a>
-                        <img id="lifepath-image" alt="horoscope sign">
-                        <h1 id="lifepath-title">Personality</h1>
-                        <p id="lifepath-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor mauris at rhoncus maximus. Praesent dui
-                        purus, pharetra at scelerisque ut, euismod eget mauris. Maecenas eleifend, purus eu dapibus finibus, libero
-                        lorem ultrices augue, vel malesuada diam quam in lorem. Suspendisse quis nisl nec risus auctor tincidunt.
-                        Integer finibus pellentesque ipsum tempor mattis. Morbi finibus nisi id purus dignissim, ut pretium velit
-                        pellentesque. Ut pretium tortor ut pretium pharetra. Ut ut hendrerit lectus.
-                        </p>
+                    <a class="close" href="#lifepath-popup-box">&times;</a>
+                    <img id="lifepath-image" alt="horoscope sign">
+                    <h1 id="lifepath-title">Personality</h1>
+                    <p id="lifepath-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor mauris at rhoncus maximus. Praesent dui
+                    purus, pharetra at scelerisque ut, euismod eget mauris. Maecenas eleifend, purus eu dapibus finibus, libero
+                    lorem ultrices augue, vel malesuada diam quam in lorem. Suspendisse quis nisl nec risus auctor tincidunt.
+                    Integer finibus pellentesque ipsum tempor mattis. Morbi finibus nisi id purus dignissim, ut pretium velit
+                    pellentesque. Ut pretium tortor ut pretium pharetra. Ut ut hendrerit lectus.
+                    </p>
                 </div>
             </div>
             <div class="site-content lifepath-content">
@@ -244,40 +244,40 @@
 
         <!-- Setting page allows user to update name and birthday-->
         <section id="settingpage">
-                <div class="site-content settings-content">
-                    <div class="settings-menu-background">
-                        <div class="settings-content-inside">
-                            <h1>Settings</h1>
-                            <div class="current-profile">
-                                <p id="profile-display">Hey new friend! We are excited to meet you.</p>
+            <div class="site-content settings-content">
+                <div class="settings-menu-background">
+                    <div class="settings-content-inside">
+                        <h1>Settings</h1>
+                        <div class="current-profile">
+                            <p id="profile-display">Hey new friend! We are excited to meet you.</p>
+                        </div>
+                        <div class="update-profile">
+                            <h2>Update Profile</h2>
+                            <div id="change-birthday">
+                                <form id="save-birthday-form">
+                                    <label for="birthday-date">Your Birthday is:</label>
+                                    <input type="date" id="birthday">
+                                    <input type="submit" value="Update">
+                                </form> 
                             </div>
-                            <div class="update-profile">
-                                <h2>Update Profile</h2>
-                                <div id="change-birthday">
-                                    <form id="save-birthday-form">
-                                        <label for="birthday-date">Your Birthday is:</label>
-                                        <input type="date" id="birthday">
+                            <div id="change-name">
+                                <form id="save-name-form">
+                                    <div>
+                                        <label for="name">Your Name is:</label>
+                                        <input type="text" id="name" name="name">
                                         <input type="submit" value="Update">
-                                    </form> 
-                                </div>
-                                <div id="change-name">
-                                    <form id="save-name-form">
-                                        <div>
-                                            <label for="name">Your Name is:</label>
-                                            <input type="text" id="name" name="name">
-                                            <input type="submit" value="Update">
-                                        </div>
-                                    </form>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="clear-profile">
-                                <p>*All data is saved locally. You can </p>
-                                <button>clear</button>
-                                <p>your data at any time.</p>
-                            </div>
+                        </div>
+                        <div class="clear-profile">
+                            <p>*All data is saved locally. You can </p>
+                            <button>clear</button>
+                            <p>your data at any time.</p>
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
         
         <!-- FAQ page for the whole site-->
@@ -320,7 +320,7 @@
         <script src="https://kit.fontawesome.com/ec9b6ab711.js" crossorigin="anonymous"></script>
         <script type="module" src="scripts/settings.js"></script>
         <script type="module" src="scripts/index.js"></script>
-        <script type="module" src="scripts/compatability.js"></script>
+        <script type="module" src="scripts/compatibility.js"></script>
         <script type="module" src="scripts/birthday-numerology.js"></script>
     </body>
 </html>

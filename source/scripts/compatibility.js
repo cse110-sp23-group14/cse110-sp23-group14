@@ -29,10 +29,10 @@ const shapeRight = document.querySelector('.shape-right');
 const loveContent = document.getElementById('description');
 const chooseSignWindow = document.getElementById('choose-sign');
 
-const checkCompatibilityButton = document.getElementById('check-compatability-button');
-const closeCompatability = document.getElementById('close-compatability-popup-new');
+const checkCompatibilityButton = document.getElementById('check-compatibility-button');
+const closeCompatibility = document.getElementById('close-compatibility-popup-new');
 
-// Getting sign of each div within the compatability menu
+// Getting sign of each div within the compatibility menu
 const capricornSign=document.getElementById('capricorn');
 const cancerSign=document.getElementById('cancer');
 const aquariusSign=document.getElementById('aquarius');
@@ -119,20 +119,20 @@ function checkCompatibility() {
 
 /**
  * It is triggered when the checkCompatibilityButton is being clicked, it will alert that the button was clicked
- * The compatability popup page will appear
+ * The compatibility popup page will appear
  * @param {Event} event - "click"
  */
 checkCompatibilityButton.addEventListener('click', () => {
-    document.getElementById('compatability-popup-new').classList.add('visible');
+    document.getElementById('compatibility-popup-new').classList.add('visible');
 });
 
 /**
- * It is triggered when the closeCompatability is being clicked
- * The compatability popup page will disappear
+ * It is triggered when the closeCompatibility is being clicked
+ * The compatibility popup page will disappear
  * @param {Event} event - "click"
  */
-closeCompatability.addEventListener('click', function() {
-    document.getElementById('compatability-popup-new').classList.remove('visible');
+closeCompatibility.addEventListener('click', function() {
+    document.getElementById('compatibility-popup-new').classList.remove('visible');
 });
 
 /**

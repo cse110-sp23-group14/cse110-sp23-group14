@@ -28,6 +28,7 @@ function updateLifePathNumber() {
         const lifePathButtonBox = document.querySelector('.button-box');
         const lifePathImage = document.getElementById('lifepath-image');
         lifePathImage.setAttribute('src', `assets/lifepath/${lifePathNumber}.png`);
+
         /**
          * Event listener for lifePathButtons
          * @param {Event} event - The 'click' event object
@@ -58,9 +59,7 @@ function updateLifePathNumber() {
             lifePathTitle.innerHTML = predictionType;
             lifePathText.innerHTML = predictionValue;
         }
-        // show lifePathButtons
         lifePathButtonBox.style.display = '';
-        // Attach the event listener to each button
         lifePathButtons.forEach(button => {
             button.addEventListener('click', handleButtonClick);
         });
@@ -79,10 +78,8 @@ function updateLifePathNumber() {
  * @returns {number} calculated life path number
  */
 function calculateLifePathNumber(birthDate) {
-    // Split the birth date into an array
+    // Extract year, month, and day
     const dateArray = birthDate.split('.');
-
-    // Extract year, month, and day from the array
     const year = dateArray[0];
     const month = dateArray[1];
     const day = dateArray[2];
@@ -90,14 +87,10 @@ function calculateLifePathNumber(birthDate) {
     const reducedYear = reduceNumber(year);
     const reducedMonth = reduceNumber(month);
     const reducedDay = reduceNumber(day);
-
     // Calculate the sum of year, month, and day
     let sum = reducedYear + reducedMonth + reducedDay;
-
     // Reduce the sum to a single digit or a master number
     sum = reduceNumber(sum);
-
-    // Return the calculated Life Path number
     return sum;
 }
 
@@ -114,6 +107,5 @@ function reduceNumber(number) {
             return acc + curr;
         }, 0);
     }
-
     return result;
 }
