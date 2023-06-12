@@ -13,7 +13,6 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const horoscopeButton = document.getElementById('horoscope-button');
     const horoscopeDetect = document.getElementById('horoscope-detect');
     const closePopup = document.querySelector('.close');
-    const copied = document.getElementsByClassName('share-confirm');
     let isNavOpen = false;
     let isHoroscopeDisplayed = false;
     const dailyReport = document.querySelector('.daily-report');
