@@ -209,20 +209,15 @@
     backdrop-filter: blur(15px);
     border: 
         1px solid
-        rgba(255, 255, 255, 0.18);
+        rgb(255 255 255 / 18%);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     text-align: center;
 }
 
-/* .compatibility-content .menu {
-    text-decoration: none;
-    color: #f0e9e9;
-} */
-
 .compatibility-content .menu h3 {
     color: #fff;
-    margin: 0.4em 0 0 0;
+    margin: 0.4em 0 0;
 }
 
 .compatibility-content .menu > div {
@@ -232,7 +227,7 @@
     height: 15vh;
     padding: 1.5vh;
     background:    
-        rgba(255,255,255,20%);
+        rgb(255 255 255 / 20%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -302,7 +297,7 @@
 
 #check-compatability-button:disabled {
     background-color: #c994fd;
-    opacity: 50%;
+    opacity: 0.5;
 }
 
 
@@ -315,7 +310,6 @@
 }
 
 @media screen and (width <= 600px) {
-
     .compatibility-content .header{
         margin: 0;
         min-width: 0;
@@ -348,9 +342,8 @@
     .compatibility-content .menu > div {
         width: 20.5vw;
         height: 13vh;
-        padding: 0;
         margin: 1vw;
-        padding: 0.3vw
+        padding: 0.3vw;
     }
 
     .compatibility-content .menu > div > *{
