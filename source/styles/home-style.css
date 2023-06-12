@@ -459,6 +459,7 @@ button:hover, .button:hover {
     }
 }
 
+/* Resizing for mobile */
 @media screen and (width <= 600px) {
     /* reducing font size for mobile devices */
     .nav h1 {

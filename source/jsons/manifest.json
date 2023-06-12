@@ -1,6 +1,6 @@
 {
     "name":"Zodiac",
-    "short_name":"PWA",
+    "short_name":"Zodiac",
     "start_url":"../index.html",
     "display":"standalone",
     "background_color":"#5900b3",

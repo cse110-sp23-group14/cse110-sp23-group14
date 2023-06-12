@@ -118,22 +118,17 @@ describe('Horoscope page test suite', () => {
     /**
      * Check that popup contains the correct horoscope for user's sign and today's date
      */
+      
     it('Check horoscope text in popup', async () => {
-        // Wait for the letter animation to finish
-        await page.waitForTimeout(3000);
 
-        // Get text of horoscope in popup
-
-        // const text = await page.$eval("#horoscope-popup > div > p.daily-content", (element) => {
-        //     return element.innerText; //textContent;
-        // });
-
-        const text = await page.$eval('#horoscope-popup > div > p.daily-content', (div) => {
-            return div.innerText;
+        // Get the text of the horoscope in the popup
+        const text = await page.evaluate(async() => {
+        const horoscopeButton = document.getElementById("horoscope-button");
+        horoscopeButton.click();
+        await new Promise(r => setTimeout(r, 4000));
+        const dailyContent = document.querySelector("#horoscope-popup > div > p.daily-content");
+        return dailyContent.textContent;
         });
-
-        // const textElement = await page.$("#horoscope-popup > div > p.daily-content");
-        // const text = await (await textElement.getProperty('textContent')).jsonValue();
 
         // Find expected message
         const horoscopeTable = JSON.parse(JSON.stringify(horoscopeJSON))['Libra'];
@@ -149,7 +144,7 @@ describe('Horoscope page test suite', () => {
         const message = horoscopeTable[index];
 
         expect(text).toBe(message);
-    }, 10000);
+    });
 
     /**
      * Test that share button is clickable
@@ -177,6 +172,25 @@ describe('Horoscope page test suite', () => {
 
         expect(page.url()).toBe(`http://localhost:${SERVER_PORT}/source/#horoscope_popup-box`);
         xBtn.dispose();
+    });
+
+    /**
+     * Clear user info to reset for next test suite
+     */
+    afterAll(async () => {
+        // Set event listener to accept dialog when it pops up
+        page.on('dialog', async dialog => {
+            await dialog.accept();
+        });
+
+        // Wait to accept dialog and reload home page
+        await page.goto(`http://localhost:${SERVER_PORT}/source/`);
+
+        // Click clear button
+        const clearButton = await page.evaluateHandle(`document.querySelector("#settingpage > div > div > div > div.clear-profile > button")`);
+        await clearButton.click();
+
+        await clearButton.dispose();
     });
 });
 

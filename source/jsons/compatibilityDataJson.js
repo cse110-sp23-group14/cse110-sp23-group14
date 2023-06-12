@@ -1,6 +1,8 @@
 export {compatibilityData};
 
-
+/**
+ * It maps sign pairs to descriptions of compatability according to "angle aspects".
+ */
 const compatibilityData = {
     "compatibility": [
         {

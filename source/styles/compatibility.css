@@ -1,5 +1,5 @@
 /* set the settings for the compatibility content section */
-.compatibility-content{
+.compatibility-content {
     height: 100vh;
     background-image: url('../assets/space.jpeg');
     background-size: cover;
@@ -108,7 +108,7 @@
     transition: 0.2s;
 }
 
-.compatibility-content .menu >div:hover {
+.compatibility-content .menu > div:hover {
     background: rgba(255 255 255 / 50%);
     transform: scale(1.1);
     box-shadow: 
@@ -130,7 +130,8 @@
     
 }
 
-#compatibility-popup-new.visible {
+/* give class to popup to make it visibile */
+#compatibility-popup.visible {
     visibility: visible;
     opacity: 1;
 }
@@ -142,7 +143,7 @@
     width: 30%;
 }
 
-#close-compatibility-popup-new {
+#close-compatibility-popup {
     position: absolute;
     top: 20px;
     right: 30px;
@@ -179,6 +180,7 @@
     background: var(--main-light-color);
 }
 
+/* Resizing for mobile */
 @media screen and (width <= 600px) {
     .compatibility-content .header{
         margin: 0;
@@ -223,5 +225,4 @@
     .compatibility-content .zodiac-sign {
         font-size: 24px;
     }
-
 }
