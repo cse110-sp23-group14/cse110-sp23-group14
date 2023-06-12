@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const horoscopeDetect = document.getElementById('horoscope-detect');
     let isNavOpen = false;
     let isHoroscopeDisplayed = false;
-    const dailyReport = document.querySelector('.report');
+    const dailyReport = document.querySelector('.daily-report');
 
     if (!localStorage.getItem('birthdayYear')) {
         // Hide the button
