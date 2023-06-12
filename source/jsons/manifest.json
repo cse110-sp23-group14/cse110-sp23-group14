@@ -1,7 +1,7 @@
 {
     "name":"Zodiac",
     "short_name":"PWA",
-    "start_url":"./index.html",
+    "start_url":"../index.html",
     "display":"standalone",
     "background_color":"#5900b3",
     "theme_color":"black",
@@ -14,7 +14,7 @@
     "type":"image/png"
     },
     {
-    "src":"../assets/title-logo-512.png",
+    "src":"../assets/title-logo.png",
     "sizes":"512x512",
     "type":"image/png"
     }
