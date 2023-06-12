@@ -1,7 +1,5 @@
 .faq {
     min-height: 100vh;
-
-    /* allow overflow in snap section */
     height: fit-content;
     overflow-y: scroll;
     background-image: url('../assets/settings-background.jpeg');
@@ -29,6 +27,7 @@
     text-align: center;
     font-weight: bold;
 }
+
 
 .faq h2 {
     font: 2vh Inter, sans-serif;
