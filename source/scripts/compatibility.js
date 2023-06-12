@@ -168,8 +168,3 @@ function handleClick() {
         }, 300);
     }
 }
-
-// Function to hide the pop-up and reset the page
-function hidePopup() {
-    document.getElementById("compatibility-popup").style.display = "none";
-}
