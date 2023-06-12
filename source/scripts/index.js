@@ -12,16 +12,29 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const navContainer = document.getElementsByClassName('nav-container')[0];
     const horoscopeButton = document.getElementById('horoscope-button');
     const horoscopeDetect = document.getElementById('horoscope-detect');
+    const add = document.getElementById("add");
+    const scroll = document.getElementById("scroll");
     let isNavOpen = false;
     let isHoroscopeDisplayed = false;
     const dailyReport = document.querySelector('.daily-report');
 
-    if (!localStorage.getItem('birthdayYear')) {
-        horoscopeButton.style.display = 'none';
-        horoscopeDetect.style.display = 'block';
-    }else{
-        horoscopeDetect.style.display = 'none';
+
+    /**
+     * Check the presence of 'birthdayYear' in local storage and toggle the visibility of elements accordingly.
+     */
+    function checkStorage(){
+        if (!localStorage.getItem('birthdayYear')) {
+            horoscopeButton.style.display = 'none';
+            horoscopeDetect.style.display = 'block';
+            add.style.display='block';
+            scroll.style.display='none';
+        }else{
+            horoscopeDetect.style.display = 'none';
+            add.style.display='none';
+            scroll.style.display='block';
+        }
     }
+    checkStorage();
 
     /**
      * Toggles the navigation bar state
@@ -161,6 +174,13 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             scrollToElement(target);
         });
     }
+
+    const addLink = document.querySelector("#add");
+    addLink.addEventListener('click',(event)=>{
+        event.preventDefault();
+        const target = document.querySelector(addLink.getAttribute('href'));
+        scrollToElement(target);
+    })
 
     /**
      * FAQ dropdown functionality
