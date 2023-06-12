@@ -23,9 +23,8 @@ This project is a website that allows you to recieve a daily horoscope based on 
         - Once features are done can merge them into the main branch
     - 8 Ball branch
         - The intro project with 8ball material
-
+        - 
 ## CI/CD Documentation
-
 - Run the full CI/CD at this link: [here](https://github.com/cse110-sp23-group14/cse110-sp23-group14/actions/workflows/full-deploy-pipeline.yml)
 - Note about full CI/CD: Only run it on the main branch because deploy fails for no reason when run on other branches
 - CI/CD Features

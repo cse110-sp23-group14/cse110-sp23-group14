@@ -1,11 +1,12 @@
 name: Full CI/CD Pipeline
 
 on:
-  push:
-    branches:
-      - main
-      - fortune-telling-dev
-      - 8-ball
+    push:
+        branches:
+        - main
+        - fortune-telling-dev
+        - 8-ball
+    workflow_dispatch:
 
 permissions:
     contents: write
