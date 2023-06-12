@@ -70,19 +70,54 @@ describe('Compatibility page test suite', () => {
         const title = await page.$eval('#compatibility-popup-new > div > h1', (div) => {
             return div.innerText;
         });
-        expect(title).toBe('Sagittarius+Scorpio');
+        expect(title).toBe('Sagittarius + Scorpio');
 
         const message = await page.$eval('#compatibility-popup-new > div > p', (div) => {
             return div.innerText;
         });
         expect(message).toBe('30° (Semi-Sextile): Signs that are semi-sextile have a subtle and supportive compatibility. While you may have different elemental natures, you still share some similarities that enable you to understand and appreciate each other. Your relationship is characterized by a sense of cooperation, where you can support each other\'s growth and offer different perspectives. With open communication and mutual respect, you can create a stable and nurturing connection.');
+
+        await compBtn.dispose();
     });
 
     /**
      * Check that we can close popup and clear the selected signs
      */
     it('Check that we can close popup and clear the selected signs', async () => {
-        
+        // Close popup and clear selected signs
+        const xBtn = await page.evaluateHandle(`document.querySelector("#close-compatibility-popup-new")`);
+        await xBtn.click();
+
+        const leftBtn = await page.evaluateHandle(`document.querySelector("#header > div > div.shape-left")`);
+        await leftBtn.click();
+
+        const rightBtn = await page.evaluateHandle(`document.querySelector("#header > div > div.shape-right")`);
+        await rightBtn.click();
+
+        // Make sure that header text and images are empty now
+        const leftText = await page.$eval("#header > div > div.shape-left > span", (element) => {
+            return element.innerHTML;
+        });
+        expect(leftText).toBe('');
+
+        const leftImg = await page.$eval('#header > div > div.shape-left', async (div) => {
+            return div.style.backgroundImage;
+        });
+        expect(leftImg).toBe('');
+
+        const rightText = await page.$eval("#header > div > div.shape-right > span", (element) => {
+            return element.innerHTML;
+        });
+        expect(rightText).toBe('');
+
+        const rightImg = await page.$eval('#header > div > div.shape-right', async (div) => {
+            return div.style.backgroundImage;
+        });
+        expect(rightImg).toBe('');
+
+        await xBtn.dispose();
+        await leftBtn.dispose();
+        await rightBtn.dispose();
     });
 
     /**

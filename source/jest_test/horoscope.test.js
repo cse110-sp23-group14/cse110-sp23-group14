@@ -45,7 +45,7 @@ describe('Horoscope page test suite', () => {
         await page.$eval('#name', el => {
             el.value = 'Sample Name';
         });
-        const nameButton = await page.evaluateHandle(`document.querySelector("#save-name-form > div > input[type=submit]:nth-child(3)")`);
+        const nameButton = await page.evaluateHandle(`document.querySelector("#save-name-form > label > input[type=submit]:nth-child(2)")`);
         await nameButton.click();
 
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
@@ -61,7 +61,7 @@ describe('Horoscope page test suite', () => {
         await page.$eval('#birthday', el => {
             el.value = '2004-09-23';
         });
-        const bdayButton = await page.evaluateHandle(`document.querySelector("#save-birthday-form > input[type=submit]:nth-child(3)")`);
+        const bdayButton = await page.evaluateHandle(`document.querySelector("#save-birthday-form > label > input[type=submit]:nth-child(2)")`);
         await bdayButton.click();
 
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
