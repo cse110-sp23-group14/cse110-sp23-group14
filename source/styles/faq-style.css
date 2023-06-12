@@ -1,8 +1,9 @@
 .faq {
+    min-height: 100vh;
+
     /* allow overflow in snap section */
     height: fit-content;
     overflow-y: scroll;
-    min-height: 100vh;
     background-image: url('../assets/settings-background.jpeg');
     background-size: cover;
     background-position: center;
@@ -41,29 +42,12 @@
     padding-left: 2.5vw;
 }
 
-ul, ol {
+.bullet-point{
     font: 1.8vh Lora, serif;
     color:var(--main-light-color);
 }
 
-.steps {
+.steps{
     font: 1.8vh Lora, serif;
     color:var(--main-light-color);
-}
-
-.question {
-    border-bottom: 0.1em solid var(--main-light-color);
-    padding: 1em;
-}
-
-.question h2 {
-    cursor: pointer;
-}
-
-.question h2:hover {
-    color: #8c67b1;
-}
-
-.hide {
-    display: none;
 }
