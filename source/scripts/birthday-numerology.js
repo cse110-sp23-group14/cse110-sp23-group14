@@ -36,6 +36,7 @@ function updateLifePathNumber() {
         function handleButtonClick(event) {
             const buttonIndex = Array.from(lifePathButtons).indexOf(event.target);
             let predictionType, predictionValue;
+            //get the description for the four aspect of a life path number
             switch (buttonIndex) {
             case 0:
                 predictionType = 'Personality';
@@ -64,6 +65,7 @@ function updateLifePathNumber() {
             button.addEventListener('click', handleButtonClick);
         });
     }else {
+        //when we the user does not put personal info
         const lifePathButtonBox = document.querySelector('.lifepath-content .button-box');
         lifePathButtonBox.style.display = 'none';
         lifePathNumberLabel.innerHTML = "Your lifepath has not been revealed yet. Please fill out your info!";
