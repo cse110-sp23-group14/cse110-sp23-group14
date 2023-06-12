@@ -262,19 +262,19 @@
     
 }
 
-#compatability-popup-new.visible {
+#compatibility-popup-new.visible {
     visibility: visible;
     opacity: 1;
 }
 
-.compatability-popup-logo {
+.compatibility-popup-logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 30%;
 }
 
-#close-compatability-popup-new {
+#close-compatibility-popup-new {
     position: absolute;
     top: 20px;
     right: 30px;
@@ -285,7 +285,7 @@
     cursor: pointer;
 }
 
-#check-compatability-button {
+#check-compatibility-button {
     font-family: Inter, sans-serif !important;
     font-weight: bold;
     margin: auto;
@@ -300,17 +300,17 @@
     text-align: center;
 }
 
-#check-compatability-button:disabled {
+#check-compatibility-button:disabled {
     background-color: #c994fd;
     opacity: 50%;
 }
 
 
-#check-compatability-button:hover {
+#check-compatibility-button:hover {
     background-color: #c994fd;
 }
 
-#check-compatability-button:active {
+#check-compatibility-button:active {
     background-color: #eedcff;
 }
 
