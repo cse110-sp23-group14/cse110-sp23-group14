@@ -109,4 +109,10 @@ input[type="submit"] {
     .clear-profile button {
         font: 3.5vw Inter, sans-serif;
     }
+
+    input[type="text"] {
+        font-size: 16px;
+        touch-action: manipulation; 
+        max-height: 1em; 
+    }
 }
