@@ -12,6 +12,8 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const navContainer = document.getElementsByClassName('nav-container')[0];
     const horoscopeButton = document.getElementById('horoscope-button');
     const horoscopeDetect = document.getElementById('horoscope-detect');
+    const closePopup = document.querySelector('.close');
+    const copied = document.getElementsByClassName('share-confirm');
     let isNavOpen = false;
     let isHoroscopeDisplayed = false;
     const dailyReport = document.querySelector('.daily-report');
@@ -29,6 +31,13 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         }
     }
     checkStorage();
+
+
+    closePopup.addEventListener('click',(event)=>{
+        const shareConfirm = document.querySelector('.share-confirm');
+        shareConfirm.innerHTML = "";
+    })
+
 
     /**
      * Toggles the navigation bar state
