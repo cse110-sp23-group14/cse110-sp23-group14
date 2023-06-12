@@ -361,14 +361,13 @@ button:hover, .button:hover {
 
     .nav-content {
         padding-left: 5vw; /* Add left padding to create spacing */
-        display: flex;
+        display: none;
         flex-direction: row;
         align-items: center;
         height: 100%;
         width: 100%;
         transition: opacity 1.3s;
         transition: visibility 0s;
-        display: none;
     }
       
     #nav-button {
