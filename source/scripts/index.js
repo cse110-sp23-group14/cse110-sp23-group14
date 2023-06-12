@@ -40,36 +40,6 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         navContainer.classList.toggle('nav-background-hide', !isOpen);
     }
 
-    // /**
-    //  * This function opens up the navigation bar
-    //  * and changes the hamburger to an x
-    //  */
-    // function openNav() {
-    //     // Open Nav
-    //     isNavOpen = true;
-    //     navMenu.classList.add('nav-show');
-    //     navMenu.classList.remove('nav-hide');
-    //     navIconBars.classList.add('icon-hide');
-    //     navIconXMark.classList.remove('icon-hide');
-    //     navContainer.classList.add('nav-show-background');
-    //     navContainer.classList.remove('nav-background-hide');
-    // }
-
-    // /**
-    //  * Closes the navigation bar
-    //  * and changes the x back to the hamburger
-    //  */
-    // function closeNav() {
-    //     // Close Nav
-    //     isNavOpen = false;
-    //     navMenu.classList.add('nav-hide');
-    //     navMenu.classList.remove('nav-show');
-    //     navIconBars.classList.remove('icon-hide');
-    //     navIconXMark.classList.add('icon-hide');
-    //     navContainer.classList.add('nav-background-hide');
-    //     navContainer.classList.remove('nav-show-background');
-    // }
-
     /**
     * Event listener function for the 'click' event on the navButton.
     *
@@ -212,6 +182,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         });
     }
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
     /**
      * Scrolls to the target element smoothly.
      * @param {Element} target - The target element to scroll to
@@ -222,71 +193,11 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             window.scrollTo({
                 top: offset,
                 behavior: 'smooth'
-            },2);
+            },100);
         } else {
             target.scrollIntoView({
                 behavior: 'smooth'
             });
         }
     }
-    
-    // /**
-    //  * Scrolls to the settings page
-    //  * @param {Event} event - "click"
-    //  */
-    // document.getElementById('settings-link').addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     const target = document.querySelector(this.getAttribute('href'));
-    //     scrollToElement(target);
-    // });
-
-    // /**
-    //  * Scrolls to the home page
-    //  * @param {Event} event - "click"
-    //  */
-    // document.getElementById('home-link').addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     const target = document.querySelector(this.getAttribute('href'));
-    //     scrollToElement(target);
-    // });
-
-    // /**
-    //  * Scrolls to the report link page
-    //  * @param {Event} event - "click"
-    //  */
-    // document.getElementById('report-link').addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     const target = document.querySelector(this.getAttribute('href'));
-    //     scrollToElement(target);
-    // });
-
-    // /**
-    //  * Scrolls to the lifepath page
-    //  * @param {Event} event - "click"
-    //  */
-    // document.getElementById('lifepath-link').addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     const target = document.querySelector(this.getAttribute('href'));
-    //     scrollToElement(target);
-    // });
-
-    // /**
-    //  * Scrolls to the compatability page
-    //  * @param {Event} event - "click"
-    //  */
-    // document.getElementById('compatibility-link').addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     const target = document.querySelector(this.getAttribute('href'));
-    //     scrollToElement(target);
-    // });
-
-    // /**
-    //  * Scrolls to the FAQ page
-    //  * @param {Event} event - "click"
-    //  */
-    // document.getElementById('faq-link').addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     const target = document.querySelector(this.getAttribute('href'));
-    //     scrollToElement(target);
-    // });
 });
