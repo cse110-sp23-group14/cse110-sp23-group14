@@ -37,6 +37,7 @@
     flex-direction: row;
     justify-content: center;
     width: 100vw;
+    gap: 1vw;
 }
 
 .deemphasize {
@@ -44,7 +45,6 @@
 }
 
 @media screen and (width <= 600px) {
-
     .lifepath-content .button-box {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
