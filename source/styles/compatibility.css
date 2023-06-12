@@ -209,20 +209,15 @@
     backdrop-filter: blur(15px);
     border: 
         1px solid
-        rgba(255, 255, 255, 0.18);
+        rgb(255 255 255 / 18%);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     text-align: center;
 }
 
-/* .compatibility-content .menu {
-    text-decoration: none;
-    color: #f0e9e9;
-} */
-
 .compatibility-content .menu h3 {
     color: #fff;
-    margin: 0.4em 0 0 0;
+    margin: 0.4em 0 0;
 }
 
 .compatibility-content .menu > div {
@@ -232,7 +227,7 @@
     height: 15vh;
     padding: 1.5vh;
     background:    
-        rgba(255,255,255,20%);
+        rgb(255 255 255 / 20%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,19 +257,19 @@
     
 }
 
-#compatability-popup-new.visible {
+#compatibility-popup-new.visible {
     visibility: visible;
     opacity: 1;
 }
 
-.compatability-popup-logo {
+.compatibility-popup-logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 30%;
 }
 
-#close-compatability-popup-new {
+#close-compatibility-popup-new {
     position: absolute;
     top: 20px;
     right: 30px;
@@ -285,7 +280,7 @@
     cursor: pointer;
 }
 
-#check-compatability-button {
+#check-compatibility-button {
     font-family: Inter, sans-serif !important;
     font-weight: bold;
     margin: auto;
@@ -300,22 +295,21 @@
     text-align: center;
 }
 
-#check-compatability-button:disabled {
+#check-compatibility-button:disabled {
     background-color: #c994fd;
-    opacity: 50%;
+    opacity: 0.5;
 }
 
 
-#check-compatability-button:hover {
+#check-compatibility-button:hover {
     background-color: #c994fd;
 }
 
-#check-compatability-button:active {
+#check-compatibility-button:active {
     background-color: #eedcff;
 }
 
 @media screen and (width <= 600px) {
-
     .compatibility-content .header{
         margin: 0;
         min-width: 0;
@@ -348,9 +342,8 @@
     .compatibility-content .menu > div {
         width: 20.5vw;
         height: 13vh;
-        padding: 0;
         margin: 1vw;
-        padding: 0.3vw
+        padding: 0.3vw;
     }
 
     .compatibility-content .menu > div > *{
