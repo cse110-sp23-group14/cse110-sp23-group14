@@ -24,12 +24,8 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         if (!localStorage.getItem('birthdayYear')) {
             horoscopeButton.style.display = 'none';
             horoscopeDetect.style.display = 'block';
-            // add.style.display='block';
-            scroll.style.display='none';
         }else{
             horoscopeDetect.style.display = 'none';
-            add.style.display='none';
-            scroll.style.display='block';
         }
     }
     checkStorage();
