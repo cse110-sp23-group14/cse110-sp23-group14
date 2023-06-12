@@ -60,7 +60,7 @@ describe('Compatibility page test suite', () => {
     });
 
     /**
-     * Check that scorpio+sagittarius gives the correct message and popup title when we 
+     * Check that scorpio+sagittarius gives the correct message and popup title when we
      * click the compatibility button
      */
     it('Check that Scorpio&Sagittarius popup text is correct', async () => {
