@@ -182,6 +182,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         });
     }
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
     /**
      * Scrolls to the target element smoothly.
      * @param {Element} target - The target element to scroll to
