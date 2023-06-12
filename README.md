@@ -7,8 +7,8 @@
 - [Team Page](https://github.com/cse110-sp23-group14/cse110-sp23-group14/blob/main/admin/team.md)
 - [Documentation](https://cse110-sp23-group14.github.io/cse110-sp23-group14/main/documentation/index.html)
 - [Fortune Telling Dev Deploy](https://cse110-sp23-group14.github.io/cse110-sp23-group14/main/fortune-telling-dev/source/index.html)
-- [Main Deploy]() TODO
-- [8Ball PWA Test](https://cse110-sp23-group14.github.io/cse110-sp23-group14/main/test-8ball-PWA/source/8ball/index.html) TODO Merge 2 8ball branches together
+- [Main Deploy](https://cse110-sp23-group14.github.io/cse110-sp23-group14/source/index.html)
+- [8Ball PWA Test](https://cse110-sp23-group14.github.io/cse110-sp23-group14/main/test-8ball-PWA/source/8ball/index.html)
 
 
 ## Project Overview:
@@ -40,9 +40,8 @@ This project is a website that allows you to recieve a daily horoscope based on 
         - Can be run manually [here](https://github.com/cse110-sp23-group14/cse110-sp23-group14/actions/workflows/linter.yml)
     - Testing
         - Testing is done with puppeteer + Jest
-        - BIG ISSUE WITH THE TESTING WORKFLOW: IT WILL PASS EVEN IF TESTS FAIL, BE SURE TO CHECK WORKFLOW AFTER IT RUNS
+        - SMALL ISSUE WITH THE TESTING WORKFLOW: IT WILL PASS EVEN IF TESTS FAIL, BE SURE TO CHECK WORKFLOW AFTER IT RUNS
         - Tests found in `source/jest_test`
-        - Can be run manually here
     - Documentation 
         - Documentation done with JSDocs
         - Built off of the fortune-telling-dev branch for most up to date docs
