@@ -10,9 +10,9 @@ window.addEventListener('DOMContentLoaded', (event)=> {
 });
 
 /**
-    * Updates the life path number text on the numerology page
-    * (Made to not have to reload page to get number to change)
-    */
+* Updates the life path number text on the numerology page
+* (Made to not have to reload page to get number to change)
+*/
 function updateLifePathNumber() {
     const lifePathNumberLabel = document.getElementById("lifepath-number");
     const birthday = localStorage.getItem("birthdayYear");

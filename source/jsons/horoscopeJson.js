@@ -1,6 +1,8 @@
 export {horoscopeJSON};
 
-
+/**
+ * It maps signs and integers (determined by hashing current date) to an daily horoscope message.
+ */
 const horoscopeJSON = {
     "Aries": {
         "0": "Today, the stars align in your favor, dear Aries. Your natural confidence and assertiveness will be at an all-time high. Take charge and pursue your goals with unwavering determination. Success is within your grasp!",

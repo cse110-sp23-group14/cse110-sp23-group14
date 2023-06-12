@@ -75,6 +75,7 @@ input[type="submit"] {
     height: 25px;
 }
 
+/* Resizing for mobile */
 @media screen and (width <= 600px) {
     .settings-menu-background {
         width: 95vw;

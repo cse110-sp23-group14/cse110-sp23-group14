@@ -19,10 +19,13 @@ function findDescription(sign1, sign2) {
     return null;
 }
 
+// The displayed shapes in the header of the compatibility page.
 const shapeLeft = document.querySelector('.shape-left');
 const shapeRight = document.querySelector('.shape-right');
+
+// Popup and close button
 const checkCompatibilityButton = document.getElementById('check-compatibility-button');
-const closeCompatibility = document.getElementById('close-compatibility-popup-new');
+const closeCompatibility = document.getElementById('close-compatibility-popup');
 
 // Getting sign of each div within the compatibility menu
 const capricornSign=document.getElementById('capricorn');
@@ -42,8 +45,7 @@ const ariesSign=document.getElementById('aries');
 const signArray = [capricornSign, cancerSign, aquariusSign, geminiSign, leoSign, libraSign, piscesSign, sagittariusSign, scorpioSign, taurusSign, virgoSign, ariesSign];
 const signNamesArray = ['capricorn', 'cancer', 'aquarius', 'gemini', 'leo', 'libra', 'pisces', 'sagittarius', 'scorpio', 'taurus', 'virgo', 'aries'];
 
-// Counter for keeping track of when enough clicks occur to show pop up, it starts at 0
-// How it works: It starts at 0, then on each click of the menu, the counter goes up.
+// Counter for keeping track of when enough clicks occur to show pop up to enable button.
 let clickCount = 0;
 
 /**
@@ -61,14 +63,13 @@ function setShapeProperties(shape, image, signName) {
 }
 
 for (let i=0; i < signArray.length; i++) {
-    signArray[i].addEventListener('click', function(){
+    signArray[i].addEventListener('click', function() {
         const image = `assets/zodiac_sign/${signNamesArray[i]}.png`;
 
         if(shapeLeft.querySelector('.sign-name').textContent=='' && shapeRight.querySelector('.sign-name').textContent==''){
             shapeLeft.style.backgroundImage = `url(${image})`;
             shapeLeft.style.backgroundSize ='cover';
             shapeLeft.querySelector('.sign-name').textContent = signNamesArray[i].charAt(0).toUpperCase() + signNamesArray[i].slice(1);
-            // Inspiration: const capitalizedSign1 = sign1.charAt(0).toUpperCase() + sign1.slice(1);
         } else {
             if (shapeLeft.querySelector('.sign-name').textContent == '') {
                 setShapeProperties(shapeLeft, image, signNamesArray[i]);
@@ -113,7 +114,7 @@ function checkCompatibility() {
  * @param {Event} event - "click"
  */
 checkCompatibilityButton.addEventListener('click', () => {
-    document.getElementById('compatibility-popup-new').classList.add('visible');
+    document.getElementById('compatibility-popup').classList.add('visible');
 });
 
 /**
@@ -122,7 +123,7 @@ checkCompatibilityButton.addEventListener('click', () => {
  * @param {Event} event - "click"
  */
 closeCompatibility.addEventListener('click', function() {
-    document.getElementById('compatibility-popup-new').classList.remove('visible');
+    document.getElementById('compatibility-popup').classList.remove('visible');
 });
 
 /**
