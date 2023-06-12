@@ -16,12 +16,19 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     let isHoroscopeDisplayed = false;
     const dailyReport = document.querySelector('.daily-report');
 
-    if (!localStorage.getItem('birthdayYear')) {
-        horoscopeButton.style.display = 'none';
-        horoscopeDetect.style.display = 'block';
-    }else{
-        horoscopeDetect.style.display = 'none';
+                                                 
+    /**
+     * Check the presence of 'birthdayYear' in local storage and toggle the visibility of elements accordingly.
+     */
+    function checkStorage(){
+        if (!localStorage.getItem('birthdayYear')) {
+            horoscopeButton.style.display = 'none';
+            horoscopeDetect.style.display = 'block';
+        }else{
+            horoscopeDetect.style.display = 'none';
+        }
     }
+    checkStorage();
 
     /**
      * Toggles the navigation bar state
@@ -151,7 +158,12 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         }
     });
 
-    const menuLinks = document.querySelectorAll('.nav a');
+    const menuLinks = document.querySelectorAll('.nav a');//get all the nav bar options
+    /**
+     * Attach click event listeners to each menu link.
+     *
+     * @param {HTMLElement} link - The menu link element.
+     */
     for (const link of menuLinks) {
         link.addEventListener('click', (event) => {
             // closeNav();

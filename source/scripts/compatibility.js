@@ -19,6 +19,7 @@ function findDescription(sign1, sign2) {
     return null;
 }
 
+//Getting the boxes that stores the zodiac signs
 const shapeLeft = document.querySelector('.shape-left');
 const shapeRight = document.querySelector('.shape-right');
 const checkCompatibilityButton = document.getElementById('check-compatibility-button');
