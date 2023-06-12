@@ -18,6 +18,7 @@ function updateLifePathNumber() {
     const birthday = localStorage.getItem("birthdayYear");
     let lifePathNumber = -1;
     if (birthday) {
+        // Handle when we have personal information in localstorage
         lifePathNumber = calculateLifePathNumber(birthday);
         lifePathNumberLabel.innerHTML = `${lifePathNumber}`;
         lifePathNumberLabel.classList.add('highlight');
@@ -36,6 +37,7 @@ function updateLifePathNumber() {
         function handleButtonClick(event) {
             const buttonIndex = Array.from(lifePathButtons).indexOf(event.target);
             let predictionType, predictionValue;
+            // Get the description for the four aspect of a life path number
             switch (buttonIndex) {
             case 0:
                 predictionType = 'Personality';
@@ -64,6 +66,7 @@ function updateLifePathNumber() {
             button.addEventListener('click', handleButtonClick);
         });
     }else {
+        // When we the user does not put personal info
         const lifePathButtonBox = document.querySelector('.lifepath-content .button-box');
         lifePathButtonBox.style.display = 'none';
         lifePathNumberLabel.innerHTML = "Your lifepath has not been revealed yet. Please fill out your info!";
