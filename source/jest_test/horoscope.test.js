@@ -118,7 +118,6 @@ describe('Horoscope page test suite', () => {
     /**
      * Check that popup contains the correct horoscope for user's sign and today's date
      */
-      
     it('Check horoscope text in popup', async () => {
 
         // Get the text of the horoscope in the popup
