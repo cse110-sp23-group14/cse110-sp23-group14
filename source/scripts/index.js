@@ -48,17 +48,21 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             isNavOpen = true;
             modifyClass(navMenu, 'nav-show', 'nav-hide');
             modifyClass(navIconBars, 'icon-hide', '');
+            modifyClass(navIconXMark, '', 'icon-hide');
+            modifyClass(navContainer, 'nav-show-background', 'nav-background-hide');
         } else {
             isNavOpen = false;
             modifyClass(navMenu, 'nav-hide', 'nav-show');
             modifyClass(navIconBars, '', 'icon-hide');
-        }
-        // Additional code specific to opening/closing the navigation bar
-        if (isOpen) {
-            modifyClass(navContainer, 'nav-show-background', 'nav-background-hide');
-        } else {
+            modifyClass(navIconXMark, 'icon-hide', '');
             modifyClass(navContainer, 'nav-background-hide', 'nav-show-background');
         }
+        // Additional code specific to opening/closing the navigation bar
+        // if (isOpen) {
+        //     modifyClass(navContainer, 'nav-show-background', 'nav-background-hide');
+        // } else {
+        //     modifyClass(navContainer, 'nav-background-hide', 'nav-show-background');
+        // }
     }
     
     // /**
@@ -98,8 +102,10 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     */
     navButton.addEventListener('click', (event) => {
         if (isNavOpen) {
+            // closeNav();
             updateNav(false);
         } else {
+            // openNav();
             updateNav(true);
         }
     });
@@ -208,6 +214,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const menuLinks = document.querySelectorAll('.nav a');
     for (const link of menuLinks) {
         link.addEventListener('click', (event) => {
+            // closeNav();
             updateNav(false);
             event.preventDefault();
             const target = document.querySelector(link.getAttribute('href'));
