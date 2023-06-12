@@ -193,7 +193,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
             window.scrollTo({
                 top: offset,
                 behavior: 'smooth'
-            },2);
+            },100);
         } else {
             target.scrollIntoView({
                 behavior: 'smooth'
