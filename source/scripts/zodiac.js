@@ -2,9 +2,7 @@ export { Zodiac };
 import { zodiacJSON } from "../jsons/zodiacJson.js";
 
 class Zodiac {
-
     static zodiacTable;
-
     static {
         this.zodiacTable = JSON.parse(JSON.stringify(zodiacJSON));
     }
