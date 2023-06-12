@@ -368,6 +368,7 @@ button:hover, .button:hover {
         width: 100%;
         transition: opacity 1.3s;
         transition: visibility 0s;
+        display: none;
     }
       
     #nav-button {
@@ -377,5 +378,9 @@ button:hover, .button:hover {
         align-self: center;
         color: var(--main-light-color);
         cursor: pointer;
+    }
+
+    .nav-container{
+        display: none;
     }
 }
