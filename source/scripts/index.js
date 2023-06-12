@@ -199,5 +199,5 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
                 behavior: 'smooth'
             });
         }
-    }    
+    }
 });
