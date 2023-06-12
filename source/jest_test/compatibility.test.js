@@ -67,12 +67,12 @@ describe('Compatibility page test suite', () => {
         const compBtn = await page.evaluateHandle(`document.querySelector("#check-compatibility-button")`);
         await compBtn.click();
 
-        const title = await page.$eval('#compatibility-popup-new > div > h1', (div) => {
+        const title = await page.$eval('#compatibility-popup > div > h1', (div) => {
             return div.innerText;
         });
         expect(title).toBe('Sagittarius + Scorpio');
 
-        const message = await page.$eval('#compatibility-popup-new > div > p', (div) => {
+        const message = await page.$eval('#compatibility-popup > div > p', (div) => {
             return div.innerText;
         });
         expect(message).toBe('30° (Semi-Sextile): Signs that are semi-sextile have a subtle and supportive compatibility. While you may have different elemental natures, you still share some similarities that enable you to understand and appreciate each other. Your relationship is characterized by a sense of cooperation, where you can support each other\'s growth and offer different perspectives. With open communication and mutual respect, you can create a stable and nurturing connection.');
