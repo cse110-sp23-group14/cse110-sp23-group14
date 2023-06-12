@@ -22,6 +22,11 @@ body {
     align-items: center;
 }
 
+.home-content {
+    height: 100vh;
+    background-color: var(--main-dark-blue);
+}
+
 .horoscope-content {
     height: 100vh; 
     background-size: cover;
@@ -270,11 +275,23 @@ body {
 }
 
 .title-box {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--main-dark-blue);
-    height: 100vh;
+}
+
+.title-reminder {
+    display: flex !important;
+    justify-content: center;
+}
+
+#scroll {
+    color: var(--main-light-color);
+    font: 20px Lora, serif;
+    margin-top: 23vh;
 }
 
 .title-content {
@@ -507,5 +524,9 @@ button:hover, .button:hover {
 
     .nav-container{
         display: none;
+    }
+
+    #scroll {
+        margin-top: 15vh;
     }
 }
