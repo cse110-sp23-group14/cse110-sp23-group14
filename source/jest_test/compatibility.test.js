@@ -119,8 +119,4 @@ describe('Compatibility page test suite', () => {
         await leftBtn.dispose();
         await rightBtn.dispose();
     });
-
-    /**
-     * Check that each combination of 2 signs has a non-empty message
-     */
 });
