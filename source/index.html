@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
     <head>
         <title>Welcome to Zodiak</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
-            rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
         <link rel="manifest" href="jsons/manifest.json">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +21,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
+
+
     <body>
+        <!-- External Scripts -->
+        <script src="https://kit.fontawesome.com/ec9b6ab711.js" crossorigin="anonymous"></script>
+        <script type="module" src="scripts/settings.js"></script>
+        <script type="module" src="scripts/index.js"></script>
+        <script type="module" src="scripts/compatibility.js"></script>
+        <script type="module" src="scripts/birthday-numerology.js"></script>
+
+
+
         <!-- Navigation bar -->
         <div class="nav-container nav-background-hide">
             <a id="nav-button"><i class="fa-solid fa-bars fa-2xl"></i><i class="fa-solid fa-xmark fa-2xl icon-hide"></i></a>
@@ -52,59 +64,67 @@
             </div>
         </div> 
 
-        <!-- Welcome page -->
-        <section id="home"></section>
 
-        <div class="site-content">
-            <div class="title-box">
-                <div class="title-content">
-                    <h1 class="title-text">welcome to <span class="bolded">Zodiak</span></h1>
-                    <img class="title-logo" src="assets/title-logo.png" alt="Logo Image here">
+
+        <!-- Background star affect -->
+        <div class="stars-container">
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+        </div>
+
+
+
+        <!-- Welcome page -->
+        <section id="home">
+            <div class="site-content">
+                <div class="title-box">
+                    <div class="title-content">
+                        <h1 class="title-text">welcome to <span class="bolded">Zodiak</span></h1>
+                        <img class="title-logo" src="assets/title-logo.png" alt="Logo Image here">
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        
 
         <!-- Daily Horoscope page -->
-        <section id="daily-report"></section>
-        
-        <div class="site-content horoscope-content">
-            <!-- clicking the horoscope button will lead to the popup -->
-            <a id="horoscope-button" class="button" href="#horoscope-popup">Today's Horoscope</a>
-            <p id="horoscope-detect">We do not have your birthday yet. <br>Please fill out your information in the settings page!</p>
-
-            <!-- horoscope popup has date, imagine, daily horoscope, and share button -->
-            <div id="horoscope-popup" class="overlay">
-                <div class="popup">
-                    <a class="close" href="#horoscope_popup-box">&times;</a>
-                    <img class="daily-image" src="assets/title-logo.png" alt="daily horoscope image">
-                    <h1 class="daily-title">Leo</h1>
-                    <p class="daily-date">May 23, 2023</p>
-                    <p class="daily-content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor mauris at rhoncus maximus. Praesent dui purus, pharetra at scelerisque ut, euismod eget mauris. Maecenas eleifend, purus eu dapibus finibus, libero lorem ultrices augue, vel malesuada diam quam in lorem. Suspendisse quis nisl nec risus auctor tincidunt. Integer finibus pellentesque ipsum tempor mattis. Morbi finibus nisi id purus dignissim, ut pretium velit pellentesque. Ut pretium tortor ut pretium pharetra. Ut ut hendrerit lectus.
-                    </p>
-                    <button class="share-btn">Share</button>
-                    <p class="share-confirm"></p>
+        <section id="daily-report">
+            <div class="site-content horoscope-content">
+                <!-- clicking the horoscope button will lead to the popup -->
+                <a id="horoscope-button" class="button" href="#horoscope-popup">Today's Horoscope</a>
+                <p id="horoscope-detect">We do not have your birthday yet. <br>Please fill out your information in the settings page!</p>
+    
+                <!-- horoscope popup has date, imagine, daily horoscope, and share button -->
+                <div id="horoscope-popup" class="overlay">
+                    <div class="popup">
+                        <a class="close" href="#horoscope_popup-box">&times;</a>
+                        <img class="daily-image" src="assets/title-logo.png" alt="daily horoscope image">
+                        <h1 class="daily-title">Leo</h1>
+                        <p class="daily-date">May 23, 2023</p>
+                        <p class="daily-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor mauris at rhoncus maximus. Praesent dui purus, pharetra at scelerisque ut, euismod eget mauris. Maecenas eleifend, purus eu dapibus finibus, libero lorem ultrices augue, vel malesuada diam quam in lorem. Suspendisse quis nisl nec risus auctor tincidunt. Integer finibus pellentesque ipsum tempor mattis. Morbi finibus nisi id purus dignissim, ut pretium velit pellentesque. Ut pretium tortor ut pretium pharetra. Ut ut hendrerit lectus.
+                        </p>
+                        <button class="share-btn">Share</button>
+                        <p class="share-confirm"></p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+
 
         <!-- Compatibility checker page -->
         <section id="compatibilitypage">
             <div class="site-content compatibility-content">
-
-                <!-- Container for the background star affect -->
-                 <div class="stars-container">
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                    <span class="star"></span>
-                </div>
 
                 <!-- Header of the compatibility page -->
                 <section id="header">
@@ -113,7 +133,6 @@
                         <span class="ampersand">&amp;</span>
                         <div class="shape-right"> <span class="sign-name"></span></div>
                     </div>    
-            
                 </section>
             
                  <!-- The signs of the people whose compatibilities to check-->
@@ -210,6 +229,8 @@
             </div>
         </section>
 
+
+
          <!-- Lifepath page with popups-->
         <section id="lifepath-page">
             <div id="lifepath-popup" class="overlay">
@@ -241,6 +262,8 @@
                 </div>
             </div>
         </section>
+
+
 
         <!-- Setting page allows user to update name and birthday-->
         <section id="settingpage">
@@ -280,6 +303,8 @@
             </div>
         </section>
         
+
+
         <!-- FAQ page for the whole site-->
         <section id="faq-page">
             <div class="site-content faq">
@@ -346,11 +371,8 @@
                 </div>
             </div>
         </section>
-        
-        <script src="https://kit.fontawesome.com/ec9b6ab711.js" crossorigin="anonymous"></script>
-        <script type="module" src="scripts/settings.js"></script>
-        <script type="module" src="scripts/index.js"></script>
-        <script type="module" src="scripts/compatibility.js"></script>
-        <script type="module" src="scripts/birthday-numerology.js"></script>
+
+
+
     </body>
 </html>
