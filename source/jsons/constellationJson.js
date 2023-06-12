@@ -1,3 +1,8 @@
+export{constellation};
+
+/**
+ * It maps signs to an image path to be used in the background of the daily horoscope page.
+ */
 const constellation = {
     'Aries': 'assets/constellation/aries.jpeg',
     'Aquarius': 'assets/constellation/aquarius.jpeg',
@@ -12,5 +17,3 @@ const constellation = {
     'Taurus': 'assets/constellation/taurus.jpeg',
     'Virgo': 'assets/constellation/virgo.jpeg',
 };
-
-export{constellation};

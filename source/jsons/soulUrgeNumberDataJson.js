@@ -1,6 +1,8 @@
 export {soulUrgeNumberData};
 
-
+/**
+ * It maps integers (to be determened by hashing of birthdate) to life traits.
+ */
 const soulUrgeNumberData = {
     "1": {
         "personality":

@@ -173,6 +173,25 @@ describe('Horoscope page test suite', () => {
         expect(page.url()).toBe(`http://localhost:${SERVER_PORT}/source/#horoscope_popup-box`);
         xBtn.dispose();
     });
+
+    /**
+     * Clear user info to reset for next test suite
+     */
+    afterAll(async () => {
+        // Set event listener to accept dialog when it pops up
+        page.on('dialog', async dialog => {
+            await dialog.accept();
+        });
+
+        // Wait to accept dialog and reload home page
+        await page.goto(`http://localhost:${SERVER_PORT}/source/`);
+
+        // Click clear button
+        const clearButton = await page.evaluateHandle(`document.querySelector("#settingpage > div > div > div > div.clear-profile > button")`);
+        await clearButton.click();
+
+        await clearButton.dispose();
+    });
 });
 
 

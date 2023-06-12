@@ -1,5 +1,8 @@
 export { zodiacJSON };
 
+/**
+ * It maps birthdates to signs.
+ */
 const zodiacJSON = {
     "ZodiacSigns": [{
         "name": "Aquarius",
