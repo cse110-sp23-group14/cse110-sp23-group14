@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     closePopup.addEventListener('click',(event)=>{
         const shareConfirm = document.querySelector('.share-confirm');
         shareConfirm.innerHTML = "";
-    })
+    });
 
 
     /**
