@@ -1,7 +1,6 @@
 /* main container style */
 .faq {
     min-height: 100vh;
-    /* allow overflow in snap section */
     height: fit-content;
     overflow-y: scroll;
     background-image: url('../assets/settings-background.jpeg');
