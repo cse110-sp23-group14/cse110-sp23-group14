@@ -20,8 +20,23 @@ jobs:
               with:
                     node-version: 18
             - run: npm ci
-            - run: npm run serve-port & npm test & sleep ${SERVE_TIME};kill $(ps aux | grep "npm run serve-port" | awk 'NR==1 {print $2}')       
-            
-
+            - run: npm run serve-port & npm test & sleep ${SERVE_TIME};kill $(ps aux | grep "npm run serve-port" | awk 'NR==1 {print $2}')                    
+    coverage:
+        needs: [ testing ]
+        name: coverage
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                node-version: 18
+            - run: npm install -g yarn
+            - run: yarn install
+            - run: yarn build
+            - uses: paambaati/codeclimate-action@v2.2.4
+              env:
+                CC_TEST_REPORTER_ID: 0beb75312ca3b8fa83af10d59d0fc5e9e706aebc8fb5d501afcaa6de4202a9f3
+              with:
+                    coverageCommand: yarn coverage
 
 
