@@ -1,5 +1,3 @@
-
-/* Old stuff Here
 /**
  * Notes:
  * - Our functions and our webpage (localStorage, DOM, etc.) are strongly coupled, and so for our "unit tests",
@@ -130,8 +128,8 @@ describe('Horoscope page test suite', () => {
         //     return element.innerText; //textContent;
         // });
 
-        const text = await page.evaluate(() => {
-            return document.querySelector("#horoscope-popup > div > p.daily-content").innerText;
+        const text = await page.$eval('#horoscope-popup > div > p.daily-content', (div) => {
+            return div.innerText;
         });
 
         // const textElement = await page.$("#horoscope-popup > div > p.daily-content");
