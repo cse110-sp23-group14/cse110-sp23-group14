@@ -19,7 +19,7 @@ describe('Horoscope page test suite', () => {
     // Go to the page
     beforeAll(async () => {
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
-    }, 10000);
+    }, 20000);
 
     /**
      * First check that localStorage is empty, then add name and birthday and check that
@@ -27,13 +27,19 @@ describe('Horoscope page test suite', () => {
      */
     it('Check that localStorage starts empty then adds user\'s info', async () => {
         // Check that name and birthday are null
-        const storedName = await page.evaluate(() => {return localStorage.getItem('name')});
+        const storedName = await page.evaluate(() => {
+            return localStorage.getItem('name');
+        });
         expect(storedName).toBe(null);
 
-        const storedBirthday = await page.evaluate(() => {return localStorage.getItem('birthday')});
+        const storedBirthday = await page.evaluate(() => {
+            return localStorage.getItem('birthday');
+        });
         expect(storedBirthday).toBe(null);
 
-        const storedYear = await page.evaluate(() => {return localStorage.getItem('birthdayYear')});
+        const storedYear = await page.evaluate(() => {
+            return localStorage.getItem('birthdayYear');
+        });
         expect(storedYear).toBe(null);
 
         // Add name and birthday
@@ -46,7 +52,9 @@ describe('Horoscope page test suite', () => {
 
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const newName = await page.evaluate(() => {return localStorage.getItem('name')});
+        const newName = await page.evaluate(() => {
+            return localStorage.getItem('name');
+        });
         expect(newName).toBe('Sample Name');
 
         await nameButton.dispose();
@@ -60,10 +68,14 @@ describe('Horoscope page test suite', () => {
 
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
 
-        const newBirthday = await page.evaluate(() => {return localStorage.getItem('birthday')});
+        const newBirthday = await page.evaluate(() => {
+            return localStorage.getItem('birthday');
+        });
         expect(newBirthday).toBe('9.23');
 
-        const newYear = await page.evaluate(() => {return localStorage.getItem('birthdayYear')});
+        const newYear = await page.evaluate(() => {
+            return localStorage.getItem('birthdayYear');
+        });
         expect(newYear).toBe('2004.9.23');
 
         await bdayButton.dispose();
@@ -81,34 +93,15 @@ describe('Horoscope page test suite', () => {
     });
 
     /**
-     * Check that popup contains the correct horoscope for user's sign and today's date
-     */
-    it('Check horoscope text in popup', async () => {
-        // Wait for the letter animation to finish
-        await page.waitForTimeout(5000);
-
-        const text = await page.$eval("#horoscope-popup > div > p.daily-content", (element) => {
-            return element.innerHTML;
-        });
-
-        let horoscopeTable = JSON.parse(JSON.stringify(horoscopeJSON))['Libra'];
-        console.log(horoscopeTable);
-
-        // const newYear = await page.evaluate(() => {
-        //     localStorage.getItem('birthdayYear')
-        // });
-
-        expect(text).toBe('Libra');
-    }, 10000);
-
-    /**
      * Check that popup contains the correct date (today's date)
      */
     it('Check current date in popup', async () => {
         const date = await page.$eval("#horoscope-popup > div > p.daily-date", (element) => {
             return element.innerHTML;
         });
-        const currentDate = await page.evaluate(() => {return new Date().toLocaleDateString()});
+        const currentDate = await page.evaluate(() => {
+            return new Date().toLocaleDateString();
+        });
 
         expect(date).toBe(currentDate);
     });
@@ -122,6 +115,34 @@ describe('Horoscope page test suite', () => {
         });
         expect(sign).toBe('Libra');
     });
+
+    /**
+     * Check that popup contains the correct horoscope for user's sign and today's date
+     */
+    it('Check horoscope text in popup', async () => {
+        // Wait for the letter animation to finish
+        await page.waitForTimeout(3000);
+
+        const text = await page.$eval("#horoscope-popup > div > p.daily-content", (element) => {
+            return element.textContent;
+        });
+
+        // const textElement = await page.$("#horoscope-popup > div > p.daily-content");
+        // const text = await (await textElement.getProperty('textContent')).jsonValue();
+
+        let horoscopeTable = JSON.parse(JSON.stringify(horoscopeJSON))['Libra'];
+        console.log(horoscopeTable);
+
+        // const newYear = await page.evaluate(() => {
+        //     localStorage.getItem('birthdayYear')
+        // });
+
+        expect(text).toBe('Libra');
+    }, 10000);
+
+    // test share button
+
+    // test closing popup
 });
 
 

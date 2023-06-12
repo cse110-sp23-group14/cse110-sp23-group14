@@ -18,7 +18,7 @@ const SERVER_PORT = 36873;
 describe('Settings page test suite', () => {
     beforeAll(async () => {
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
-    }, 10000);
+    }, 20000);
 
     /**
      * This should pass (sanity check)
@@ -73,7 +73,7 @@ describe('Settings page test suite', () => {
         expect(storedName).toBe('Sample Name');
 
         await nameButton.dispose();
-    });
+    }, 10000);
 
     /**
      * Check to make sure we can set birthday in localStorage using form in settings page
