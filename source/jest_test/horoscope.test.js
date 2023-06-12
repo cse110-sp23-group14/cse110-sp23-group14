@@ -90,6 +90,7 @@ describe('Horoscope page test suite', () => {
         await horoscopeBtn.click();
 
         expect(page.url()).toBe(`http://localhost:${SERVER_PORT}/source/#horoscope-popup`);
+        horoscopeBtn.dispose();
     });
 
     /**
@@ -123,6 +124,8 @@ describe('Horoscope page test suite', () => {
         // Wait for the letter animation to finish
         await page.waitForTimeout(3000);
 
+        // Get text of horoscope in popup
+
         // const text = await page.$eval("#horoscope-popup > div > p.daily-content", (element) => {
         //     return element.innerText; //textContent;
         // });
@@ -134,19 +137,67 @@ describe('Horoscope page test suite', () => {
         // const textElement = await page.$("#horoscope-popup > div > p.daily-content");
         // const text = await (await textElement.getProperty('textContent')).jsonValue();
 
-        let horoscopeTable = JSON.parse(JSON.stringify(horoscopeJSON))['Libra'];
-        console.log(horoscopeTable);
+        // Find expected message
+        const horoscopeTable = JSON.parse(JSON.stringify(horoscopeJSON))['Libra'];
+        const index = await page.evaluate(() => {
+            const date = new Date();
+            const day = date.getDate();
+            const month = date.getMonth();
+            const stringInputToHash = "" + day + month;
+            const inputToHash = Number(stringInputToHash);
+            const hashValue = inputToHash % 13;
+            return hashValue;
+        });
+        const message = horoscopeTable[index];
 
-        // const newYear = await page.evaluate(() => {
-        //     localStorage.getItem('birthdayYear')
-        // });
-
-        expect(text).toBe('Libra');
+        expect(text).toBe(message);
     }, 10000);
 
-    // test share button
+    /**
+     * Test that share button is clickable
+     */
+    it('Check share button', async () => {
+        // Click the share button
+        const shareBtn = await page.evaluateHandle(`document.querySelector("#horoscope-popup > div > button")`);
+        await shareBtn.click();
 
-    // test closing popup
+        await page.evaluate(() => {
+            // mock clipboard
+            let clipboardText = null;
+            window["navigator"]["clipboard"] = {
+                writeText: text => new Promise(resolve => clipboardText = text),
+                readText: () => new Promise(resolve => resolve(clipboardText)),
+            }
+        });
+
+        // Find expected message
+        const horoscopeTable = JSON.parse(JSON.stringify(horoscopeJSON))['Libra'];
+        const index = await page.evaluate(() => {
+            const date = new Date();
+            const day = date.getDate();
+            const month = date.getMonth();
+            const stringInputToHash = "" + day + month;
+            const inputToHash = Number(stringInputToHash);
+            const hashValue = inputToHash % 13;
+            return hashValue;
+        });
+        const message = horoscopeTable[index];
+        const shareText = `Hey 💖, I just checked my daily horoscope ✨ and I couldn\'t wait to share it with you! According to the stars 🌌, for Libra:\n${message}\nHow about you? Open our app and check your own forecast 🌤️, and let\'s compare our results 📈. Who knows what the universe has in store for us today!`
+
+        expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(shareText);
+    }, 10000);
+
+    /**
+     * Click the x button and check that we redirect to the correct url
+     */
+    it('Check that horoscope popup disappears when x button clicked', async () => {
+        const xBtn = await page.evaluateHandle(`document.querySelector("#horoscope-popup > div > a")`);
+        await page.goto(`http://localhost:${SERVER_PORT}/source/#horoscope_popup-box`);
+        await xBtn.click();
+
+        expect(page.url()).toBe(`http://localhost:${SERVER_PORT}/source/#horoscope_popup-box`);
+        xBtn.dispose();
+    });
 });
 
 
