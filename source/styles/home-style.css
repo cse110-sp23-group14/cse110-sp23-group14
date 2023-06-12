@@ -371,11 +371,11 @@ button:hover, .button:hover {
     }
       
     #nav-button {
+        display: none;
         pointer-events: all;
         margin: 1vw; /* Reduce the margin to make the icon smaller */
         align-self: center;
         color: var(--main-light-color);
         cursor: pointer;
     }
-      
 }
