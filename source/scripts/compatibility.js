@@ -19,7 +19,7 @@ function findDescription(sign1, sign2) {
     return null;
 }
 
-// The displayed shapes in the header of the compatibility page.
+//Getting the boxes that stores the zodiac signs
 const shapeLeft = document.querySelector('.shape-left');
 const shapeRight = document.querySelector('.shape-right');
 

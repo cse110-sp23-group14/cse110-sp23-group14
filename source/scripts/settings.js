@@ -35,11 +35,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
         setHoroscope();
         updateLifePathNumber();
         const horoscopeButton = document.getElementById('horoscope-button');
-        if (localStorage.getItem('birthdayYear')) {
-            horoscopeButton.style.display = 'block';
-        }
         const horoscopeDetect = document.getElementById('horoscope-detect');
         if (localStorage.getItem('birthdayYear')) {
+            horoscopeButton.style.display = 'block';
             horoscopeDetect.style.display = 'none';
         }
     });
@@ -57,11 +55,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
         updateLifePathNumber();
         setHoroscope();
         const horoscopeButton = document.getElementById('horoscope-button');
-        if (!localStorage.getItem('birthdayYear')) {
-            horoscopeButton.style.display = 'none';
-        }
         const horoscopeDetect = document.getElementById('horoscope-detect');
         if (!localStorage.getItem('birthdayYear')) {
+            horoscopeButton.style.display = 'none';
             horoscopeDetect.style.display = 'block';
         }
     });

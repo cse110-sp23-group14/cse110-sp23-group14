@@ -167,20 +167,17 @@
     background-color: #8c67b1;
     width: 30%;
     text-align: center;
+    cursor: pointer;
 }
 
 #check-compatibility-button:disabled {
-    background-color: #c994fd;
+    background-color: #c994fd !important;
     opacity: 0.5;
+    cursor: auto;
 }
-
 
 #check-compatibility-button:hover {
-    background-color: #c994fd;
-}
-
-#check-compatibility-button:active {
-    background-color: #eedcff;
+    background: var(--main-light-color);
 }
 
 /* Resizing for mobile */
