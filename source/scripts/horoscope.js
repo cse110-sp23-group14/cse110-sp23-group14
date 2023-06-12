@@ -4,9 +4,7 @@ import { horoscopeJSON } from "../jsons/horoscopeJson.js";
 
 const NUM_HOROSCOPES = 13;
 class Horoscope {
-
     static horoscopeTable;
-
     static {
         this.horoscopeTable = JSON.parse(JSON.stringify(horoscopeJSON));
     }

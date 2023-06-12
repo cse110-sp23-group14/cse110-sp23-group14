@@ -18,42 +18,33 @@ function findDescription(sign1, sign2) {
     }
     return null;
 }
-  
-const sign1 = "aries";
-const sign2 = "leo";
-const description = findDescription(sign1, sign2);
 
-// get the shape element
 const shapeLeft = document.querySelector('.shape-left');
 const shapeRight = document.querySelector('.shape-right');
-const loveContent = document.getElementById('description');
-const chooseSignWindow = document.getElementById('choose-sign');
 
 const checkCompatibilityButton = document.getElementById('check-compatability-button');
 const closeCompatability = document.getElementById('close-compatability-popup-new');
 
-// Getting sign of each div within the compatability menu
-const capricornSign=document.getElementById('capricorn');
-const cancerSign=document.getElementById('cancer');
-const aquariusSign=document.getElementById('aquarius');
-const geminiSign=document.getElementById('gemini');
-const leoSign=document.getElementById('leo');
-const libraSign=document.getElementById('libra');
-const piscesSign=document.getElementById('pisces');
-const sagittariusSign=document.getElementById('sagittarius');
-const scorpioSign=document.getElementById('scorpio');
-const taurusSign=document.getElementById('taurus');
-const virgoSign=document.getElementById('virgo');
-const ariesSign=document.getElementById('aries');
+// Get sign of each div within the compatability menu
+const capricornSign = document.getElementById('capricorn');
+const cancerSign = document.getElementById('cancer');
+const aquariusSign = document.getElementById('aquarius');
+const geminiSign = document.getElementById('gemini');
+const leoSign = document.getElementById('leo');
+const libraSign = document.getElementById('libra');
+const piscesSign = document.getElementById('pisces');
+const sagittariusSign = document.getElementById('sagittarius');
+const scorpioSign = document.getElementById('scorpio');
+const taurusSign = document.getElementById('taurus');
+const virgoSign = document.getElementById('virgo');
+const ariesSign = document.getElementById('aries');
 
-// Parallel arrays, matching sign with sign name
 const signArray = [capricornSign, cancerSign, aquariusSign, geminiSign, leoSign, libraSign, piscesSign, sagittariusSign, scorpioSign, taurusSign, virgoSign, ariesSign];
 const signNamesArray = ['capricorn', 'cancer', 'aquarius', 'gemini', 'leo', 'libra', 'pisces', 'sagittarius', 'scorpio', 'taurus', 'virgo', 'aries'];
 
 // Counter for keeping track of when enough clicks occur to show pop up, it starts at 0
 // How it works: It starts at 0, then on each click of the menu, the counter goes up.
 let clickCount = 0;
-
 
 /**
  * Sets the properties of a shape element.
@@ -68,7 +59,6 @@ function setShapeProperties(shape, image, signName) {
     shape.style.backgroundSize = 'cover';
     shape.querySelector('.sign-name').textContent = signName.charAt(0).toUpperCase() + signName.slice(1);
 }
-
 
 for (let i=0; i < signArray.length; i++) {
     signArray[i].addEventListener('click', function(){
@@ -179,26 +169,7 @@ function handleClick() {
     }
 }
 
-
-
 // Function to hide the pop-up and reset the page
 function hidePopup() {
     document.getElementById("compatibility-popup").style.display = "none";
 }
-
-/**
- * Attach event listener to the close button
- * @param {Event} event - "click"
- */
-
-/*
-document.querySelector(".compatibility-popup-close").addEventListener("click", () => {
-    hidePopup();
-    clickCount=0;
-    shapeLeft.style.backgroundImage='';
-    shapeRight.style.backgroundImage='';
-    shapeLeft.querySelector('.sign-name').textContent='';
-    shapeRight.querySelector('.sign-name').textContent='';
-    chooseSignWindow.style.display='block';
-});
-*/
