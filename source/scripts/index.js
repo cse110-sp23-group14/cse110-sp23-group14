@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const horoscopeDetect = document.getElementById('horoscope-detect');
     let isNavOpen = false;
     let isHoroscopeDisplayed = false;
-    const dailyReport = document.querySelector('.report');
+    const dailyReport = document.querySelector('.daily-report');
 
     if (!localStorage.getItem('birthdayYear')) {
         // Hide the button
@@ -24,43 +24,22 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         horoscopeDetect.style.display = 'none';
     }
 
-    /**
-     * Adds the specified class and removes the other class
-     * @param {Element} element - The DOM element to modify
-     * @param {string} addClass - The class to add
-     * @param {string} removeClass - The class to remove
-     */
-    function modifyClass(element, addClass, removeClass) {
-        if (addClass) {
-            element.classList.add(addClass);
-        }
-        if (removeClass) {
-            element.classList.remove(removeClass);
-        }
-    }
+
 
     /**
-     * Updates the navigation bar state based on the parameter value
-     * @param {boolean} isOpen - Indicates whether the navigation bar should be open or closed
+     * Toggles the navigation bar state
+     * @param {boolean} isOpen - Indicates whether to open or close the navigation bar
      */
-    function updateNav(isOpen) {
-        if (isOpen) {
-            isNavOpen = true;
-            modifyClass(navMenu, 'nav-show', 'nav-hide');
-            modifyClass(navIconBars, 'icon-hide', '');
-        } else {
-            isNavOpen = false;
-            modifyClass(navMenu, 'nav-hide', 'nav-show');
-            modifyClass(navIconBars, '', 'icon-hide');
-        }
-        // Additional code specific to opening/closing the navigation bar
-        if (isOpen) {
-            modifyClass(navContainer, 'nav-show-background', 'nav-background-hide');
-        } else {
-            modifyClass(navContainer, 'nav-background-hide', 'nav-show-background');
-        }
+    function toggleNav(isOpen) {
+        isNavOpen = isOpen;
+        navMenu.classList.toggle('nav-show', isOpen);
+        navMenu.classList.toggle('nav-hide', !isOpen);
+        navIconBars.classList.toggle('icon-hide', isOpen);
+        navIconXMark.classList.toggle('icon-hide', !isOpen);
+        navContainer.classList.toggle('nav-show-background', isOpen);
+        navContainer.classList.toggle('nav-background-hide', !isOpen);
     }
-    
+
     // /**
     //  * This function opens up the navigation bar
     //  * and changes the hamburger to an x
@@ -98,9 +77,11 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     */
     navButton.addEventListener('click', (event) => {
         if (isNavOpen) {
-            updateNav(false);
+            // closeNav();
+            toggleNav(false);
         } else {
-            updateNav(true);
+            // openNav();
+            toggleNav(true);
         }
     });
 
@@ -208,7 +189,8 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const menuLinks = document.querySelectorAll('.nav a');
     for (const link of menuLinks) {
         link.addEventListener('click', (event) => {
-            updateNav(false);
+            // closeNav();
+            toggleNav(false);
             event.preventDefault();
             const target = document.querySelector(link.getAttribute('href'));
             scrollToElement(target);

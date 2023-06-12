@@ -13,9 +13,8 @@ window.addEventListener('DOMContentLoaded', (event)=> {
     * Updates the life path number text on the numerology page
     * (Made to not have to reload page to get number to change)
     */
-function updateLifePathNumber(){
+function updateLifePathNumber() {
     const lifePathNumberLabel = document.getElementById("lifepath-number");
-
     const birthday = localStorage.getItem("birthdayYear");
     let lifePathNumber = -1;
     if (birthday) {
@@ -29,7 +28,6 @@ function updateLifePathNumber(){
         const lifePathButtonBox = document.querySelector('.button-box');
         const lifePathImage = document.getElementById('lifepath-image');
         lifePathImage.setAttribute('src', `assets/lifepath/${lifePathNumber}.png`);
-
         /**
          * Event listener for lifePathButtons
          * @param {Event} event - The 'click' event object
@@ -37,7 +35,6 @@ function updateLifePathNumber(){
         function handleButtonClick(event) {
             const buttonIndex = Array.from(lifePathButtons).indexOf(event.target);
             let predictionType, predictionValue;
-    
             switch (buttonIndex) {
             case 0:
                 predictionType = 'Personality';
@@ -58,7 +55,6 @@ function updateLifePathNumber(){
             default:
                 return;
             }
-    
             lifePathTitle.innerHTML = predictionType;
             lifePathText.innerHTML = predictionValue;
         }
