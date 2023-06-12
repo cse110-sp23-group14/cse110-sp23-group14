@@ -17,14 +17,11 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
     const dailyReport = document.querySelector('.daily-report');
 
     if (!localStorage.getItem('birthdayYear')) {
-        // Hide the button
         horoscopeButton.style.display = 'none';
         horoscopeDetect.style.display = 'block';
     }else{
         horoscopeDetect.style.display = 'none';
     }
-
-
 
     /**
      * Toggles the navigation bar state
@@ -42,7 +39,6 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
 
     /**
     * Event listener function for the 'click' event on the navButton.
-    *
     * @param {Event} event -The 'click' event object
     */
     navButton.addEventListener('click', (event) => {
@@ -84,7 +80,6 @@ window.addEventListener('DOMContentLoaded', async (event)=> {
         dailyReport.classList.remove('highlight');
         localStorage.setItem('report_read', true);
     });
-
     localStorage.setItem('last_visit', currentDateStr);
 
     // Set horoscope popup text
