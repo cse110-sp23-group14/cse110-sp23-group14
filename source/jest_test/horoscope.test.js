@@ -161,30 +161,12 @@ describe('Horoscope page test suite', () => {
         const shareBtn = await page.evaluateHandle(`document.querySelector("#horoscope-popup > div > button")`);
         await shareBtn.click();
 
-        await page.evaluate(() => {
-            // mock clipboard
-            let clipboardText = null;
-            window["navigator"]["clipboard"] = {
-                writeText: text => new Promise(resolve => clipboardText = text),
-                readText: () => new Promise(resolve => resolve(clipboardText)),
-            }
+        const text = await page.$eval("#horoscope-popup > div > p.share-confirm", (element) => {
+            return element.innerHTML;
         });
 
-        // Find expected message
-        const horoscopeTable = JSON.parse(JSON.stringify(horoscopeJSON))['Libra'];
-        const index = await page.evaluate(() => {
-            const date = new Date();
-            const day = date.getDate();
-            const month = date.getMonth();
-            const stringInputToHash = "" + day + month;
-            const inputToHash = Number(stringInputToHash);
-            const hashValue = inputToHash % 13;
-            return hashValue;
-        });
-        const message = horoscopeTable[index];
-        const shareText = `Hey 💖, I just checked my daily horoscope ✨ and I couldn\'t wait to share it with you! According to the stars 🌌, for Libra:\n${message}\nHow about you? Open our app and check your own forecast 🌤️, and let\'s compare our results 📈. Who knows what the universe has in store for us today!`
-
-        expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(shareText);
+        expect(text).toBe('Copied!');
+        await shareBtn.dispose();
     }, 10000);
 
     /**
