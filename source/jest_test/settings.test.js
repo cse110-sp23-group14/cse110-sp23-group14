@@ -1,7 +1,6 @@
 const puppeteer = require("puppeteer");
 const SERVER_PORT = 36873;
 
-
 /**
  * E2E test suite to test storing user's information to local storage
  * Testing basic functionality for settings page
