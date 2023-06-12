@@ -123,11 +123,13 @@ describe('Horoscope page test suite', () => {
 
         // Get the text of the horoscope in the popup
         const text = await page.evaluate(async() => {
-        const horoscopeButton = document.getElementById("horoscope-button");
-        horoscopeButton.click();
-        await new Promise(r => setTimeout(r, 4000));
-        const dailyContent = document.querySelector("#horoscope-popup > div > p.daily-content");
-        return dailyContent.textContent;
+            const horoscopeButton = document.getElementById("horoscope-button");
+            horoscopeButton.click();
+            await new Promise(r => {
+                setTimeout(r, 4000);
+            });
+            const dailyContent = document.querySelector("#horoscope-popup > div > p.daily-content");
+            return dailyContent.textContent;
         });
 
         // Find expected message
