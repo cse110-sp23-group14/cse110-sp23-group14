@@ -115,4 +115,7 @@ input[type="submit"] {
         touch-action: manipulation; 
         max-height: 1em; 
     }
+    #name {
+        width: 40%; /* Adjust the width as needed */
+    }
 }
