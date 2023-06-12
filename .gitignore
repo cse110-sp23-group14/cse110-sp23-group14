@@ -1,2 +1,4 @@
 .DS_Store
-*.icloud
+node_modules/*
+source/node_modules/*
+.vscode/*

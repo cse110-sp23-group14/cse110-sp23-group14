@@ -1,0 +1,123 @@
+.settings-content {
+    background-image: url('../assets/settings-background.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: var(--main-light-color);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-menu-background {
+    width: 80vw;
+    height: 80vh;
+    background-color: rgba(40 37 37 / 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-content h1 {
+    font: 4.5vw Lora, serif;
+    margin-top: 0;
+    margin-bottom: 2vh;
+}
+
+.current-profile p {
+    font: 2.5vw Lora, serif;
+}
+
+.settings-content h2 {
+    font: 2.5vw Inter, sans-serif;
+    text-decoration: underline;
+}
+
+.settings-content label {
+    font: 2vw Inter, sans-serif;
+}
+
+.settings-content input {
+    height: 20px;
+}
+
+.clear-profile {
+    margin-top: 10vh;
+}
+
+.clear-profile p {
+    display: inline;
+    font: 1.3vw Inter, sans-serif;
+}
+
+.clear-profile button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--main-light-color);
+    text-decoration: underline;
+    cursor: pointer;
+    font: 1.3vw Inter, sans-serif;
+}
+
+.update-profile > div {
+    margin-bottom: 5vh;
+}
+
+select {
+    height: 25px;
+}
+
+input[type="submit"] {
+    padding: 4px, 5px, 10px, 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    height: 25px;
+}
+
+/* Resizing for mobile */
+@media screen and (width <= 600px) {
+    .settings-menu-background {
+        width: 95vw;
+        height: 70vh;
+    }
+
+    .settings-content-inside {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .settings-content h1 {
+        font: 9vw Lora, serif;
+    }
+
+    .current-profile p {
+        font: 5vw Lora, serif;
+    }
+
+    .settings-content h2 {
+        font: 5vw Inter, sans-serif;
+    }
+
+    .settings-content label {
+        font: 4vw Inter, sans-serif;
+    }
+
+    .clear-profile p {
+        font: 3.5vw Inter, sans-serif;
+    }
+
+    .clear-profile button {
+        font: 3.5vw Inter, sans-serif;
+    }
+
+    input[type="text"] {
+        font-size: 16px;
+        touch-action: manipulation; 
+        max-height: 1em; 
+    }
+    
+    #name {
+        width: 40%; /* Adjust the width as needed */
+    }
+}

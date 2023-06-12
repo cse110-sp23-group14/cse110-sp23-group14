@@ -1,0 +1,61 @@
+.lifepath-content {
+    background-image: url("../assets/space.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: var(--main-light-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lifepath-menu-background {
+    background-color: rgba(40 37 37 / 50%);
+    padding-bottom: 3vh;
+}
+
+.lifepath-content button, .button {
+    padding: 1em;
+}
+
+.lifepath-info {
+    min-height: 30%;
+}
+
+.lifepath-info h1 {
+    font: 64px Lora, serif;
+    margin-bottom: 2vh;
+}
+
+#lifepath-number {
+    font-size: 6em;
+}
+
+.lifepath-content .button-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    gap: 1vw;
+}
+
+.deemphasize {
+    font-size: 2em !important;
+}
+
+/* Resizing for mobile */
+@media screen and (width <= 600px) {
+    .lifepath-content .button-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 0;
+        width: 100vw;
+        gap: 1vw;
+    }
+
+    .lifepath-content button, .button {
+        width: 40vw;
+    }
+
+}

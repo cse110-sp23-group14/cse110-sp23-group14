@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+    <head>
+        <title>Welcome to Zodiak</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="manifest" href="jsons/manifest.json">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="styles/home-style.css">
+        <link rel="stylesheet" href="styles/settings-style.css">
+        <link rel="stylesheet" href="styles/lifepath-style.css">
+        <link rel="stylesheet" href="styles/compatibility.css" >
+        <link rel="stylesheet" href ="styles/faq-style.css">
+
+        <!-- Setting the character encoding and viewport for the page -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+
+
+    <body>
+        <!-- External Scripts -->
+        <script src="https://kit.fontawesome.com/ec9b6ab711.js" crossorigin="anonymous"></script>
+        <script type="module" src="scripts/settings.js"></script>
+        <script type="module" src="scripts/index.js"></script>
+        <script type="module" src="scripts/compatibility.js"></script>
+        <script type="module" src="scripts/birthday-numerology.js"></script>
+
+
+
+        <!-- Navigation bar -->
+        <div class="nav-container nav-background-hide">
+            <a id="nav-button"><i class="fa-solid fa-bars fa-2xl"></i><i class="fa-solid fa-xmark fa-2xl icon-hide"></i></a>
+            <div class="nav-content nav-hide">
+                <div class="nav">
+                    <a href="#home" class="option" id="home-link">
+                        <h1 class="home">Home</h1>
+                    </a>
+                    <a href="#daily-report" class="option" id="report-link">
+                        <h1 class="daily-report">Daily Report</h1>
+                    </a>
+                    <a href="#compatibilitypage" class="option" id="compatibility-link">
+                        <h1 class="compatibility-report">Compatibility</h1>
+                    </a>
+                    <a href="#lifepath-page" class="option" id="lifepath-link">
+                        <h1 class="settings">Life Path Number</h1>
+                    </a>
+                    <a href="#settingpage" class="option" id="settings-link">
+                        <h1 class="settings">Settings</h1>
+                    </a>
+                    <a href="#faq-page" class="option" id="faq-link">
+                        <h1 class="settings">FAQ</h1>
+                    </a>
+                </div>
+                <div class="subheading">
+                    <p>Zodiak</p>
+                </div>
+            </div>
+        </div> 
+
+
+
+        <!-- Background star affect -->
+        <div class="stars-container">
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+        </div>
+
+
+
+        <!-- Welcome page -->
+        <section id="home">
+            <div class="site-content home-content">
+                <div class="title-box">
+                    <div class="title-content">
+                        <h1 class="title-text">welcome to <span class="bolded">Zodiak</span></h1>
+                        <img class="title-logo" src="assets/title-logo.png" alt="Logo Image here">
+                    </div>
+                </div>
+                <div class="title-reminder">
+                    <a id="scroll">Scroll to discover the features!</a>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Daily Horoscope page -->
+        <section id="daily-report">
+            <div class="site-content horoscope-content">
+                <!-- clicking the horoscope button will lead to the popup -->
+                <a id="horoscope-button" class="button" href="#horoscope-popup">Today's Horoscope</a>
+                <p id="horoscope-detect">We do not have your birthday yet. <br>Please fill out your information in the settings page!</p>
+    
+                <!-- horoscope popup has date, imagine, daily horoscope, and share button -->
+                <div id="horoscope-popup" class="overlay">
+                    <div class="popup">
+                        <a class="close" href="#horoscope_popup-box">&times;</a>
+                        <img class="daily-image" src="assets/title-logo.png" alt="daily horoscope image">
+                        <h1 class="daily-title">Leo</h1>
+                        <p class="daily-date">May 23, 2023</p>
+                        <p class="daily-content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor mauris at rhoncus maximus. Praesent dui purus, pharetra at scelerisque ut, euismod eget mauris. Maecenas eleifend, purus eu dapibus finibus, libero lorem ultrices augue, vel malesuada diam quam in lorem. Suspendisse quis nisl nec risus auctor tincidunt. Integer finibus pellentesque ipsum tempor mattis. Morbi finibus nisi id purus dignissim, ut pretium velit pellentesque. Ut pretium tortor ut pretium pharetra. Ut ut hendrerit lectus.
+                        </p>
+                        <button class="share-btn">Share</button>
+                        <p class="share-confirm"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Compatibility checker page -->
+        <section id="compatibilitypage">
+            <div class="site-content compatibility-content">
+
+                <!-- Header of the compatibility page -->
+                <section id="header">
+                    <div class="header">
+                        <div class="shape-left"> <span class="sign-name"></span></div>
+                        <span class="ampersand">&amp;</span>
+                        <div class="shape-right"> <span class="sign-name"></span></div>
+                    </div>    
+                </section>
+            
+                 <!-- The signs of the people whose compatibilities to check-->
+                <section id="choose-sign">
+                   
+                    <div class="menu">
+                        <div id="aries">
+                            <span class="zodiac-sign">&#9800;</span>
+                            <h3>Aries</h3>
+                            <p> MAR 21 - APR 19</p>
+                        </div>
+            
+                        <div id="taurus">
+                            <span class="zodiac-sign">&#9801;</span>
+                            <h3>Taurus</h3>
+                            <p> APR 20 - MAY 20</p>
+                        </div>
+            
+                        <div id="gemini">
+                            <span class="zodiac-sign">&#9802;</span>
+                            <h3>Gemini</h3>
+                            <p> MAY 21 - JUN 20</p>
+                        </div>
+            
+                        <div id="cancer">
+                            <span class="zodiac-sign">&#9803;</span>
+                            <h3>Cancer</h3>
+                            <p> JUN 21 - JUL 22</p>
+                        </div>
+            
+                        <div id="leo">
+                            <span class="zodiac-sign">&#9804;</span>
+                            <h3>Leo</h3>
+                            <p> JUL 23 - AUG 22</p>
+                        </div>
+            
+                        <div id="virgo">
+                            <span class="zodiac-sign">&#9805;</span>
+                            <h3>Virgo</h3>
+                            <p> AUG 23 - SEP 22</p>
+                        </div>
+            
+                        <div id="libra">
+                            <span class="zodiac-sign">&#9806;</span>
+                            <h3>Libra</h3>
+                            <p> SEP 23 - OCT 22</p>
+                        </div>
+            
+                        <div id="scorpio">
+                            <span class="zodiac-sign">&#9807;</span>
+                            <h3>Scorpio</h3>
+                            <p> OCT 23 - NOV 21</p>
+                        </div>
+            
+                        <div id="sagittarius">
+                            <span class="zodiac-sign">&#9808;</span>
+                            <h3>Sagittarius</h3>
+                            <p> NOV 22 - DEC 21</p>
+                        </div>
+            
+                        <div id="capricorn">
+                            <span class="zodiac-sign">&#9809;</span>
+                            <h3>Capricorn</h3>
+                            <p> DEC 22 - JAN 19</p>
+                        </div>
+            
+                        <div id="aquarius">
+                            <span class="zodiac-sign">&#9810;</span>
+                            <h3>Aquarius</h3>
+                            <p> JAN 20 - FEB 18</p>
+                        </div>
+            
+                        <div id="pisces">
+                            <span class="zodiac-sign">&#9811;</span>
+                            <h3>Pisces</h3>
+                            <p> FEB 19 - MAR 20</p>
+                        </div>
+                    </div>
+                </section>
+
+                <button id="check-compatibility-button" disabled>
+                    Check Compatibility
+                </button>
+
+                 <!-- compatibility result of the two signs-->
+                <div id="compatibility-popup" class="overlay">
+                    <div class="popup">
+                        <span id="close-compatibility-popup">&times;</span>
+                        <img class="compatibility-popup-logo" src="assets/title-logo.png" alt="filler">
+                        <h1 class="compatibility-pair">Leo + Aries</h1>
+                        <p class="descript">a</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+         <!-- Lifepath page with popups-->
+        <section id="lifepath-page">
+            <div id="lifepath-popup" class="overlay">
+                <div class="popup">
+                    <a class="close" href="#lifepath-popup-box">&times;</a>
+                    <img id="lifepath-image" alt="horoscope sign">
+                    <h1 id="lifepath-title">Personality</h1>
+                    <p id="lifepath-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor mauris at rhoncus maximus. Praesent dui
+                    purus, pharetra at scelerisque ut, euismod eget mauris. Maecenas eleifend, purus eu dapibus finibus, libero
+                    lorem ultrices augue, vel malesuada diam quam in lorem. Suspendisse quis nisl nec risus auctor tincidunt.
+                    Integer finibus pellentesque ipsum tempor mattis. Morbi finibus nisi id purus dignissim, ut pretium velit
+                    pellentesque. Ut pretium tortor ut pretium pharetra. Ut ut hendrerit lectus.
+                    </p>
+                </div>
+            </div>
+            <div class="site-content lifepath-content">
+                <div class="lifepath-menu-background">
+                    <div class="lifepath-info">
+                        <h1>Your Lifepath Number</h1>
+                        <p id="lifepath-number">#</p>
+                    </div>
+                    <div class="button-box">
+                        <a id="personality-button" class="button" href="#lifepath-popup">Personality</a>
+                        <a id="characteristics-button" class="button" href="#lifepath-popup">Characteristics</a>
+                        <a id="career-button" class="button" href="#lifepath-popup">Career</a>
+                        <a id="love-button" class="button" href="#lifepath-popup">Love</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Setting page allows user to update name and birthday-->
+        <section id="settingpage">
+            <div class="site-content settings-content">
+                <div class="settings-menu-background">
+                    <div class="settings-content-inside">
+                        <h1>Settings</h1>
+                        <div class="current-profile">
+                            <p id="profile-display">Hey new friend! We are excited to meet you.</p>
+                        </div>
+                        <div class="update-profile">
+                            <h2>Update Profile</h2>
+                            <div id="change-birthday">
+                                <form id="save-birthday-form">
+                                    <label>Your Birthday is:
+                                        <input type="date" id="birthday" autocomplete="bday">
+                                        <input type="submit" value="Update">
+                                    </label>
+                                </form> 
+                            </div>
+                            <div id="change-name">
+                                <form id="save-name-form">
+                                    <label>Your Name is:
+                                        <input type="text" id="name" autocomplete="name">
+                                        <input type="submit" value="Update">
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="clear-profile">
+                            <p>*All data is saved locally. You can </p>
+                            <button>clear</button>
+                            <p>your data at any time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+
+        <!-- FAQ page for the whole site-->
+        <section id="faq-page">
+                <div class="site-content faq">
+                    <div class="faq-background">
+                        <h1 class="title-faq">Frequently Asked Questions</h1>
+                        <div class="faq-content">
+                            <h2 id = "first-question">1. What is a horoscope?</h2>
+                            <p>A horoscope is a personalized astrological forecast based on the positions of celestial bodies at the time of a person's birth. It is a symbolic representation of the energies and influences that may affect various aspects of a person's life, such as personality traits, relationships, career, and more.</p>
+                            <h2 id ="second-question">2. What is a Zodiac sign?</h2>
+                            <p>The Zodiac signs are twelve equal divisions of the ecliptic, representing specific periods of the year. The signs are: Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, Aquarius, and Pisces. Each sign is associated with certain characteristics and is ruled by a particular planet.</p>
+                            <h2 id ="third-question">3.How is my Zodiac sign determined?</h2>
+                            <p>It is calculated by the date of your birthday. You can actually input your birthday into our site and we will calculate your Zodiac sign for you!</p>
+                            <h2 id = "fourth-question">4. What are the benefits of reading my daily horoscope?</h2>
+                                <ul class = "bullet-point">
+                                    <li>Increases your self-awareness</li>
+                                    <li>Provides guidance and decision-making</li>
+                                    <li>Educates on the timing and awareness of celestial influences</li>
+                                    <li>Gives validation and reassurance</li>
+                                    <li>Spurs personal growth and development</li>
+                                    <li>Sparks curiosity and exploration</li>
+                                </ul>
+                            <h2 id = "fifth-question">5. Help! My horoscope was wrong!</h2>
+                            <p>Remember, astrology, the foundation of horoscopes, is not considered a scientific discipline in the traditional sense. It operates on a different set of principles and is often regarded as a metaphysical or esoteric practice. Still, it has a long history and is valued by many individuals and cultures.
+                                It's important to approach horoscopes with an open mind, using them as a tool for self-reflection and inspiration rather than relying solely on them for decision-making. Ultimately, you have the power to shape your own life and make choices based on your personal values, goals, and circumstances.</p>
+                            <h2 id = "sixth-question">6. How does your compatibility feature work?</h2>
+                                <ol class = "steps">
+                                    <li>Select the zodiac sign of the first person</li>
+                                    <li> Select the zodiac sign of the second person</li>
+                                    <li>Read the result of putting these two signs together!</li>
+                                </ol>
+                            <h2 id = "seventh-question">7. My question was not answered here! Who can I contact?</h2>
+                            <p>You may reach the developers at the Geisel Library on the first floor on Tuesdays and Thursdays after their favorite lecture.</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+
+    </body>
+</html>
