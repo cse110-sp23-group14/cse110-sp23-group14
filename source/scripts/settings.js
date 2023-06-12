@@ -39,8 +39,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
             horoscopeButton.style.display = 'block';
         }
         const horoscopeDetect = document.getElementById('horoscope-detect');
+        const add = document.getElementById("add");
+        const scroll = document.getElementById("scroll");
         if (localStorage.getItem('birthdayYear')) {
             horoscopeDetect.style.display = 'none';
+            add.style.display='none';
+            scroll.style.display='block';
         }
     });
     
@@ -61,8 +65,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
             horoscopeButton.style.display = 'none';
         }
         const horoscopeDetect = document.getElementById('horoscope-detect');
+        const add = document.getElementById("add");
+        const scroll = document.getElementById("scroll");
         if (!localStorage.getItem('birthdayYear')) {
             horoscopeDetect.style.display = 'block';
+            add.style.display='block';
+            scroll.style.display='none';
         }
     });
 });
