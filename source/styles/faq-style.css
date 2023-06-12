@@ -1,5 +1,7 @@
+/* main container style */
 .faq {
     min-height: 100vh;
+    /* allow overflow in snap section */
     height: fit-content;
     overflow-y: scroll;
     background-image: url('../assets/settings-background.jpeg');
@@ -10,17 +12,20 @@
     align-items: center;
 }
 
+/* background container style */
 .faq-background {
     width: 80vw;
     height: auto;
     background-color: rgba(40 37 37 / 50%);
 }
 
+/* add padding */ 
 .faq-content {
     padding-left: 3%;
     padding-right: 3%;
 }
 
+/* title styling for the faq page */
 .title-faq{
     font: 3vh Lora, serif;
     color: var(--main-light-color);
@@ -28,24 +33,27 @@
     font-weight: bold;
 }
 
-
+/* styling for the questions */
 .faq h2 {
     font: 2vh Inter, sans-serif;
     color: var(--main-light-color);
     font-weight: bold;
 }
 
+/* styling for the answers */
 .faq p {
     font: 1.8vh Lora, serif;
     color:var(--main-light-color);
     padding-left: 2.5vw;
 }
 
+/* styling for bullet points */
 .bullet-point{
     font: 1.8vh Lora, serif;
     color:var(--main-light-color);
 }
 
+/* styling for list of steps */
 .steps{
     font: 1.8vh Lora, serif;
     color:var(--main-light-color);

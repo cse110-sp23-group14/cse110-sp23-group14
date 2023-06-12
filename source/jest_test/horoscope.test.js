@@ -1,5 +1,3 @@
-
-/* Old stuff Here
 /**
  * Notes:
  * - Our functions and our webpage (localStorage, DOM, etc.) are strongly coupled, and so for our "unit tests",
@@ -47,7 +45,7 @@ describe('Horoscope page test suite', () => {
         await page.$eval('#name', el => {
             el.value = 'Sample Name';
         });
-        const nameButton = await page.evaluateHandle(`document.querySelector("#save-name-form > div > input[type=submit]:nth-child(3)")`);
+        const nameButton = await page.evaluateHandle(`document.querySelector("#save-name-form > label > input[type=submit]:nth-child(2)")`);
         await nameButton.click();
 
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
@@ -63,7 +61,7 @@ describe('Horoscope page test suite', () => {
         await page.$eval('#birthday', el => {
             el.value = '2004-09-23';
         });
-        const bdayButton = await page.evaluateHandle(`document.querySelector("#save-birthday-form > input[type=submit]:nth-child(3)")`);
+        const bdayButton = await page.evaluateHandle(`document.querySelector("#save-birthday-form > label > input[type=submit]:nth-child(2)")`);
         await bdayButton.click();
 
         await page.goto(`http://localhost:${SERVER_PORT}/source/`);
@@ -130,8 +128,8 @@ describe('Horoscope page test suite', () => {
         //     return element.innerText; //textContent;
         // });
 
-        const text = await page.evaluate(() => {
-            return document.querySelector("#horoscope-popup > div > p.daily-content").innerText;
+        const text = await page.$eval('#horoscope-popup > div > p.daily-content', (div) => {
+            return div.innerText;
         });
 
         // const textElement = await page.$("#horoscope-popup > div > p.daily-content");
