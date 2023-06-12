@@ -51,12 +51,11 @@ describe('Numerology page test suite', () => {
     it('Check that personality popup displays correct message', async () => {
         const persButton = await page.evaluateHandle(`document.querySelector("#personality-button")`);
         await persButton.click();
-        await page.goto(`http://localhost:${SERVER_PORT}/source/#lifepath-popup`);
 
         const text = await page.$eval("#lifepath-text", (element) => {
             return element.innerText;
         });
-        const expectedText = 'People in the category of number 2 are true peace lovers. Your emotional quotient is very high which is both bane and boon for you in life. You are a loyal partner, friend, and bond with people easily. Even though you are reserved by nature, the intuitive side of you makes you a people\'s person. In a situation of confusion, tiff, and misunderstanding you play an active part in resolving them for others. The convincing power is high on your side, which makes you a perfect mediator. Since you have the power to change people\'s mind, it often becomes difficult to explain yourself when there is a problem in your paradise. You own the power to self-heal from hurtful situations and also specialize in helping others do the same. People with this life path number are mostly in professions like spirituality, healing, nursing, etc.';
+        const expectedText = 'As natural-born leaders, you are not only courageous but also high spirited. You love your freedom, so it is ensured that its reins are intact in your hands. You are well- suited for self-employment and would excel as a self-boss. Your goal-oriented nature has taken you a long way in your life, if not yet then it is likely to show its effect in the coming time. The pure dedication and focus with which you take up any task or errand give you success most of the time. You put your heart and soul into achieving your target or task. You can be a multi-tasker if the work interests you and you have the zeal to do it. You are mostly clear about the path of achievement but you also demand attention and love from people around. Often you get agitated when things do not go your way. The swollen ego, boastful nature and arrogance at times drive you insane and you hamper things around.';
         expect(text).toBe(expectedText);
         await persButton.dispose();
 
