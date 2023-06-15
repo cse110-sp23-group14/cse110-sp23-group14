@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Home - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#calculateLifePathNumber">calculateLifePathNumber</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkCompatibility">checkCompatibility</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#clearUserInfo">clearUserInfo</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#displayStoredData">displayStoredData</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#findDescription">findDescription</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#handleClick">handleClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#handleShapeClick">handleShapeClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#reduceNumber">reduceNumber</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#saveBirthday">saveBirthday</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#saveUserName">saveUserName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setHoroscope">setHoroscope</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setShapeProperties">setShapeProperties</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#staticCacheName">staticCacheName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#updateLifePathNumber">updateLifePathNumber</a></span></li>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    <section class="readme">
+        <article><h1>Net Ninjas (Group 14)</h1>
+<p><a href="https://codeclimate.com/github/cse110-sp23-group14/cse110-sp23-group14/maintainability"><img src="https://api.codeclimate.com/v1/badges/8f2ee10c3081178fffa7/maintainability" /></a></p>
+<h2>Important Links</h2>
+<ul>
+<li><a href="https://github.com/cse110-sp23-group14/cse110-sp23-group14/blob/main/admin/team.md">Team Page</a></li>
+<li><a href="https://cse110-sp23-group14.github.io/cse110-sp23-group14/main/documentation/index.html">Documentation</a></li>
+<li><a href="https://cse110-sp23-group14.github.io/cse110-sp23-group14/main/fortune-telling-dev/source/index.html">Fortune Telling Dev Deploy</a></li>
+<li><a href="https://cse110-sp23-group14.github.io/cse110-sp23-group14/source/index.html">Main Deploy</a></li>
+<li><a href="https://cse110-sp23-group14.github.io/cse110-sp23-group14/main/test-8ball-PWA/source/8ball/index.html">8Ball PWA Test</a></li>
+</ul>
+<h2>Project Overview:</h2>
+<p>This project is a website that allows you to recieve a daily horoscope based on your birthday. Some other features include the life path number which tells you your life path based on your birthday and the compatability checker to check your love compatability</p>
+<h2>Repo Walk Through</h2>
+<ul>
+<li>Repository organization:
+<ul>
+<li>Main branch is for fully done releases</li>
+<li>Fortune-Telling-Dev branch is for working on new features
+<ul>
+<li>Once features are done can merge them into the main branch</li>
+</ul>
+</li>
+<li>8 Ball branch
+<ul>
+<li>The intro project with 8ball material</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>CI/CD Documentation</h2>
+<ul>
+<li>Run the full CI/CD at this link: <a href="https://github.com/cse110-sp23-group14/cse110-sp23-group14/actions/workflows/full-deploy-pipeline.yml">here</a></li>
+<li>Note about full CI/CD: Only run it on the main branch because deploy fails for no reason when run on other branches</li>
+<li>CI/CD Features
+<ul>
+<li>Multibranch Deploy
+<ul>
+<li>This action deploys the full release from the main branch as well as: 8ball, dev branch (for testing), and documentation from their respective branches.</li>
+<li>Have multibranch deploy since we had to constantly change which branch pages was built off of when building the project which got annoying</li>
+<li>Comments in <code>.yml</code> provide more clarity, but essentially works by copying files into main branch and deploying them all</li>
+<li>Can be run manually <a href="https://github.com/cse110-sp23-group14/cse110-sp23-group14/actions/workflows/full-deploy-pipeline.yml">here</a></li>
+</ul>
+</li>
+<li>Github Super linter
+<ul>
+<li>Works by running specified linters (ESLint, HTMLHint, and stylelint) on all the of the files in the repo</li>
+<li>Style specifications for the linters found in the <code>.github/linters</code> folder.</li>
+<li>Can be run manually <a href="https://github.com/cse110-sp23-group14/cse110-sp23-group14/actions/workflows/linter.yml">here</a></li>
+</ul>
+</li>
+<li>Testing
+<ul>
+<li>Testing is done with puppeteer + Jest</li>
+<li>SMALL ISSUE WITH THE TESTING WORKFLOW: IT WILL PASS EVEN IF TESTS FAIL, BE SURE TO CHECK WORKFLOW AFTER IT RUNS</li>
+<li>Tests found in <code>source/jest_test</code></li>
+</ul>
+</li>
+<li>Documentation
+<ul>
+<li>Documentation done with JSDocs</li>
+<li>Built off of the fortune-telling-dev branch for most up to date docs</li>
+<li>Can be run manually <a href="https://github.com/cse110-sp23-group14/cse110-sp23-group14/actions/workflows/documentation.yml">here</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Thu Jun 15 2023 06:31:48 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

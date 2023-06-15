@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>horoscope.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#calculateLifePathNumber">calculateLifePathNumber</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkCompatibility">checkCompatibility</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#clearUserInfo">clearUserInfo</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#displayStoredData">displayStoredData</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#findDescription">findDescription</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#handleClick">handleClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#handleShapeClick">handleShapeClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#reduceNumber">reduceNumber</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#saveBirthday">saveBirthday</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#saveUserName">saveUserName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setHoroscope">setHoroscope</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setShapeProperties">setShapeProperties</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#staticCacheName">staticCacheName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#updateLifePathNumber">updateLifePathNumber</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">horoscope.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>export { Horoscope };
+import { Zodiac } from "./zodiac.js";
+import { horoscopeJSON } from "../jsons/horoscopeJson.js";
+
+const NUM_HOROSCOPES = 13;
+class Horoscope {
+    static horoscopeTable;
+    static {
+        this.horoscopeTable = JSON.parse(JSON.stringify(horoscopeJSON));
+    }
+
+    /**
+     * Finds user's sign from birthday stored in local storage
+     * @returns {string|null} user's zodiac sign, or null if sign is not found
+     */
+    static getSign() {
+        // Getting Birthday Data
+        const birthday = localStorage.getItem('birthday');
+        if (!birthday) {
+            return null;
+        }
+        const birthdaySplit = birthday.split(".");
+        // Getting Zodiac sign data
+        const sign = Zodiac.getZodiacSign(birthdaySplit[0], birthdaySplit[1]);
+        return sign;
+    }
+
+    /**
+     * Finds user's sign and current date and returns an appropriate horoscope.
+     * @returns {string} A horoscope in string form.
+     */
+    static generateHoroscope() {
+        // Getting Zodiac sign data
+        const sign = this.getSign();
+        if (!sign) {
+            return "No horoscope found.";
+        }
+        // Getting Date for hashing function
+        const date = new Date();
+        const day = date.getDate();
+        const month = date.getMonth();
+        const stringInputToHash = "" + day + month;
+        const inputToHash = Number(stringInputToHash);
+        const hashValue = inputToHash % NUM_HOROSCOPES;
+        // Read horoscopes.json and get today's horoscope
+        const todayHoroscope = this.horoscopeTable[sign][hashValue];
+        return todayHoroscope;
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Thu Jun 15 2023 06:31:48 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

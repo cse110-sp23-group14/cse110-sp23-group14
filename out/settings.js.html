@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>settings.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#calculateLifePathNumber">calculateLifePathNumber</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkCompatibility">checkCompatibility</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#clearUserInfo">clearUserInfo</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#displayStoredData">displayStoredData</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#findDescription">findDescription</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#handleClick">handleClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#handleShapeClick">handleShapeClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#reduceNumber">reduceNumber</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#saveBirthday">saveBirthday</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#saveUserName">saveUserName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setHoroscope">setHoroscope</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setShapeProperties">setShapeProperties</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#staticCacheName">staticCacheName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#updateLifePathNumber">updateLifePathNumber</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">settings.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { Horoscope } from "./horoscope.js";
+import { constellation } from "../jsons/constellationJson.js";
+import { updateLifePathNumber } from "./birthday-numerology.js";
+
+/**
+ * Event listener function for the 'DOMContentLoaded' event.
+ * @param {Event} event -The 'DOMContentLoaded' event object
+ */
+window.addEventListener('DOMContentLoaded', (event) => {
+    displayStoredData();
+    setHoroscope();
+
+    const saveUserNameForm = document.getElementById('save-name-form');
+    /**
+     * Saves the username
+     * @param {Event} event - 'submit'
+     */
+    saveUserNameForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        saveUserName();
+        displayStoredData();
+        setHoroscope();
+        updateLifePathNumber();
+    });
+
+    const saveBirthdayForm = document.getElementById('save-birthday-form');
+    /**
+    * Saves the birthday
+    * @param {Event} event - 'submit'
+    */
+    saveBirthdayForm.addEventListener('submit', function(event){
+        event.preventDefault(); // Prevent page jump
+        saveBirthday();
+        displayStoredData();
+        setHoroscope();
+        updateLifePathNumber();
+        const horoscopeButton = document.getElementById('horoscope-button');
+        const horoscopeDetect = document.getElementById('horoscope-detect');
+        if (localStorage.getItem('birthdayYear')) {
+            horoscopeButton.style.display = 'block';
+            horoscopeDetect.style.display = 'none';
+        }
+    });
+    
+    const clearUserInfoButton = document.querySelector('.clear-profile button');
+    /**
+    * clears user information
+    * @param {Event} event - 'click'
+    */
+    clearUserInfoButton.addEventListener('click', function(event){
+        event.preventDefault();
+        clearUserInfo();
+        displayStoredData();
+        setHoroscope();
+        updateLifePathNumber();
+        setHoroscope();
+        const horoscopeButton = document.getElementById('horoscope-button');
+        const horoscopeDetect = document.getElementById('horoscope-detect');
+        if (!localStorage.getItem('birthdayYear')) {
+            horoscopeButton.style.display = 'none';
+            horoscopeDetect.style.display = 'block';
+        }
+    });
+});
+
+/**
+ * Get user name and birthday from localStorage,
+ * and display them in setting page
+ */
+function displayStoredData() {
+    const displayElement = document.getElementById('profile-display');
+    const storedBirthday = localStorage.getItem('birthdayYear');
+    if (storedBirthday) {
+        const storedName = localStorage.getItem('name');
+        if (storedName) {
+            displayElement.innerHTML = `Welcome back &lt;span class="highlight">${storedName}&lt;/span>! Your birthday on record is &lt;span class="highlight">${storedBirthday}&lt;/span>`;
+        } else {
+            displayElement.innerHTML = `Welcome back! Your birthday on record is &lt;span class="highlight">${storedBirthday}&lt;/span>`;
+        }
+    }else{
+        displayElement.innerHTML = 'Hey new friend! We are excited to meet you.';
+    }
+}
+
+/**
+ * set daily report's popup card and background according to user's birthday
+ */
+function setHoroscope() {
+    const horoscopeContent = document.querySelector('.horoscope-content');
+    const zodiacSign = Horoscope.getSign();
+    const defaultImage = 'assets/settings-background.jpeg';
+    if (zodiacSign) {
+        const imageKey = zodiacSign.charAt(0).toUpperCase() + zodiacSign.slice(1);
+        horoscopeContent.style.backgroundImage = `url(${constellation[imageKey]})`;
+    } else {
+        horoscopeContent.style.backgroundImage = `url(${defaultImage})`;
+    }
+    const dailyTitle = document.getElementsByClassName("daily-title")[0];
+    const dailyContent = document.getElementsByClassName("daily-content")[0];
+    dailyTitle.innerHTML = Horoscope.getSign();
+    dailyContent.innerHTML = Horoscope.generateHoroscope();
+}
+
+/**
+ * Saves the string entered by the user as their name into local storage.
+ */
+function saveUserName() {
+    const userName = document.getElementById('name').value;
+    localStorage.setItem('name', userName);
+}
+
+/**
+ * Saves the birthday entered by the user into local storage.
+ */
+function saveBirthday() {
+    const birthdayInput = document.getElementById("birthday");
+    if (birthdayInput.value.trim() === '') {
+        alert('Please enter your birthday before submitting.');
+        return;
+    }
+    // process date format
+    // "2023-06-01" --> "2023.6.1"
+    const dateArray = birthdayInput.value.split('-');
+    // remove leading "0"
+    for (let i=0; i&lt;dateArray.length; i++) {
+        dateArray[i] = parseInt(dateArray[i], 10).toString();
+    }
+    const year = dateArray[0];
+    const month = dateArray[1];
+    const day = dateArray[2];
+    const birthday = month + '.' + day;
+    const birthdayYear = year + '.' + birthday;
+    localStorage.setItem("birthday", birthday);
+    localStorage.setItem("birthdayYear",birthdayYear);
+    setHoroscope();
+    displayStoredData();
+    updateLifePathNumber();
+}
+
+/**
+ * Clear 'name' and 'birthday' items in localStorage
+ */
+function clearUserInfo() {
+    const confirmed = window.confirm("Are you sure you want to clear your name and birthday?");
+    if (confirmed) {
+        localStorage.removeItem('name');
+        localStorage.removeItem('birthday');
+        localStorage.removeItem('birthdayYear');
+        setHoroscope();
+        displayStoredData();
+        updateLifePathNumber();
+    }
+    displayStoredData();
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Thu Jun 15 2023 06:31:48 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

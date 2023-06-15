@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>birthday-numerology.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#calculateLifePathNumber">calculateLifePathNumber</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#checkCompatibility">checkCompatibility</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#clearUserInfo">clearUserInfo</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#displayStoredData">displayStoredData</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#findDescription">findDescription</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#handleClick">handleClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#handleShapeClick">handleShapeClick</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#reduceNumber">reduceNumber</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#saveBirthday">saveBirthday</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#saveUserName">saveUserName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setHoroscope">setHoroscope</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#setShapeProperties">setShapeProperties</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#staticCacheName">staticCacheName</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#updateLifePathNumber">updateLifePathNumber</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">birthday-numerology.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import {soulUrgeNumberData} from "../jsons/soulUrgeNumberDataJson.js";
+export {updateLifePathNumber};
+
+/**
+ * Event listener function for the 'DOMContentLoaded' event.
+ * @param {Event} event -The 'DOMContentLoaded' event object
+ */
+window.addEventListener('DOMContentLoaded', (event)=> {
+    updateLifePathNumber();
+});
+
+/**
+* Updates the life path number text on the numerology page
+* (Made to not have to reload page to get number to change)
+*/
+function updateLifePathNumber() {
+    const lifePathNumberLabel = document.getElementById("lifepath-number");
+    const birthday = localStorage.getItem("birthdayYear");
+    let lifePathNumber = -1;
+    if (birthday) {
+        // Handle when we have personal information in localstorage
+        lifePathNumber = calculateLifePathNumber(birthday);
+        lifePathNumberLabel.innerHTML = `${lifePathNumber}`;
+        lifePathNumberLabel.classList.add('highlight');
+        lifePathNumberLabel.classList.remove('deemphasize');
+        const lifePathTitle = document.getElementById('lifepath-title');
+        const lifePathText = document.getElementById('lifepath-text');
+        const lifePathButtons = document.querySelectorAll('.button-box a');
+        const lifePathButtonBox = document.querySelector('.button-box');
+        const lifePathImage = document.getElementById('lifepath-image');
+        lifePathImage.setAttribute('src', `assets/lifepath/${lifePathNumber}.png`);
+
+        /**
+         * Event listener for lifePathButtons
+         * @param {Event} event - The 'click' event object
+         */
+        function handleButtonClick(event) {
+            const buttonIndex = Array.from(lifePathButtons).indexOf(event.target);
+            let predictionType, predictionValue;
+            // Get the description for the four aspect of a life path number
+            switch (buttonIndex) {
+            case 0:
+                predictionType = 'Personality';
+                predictionValue = soulUrgeNumberData[lifePathNumber]['personality'];
+                break;
+            case 1:
+                predictionType = 'Characteristics';
+                predictionValue = soulUrgeNumberData[lifePathNumber]['characteristic'];
+                break;
+            case 2:
+                predictionType = 'Career';
+                predictionValue = soulUrgeNumberData[lifePathNumber]['career'];
+                break;
+            case 3:
+                predictionType = 'Love';
+                predictionValue = soulUrgeNumberData[lifePathNumber]['love'];
+                break;
+            default:
+                return;
+            }
+            lifePathTitle.innerHTML = predictionType;
+            lifePathText.innerHTML = predictionValue;
+        }
+        lifePathButtonBox.style.display = '';
+        lifePathButtons.forEach(button => {
+            button.addEventListener('click', handleButtonClick);
+        });
+    }else {
+        // When we the user does not put personal info
+        const lifePathButtonBox = document.querySelector('.lifepath-content .button-box');
+        lifePathButtonBox.style.display = 'none';
+        lifePathNumberLabel.innerHTML = "Your lifepath has not been revealed yet. Please fill out your info!";
+        lifePathNumberLabel.classList.add('deemphasize');
+        lifePathNumberLabel.classList.remove('highlight');
+    }
+}
+
+/**
+ * Calculates the life path number based on the birthday
+ * @param {number} birthDate
+ * @returns {number} calculated life path number
+ */
+function calculateLifePathNumber(birthDate) {
+    // Extract year, month, and day
+    const dateArray = birthDate.split('.');
+    const year = dateArray[0];
+    const month = dateArray[1];
+    const day = dateArray[2];
+    // Reduce each part to a single digit or a master number
+    const reducedYear = reduceNumber(year);
+    const reducedMonth = reduceNumber(month);
+    const reducedDay = reduceNumber(day);
+    // Calculate the sum of year, month, and day
+    let sum = reducedYear + reducedMonth + reducedDay;
+    // Reduce the sum to a single digit or a master number
+    sum = reduceNumber(sum);
+    return sum;
+}
+
+/**
+ * Performs a reduction operation on it until the result becomes a single-digit number
+ * @param {number} number
+ * @returns {number} single digit number
+ */
+function reduceNumber(number) {
+    let result = parseInt(number, 10);
+    while (result > 9) {
+        const digits = Array.from(result.toString(), Number);
+        result = digits.reduce((acc, curr) => {
+            return acc + curr;
+        }, 0);
+    }
+    return result;
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Thu Jun 15 2023 06:31:48 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
