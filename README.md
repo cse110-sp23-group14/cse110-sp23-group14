@@ -9,7 +9,7 @@
 - [Fortune Telling Dev Deploy](https://cse110-sp23-group14.github.io/cse110-sp23-group14/main/fortune-telling-dev/source/index.html)
 - [Main Deploy](https://cse110-sp23-group14.github.io/cse110-sp23-group14/source/index.html)
 - [8Ball PWA Test](https://cse110-sp23-group14.github.io/cse110-sp23-group14/main/test-8ball-PWA/source/8ball/index.html)
-
+- [Final Public Presentation Video](https://youtu.be/FaTcLcg4w4g)
 
 ## Project Overview:
 
